@@ -8,6 +8,7 @@ import './assets/css/button.css'
 import './assets/css/input.css'
 import './assets/css/margin-padding.css'
 import './assets/css/table.css'
+import './assets/css/cards.css'
 
 import router from './router'
 // createApp(App).mount('#app')

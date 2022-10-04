@@ -1143,7 +1143,7 @@
             },  
             collapseClick(e){            
                 this.iconState = !this.iconState;
-                this.popupOverContent = `<div class="popover sched-interview-popup-over" ref='popupOverContent' role="popover" style="transform: translate(1328px, 875px) !important;">
+                this.popupOverContent = `<div class="popover sched-interview-popup-over" ref='popupOverContent' role="popover">
                                             <div class="popover-arrow  sched-interview-popover-arrow"></div>
                                             <div class="popover-inner">
                                                 <div class="popupHead">
@@ -1249,7 +1249,7 @@
             --bs-popover-max-width: 524px !important;
             font-family: RubikLight !important;
             box-shadow: 0px 0px 15px 1px #eee;
-            left: -213px !important;
+            /* left: -213px !important; */
             border-radius: unset !important;
         }
         .popupHead{
@@ -1258,10 +1258,6 @@
             font-weight: 600;
             font-size: 18px;
             color: #2C91FF;
-        }
-
-        .sched-interview-popover-arrow{
-            transform: translate(469px, 0px) !important;
         }
 
         .popupFooter{

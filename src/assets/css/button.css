@@ -5,6 +5,10 @@
     color:#27304C !important;
     border-radius: 2px !important;
 }
+.btn-outline-gray:hover{
+    background-color: #eee !important;
+}
+
 .btn-outline-blue{
     border: 1px solid #2C91FF !important;
     color: #2C91FF !important;
@@ -13,6 +17,11 @@
     font-family: RubikRegular !important;
     border-radius: 3px !important;
 }
+.btn-outline-blue:hover{
+    background-color: #2C91FF !important;
+    color: white !important;
+}
+
 .btn-outline-red{
     border: 1px solid #FF4949 !important;
     color: #FF4949 !important;
@@ -21,6 +30,10 @@
     font-family: RubikRegular !important;
     border-radius: 3px !important;
 }
+.btn-outline-red:hover{
+    background-color: #ffd9d9 !important;
+}
+
 .btn-save-changes{
     border: 1px solid #2C91FF !important;
     background: #2C91FF !important;

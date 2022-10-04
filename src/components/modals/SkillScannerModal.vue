@@ -25,7 +25,7 @@
                                     </div>
                                 </td>
                                 <td width="247">
-                                    <input type="text"  class="form-control skill-scan-input input-pink skill-scan-custom" placeholder="Select primary skill">
+                                    <input type="text"  class="form-control skill-scan-input input-pink skill-scan-custom" disabled placeholder="Select primary skill">
                                 </td>
                                 <td width="125">
                                     <div class="skill-scan-label secondary-skill-label ">
@@ -33,7 +33,7 @@
                                     </div>
                                 </td>
                                 <td width="228"> 
-                                    <input type="text"  class="form-control skill-scan-input input-violet skill-scan-custom" placeholder="Select 2 Secondary Skills">
+                                    <input type="text"  class="form-control skill-scan-input input-violet skill-scan-custom" disabled placeholder="Select 2 Secondary Skills">
                                 </td>
                             </tr>
                         </table> 
@@ -45,7 +45,7 @@
                                     </div>
                                 </td>
                                 <td colspan="3">
-                                    <input type="text"  class="form-control skill-scan-input input-yellow skill-scan-custom" placeholder="Select skill from below">
+                                    <input type="text"  class="form-control skill-scan-input input-yellow skill-scan-custom" disabled placeholder="Select skill from below">
                                 </td>                           
                             </tr>
                         </table> 
@@ -98,7 +98,7 @@
                                                 Backend
                                             </div>
                                             <div class="flex-fill text-end">
-                                            <span class="see-all-skills">See All</span>
+                                            <span class="see-all-skills cursor-pointer">See All</span>
                                             </div>
                                         </div>   
                                         <div class="sub-label">
@@ -142,7 +142,7 @@
                                                 Frontend
                                             </div>
                                             <div class="flex-fill text-end">
-                                            <span class="see-all-skills">See All</span>
+                                            <span class="see-all-skills cursor-pointer">See All</span>
                                             </div>
                                         </div>   
                                         <div class="sub-label">
@@ -185,7 +185,7 @@
                                                 Mobile
                                             </div>
                                             <div class="flex-fill text-end">
-                                            <span class="see-all-skills">See All</span>
+                                            <span class="see-all-skills cursor-pointer">See All</span>
                                             </div>
                                         </div>   
                                         <div class="sub-label">
@@ -228,7 +228,7 @@
                 </div>
                 <div class="modal-footer custom-modal-footer">
                     <button type="button" class="btn btn-outline-blue btn-lg btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-save-changes btn-lg">Save</button>
+                    <button type="button" class="btn btn-primary btn-save-changes btn-lg" data-bs-dismiss="modal">Save</button>
                 </div>
                 </div>
             </div>
@@ -265,7 +265,7 @@
                                     <section class="inner">                                      
                                         <div class="tag-field js-tags">
                                         <div class="tag js-tag" data-index="0">HTML<span class="tag-close js-tag-close" data-index="0">×</span></div>
-                                        <input class="js-tag-input"  id="textInput"/>
+                                        <input class="js-tag-input" disabled id="textInput"/>
                                         </div>
                                     </section>
                                 </section>                               
@@ -282,7 +282,7 @@
                                         <div class="tag-field js-tags">
                                         <div class="tag js-tag" data-index="0">CSS<span class="tag-close js-tag-close" data-index="0">×</span></div>
                                         <div class="tag js-tag" data-index="1">Javascript<span class="tag-close js-tag-close" data-index="0">×</span></div>
-                                        <input class="js-tag-input"  id="textInput"/>
+                                        <input class="js-tag-input" disabled  id="textInput"/>
                                         </div>
                                     </section>
                                 </section>                               
@@ -432,7 +432,7 @@
                     </div>
                 </div>
                 <div class="modal-footer custom-modal-footer">
-                    <button type="button" class="btn btn-outline-red btn-lg btn-cancel">
+                    <button type="button" class="btn btn-outline-red btn-lg btn-cancel" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.00008 15.8333C5.00008 16.75 5.75008 17.5 6.66675 17.5H13.3334C14.2501 17.5 15.0001 16.75 15.0001 15.8333V5.83333H5.00008V15.8333ZM6.66675 7.5H13.3334V15.8333H6.66675V7.5ZM12.9167 3.33333L12.0834 2.5H7.91675L7.08341 3.33333H4.16675V5H15.8334V3.33333H12.9167Z" fill="#FF4949"/>
                         </svg>
@@ -440,7 +440,7 @@
                         Delete
                     </button>
                     <button type="button" class="btn btn-outline-blue btn-lg btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-save-changes btn-lg">Save Changes</button>
+                    <button type="button" class="btn btn-primary btn-save-changes btn-lg" data-bs-dismiss="modal">Save Changes</button>
                 </div>
                 </div>
             </div>
@@ -474,7 +474,7 @@
                                 <section class="container-input-content input-tag-container">
                                     <section class="inner">                                      
                                         <div class="tag-field js-tags">
-                                        <input class="js-tag-input"  placeholder="Select primary skill"/>
+                                        <input class="js-tag-input" disabled  placeholder="Select primary skill"/>
                                         </div>
                                     </section>
                                 </section>                               
@@ -489,7 +489,7 @@
                                 <section class="container-input-content input-tag-container">
                                     <section class="inner">                                      
                                         <div class="tag-field js-tags">                                       
-                                        <input class="js-tag-input"  placeholder="Select secondary skill"/>
+                                        <input class="js-tag-input" disabled  placeholder="Select secondary skill"/>
                                         </div>
                                     </section>
                                 </section>                               
@@ -503,7 +503,7 @@
                                 <section class="container-input-content input-tag-container">
                                     <section class="inner">                                      
                                         <div class="tag-field js-tags">
-                                        <input class="js-tag-input"  placeholder="Select other skill"/>
+                                        <input class="js-tag-input"  disabled placeholder="Select other skill"/>
                                         </div>
                                     </section>
                                 </section>                               
@@ -637,7 +637,7 @@
                 </div>
                 <div class="modal-footer custom-modal-footer">
                     <button type="button" class="btn btn-outline-blue btn-lg btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-save-changes btn-lg">Create Alerts</button>
+                    <button type="button" class="btn btn-primary btn-save-changes btn-lg" data-bs-toggle="modal" data-bs-target="#reachLimitModal">Create Alerts</button>
                 </div>
                 </div>
             </div>
@@ -667,7 +667,7 @@
             </div>
             <div class="modal-footer text-center">
                 <button type="button" class="btn btn-default  btn-outline-gray alert-cancel-btn" data-bs-dismiss="modal">No, cancel!</button>
-                <button type="button" class="btn btn-default btn-custom-green alert-yes-btn" data-bs-toggle="modal" data-bs-target="#reachLimitModal"> Yes, I'm sure.</button>
+                <button type="button" class="btn btn-default btn-custom-green alert-yes-btn"  data-bs-dismiss="modal"> Yes, I'm sure.</button>
             </div>
             </div>
              </div>
@@ -892,7 +892,7 @@
         padding-right: 8px;
     }
     .suggested-skill-label{
-        color: #27304C !important;
+        color: black !important;
         font-weight: 500;
         font-size: 16px;
     }

@@ -1,0 +1,20 @@
+.card-yello-green{
+    border-color:#00B600;
+    background: #E0F9E0;
+    border-radius: 4px;
+}
+.card-sky-blue{
+    border-color:#2C91FF;
+    background: #E3F1FF;
+    border-radius: 4px;
+}
+.card-sky-orange{
+    border-color:#FFC700;
+    background: #FFF8DE;
+    border-radius: 4px;
+}
+.card-sky-white{
+    border-color:#EDEDED;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
