@@ -1,0 +1,90 @@
+
+       
+     @font-face {
+        font-family: "RubikRegular";
+        src: local("Rubik"),
+        url(../../assets/Rubik/Rubik-Regular.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: "RubikLight";
+        src: local("Rubik"),
+        url(../../assets/Rubik/Rubik-Light.ttf) format("truetype");
+    }   
+    .text-pink{
+        color: #EF5DA8 !important;
+    } 
+    .text-violet{
+        color: #5D5FEF;
+    }
+    .text-orange{
+        color: #FF9A2C;
+    }
+    
+    .error-msg{
+        font-size: 12px;
+        line-height: 170%;
+        color:#E54141;
+        font-weight: 400;
+        font-family: RubikRegular;
+    }
+
+    
+    .text-red{
+        color: #E54141
+    }
+    .text-b-b-18{
+        color: #2C91FF;
+        font-weight: 600;
+        font-size: 18px;
+        font-family: RubikRegular;
+    }
+    .text-orange-b-18{
+        color: #FF9A2C;
+        font-weight: 600;
+        font-size: 18px;
+        font-family: RubikRegular;
+    }
+    
+    
+    .badge-red{
+        background: #FF4949;
+        border-radius: 100px;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 10px;
+        color:white;
+        font-size: 12px;
+        height: 24px;
+    }
+    .badge-blue{
+        background: #2C91FF;
+        border-radius: 22px;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 10px;
+        gap: 10px;      
+        height: 24px;
+        color:white;
+        font-family: RubikRegular;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .badge-orange{
+        background: #FF9A2C;
+        border-radius: 22px;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 10px;
+        gap: 10px;      
+        height: 24px;
+        color:white;
+        font-family: RubikRegular;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .font-regular{
+        font-family: RubikRegular;
+    }
+    .font-light{
+        font-family: RubikLight;
+    }

@@ -1,0 +1,136 @@
+.input-pink{
+    background: #FFE3F1 !important;
+    box-shadow:none !important;
+    border-color: #EDEDED !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    font-family: RubikRegular;
+} 
+.input-yellow{
+    background: #FFF2E3 !important;
+    box-shadow:none !important;
+    border-color: #EDEDED !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    font-family: RubikRegular;
+}
+.input-violet{
+    background: #E3E4FF !important;
+    box-shadow:none !important;
+    border-color: #EDEDED !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    font-family: RubikRegular;
+}
+
+.input-tag-container{
+    background: #E3F1FF;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 551px;
+    box-shadow: 0 0 1px #b3b2b2;
+}
+.container-input-content {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.inner {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tag-field {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input.js-tag-input {
+    border: 0;
+    outline: 0;
+    background: none;
+}
+
+
+.tags{
+    width: 270px !important;
+    justify-content: space-between;
+}
+
+
+
+.tag {
+    display: flex;
+    align-items: center;
+    height: 26px;
+    margin-right: 5px;
+    padding: 3px 8px;
+    color: #2C91FF;
+    background: #E3F1FF;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid #2C91FF;
+}
+
+.tag-close {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -3px;
+    overflow: hidden;
+    width: 10px;
+}
+
+.tag-pink{
+    background: #FFE3F1;
+    gap: 4px;
+    padding: 3px 8px;
+    color: #EF5DA8;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.tag-gray{
+    background: #EDEDED;
+    gap: 4px;
+    padding: 3px 8px;
+    color: #6D6D6D;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.tag-violet{
+    background: #E3E4FF;
+    gap: 4px;
+    padding: 3px 8px;
+    color:#5D5FEF;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.tag-orange{
+    background: #FFF2E3;
+    gap: 4px;
+    padding: 3px 8px;
+    color:#FF9A2C;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.js-tag-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #C9C9C9 !important;
+    opacity: 1; /* Firefox */
+}   
+
+
+.custom-input{
+    height: 40px;
+    padding: 9px 12px !important;
+    background: #E3F1FF !important;
+    border: 1px solid #EDEDED !important;
+    border-radius: 2px !important;
+    color: #8C8C8C !important;
+    font-weight: 400  !important;
+    font-size: 14px  !important;
+}

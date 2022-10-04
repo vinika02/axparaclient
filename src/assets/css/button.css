@@ -1,0 +1,87 @@
+.btn-outline-gray{
+    font-family: RubikRegular !important;
+    margin-right: 12px !important;
+    border: 1px solid #27304C !important;
+    color:#27304C !important;
+    border-radius: 2px !important;
+}
+.btn-outline-blue{
+    border: 1px solid #2C91FF !important;
+    color: #2C91FF !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    font-family: RubikRegular !important;
+    border-radius: 3px !important;
+}
+.btn-outline-red{
+    border: 1px solid #FF4949 !important;
+    color: #FF4949 !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    font-family: RubikRegular !important;
+    border-radius: 3px !important;
+}
+.btn-save-changes{
+    border: 1px solid #2C91FF !important;
+    background: #2C91FF !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    font-family: RubikRegular !important;
+    border-radius: 3px !important;
+}
+.btn-cancel{
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    font-family: RubikRegular !important;
+    margin-right: 12px !important;
+}
+.btn-custom-blue{       
+    background: #2C91FF !important;
+    border-color: #2C91FF !important;    
+    border-radius: 2px;
+}
+.btn-custom-green{       
+    background: #00B600 !important;
+    border-color: #00B600 !important;
+    border-radius: 2px !important;
+}
+.btn-alert{
+    width: 114px;
+    height: 40px;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    font-family: RubikRegular;
+    margin-top: -15px;
+}
+.btn-add-order{
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    border-radius: 2px !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: white !important;
+    font-family: RubikRegular;
+}
+
+.btn-interview{
+    justify-content: center;
+    align-items: center;
+    width: 87px;
+    border-radius: 2px !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: white !important;
+    font-family: RubikRegular;
+}
+.btn-outline-orange{
+    background: #FFF2E3;
+    border: 1px solid #FF9A2C;
+    border-radius: 100px;
+    padding: 0px 8px;
+    padding-bottom: 1px;
+    color: #FF9A2C;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: RubikRegular;
+}

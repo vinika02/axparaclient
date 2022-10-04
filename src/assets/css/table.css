@@ -1,0 +1,25 @@
+
+.thead{
+    background: #419CFF;
+    box-shadow: inset 0px -1px 0px #EDEDED;     
+}
+.td-text-yellow-green{
+    color: #00B600 !important;
+    font-size: 12px;
+}
+.td-text-gray{
+    color: #8C8C8C !important;
+    font-size: 12px;
+}
+.td-text-blue{
+    color: #2C91FF !important;
+    font-size: 12px;
+}
+.td-text-skye-blue{
+    color: #2C91FF !important;
+    font-size: 12px;
+}
+
+.td-filter span{
+    font-weight: bold;        
+}
