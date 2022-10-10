@@ -1,6 +1,6 @@
 
        
-     @font-face {
+    @font-face {
         font-family: "RubikRegular";
         src: local("Rubik"),
         url(../../assets/Rubik/Rubik-Regular.ttf) format("truetype");
@@ -9,6 +9,11 @@
         font-family: "RubikLight";
         src: local("Rubik"),
         url(../../assets/Rubik/Rubik-Light.ttf) format("truetype");
+    }  
+    @font-face {
+        font-family: "RubikMedium";
+        src: local("Rubik"),
+        url(../../assets/Rubik/Rubik-Medium.ttf) format("truetype");
     }   
     .text-pink{
         color: #EF5DA8 !important;
@@ -40,15 +45,15 @@
     }
     .text-b-b-18{
         color: #2C91FF;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 18px;
-        font-family: RubikRegular;
+        font-family: RubikMedium;
     }
     .text-orange-b-18{
         color: #FF9A2C;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 18px;
-        font-family: RubikRegular;
+        font-family:  RubikMedium;
     }
     
     
