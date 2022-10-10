@@ -28,19 +28,10 @@
                     </div>
 
                     <div class="modal-header skill-scann-modal-header">
-                        <div class="input-group search-skill">
-                            <input type="text" class="form-control input-skill-scann"
-                                placeholder="Search keywords or select skills"
-                                aria-label="Search keywords or select skills" aria-describedby="input-skill-scann">
-                            <span class="input-group-text search-icon" id="input-skill-scann">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14V14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z"
-                                        fill="#323232" />
-                                </svg>
-                            </span>
+                        <div class="search-box">
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Search Keywords or select skills">
                         </div>
+                        
                         <button type="button" class="btn filter btn-primary">
                             <img src="../../../assets/images/mytalents/Vector.png">Filter</button>
                         <div class="form-check1">
@@ -625,7 +616,8 @@
                                 <span class="badge  badgeBootstrap">Bootstrap</span>
                             </div>
                             <div class="bookInterview">
-                                Book an Interview
+                                Book an Interview 
+                                
                                 <button class="btn  seemy">13 Sep, Mon | 11:00 AM</button>
                                 <button class="btn  seemy">13 Sep, Mon | 11:00 AM</button>
                                 <button class="btn  seemy">13 Sep, Mon | 11:00 AM</button>
@@ -829,7 +821,7 @@ export default {
     height: 72px;
     font-size: 26px;
     color: #FFFFFF;
-    font-family: RubikMediumr !important;
+    font-family: "RubikMediumr";
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -936,14 +928,14 @@ export default {
 
 .form-control {
     font-family: 'RubikRegular';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 160%;
-    width: 1127px;
-    display: flex;
-    align-items: center;
-    color: #C9C9C9;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 160%;
+display: flex;
+align-items: center;
+border-radius: 1px;
+color: #C9C9C9;
 }
 
 .skill-scann-modal-header {
@@ -982,8 +974,14 @@ export default {
     flex-grow: 0;
 }
 
-.input-group {
-    width: 1127px;
+.search-box {
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 1127px;
+height: 40px;
 }
 
 .form-check1 {
