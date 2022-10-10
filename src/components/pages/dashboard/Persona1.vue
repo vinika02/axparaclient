@@ -1,6 +1,6 @@
 <template>
     <div class="bg-gray  pt-0">
-        <div class="container-fluid app-container">
+        <div class="container-fluid app-container ">
             <div class="content-container dashboard padding-24">
                <div class="d-flex persona-header">
                     <div class="flex-fill persona-1 w-420">Hello, Leslie Alexander</div>
@@ -8,15 +8,15 @@
                         <button class="btn btn-outline-blue btn-lg btn-dashboard-date">1 June 2022, Wed  |   1:23 pm </button>
                     </div>
                </div>
-               <div class="d-flex">
-                    <div class="flex-fill w-480 me-4  padding-top-24">
+               <div class="row">
+                    <div class="col  padding-top-24">
                         <div class="schedule">
                             <div class="d-flex m-bottom-14">
                                 <div class="flex-fill text-b-b-18">
                                     Schedules
                                 </div>
                                 <div class="flex-fill w-38">
-                                    <span class="badge-blue">
+                                    <span class="badge-blue font-14">
                                         All
                                     </span>
                                 </div>
@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="ps-2 mt-1">
                                                 <div class="text-orange">
-                                                    KR-02052 (Aubrey) | 3 Jun, Fri • 3:00 pm
+                                                    VM-83792 (Michelle) | 3 Jun, Fri • 4:00 pm
                                                 </div>
                                                 <div class="sub-text-gray">
                                                     Mobile Application Developer (Android)
@@ -370,14 +370,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-fill w-480 me-4 padding-top-24">
+                    <div class="col padding-top-24">
                         <div class="notification">
                             <div class="d-flex m-bottom-14">
                                 <div class="flex-fill text-orange-b-18">
                                     Notifications
                                 </div>
                                 <div class="flex-fill w-38">
-                                    <span class="badge-orange">
+                                    <span class="badge-orange font-14">
                                         All
                                     </span>
                                 </div>
@@ -775,7 +775,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-fill  w-480 padding-top-24">
+                    <div class="col padding-top-24">
                         <div class="my-talent ">
                             <div class="d-flex">
                                 <div class="flex-fill text-b-b-18">
@@ -811,28 +811,604 @@
                                 </div>  
                                                        
                             </div>
-                            <div class="talent-list p-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 p-6 " v-for="talent in talents" :key="talent">
-                                            <div class="card talent-card " v-bind:class="talent.classColor">
-                                                <div class="card-body">
-                                                   <div class="text-center talent-image">           
-                                                        <img  v-bind:src="require('../../../assets/images/mytalents/'+talent.image)" /> 
-                                                   </div>
-                                                   <div class="text-center talent-name font-regular mt-1">           
-                                                        {{talent.name}}
-                                                   </div>
-                                                   <div class="text-center talent-details font-regular">           
-                                                        {{talent.details}}
-                                                   </div>
+                            <div class="talent-list">
+                                <div class="row">
+                                    <div class="col-sm-4 p-6 " v-for="talent in talents" :key="talent">
+                                        <div class="card talent-card " v-bind:class="talent.classColor">
+                                            <div class="card-body cursor-pointer">
+                                                <div class="text-center talent-image">           
+                                                    <img  v-bind:src="require('../../../assets/images/mytalents/'+talent.image)" /> 
+                                                </div>
+                                                <div class="text-center talent-name font-regular mt-1">           
+                                                    {{talent.name}}
+                                                </div>
+                                                <div class="text-center talent-details font-regular">           
+                                                    {{talent.details}}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>     
+                                </div>
+                            </div>     
                         </div>
                     </div>
                </div>
+               <div class="row ">
+                    <div class="col-lg-8 padding-top-24">
+                        <div class="pending-client-review">
+                            <div class="d-flex">
+                                <div class="flex-fill">
+                                    <div class="pending-client-label">
+                                        Pending Client Review / Feedback
+                                    </div>
+                                    <div class="pending-client-label-details">
+                                        Summary of all pending actions for you to review on My Orders
+                                    </div>
+                                </div>
+                                <div class="flex-fill text-end align-self-center">
+                                    <span class="see-pull-pipe">
+                                        See Full Pipeline
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex pending-client-table-container">
+                                <div class="flex-fill p-14">
+                                    <div class="d-flex p-b-10 border-bottom">
+                                        <div class="cv-review heading flex-fill">
+                                            CVs for Review
+                                        </div>
+                                        <div class="flex-fill text-end  p-0 pt-1 badge">
+                                            <span class="badge-orange  font-light font-12">
+                                                06
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="p-t-14 ">
+                                        <div class="cv-review-details">
+                                            <div class="mb-2">
+                                               <div class="profession p-x-12 p-y-4">Backend Developer</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">1 day ago</div>
+                                                    </div> 
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24547</div>
+                                                        <div class="text-end">2 days ago</div>
+                                                    </div>  
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24648</div>
+                                                        <div class="text-end">3 days ago</div>
+                                                    </div>                                                
+                                               </div>
+                                            </div>
+                                            <div class="mb-2">
+                                               <div class="profession p-x-12 p-y-4">GoLang Developer</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">2 days ago</div>
+                                                    </div> 
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24547</div>
+                                                        <div class="text-end">3 days ago</div>
+                                                    </div>  
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>LK-98202</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>  
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>ES-49203</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>                                                    
+                                               </div>
+                                            </div>
+                                            <div class="mb-2">
+                                               <div class="profession p-x-12 p-y-4">Frontend Dev</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">2 days ago</div>
+                                                    </div> 
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24547</div>
+                                                        <div class="text-end">3 days ago</div>
+                                                    </div>  
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>LK-98202</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>  
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>ES-49203</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>                                                    
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-fill p-14">                                
+                                    <div class="d-flex p-b-10 border-bottom">
+                                        <div class="interview-feedback heading">
+                                            Interview Feedback
+                                        </div>
+                                        <div class="flex-fill p-0 pt-1 text-end badge">
+                                            <span class="badge-orange font-light font-12">
+                                                04
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="p-t-14 ">
+                                        <div class="cv-review-details">
+                                            <div class="mb-2">
+                                               <div class="profession p-x-12 p-y-4">Backend Developer</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">3 days ago</div>
+                                                    </div> 
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24547</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>                                           
+                                               </div>
+                                            </div>
+                                            <div class="mb-2">
+                                               <div class="profession p-x-12 p-y-4">Software Engineer</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">2 days ago</div>
+                                                    </div> 
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24547</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>  
+                                                                                                 
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-fill p-14">                                   
+                                    <div class="d-flex p-b-10 border-bottom">
+                                        <div class="interview-feedback heading">
+                                            Assessment Feedback
+                                        </div>
+                                        <div class="flex-fill text-end p-0 pt-1 badge">
+                                            <span class="badge-orange  font-light font-12">
+                                                02
+                                            </span>
+                                        </div>
+                                     </div>
+                                     <div class="p-t-14 ">
+                                        <div class="cv-review-details">
+                                            <div class="mb-2">
+                                               <div class="profession p-x-12 p-y-4">Backend Developer</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">3 days ago</div>
+                                                    </div> 
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24547</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>                                           
+                                               </div>
+                                            </div>
+                                            <div class="mb-2">
+                                               <div class="profession p-x-12 p-y-4">Software Engineer</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>                                                                                                  
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-lg-4  padding-top-24">
+                        <div class="looking-for-candidates">
+                            <div class="skill-scanner-label">
+                                SkillScanner
+                            </div>
+                            <div class="dash-what-is-skill-scanner">
+                                What skills are you looking for in a candidate?
+                            </div>
+                            <div class="primary-skills">
+                            <div>
+                                <span class="primary-label">Primary Skill </span>
+                                <span class="asterisk">*</span>
+                            </div>
+                            <div class="p-t-6">
+                                <section class="container-input-content input-tag-container">
+                                    <section class="inner">                                      
+                                        <div class="">
+                                        <input class="js-tag-input" disabled  placeholder="Pick 1 primary skill"/>
+                                        </div>
+                                    </section>
+                                </section>                               
+                            </div>
+                        </div>
+                        <div class="secondary-skills">
+                            <div>
+                                <span class="secondary-label">Secondary Skill </span>
+                                <span class="asterisk">*</span>
+                            </div>
+                            <div class="p-t-6">
+                                <section class="container-input-content input-tag-container">
+                                    <section class="inner">                                      
+                                        <div class="tag-field js-tags">                                       
+                                        <input class="js-tag-input" disabled  placeholder="Pick 2 secondary skills"/>
+                                        </div>
+                                    </section>
+                                </section>                               
+                            </div>
+                        </div>
+                        <div class="secondary-skills">
+                            <div>
+                                <span class="secondary-label">Other Skill </span>
+                            </div>
+                            <div class="p-t-6">
+                                <section class="container-input-content input-tag-container">
+                                    <section class="inner">                                      
+                                        <div class="tag-field js-tags">
+                                        <input class="js-tag-input w-100"   disabled placeholder="Optional skills that are nice to have"/>
+                                        </div>
+                                    </section>
+                                </section>                               
+                            </div>
+                        </div>
+                        <div class="text-end see-matches">
+                            <button class="btn btn-primary btn-custom-blue ">
+                                See Matches
+                            </button>
+                        </div>
+                            
+                        </div>
+                        
+                    </div>
+               </div>
+
+               <div class="row ">
+                    <div class="col-lg-8 padding-top-24">
+                        <div class="pending-leave-request">
+                            <div class="text-b-b-18">
+                                Pending Leave Requests
+                            </div>       
+                            <div class="client-review-container">
+                                <table class="client-review-table">
+                                    <tr>
+                                        <th>
+                                            Talent Name
+                                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
+                                            </svg>
+                                        </th>
+                                        <th>
+                                            Start Date
+                                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
+                                            </svg>
+                                        </th>
+                                        <th>
+                                            End Date
+                                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
+                                            </svg>
+                                        </th> 
+                                        <th>
+                                            # of W. Days
+                                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
+                                            </svg>
+                                        </th>
+                                        <th>
+                                            Reason
+                                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
+                                            </svg>
+                                        </th>
+                                        <th class="text-center">
+                                            Action
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob Jones</td>
+                                        <td>16 Jun, Fri</td>
+                                        <td>20 Jun, Fri</td>
+                                        <td>2</td>
+                                        <td>Medical Emergency</td>
+                                        <td align="center">
+                                            <svg class="me-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M8.6479 14.171L15.1333 7.68558L14.0791 6.65433L8.6479 12.0856L5.8979 9.33558L4.86665 10.3668L8.6479 14.171ZM9.99998 19.1668C8.7472 19.1668 7.56317 18.9262 6.4479 18.445C5.33262 17.9637 4.35866 17.3068 3.52602 16.4741C2.69338 15.6415 2.03644 14.6675 1.55519 13.5522C1.07394 12.437 0.833313 11.2529 0.833313 10.0002C0.833313 8.73211 1.07394 7.54044 1.55519 6.42516C2.03644 5.30989 2.69338 4.33975 3.52602 3.51475C4.35866 2.68975 5.33262 2.03662 6.4479 1.55537C7.56317 1.07412 8.7472 0.833496 9.99998 0.833496C11.268 0.833496 12.4597 1.07412 13.575 1.55537C14.6903 2.03662 15.6604 2.68975 16.4854 3.51475C17.3104 4.33975 17.9635 5.30989 18.4448 6.42516C18.926 7.54044 19.1666 8.73211 19.1666 10.0002C19.1666 11.2529 18.926 12.437 18.4448 13.5522C17.9635 14.6675 17.3104 15.6415 16.4854 16.4741C15.6604 17.3068 14.6903 17.9637 13.575 18.445C12.4597 18.9262 11.268 19.1668 9.99998 19.1668Z" fill="#00B600"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M6.56251 14.4002L10 10.9627L13.4375 14.4002L14.4 13.4377L10.9625 10.0002L14.4 6.56266L13.4375 5.60016L10 9.03766L6.56251 5.60016L5.60001 6.56266L9.03751 10.0002L5.60001 13.4377L6.56251 14.4002ZM10 19.1668C8.74723 19.1668 7.5632 18.9262 6.44793 18.445C5.33265 17.9637 4.35869 17.3068 3.52605 16.4741C2.69341 15.6415 2.03647 14.6675 1.55522 13.5522C1.07397 12.437 0.833344 11.2529 0.833344 10.0002C0.833344 8.73211 1.07397 7.54044 1.55522 6.42516C2.03647 5.30989 2.69341 4.33975 3.52605 3.51475C4.35869 2.68975 5.33265 2.03662 6.44793 1.55537C7.5632 1.07412 8.74723 0.833496 10 0.833496C11.2681 0.833496 12.4597 1.07412 13.575 1.55537C14.6903 2.03662 15.6604 2.68975 16.4854 3.51475C17.3104 4.33975 17.9636 5.30989 18.4448 6.42516C18.9261 7.54044 19.1667 8.73211 19.1667 10.0002C19.1667 11.2529 18.9261 12.437 18.4448 13.5522C17.9636 14.6675 17.3104 15.6415 16.4854 16.4741C15.6604 17.3068 14.6903 17.9637 13.575 18.445C12.4597 18.9262 11.2681 19.1668 10 19.1668Z" fill="#FF5B5B"/>
+                                            </svg>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robert Fox</td>
+                                        <td>20 Jun, Mon</td>
+                                        <td>20 Jun, Mon</td>
+                                        <td>3</td>
+                                        <td>Annual Leave</td>
+                                        <td align="center">
+                                            <svg class="me-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M8.6479 14.171L15.1333 7.68558L14.0791 6.65433L8.6479 12.0856L5.8979 9.33558L4.86665 10.3668L8.6479 14.171ZM9.99998 19.1668C8.7472 19.1668 7.56317 18.9262 6.4479 18.445C5.33262 17.9637 4.35866 17.3068 3.52602 16.4741C2.69338 15.6415 2.03644 14.6675 1.55519 13.5522C1.07394 12.437 0.833313 11.2529 0.833313 10.0002C0.833313 8.73211 1.07394 7.54044 1.55519 6.42516C2.03644 5.30989 2.69338 4.33975 3.52602 3.51475C4.35866 2.68975 5.33262 2.03662 6.4479 1.55537C7.56317 1.07412 8.7472 0.833496 9.99998 0.833496C11.268 0.833496 12.4597 1.07412 13.575 1.55537C14.6903 2.03662 15.6604 2.68975 16.4854 3.51475C17.3104 4.33975 17.9635 5.30989 18.4448 6.42516C18.926 7.54044 19.1666 8.73211 19.1666 10.0002C19.1666 11.2529 18.926 12.437 18.4448 13.5522C17.9635 14.6675 17.3104 15.6415 16.4854 16.4741C15.6604 17.3068 14.6903 17.9637 13.575 18.445C12.4597 18.9262 11.268 19.1668 9.99998 19.1668Z" fill="#00B600"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M6.56251 14.4002L10 10.9627L13.4375 14.4002L14.4 13.4377L10.9625 10.0002L14.4 6.56266L13.4375 5.60016L10 9.03766L6.56251 5.60016L5.60001 6.56266L9.03751 10.0002L5.60001 13.4377L6.56251 14.4002ZM10 19.1668C8.74723 19.1668 7.5632 18.9262 6.44793 18.445C5.33265 17.9637 4.35869 17.3068 3.52605 16.4741C2.69341 15.6415 2.03647 14.6675 1.55522 13.5522C1.07397 12.437 0.833344 11.2529 0.833344 10.0002C0.833344 8.73211 1.07397 7.54044 1.55522 6.42516C2.03647 5.30989 2.69341 4.33975 3.52605 3.51475C4.35869 2.68975 5.33265 2.03662 6.44793 1.55537C7.5632 1.07412 8.74723 0.833496 10 0.833496C11.2681 0.833496 12.4597 1.07412 13.575 1.55537C14.6903 2.03662 15.6604 2.68975 16.4854 3.51475C17.3104 4.33975 17.9636 5.30989 18.4448 6.42516C18.9261 7.54044 19.1667 8.73211 19.1667 10.0002C19.1667 11.2529 18.9261 12.437 18.4448 13.5522C17.9636 14.6675 17.3104 15.6415 16.4854 16.4741C15.6604 17.3068 14.6903 17.9637 13.575 18.445C12.4597 18.9262 11.2681 19.1668 10 19.1668Z" fill="#FF5B5B"/>
+                                            </svg>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kristin Watson</td>
+                                        <td>30 Jun, Thurs</td>
+                                        <td>6 Jul, Wed</td>
+                                        <td>5</td>
+                                        <td>Personal Work</td>
+                                        <td align="center">
+                                            <svg class="me-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M8.6479 14.171L15.1333 7.68558L14.0791 6.65433L8.6479 12.0856L5.8979 9.33558L4.86665 10.3668L8.6479 14.171ZM9.99998 19.1668C8.7472 19.1668 7.56317 18.9262 6.4479 18.445C5.33262 17.9637 4.35866 17.3068 3.52602 16.4741C2.69338 15.6415 2.03644 14.6675 1.55519 13.5522C1.07394 12.437 0.833313 11.2529 0.833313 10.0002C0.833313 8.73211 1.07394 7.54044 1.55519 6.42516C2.03644 5.30989 2.69338 4.33975 3.52602 3.51475C4.35866 2.68975 5.33262 2.03662 6.4479 1.55537C7.56317 1.07412 8.7472 0.833496 9.99998 0.833496C11.268 0.833496 12.4597 1.07412 13.575 1.55537C14.6903 2.03662 15.6604 2.68975 16.4854 3.51475C17.3104 4.33975 17.9635 5.30989 18.4448 6.42516C18.926 7.54044 19.1666 8.73211 19.1666 10.0002C19.1666 11.2529 18.926 12.437 18.4448 13.5522C17.9635 14.6675 17.3104 15.6415 16.4854 16.4741C15.6604 17.3068 14.6903 17.9637 13.575 18.445C12.4597 18.9262 11.268 19.1668 9.99998 19.1668Z" fill="#00B600"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M6.56251 14.4002L10 10.9627L13.4375 14.4002L14.4 13.4377L10.9625 10.0002L14.4 6.56266L13.4375 5.60016L10 9.03766L6.56251 5.60016L5.60001 6.56266L9.03751 10.0002L5.60001 13.4377L6.56251 14.4002ZM10 19.1668C8.74723 19.1668 7.5632 18.9262 6.44793 18.445C5.33265 17.9637 4.35869 17.3068 3.52605 16.4741C2.69341 15.6415 2.03647 14.6675 1.55522 13.5522C1.07397 12.437 0.833344 11.2529 0.833344 10.0002C0.833344 8.73211 1.07397 7.54044 1.55522 6.42516C2.03647 5.30989 2.69341 4.33975 3.52605 3.51475C4.35869 2.68975 5.33265 2.03662 6.44793 1.55537C7.5632 1.07412 8.74723 0.833496 10 0.833496C11.2681 0.833496 12.4597 1.07412 13.575 1.55537C14.6903 2.03662 15.6604 2.68975 16.4854 3.51475C17.3104 4.33975 17.9636 5.30989 18.4448 6.42516C18.9261 7.54044 19.1667 8.73211 19.1667 10.0002C19.1667 11.2529 18.9261 12.437 18.4448 13.5522C17.9636 14.6675 17.3104 15.6415 16.4854 16.4741C15.6604 17.3068 14.6903 17.9637 13.575 18.445C12.4597 18.9262 11.2681 19.1668 10 19.1668Z" fill="#FF5B5B"/>
+                                            </svg>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>                     
+                        </div>
+                    </div>
+                    <div class="col-lg-4 padding-top-24">
+                        <div class="issue-with-talent pb-0">
+                            <div class="any-issue-label">
+                                Any Issues with Talent?
+                            </div>
+                            <div class="any-issue-details">
+                                Direct your concerns to us and our on-the-ground HR Team will get to work on resolving it.
+                            </div>
+                            <div class="d-flex">
+                                <div class="mt-4">
+                                    <button class="btn btn-outline-green btn-contact">Chat via Whatsapp</button>
+                                    <button class="btn btn-outline-green  btn-contact mt-3">Email Us</button>
+                                </div>
+                                <div class="any-issue-svg-container">
+                                    <svg width="210" height="140" viewBox="0 0 259 159" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_12402_39144)">
+                                    <path opacity="0.8" d="M245.064 159.245C245.064 159.245 272.881 139.416 280.88 105.671C288.878 71.9254 276.651 30.9927 253.471 10.3479C230.341 -10.3478 188.565 3.56831 170.02 20.8997C151.476 38.2311 151.476 38.1802 151.476 38.1802C151.476 38.1802 133.746 47.8654 110.566 47.0498C87.3852 46.1832 66.7009 77.8385 61.2497 102.714C55.7984 127.59 68.8407 160.52 68.8407 160.52L245.064 159.245Z" fill="#F5FAFF"/>
+                                    <path opacity="0.8" d="M197.824 183.534C197.824 183.534 217.235 172.982 222.278 148.514C227.322 124.046 205.415 101.668 203.326 89.4344C201.238 77.2005 205.874 62.01 186.463 50.1838C167.053 38.3577 132.511 42.5886 119.418 39.6321C106.324 36.7265 91.1423 16.4895 65.0068 21.1282C38.8713 25.7669 13.551 39.683 12.3282 70.064C11.0546 100.445 20.7854 101.261 11.0546 117.725C1.37477 134.19 -2.44621 145.558 2.18991 162.43C6.82603 179.303 16.5058 183.942 16.5058 183.942L197.824 183.534Z" fill="#E3F0FF"/>
+                                    <path d="M202.012 158.837C203.235 157.563 220.913 122.135 201.197 89.6644C181.48 57.1935 132.011 60.9656 112.295 73.6583C92.5789 86.351 82.9501 102.765 80.9122 120.045C78.9253 137.326 92.1714 164.342 92.1714 164.342L202.012 158.837Z" fill="#DDECFF"/>
+                                    <path d="M85.956 99.146H63.2338C61.8073 99.146 60.6865 98.0245 60.6865 96.5973V85.2299C60.6865 83.8026 61.8073 82.6812 63.2338 82.6812H85.956C87.3825 82.6812 88.5033 83.8026 88.5033 85.2299V96.5973C88.5033 98.0245 87.3315 99.146 85.956 99.146Z" fill="#60A8FF"/>
+                                    <path d="M74.5949 105.62L78.1611 97.0562H70.9777L74.5949 105.62Z" fill="#60A8FF"/>
+                                    <path d="M74.493 88.1354H81.0141V89.053L84.1728 87.2179L81.0141 85.3828V86.3513H74.493V88.1354Z" fill="#223A7A"/>
+                                    <path d="M84.1728 91.8567H77.6517V90.8882L74.493 92.7742L77.6517 94.6093V93.6408H84.1728V91.8567Z" fill="white"/>
+                                    <path d="M70.4682 93.5387L70.1626 93.6406C70.1626 93.6406 69.1946 92.5192 68.6851 91.3468C68.1756 90.1234 68.1756 88.6961 68.1756 88.6961L68.3794 88.5941L67.0039 85.2808C66.7491 85.4847 66.5454 85.7395 66.3416 86.0454C65.5774 87.3707 65.6283 89.3587 66.4435 91.3468C67.2076 93.3348 68.0737 95.0679 69.6021 96.1894C70.5192 96.852 71.2834 96.954 71.8947 96.852L70.4682 93.5387Z" fill="#223A7A"/>
+                                    <path d="M71.4867 93.1309L71.0791 93.2838L72.5056 96.6481C72.6585 96.5971 72.8113 96.5462 72.9132 96.4442C73.2698 96.2403 73.4227 95.8325 73.2698 95.4247L72.5566 93.5896C72.3528 93.1818 71.8943 92.9779 71.4867 93.1309Z" fill="#223A7A"/>
+                                    <path d="M68.1247 84.7202C67.9718 84.7712 67.7681 84.8731 67.5643 84.9751L68.9908 88.3394L69.4493 88.1355C69.8568 87.9826 70.0606 87.4728 69.9078 87.065L69.1436 85.179C68.9908 84.7712 68.5323 84.5673 68.1247 84.7202Z" fill="#223A7A"/>
+                                    <path d="M208.585 153.128V115.152C208.585 115.152 208.992 104.906 203.643 101.95C198.243 98.993 175.622 100.573 175.622 100.573V153.077H208.585V153.128Z" fill="#1C83FF"/>
+                                    <path d="M168.49 65.0439C168.49 65.0439 169.865 76.5642 170.375 77.4818C170.884 78.4503 170.884 78.4503 170.884 78.4503L173.533 80.2344C173.533 80.2344 168.49 87.4219 162.274 88.5433C156.059 89.7157 156.568 85.9946 156.568 85.9946L157.536 84.0065L156.262 73.047C156.262 73.098 167.572 67.8985 168.49 65.0439Z" fill="#FF9D8C"/>
+                                    <path d="M176.845 81.2026L172.718 79.4185C172.718 79.4185 170.069 83.7513 163.955 86.2491C157.842 88.7468 157.74 87.3195 157.434 86.2491C157.128 85.1786 157.536 84.0572 157.536 84.0572L157.078 80.387L154.632 81.2026L146.175 149.866L167.98 150.936L176.845 81.2026Z" fill="white"/>
+                                    <path d="M156.67 80.438C156.67 80.438 155.192 83.8533 153.817 91.8563C152.441 99.8594 151.168 113.368 150.862 122.645C150.556 131.922 150.353 153.128 150.353 153.128C150.353 153.128 123.147 153.128 122.841 153.128C122.536 153.128 120.651 142.678 120.651 142.678C120.651 142.678 132.674 132.381 133.286 130.699C133.693 129.578 133.489 108.729 135.272 99.1457C137.056 89.5625 139.399 87.6254 144.239 85.2296C149.283 82.7318 156.67 80.438 156.67 80.438Z" fill="#223A7A"/>
+                                    <path d="M142.354 141.047C142.507 141.047 142.609 140.945 142.609 140.792C142.609 140.027 142.762 129.323 142.863 118.975C143.016 108.627 143.118 97.9223 143.118 97.1577C143.118 97.0048 143.016 96.9028 142.863 96.9028C142.711 96.9028 142.609 97.0048 142.609 97.1577C142.609 97.9223 142.456 108.627 142.354 118.975C142.201 129.323 142.099 140.027 142.099 140.792C142.099 140.945 142.201 141.047 142.354 141.047Z" fill="#8593B6"/>
+                                    <path d="M197.172 138.447L197.376 153.128H165.33C165.33 153.128 163.955 140.69 164.464 139.518C165.025 138.345 197.172 138.447 197.172 138.447Z" fill="#223A7A"/>
+                                    <path d="M161.51 77.1757C160.185 78.2461 158.402 79.0617 157.026 79.5715L156.262 73.0467C156.262 73.0467 164.719 69.1726 167.623 66.2671C167.012 69.5804 165.534 73.9643 161.51 77.1757Z" fill="#8E9BBB"/>
+                                    <path d="M146.378 43.6342C146.378 43.6342 144.188 47.4063 143.729 52.096C143.322 56.7347 143.729 68.6628 147.499 73.7093C151.269 78.7558 159.217 77.2775 162.783 74.219C166.095 71.4154 169.304 68.3059 170.17 62.189C171.036 56.072 168.387 44.4498 160.898 42.054C153.409 39.6582 146.378 43.6342 146.378 43.6342Z" fill="#FF9D8C"/>
+                                    <path d="M136.851 146.501C136.851 146.501 137.208 146.501 137.768 146.501C137.921 146.501 138.074 146.501 138.176 146.501C138.736 146.501 139.399 146.45 140.061 146.45C140.214 146.45 140.367 146.45 140.52 146.45C141.182 146.45 141.742 146.501 142.303 146.501C142.405 146.501 142.557 146.501 142.71 146.501C142.761 146.501 142.812 146.501 142.863 146.501C143.169 146.45 143.22 146.399 143.576 146.247C143.984 146.043 149.792 144.768 154.53 144.768C159.217 144.768 163.445 145.125 164.159 144.513C164.872 143.953 165.28 137.989 161.255 137.632L156.313 139.518C156.313 139.518 145.054 138.193 140.876 141.251C136.75 144.259 136.851 146.501 136.851 146.501Z" fill="#FF9D8C"/>
+                                    <path d="M142.303 146.45C142.405 146.45 142.557 146.45 142.71 146.45C142.812 146.297 143.016 145.991 143.118 145.89C144.392 144.564 147.448 143.749 148.569 143.494C148.671 143.443 148.722 143.392 148.722 143.239C148.722 143.137 148.62 143.086 148.467 143.086C146.837 143.494 143.373 144.462 142.405 146.144C142.456 146.195 142.354 146.348 142.303 146.45Z" fill="#223A7A"/>
+                                    <path d="M140.112 146.45C140.265 146.45 140.418 146.45 140.571 146.45C141.946 143.902 144.239 143.188 147.041 142.271L147.194 142.22C147.295 142.169 147.346 142.067 147.295 141.965C147.245 141.863 147.143 141.812 147.041 141.863L146.888 141.914C143.933 142.831 141.539 143.596 140.112 146.45Z" fill="#223A7A"/>
+                                    <path d="M137.768 146.502C137.921 146.502 138.074 146.502 138.227 146.502C139.093 144.717 141.844 141.761 145.563 141.047C145.665 141.047 145.716 140.945 145.716 140.843C145.716 140.741 145.614 140.69 145.512 140.69C141.691 141.404 138.635 144.514 137.768 146.502Z" fill="#223A7A"/>
+                                    <path d="M167.674 56.9897C167.674 56.9897 165.33 55.8682 163.7 52.7588C162.07 49.6493 162.274 46.8457 162.274 46.8457C162.274 46.8457 159.319 46.3869 154.886 47.7123C150.454 49.0376 145.207 50.8217 140.774 48.273C136.342 45.7243 136.342 41.6973 138.533 40.0151C140.978 38.129 145.767 39.3015 145.767 39.3015C145.767 39.3015 143.933 37.5173 144.901 36.4469C145.92 35.3764 149.537 36.7527 149.537 36.7527C149.537 36.7527 153.969 33.2355 162.325 33.6433C170.68 34.0511 174.705 39.9131 175.163 46.4379C175.622 52.9627 173.278 59.5384 173.278 59.5384L167.674 56.9897Z" fill="#223A7A"/>
+                                    <path d="M150.657 58.5699C151.116 59.7424 151.116 61.1187 151.218 62.3421C151.32 63.3106 151.473 64.432 150.607 65.0947C150.199 65.4006 148.161 66.2671 149.231 66.9298C149.639 67.1847 150.301 67.1337 150.708 67.0827C151.014 67.0827 151.32 67.0317 151.625 67.0317C151.931 67.0317 152.288 66.9298 152.593 66.9298C152.797 66.9298 152.848 67.1847 152.695 67.2866C152.186 67.6434 151.371 67.7454 150.759 67.7454C150.148 67.7454 149.74 67.7454 149.18 67.4395C148.823 67.2866 148.518 67.0317 148.467 66.624C148.416 66.1652 148.772 65.7574 149.078 65.5025C149.486 65.1967 149.944 65.0437 150.352 64.7889C150.912 64.3811 150.861 63.7184 150.81 63.1067C150.708 61.6284 150.352 60.1502 150.25 58.6209C150.25 58.417 150.607 58.417 150.657 58.5699Z" fill="#8E9BBB"/>
+                                    <path d="M146.327 62.0872C146.48 62.9537 147.143 63.6164 147.754 63.5145C148.416 63.4125 148.773 62.5969 148.62 61.6794C148.467 60.8128 147.805 60.1501 147.194 60.2521C146.582 60.405 146.175 61.2206 146.327 62.0872Z" fill="#223A7A"/>
+                                    <path d="M154.428 61.3736C154.581 62.3422 155.243 63.0048 155.956 62.9029C156.67 62.8009 157.077 61.9344 156.924 60.9658C156.771 59.9973 156.109 59.3347 155.396 59.4366C154.683 59.5386 154.275 60.4051 154.428 61.3736Z" fill="#223A7A"/>
+                                    <path d="M148.212 58.4168C147.703 58.5187 147.244 58.4168 146.735 58.4677C146.633 58.4677 146.48 58.5187 146.378 58.5187C146.277 58.5187 146.531 58.5187 146.429 58.5187H146.378C146.327 58.5187 146.277 58.5187 146.175 58.5697C146.073 58.6207 145.971 58.6207 145.869 58.6716C145.767 58.6716 145.665 58.7226 145.563 58.7226C145.512 58.7226 145.461 58.7226 145.41 58.7226C145.461 58.7226 145.461 58.7226 145.512 58.7226H145.309C145.003 58.6716 144.85 58.3148 144.952 58.0599C144.952 57.958 145.003 57.907 145.054 57.856C145.054 57.8051 145.105 57.8051 145.105 57.7541L145.054 57.8051C145.054 57.7541 145.105 57.7541 145.105 57.7031C145.156 57.6521 145.156 57.6012 145.207 57.6012C145.258 57.5502 145.309 57.5502 145.309 57.4992C145.461 57.3973 145.614 57.3463 145.767 57.2953C146.073 57.2443 146.378 57.1934 146.684 57.1934C146.99 57.1934 147.295 57.2443 147.601 57.2443C147.856 57.2953 148.162 57.3463 148.365 57.5502C148.518 57.6521 148.62 57.856 148.62 58.0599C148.569 58.2129 148.416 58.4168 148.212 58.4168Z" fill="#223A7A"/>
+                                    <path d="M153.868 57.0405C153.918 56.9895 154.02 56.9895 154.071 56.9385C154.122 56.8876 154.275 56.8366 154.173 56.8876C154.224 56.8876 154.275 56.8366 154.326 56.8366C154.53 56.7346 154.734 56.6837 154.937 56.6327C155.396 56.5307 155.905 56.4798 156.415 56.5307C156.924 56.5817 157.434 56.7346 157.892 56.9895C157.943 57.0405 158.045 57.0915 158.096 57.1424C158.147 57.1934 158.147 57.2444 158.198 57.2954C158.198 57.2954 158.198 57.2444 158.147 57.2444C158.3 57.3463 158.351 57.4993 158.351 57.6522C158.351 57.8051 158.249 57.958 158.147 58.009C157.994 58.111 157.79 58.06 157.638 58.009C157.739 58.009 157.79 58.009 157.892 58.009C157.739 58.009 157.638 58.06 157.485 58.009C157.485 58.009 157.332 57.958 157.434 58.009C157.536 58.009 157.281 58.009 157.281 58.009C157.23 58.009 157.077 58.009 157.281 58.009C157.23 58.009 157.23 58.009 157.179 58.009C157.077 58.009 157.026 58.009 156.924 57.958C156.568 57.9071 156.211 57.9071 155.905 57.9071C155.6 57.9071 155.243 57.9071 154.937 57.9071C154.785 57.9071 154.683 57.9071 154.53 57.9071C154.428 57.9071 154.479 57.9071 154.53 57.9071C154.479 57.9071 154.479 57.9071 154.428 57.9071C154.377 57.9071 154.326 57.958 154.275 57.958C154.071 58.06 153.766 57.8561 153.715 57.6522C153.562 57.3973 153.613 57.1424 153.868 57.0405Z" fill="#223A7A"/>
+                                    <path d="M151.32 71.6701C150.862 70.7015 149.945 69.9879 148.926 69.5291C149.792 69.4272 153.97 69.0703 155.04 69.6311C156.211 70.2937 154.836 72.9954 152.39 73.1483C152.136 73.1483 151.881 73.1483 151.677 73.0973C151.677 72.6386 151.575 72.1288 151.32 71.6701Z" fill="#223A7A"/>
+                                    <path d="M170.629 66.012C170.629 66.012 170.221 67.6432 167.776 69.5292C165.33 71.4153 161.815 72.7916 161.815 72.7916L161.509 71.5682C161.509 71.5682 165.127 69.988 166.808 68.2549C168.489 66.5217 168.693 65.5532 168.693 65.5532L170.629 66.012Z" fill="#DEE1EB"/>
+                                    <path d="M161.102 70.7021C159.166 70.6002 158.045 72.1294 157.943 73.1489C157.79 74.1684 158.758 75.2898 160.949 74.2703C163.649 73.0469 163.089 70.8041 161.102 70.7021Z" fill="#223A7A"/>
+                                    <path d="M169.101 53.9311C169.101 53.9311 168.235 47.8651 164.21 43.7361C156.466 35.886 149.894 36.3448 149.894 36.3448C149.894 36.3448 149.945 35.2234 152.441 34.4078C154.785 33.5922 155.804 34.0509 155.804 34.0509C155.804 34.0509 162.172 34.5607 167.572 40.5247C172.973 46.4888 173.533 54.084 173.533 54.084L169.101 53.9311Z" fill="#DEE1EB"/>
+                                    <path d="M169.661 53.2176C174.756 52.3511 177.558 56.3271 177.761 60.3541C177.965 64.3811 175.061 67.3886 171.189 67.0828C162.427 66.3691 163.445 54.2371 169.661 53.2176Z" fill="white"/>
+                                    <path d="M172.208 63.1579C173.533 63.1579 174.705 62.4952 175.316 61.3228C176.029 60.0484 175.927 58.4682 175.163 57.3467C175.112 57.2448 175.01 57.2448 174.908 57.2958C174.807 57.3468 174.807 57.4997 174.857 57.5506C175.571 58.5701 175.622 59.9974 175.01 61.1189C174.399 62.1893 173.38 62.801 172.106 62.801C170.935 62.7501 169.967 62.2403 169.355 61.3228C168.642 60.2523 168.489 58.774 168.948 57.6016C169.406 56.3782 170.629 55.5626 171.801 55.7156C171.903 55.7156 172.004 55.6646 172.004 55.5626C172.004 55.4607 171.954 55.3587 171.852 55.3587C170.527 55.2058 169.101 56.0724 168.591 57.4487C168.082 58.774 168.285 60.3543 169.05 61.5267C169.763 62.5462 170.833 63.1579 172.106 63.2088C172.106 63.1579 172.157 63.1579 172.208 63.1579Z" fill="#818FB3"/>
+                                    <path d="M175.876 79.7246C175.876 79.7246 191.262 83.4967 196.663 89.6137C202.063 95.7307 204.559 125.908 204.661 131.464C204.763 137.071 200.891 139.365 198.548 140.945C196.204 142.525 186.015 145.38 177.761 145.788C169.559 146.196 161.764 145.788 161.764 145.788C161.764 145.788 161.815 144.004 160.542 141.353C159.37 138.906 157.892 138.397 157.892 138.397L164.974 135.848C164.974 135.848 166.197 113.674 168.133 102.918C170.272 90.6842 175.876 79.7246 175.876 79.7246Z" fill="#223A7A"/>
+                                    <path d="M150.352 132.381C150.403 132.381 150.403 132.381 150.454 132.381C150.607 132.33 150.658 132.177 150.607 132.024C149.18 128.762 147.652 122.39 146.837 117.904L146.786 117.548C146.531 116.222 146.225 114.591 146.837 113.47C147.142 112.909 147.907 111.635 148.569 110.411C149.282 109.137 149.995 107.964 150.148 107.608C150.505 106.894 149.333 105.059 147.652 102.561C147.193 101.898 146.786 101.287 146.582 100.879C145.971 99.8594 146.378 98.8909 146.837 97.7694L146.99 97.4126C147.397 96.3931 147.907 95.3227 148.365 94.3541C148.569 93.9463 148.722 93.5385 148.925 93.1307C149.18 92.57 149.435 92.0093 149.69 91.4486C151.167 88.1352 152.696 84.6689 154.682 81.3556C154.733 81.2536 154.733 81.1007 154.581 80.9987C154.479 80.9478 154.326 80.9478 154.224 81.1007C152.237 84.465 150.709 87.8803 149.18 91.2447C148.925 91.8054 148.671 92.3661 148.416 92.9268C148.212 93.3346 148.059 93.7424 147.856 94.1502C147.397 95.1697 146.888 96.1892 146.48 97.2597L146.327 97.6165C145.869 98.738 145.359 99.9104 146.072 101.185C146.327 101.593 146.735 102.204 147.193 102.867C148.059 104.192 149.893 106.945 149.639 107.404C149.435 107.76 148.773 108.933 148.059 110.156C147.346 111.38 146.633 112.603 146.327 113.215C145.614 114.489 145.92 116.273 146.225 117.65L146.276 118.006C146.582 119.638 148.212 127.997 150.097 132.228C150.199 132.33 150.25 132.381 150.352 132.381Z" fill="#8593B6"/>
+                                    <path d="M165.382 133.299C165.433 133.299 165.535 133.299 165.586 133.248C166.808 132.024 172.565 122.033 172.973 120.147C173.228 119.128 172.616 116.528 172.056 113.979C171.597 112.042 171.139 110.003 171.292 109.443C171.495 108.627 172.973 107.404 174.399 106.231C176.131 104.804 177.915 103.377 178.271 102.051C178.679 100.573 178.322 91.1936 178.118 85.0257C178.016 82.7828 177.966 81.0497 177.966 80.438C177.966 80.2851 177.864 80.1831 177.711 80.1831C177.558 80.1831 177.456 80.2851 177.456 80.438C177.456 81.0497 177.507 82.8338 177.609 85.0767C177.813 90.8368 178.169 100.522 177.813 101.949C177.507 103.122 175.724 104.549 174.145 105.874C172.565 107.149 171.088 108.372 170.884 109.341C170.731 110.003 171.139 111.889 171.648 114.081C172.158 116.426 172.769 119.128 172.565 120.045C172.158 121.88 166.452 131.719 165.28 132.891C165.178 132.993 165.178 133.146 165.28 133.248C165.28 133.248 165.331 133.299 165.382 133.299Z" fill="#8593B6"/>
+                                    <path d="M186.116 128.915C186.269 128.915 186.371 128.762 186.371 128.609C186.167 127.284 183.263 100.879 183.111 98.8398C183.111 98.6869 182.958 98.585 182.856 98.585C182.703 98.585 182.601 98.7379 182.601 98.8398C182.754 100.879 185.658 127.284 185.862 128.609C185.862 128.813 185.964 128.915 186.116 128.915Z" fill="#8593B6"/>
+                                    <path d="M165.126 136.102C165.177 136.102 165.177 136.102 165.228 136.102C165.89 135.847 168.743 134.879 172.361 133.656C179.697 131.209 189.682 127.793 191.618 126.825C191.72 126.774 191.771 126.621 191.72 126.468C191.669 126.366 191.516 126.315 191.364 126.366C189.479 127.335 179.086 130.852 172.208 133.197C168.591 134.42 165.687 135.389 165.024 135.644C164.871 135.695 164.821 135.847 164.871 136C164.922 136.051 165.024 136.102 165.126 136.102Z" fill="#8593B6"/>
+                                    <path d="M168.642 146.604C175.062 146.604 187.543 145.431 197.019 142.067C197.172 142.016 197.223 141.863 197.172 141.761C197.121 141.608 196.969 141.557 196.867 141.608C184.894 145.839 168.133 146.553 165.025 145.89C164.872 145.839 164.77 145.941 164.719 146.094C164.668 146.247 164.77 146.349 164.923 146.4C165.586 146.502 166.91 146.604 168.642 146.604Z" fill="#8593B6"/>
+                                    <path d="M242.311 83.2929C240.324 85.077 237.777 86.1985 236.045 88.2375C235.331 89.0531 234.72 89.8687 234.109 90.7352C233.65 91.3469 232.376 92.3664 232.173 93.1311C232.071 93.4879 232.122 93.0291 232.173 92.6723V92.6213C232.325 91.0921 232.478 89.5118 232.529 87.9316C232.58 86.3514 232.478 84.8222 232.58 83.242C232.733 81.05 233.395 78.9091 235.178 77.5328C236.045 76.8701 237.165 76.4623 237.98 75.6977C238.745 74.984 238.439 74.1685 237.98 73.4038C237.573 72.6392 237.063 71.9256 236.86 71.11C236.656 70.1414 237.012 69.122 237.522 68.3064C238.541 66.5732 240.884 64.5852 243.075 64.8401C244.909 65.044 245.113 67.1849 245.062 68.6632C245.062 70.0905 244.909 71.5178 244.858 72.9451C244.858 74.4233 245.113 75.8506 245.113 77.3289C245.317 79.7757 244.145 81.6617 242.311 83.2929Z" fill="#6BAEFF"/>
+                                    <path d="M224.466 105.638C223.905 104.313 223.294 103.089 222.479 101.866C221.409 100.184 220.186 98.6035 219.473 96.7174C218.76 94.8313 218.862 92.7924 218.76 90.8043C218.709 89.3261 218.25 87.8988 218.403 86.4205C218.454 85.7069 218.862 84.5854 219.779 84.6874C220.492 84.7893 220.899 85.6559 221.205 86.2166C221.664 87.1851 222.02 88.2556 222.377 89.2751C222.53 89.6829 222.632 90.0907 222.835 90.4985C222.937 90.7024 223.243 91.2631 223.549 91.2121C224.058 91.0592 223.6 88.9692 223.498 88.6124C223.09 86.7264 222.53 84.9932 222.428 83.0562C222.326 80.2526 222.53 76.8882 225.281 75.359C225.994 74.9512 226.911 74.6963 227.573 75.308C228.236 75.9197 228.44 76.9392 228.541 77.7548C228.847 80.3545 228.236 82.8013 227.421 85.2481C226.758 87.2871 225.943 89.3261 225.841 91.518C225.79 93.6079 226.86 95.443 227.37 97.3801C228.185 100.49 228.032 102.172 228.032 103.191C228.032 104.466 227.981 105.689 227.879 106.963C227.777 108.136 227.675 109.308 227.573 110.43C227.522 110.684 227.522 110.888 227.472 111.143C227.93 110.073 228.083 108.849 228.44 107.779C229.102 105.842 229.866 104.007 230.477 102.07C230.987 100.49 231.496 98.8583 232.159 97.3291C232.821 95.9018 233.585 94.3726 234.808 93.3021C235.521 92.6394 236.438 92.2826 237.406 92.2826C238.017 92.2826 238.578 92.4865 239.189 92.6394C239.902 92.8433 240.514 92.7414 241.074 92.2826C243.061 90.7534 243.622 88.0517 245.099 86.1656C246.169 84.7383 248.767 82.2916 250.652 83.8718C251.671 84.6874 251.926 86.3186 251.875 87.5419C251.824 89.0712 251.162 90.4985 250.346 91.7729C249.48 93.1492 248.411 94.3726 247.595 95.7489C247.137 96.5645 247.086 97.3801 247.137 98.2976C247.188 99.1642 247.29 100.031 246.984 100.897C246.067 103.446 243.265 103.089 241.074 103.14C239.546 103.191 237.916 103.395 236.438 103.905C234.757 104.466 233.687 105.587 233.076 107.218C232.617 108.442 232.413 109.767 231.598 110.837C231.191 111.296 230.681 111.653 230.121 111.908C229.255 112.265 226.656 112.469 226.656 112.214C226.605 111.398 226.198 110.583 225.994 109.818C225.536 108.391 225.026 107.014 224.466 105.638Z" fill="#6BAEFF"/>
+                                    <path d="M211.692 105.62C211.896 104.142 211.896 102.561 212.558 101.185C212.609 101.083 212.762 101.083 212.813 101.134C213.322 101.389 213.322 102.205 213.373 102.714C213.424 103.53 213.373 104.345 213.475 105.161C213.628 106.588 213.985 108.067 214.494 109.392C215.055 110.921 216.124 111.788 217.653 112.247C218.621 112.552 219.589 112.807 220.404 113.47C221.117 114.031 221.627 114.846 222.034 115.713C223.053 118.007 223.563 120.555 224.021 123.053C224.327 124.684 224.582 126.367 224.989 127.998C225.397 129.629 225.804 131.26 226.059 132.942C226.11 133.044 226.161 133.095 226.161 133.197C226.263 133.452 225.855 133.605 225.753 133.35C224.174 130.903 222.238 128.711 219.589 127.386C218.417 126.774 216.838 126.672 215.819 125.704C215.055 124.99 214.953 123.869 215.055 122.9C215.207 121.626 215.819 120.555 216.481 119.434C216.838 118.822 217.245 118.16 217.092 117.446C216.94 116.732 216.379 116.223 215.819 115.866C214.749 115.203 213.424 114.897 212.558 113.878C211.743 112.96 211.285 111.839 211.183 110.615C211.132 108.984 211.437 107.251 211.692 105.62Z" fill="#6BAEFF"/>
+                                    <path d="M233.243 114.03C234.618 112.246 236.351 110.666 238.236 109.392C239.255 108.729 241.649 107.404 242.108 109.392C242.413 110.564 241.241 111.686 240.528 112.45C239.407 113.521 238.083 114.489 237.166 115.764C238.337 116.12 239.56 116.222 240.579 117.038C241.802 118.007 242.311 119.842 241.14 121.014C240.579 121.575 239.764 121.932 239.051 122.288C238.083 122.747 237.166 123.155 236.198 123.563C234.109 124.429 231.969 125.347 230.186 126.774C228.352 128.252 226.671 130.699 226.518 133.095C226.518 133.299 226.569 133.095 226.467 132.993C226.416 133.044 226.161 132.942 226.161 132.789C226.212 129.272 226.824 125.908 228.301 122.645C229.575 119.689 231.256 116.63 233.243 114.03Z" fill="#6BAEFF"/>
+                                    <path d="M238.082 81.152C237.318 82.7323 236.503 84.3125 235.637 85.8927C234.821 87.371 234.006 88.9002 233.395 90.4804C232.631 92.4684 231.867 94.4055 231.051 96.3425C230.236 98.3815 229.472 100.471 228.861 102.561C227.689 106.69 226.823 110.921 226.415 115.203C226.211 117.395 226.11 119.536 226.161 121.728C226.211 123.41 226.415 125.143 226.568 126.825C226.721 128.61 226.874 130.394 226.721 132.127C226.619 133.605 226.364 135.389 225.193 136.409C224.989 136.613 224.632 136.358 224.785 136.103C226.161 133.299 226.059 130.241 225.804 127.233C225.651 125.551 225.447 123.869 225.396 122.187C225.345 120.046 225.396 117.905 225.6 115.764C226.008 111.584 226.823 107.455 227.893 103.377C228.453 101.287 229.115 99.2481 229.931 97.2601C230.746 95.272 231.663 93.284 232.427 91.296C233.802 87.6258 235.942 84.4144 237.827 80.9991C237.929 80.7952 238.184 80.9481 238.082 81.152Z" fill="#43588E"/>
+                                    <path d="M226.314 111.023C226.11 108.372 225.855 105.824 224.938 103.275C224.531 102.103 224.021 100.93 223.614 99.7577C223.257 98.7892 222.798 97.4129 223.053 96.3934C223.104 96.2914 223.257 96.2914 223.308 96.3934C223.461 97.0051 223.461 97.6677 223.563 98.2794C223.665 98.8911 223.868 99.4518 224.021 100.013C224.429 101.236 224.938 102.408 225.397 103.632C226.263 105.977 226.721 108.576 226.518 111.074C226.518 111.125 226.365 111.125 226.314 111.023Z" fill="#43588E"/>
+                                    <path d="M241.75 95.7308C240.68 98.2796 237.522 98.4325 235.229 98.9932C233.599 99.401 232.376 100.522 231.51 101.95C230.542 103.53 229.88 105.365 229.37 107.098H229.319C229.982 104.04 230.899 100.37 234.057 98.9422C236.605 97.8208 239.916 98.3815 241.546 95.6289C241.546 95.4759 241.801 95.5779 241.75 95.7308Z" fill="#43588E"/>
+                                    <path d="M227.995 110.616C227.893 110.769 227.74 110.972 227.638 111.125C227.587 111.227 227.486 111.278 227.435 111.329C227.333 111.38 227.231 111.482 227.129 111.482C227.078 111.482 227.027 111.431 227.078 111.38C227.129 111.278 227.231 111.227 227.282 111.176C227.333 111.125 227.435 111.023 227.486 110.972C227.638 110.82 227.791 110.667 227.893 110.514C227.995 110.565 228.046 110.565 227.995 110.616Z" fill="#43588E"/>
+                                    <path d="M234.618 118.72C232.783 120.199 231.102 121.983 229.778 123.92C229.115 124.837 228.555 125.806 227.995 126.825C227.434 127.896 227.027 129.068 226.568 130.19C226.517 130.292 226.364 130.292 226.364 130.19C226.619 127.794 228.147 125.755 229.37 123.716C229.981 122.696 230.797 121.83 231.612 120.963C232.478 120.046 233.395 119.23 234.414 118.517C234.567 118.415 234.719 118.619 234.618 118.72Z" fill="#43588E"/>
+                                    <path d="M220.099 115.866C220.965 116.375 221.016 117.752 221.016 118.618C221.067 120.3 220.608 121.932 221.372 123.512C222.035 124.99 223.105 126.213 223.971 127.539C224.786 128.813 225.55 130.444 225.55 131.974C225.55 132.075 225.397 132.126 225.397 132.025C225.091 131.311 224.939 130.546 224.735 129.833C224.48 129.017 224.123 128.252 223.665 127.539C222.85 126.264 221.831 125.143 221.169 123.767C220.455 122.339 220.557 120.912 220.608 119.383C220.659 118.414 220.761 116.783 219.946 116.069C219.793 116.018 219.946 115.815 220.099 115.866Z" fill="#43588E"/>
+                                    <path d="M225.957 132.178C229.472 132.127 236.197 132.076 236.197 132.076L234.516 144.463C234.16 147.266 231.765 149.305 228.963 149.305H226.059H225.753H222.849C220.047 149.305 217.653 147.215 217.296 144.463L215.615 132.076C215.717 132.127 222.442 132.127 225.957 132.178Z" fill="white"/>
+                                    <path d="M55.2364 109.494L75.4111 149.407L134.152 149.815L116.015 108.882L55.2364 109.494Z" fill="#F6F7FA"/>
+                                    <path d="M173.126 149.56V146.349H135.12L117.645 107.965H56.8153L55.2869 109.443H114.639L132.827 149.509C132.827 149.56 173.126 149.458 173.126 149.56Z" fill="#D9DEE8"/>
+                                    <path d="M85.7531 131.515C86.4154 133.503 90.0326 135.032 93.8027 134.931C97.5727 134.829 100.12 133.146 99.4577 131.158C98.7954 129.17 95.1782 127.641 91.4082 127.743C87.5872 127.845 85.0908 129.527 85.7531 131.515Z" fill="#D9DEE8"/>
+                                    <path d="M132.827 149.815C132.878 149.815 132.878 149.815 132.929 149.815C133.082 149.764 133.133 149.611 133.031 149.458L114.792 109.239H55.236C55.0831 109.239 54.9812 109.341 54.9812 109.494C54.9812 109.647 55.0831 109.749 55.236 109.749H114.487L132.624 149.662C132.624 149.764 132.725 149.815 132.827 149.815Z" fill="white"/>
+                                    <path d="M175.775 152.618H245.674V168.114H175.775V152.618Z" fill="#3F5282"/>
+                                    <path d="M50.4467 152.618H176.182V168.114H50.4467V152.618Z" fill="#7A89AF"/>
+                                    <path d="M175.775 152.618H176.183H245.674V155.473H176.183H175.775H50.447V152.618H175.775Z" fill="#BDC4D7"/>
+                                    <path d="M172.718 149.56H249.036V153.332H172.718V149.56Z" fill="#6F7FA9"/>
+                                    <path d="M47.3902 149.56H173.126V153.332H47.3902V149.56Z" fill="#9CA6C3"/>
+                                    <path d="M193.402 68.2044H218.111C219.64 68.2044 220.862 66.981 220.862 65.4518V53.1159C220.862 51.5867 219.64 50.3633 218.111 50.3633H193.453C191.925 50.3633 190.702 51.5867 190.702 53.1159V65.4518C190.651 66.981 191.874 68.2044 193.402 68.2044Z" fill="white"/>
+                                    <path d="M183.621 59.2839L192.893 55.3589V63.209L183.621 59.2839Z" fill="white"/>
+                                    <path d="M211.59 60.9659C210.662 60.9659 209.909 60.2128 209.909 59.2837C209.909 58.3547 210.662 57.6016 211.59 57.6016C212.519 57.6016 213.271 58.3547 213.271 59.2837C213.271 60.2128 212.519 60.9659 211.59 60.9659Z" fill="#223A7A"/>
+                                    <path d="M205.732 60.9659C204.803 60.9659 204.051 60.2128 204.051 59.2837C204.051 58.3547 204.803 57.6016 205.732 57.6016C206.66 57.6016 207.413 58.3547 207.413 59.2837C207.413 60.2128 206.66 60.9659 205.732 60.9659Z" fill="#223A7A"/>
+                                    <path d="M199.923 60.9659C198.995 60.9659 198.242 60.2128 198.242 59.2837C198.242 58.3547 198.995 57.6016 199.923 57.6016C200.852 57.6016 201.604 58.3547 201.604 59.2837C201.604 60.2128 200.852 60.9659 199.923 60.9659Z" fill="#223A7A"/>
+                                    <path d="M37.3485 23.5781H94.3067C97.9748 23.5781 100.93 26.5347 100.93 30.2048V57.2214C100.93 60.8916 97.9748 63.8482 94.3067 63.8482H89.212C89.0592 66.2949 89.4158 69.9651 91.4537 74.6038C84.8816 71.5453 81.0606 67.0086 79.1246 63.8482H37.3485C33.6804 63.8482 30.7255 60.8916 30.7255 57.2214V30.2048C30.7255 26.5347 33.6804 23.5781 37.3485 23.5781Z" fill="#60A8FF"/>
+                                    <path d="M61.65 36.4747H89.8743C90.6385 36.4747 91.3008 35.863 91.3008 35.0474C91.3008 34.2828 90.6894 33.6201 89.8743 33.6201H61.65C60.8858 33.6201 60.2235 34.2318 60.2235 35.0474C60.2235 35.812 60.8858 36.4747 61.65 36.4747Z" fill="white"/>
+                                    <path d="M41.3733 44.6819H90.4347C90.8932 44.6819 91.3008 44.2741 91.3008 43.8153C91.3008 43.3565 90.8932 42.9487 90.4347 42.9487H41.3733C40.9148 42.9487 40.5072 43.3565 40.5072 43.8153C40.5072 44.2741 40.9148 44.6819 41.3733 44.6819Z" fill="#D2E6FF"/>
+                                    <path d="M41.3733 49.4221H90.4347C90.8932 49.4221 91.3008 49.0143 91.3008 48.5555C91.3008 48.0968 90.8932 47.689 90.4347 47.689H41.3733C40.9148 47.689 40.5072 48.0968 40.5072 48.5555C40.5072 49.0653 40.9148 49.4221 41.3733 49.4221Z" fill="#D2E6FF"/>
+                                    <path d="M52.0721 54.5198H90.4347C90.8932 54.5198 91.3008 54.112 91.3008 53.6532C91.3008 53.1944 90.8932 52.7866 90.4347 52.7866H52.0721C51.6136 52.7866 51.206 53.1944 51.206 53.6532C51.206 54.1629 51.6136 54.5198 52.0721 54.5198Z" fill="#D2E6FF"/>
+                                    <path d="M41.7809 36.4747H55.2817C56.0459 36.4747 56.7082 35.863 56.7082 35.0474C56.7082 34.2828 56.0968 33.6201 55.2817 33.6201H41.7809C41.0167 33.6201 40.3544 34.2318 40.3544 35.0474C40.3544 35.812 41.0167 36.4747 41.7809 36.4747Z" fill="white"/>
+                                    <path d="M115.608 87.5235H100.324C99.7632 87.5235 99.3047 87.0647 99.3047 86.504V76.0542C99.3047 75.4934 99.7632 75.0347 100.324 75.0347H115.608C116.168 75.0347 116.626 75.4934 116.626 76.0542V86.504C116.626 87.0647 116.219 87.5235 115.608 87.5235Z" fill="white"/>
+                                    <path d="M108.067 83.1393C107.966 83.1393 107.915 83.0883 107.813 83.0374L99.5085 76.1558C99.3557 76.0029 99.3047 75.799 99.4575 75.5951C99.6104 75.4421 99.8142 75.3912 100.018 75.5441L108.118 82.2218L116.015 75.3912C116.168 75.2382 116.423 75.2892 116.576 75.4421C116.728 75.5951 116.677 75.8499 116.525 76.0029L108.424 83.0883C108.271 83.0883 108.169 83.1393 108.067 83.1393Z" fill="#6F7FA9"/>
+                                    <path d="M99.7629 87.2176C99.6611 87.2176 99.5592 87.1666 99.5082 87.1156C99.3554 86.9627 99.3554 86.7078 99.5082 86.5549L105.316 80.4379C105.469 80.285 105.724 80.285 105.877 80.4379C106.029 80.5909 106.029 80.8457 105.877 80.9987L100.069 87.1156C99.9667 87.1666 99.8648 87.2176 99.7629 87.2176Z" fill="#6F7FA9"/>
+                                    <path d="M116.218 87.0135C116.117 87.0135 116.015 86.9625 115.964 86.9115L110.105 81.0494C109.952 80.8965 109.952 80.6416 110.105 80.4887C110.258 80.3358 110.512 80.3358 110.665 80.4887L116.473 86.2998C116.626 86.4528 116.626 86.7076 116.473 86.8606C116.371 86.9625 116.32 87.0135 116.218 87.0135Z" fill="#6F7FA9"/>
+                                    <path d="M117.441 79.7242C120.255 79.7242 122.536 77.442 122.536 74.6268C122.536 71.8115 120.255 69.5293 117.441 69.5293C114.628 69.5293 112.347 71.8115 112.347 74.6268C112.347 77.442 114.628 79.7242 117.441 79.7242Z" fill="#FF5F42"/>
+                                    <path d="M116.333 74.6006L116.321 74.4599C116.476 74.5292 116.61 74.6189 116.725 74.729C116.839 74.8391 116.926 74.9595 116.987 75.0899C117.049 75.2204 117.079 75.355 117.079 75.4937C117.079 75.7261 117.014 75.9402 116.884 76.1359C116.757 76.3276 116.586 76.4826 116.37 76.6008C116.154 76.715 115.913 76.7721 115.649 76.7721C115.384 76.7721 115.143 76.715 114.927 76.6008C114.711 76.4826 114.538 76.3276 114.408 76.1359C114.281 75.9402 114.218 75.7261 114.218 75.4937C114.218 75.3061 114.257 75.145 114.334 75.0104C114.416 74.8718 114.516 74.7556 114.634 74.6618C114.756 74.568 114.876 74.4905 114.994 74.4293L114.946 74.6006C114.844 74.5598 114.744 74.5027 114.646 74.4293C114.552 74.3518 114.475 74.254 114.414 74.1357C114.352 74.0174 114.322 73.8788 114.322 73.7197C114.322 73.4914 114.381 73.2854 114.499 73.1019C114.617 72.9143 114.776 72.7655 114.976 72.6554C115.18 72.5453 115.404 72.4902 115.649 72.4902C115.897 72.4902 116.119 72.5453 116.315 72.6554C116.515 72.7655 116.674 72.9143 116.792 73.1019C116.91 73.2854 116.969 73.4914 116.969 73.7197C116.969 73.8951 116.934 74.0419 116.865 74.1602C116.796 74.2784 116.712 74.3722 116.615 74.4415C116.517 74.5109 116.423 74.5639 116.333 74.6006ZM115.056 73.732C115.056 73.8421 115.08 73.94 115.129 74.0256C115.182 74.1112 115.253 74.1806 115.343 74.2336C115.433 74.2825 115.534 74.307 115.649 74.307C115.763 74.307 115.863 74.2825 115.948 74.2336C116.038 74.1806 116.107 74.1112 116.156 74.0256C116.209 73.94 116.235 73.8421 116.235 73.732C116.235 73.5689 116.178 73.4343 116.064 73.3283C115.954 73.2182 115.816 73.1631 115.649 73.1631C115.477 73.1631 115.335 73.2182 115.221 73.3283C115.111 73.4343 115.056 73.5689 115.056 73.732ZM115.649 76.0992C115.844 76.0992 116.009 76.0401 116.144 75.9219C116.278 75.7995 116.346 75.6527 116.346 75.4814C116.346 75.3632 116.315 75.2571 116.254 75.1633C116.193 75.0696 116.109 74.9962 116.003 74.9431C115.897 74.886 115.779 74.8575 115.649 74.8575C115.518 74.8575 115.4 74.886 115.294 74.9431C115.188 74.9962 115.104 75.0696 115.043 75.1633C114.982 75.2571 114.952 75.3632 114.952 75.4814C114.952 75.6527 115.019 75.7995 115.153 75.9219C115.288 76.0401 115.453 76.0992 115.649 76.0992Z" fill="white"/>
+                                    <path d="M118.882 76.8333C118.731 76.8333 118.57 76.8109 118.399 76.766C118.228 76.7171 118.087 76.6477 117.977 76.558C117.924 76.5132 117.881 76.4561 117.849 76.3867C117.82 76.3133 117.806 76.244 117.806 76.1788C117.806 76.1094 117.835 76.0442 117.892 75.983C117.953 75.9219 118.038 75.8913 118.148 75.8913C118.222 75.8913 118.313 75.93 118.423 76.0075C118.489 76.0483 118.56 76.085 118.637 76.1176C118.715 76.1502 118.794 76.1665 118.876 76.1665C119.047 76.1665 119.204 76.1278 119.347 76.0503C119.493 75.9728 119.609 75.8688 119.695 75.7383C119.785 75.6078 119.83 75.4672 119.83 75.3163C119.83 75.1613 119.793 75.0288 119.72 74.9187C119.65 74.8086 119.557 74.7229 119.438 74.6618C119.324 74.6006 119.2 74.57 119.065 74.57C118.939 74.57 118.829 74.5904 118.735 74.6312C118.642 74.672 118.556 74.7148 118.478 74.7596C118.401 74.8004 118.324 74.8208 118.246 74.8208C118.112 74.8208 118.012 74.7923 117.947 74.7352C117.881 74.674 117.841 74.6026 117.824 74.5211C117.808 74.4395 117.804 74.3661 117.812 74.3009L118.002 72.7838C118.018 72.6982 118.059 72.6289 118.124 72.5759C118.193 72.5188 118.275 72.4902 118.368 72.4902H120.135C120.233 72.4902 120.315 72.5229 120.38 72.5881C120.445 72.6534 120.478 72.7349 120.478 72.8328C120.478 72.9266 120.445 73.0061 120.38 73.0713C120.315 73.1325 120.233 73.1631 120.135 73.1631H118.558L118.625 73.108L118.46 74.3804L118.381 74.1479C118.405 74.1072 118.458 74.0684 118.54 74.0317C118.621 73.995 118.715 73.9644 118.821 73.94C118.927 73.9114 119.031 73.8971 119.133 73.8971C119.406 73.8971 119.65 73.9603 119.866 74.0868C120.082 74.2091 120.251 74.3783 120.374 74.5945C120.5 74.8065 120.563 75.0471 120.563 75.3163C120.563 75.5283 120.518 75.7261 120.429 75.9096C120.339 76.0931 120.215 76.2542 120.056 76.3929C119.901 76.5315 119.722 76.6396 119.518 76.7171C119.318 76.7945 119.106 76.8333 118.882 76.8333Z" fill="white"/>
+                                    <path d="M21.5588 77.8048H51.4134C52.5342 77.8048 53.4512 76.8872 53.4512 75.7658V71.0761C53.4512 69.9547 52.5342 69.0371 51.4134 69.0371H21.5588C20.438 69.0371 19.5209 69.9547 19.5209 71.0761V75.7658C19.5209 76.8872 20.438 77.8048 21.5588 77.8048Z" fill="#223A7A"/>
+                                    <path d="M49.2736 75.7148C49.4265 75.7148 49.5283 75.6638 49.5793 75.5619C49.6812 75.4599 49.6812 75.358 49.6812 75.205L49.5284 74.0836C49.5284 74.0326 49.5284 74.0326 49.5284 74.0326H49.5793L50.4963 74.6953C50.5982 74.7972 50.7511 74.7972 50.8529 74.7972C50.9548 74.7972 51.0567 74.6953 51.1586 74.5933C51.2605 74.4404 51.2605 74.2875 51.2096 74.1855C51.1586 74.0836 51.0567 73.9816 50.9548 73.9307L49.885 73.4719C49.834 73.4719 49.834 73.4719 49.834 73.4209C49.834 73.4209 49.834 73.3699 49.885 73.3699L50.9548 72.9112C51.1077 72.8602 51.1586 72.7582 51.2096 72.6563C51.2605 72.5543 51.2096 72.4014 51.1586 72.2995C51.1077 72.1975 51.0058 72.0956 50.8529 72.0956C50.7511 72.0956 50.5982 72.0956 50.4963 72.1975L49.5793 72.9112C49.5283 72.9112 49.5284 72.9112 49.5284 72.9112V72.8602L49.6812 71.7388C49.6812 71.5858 49.6302 71.4839 49.5793 71.3819C49.4774 71.28 49.3755 71.229 49.2227 71.229C49.0698 71.229 48.9679 71.28 48.917 71.3819C48.8151 71.4839 48.8151 71.5858 48.8151 71.7388L48.9679 72.8602C48.9679 72.9112 48.9679 72.9112 48.9679 72.9112H48.917L48 72.2485C47.8981 72.1465 47.7452 72.1466 47.6433 72.1466C47.4905 72.1466 47.4395 72.2485 47.3376 72.3504C47.2358 72.5034 47.2358 72.6563 47.2867 72.7582C47.3376 72.8602 47.4395 72.9621 47.5414 73.0131L48.6113 73.4719C48.6623 73.4719 48.6623 73.4719 48.6623 73.5229C48.6623 73.5229 48.6623 73.5738 48.6113 73.5738L47.5414 74.0326C47.3886 74.0836 47.3376 74.1855 47.2867 74.2875C47.2358 74.3894 47.2358 74.5424 47.3376 74.6443C47.3886 74.7463 47.4905 74.8482 47.6433 74.8482C47.7962 74.8482 47.8981 74.8482 48 74.7463L48.917 74.0326C48.9679 74.0326 48.9679 74.0326 48.9679 74.0326V74.0836L48.8151 75.205C48.8151 75.358 48.8151 75.4599 48.917 75.5619C49.0189 75.6638 49.1208 75.7148 49.2736 75.7148Z" fill="white"/>
+                                    <path d="M43.1088 75.7148C43.2616 75.7148 43.3635 75.6638 43.4145 75.5619C43.5164 75.4599 43.5163 75.358 43.5163 75.205L43.3635 74.0836C43.3635 74.0326 43.3635 74.0326 43.3635 74.0326H43.4145L44.3315 74.6953C44.4334 74.7972 44.5862 74.7972 44.6881 74.7972C44.79 74.7972 44.8919 74.6953 44.9938 74.5933C45.0957 74.4404 45.0957 74.2875 45.0447 74.1855C44.9938 74.0836 44.8919 73.9816 44.79 73.9307L43.7201 73.4719C43.6692 73.4719 43.6692 73.4719 43.6692 73.4209C43.6692 73.4209 43.6692 73.3699 43.7201 73.3699L44.79 72.9112C44.9428 72.8602 44.9938 72.7582 45.0447 72.6563C45.0957 72.5543 45.0447 72.4014 44.9938 72.2995C44.8919 72.1975 44.841 72.0956 44.6881 72.0956C44.5862 72.0956 44.4334 72.0956 44.3315 72.1975L43.4145 72.9112C43.3635 72.9112 43.3635 72.9112 43.3635 72.9112V72.8602L43.5163 71.7388C43.5163 71.5858 43.4654 71.4839 43.4145 71.3819C43.3126 71.28 43.2107 71.229 43.0578 71.229C42.905 71.229 42.8031 71.28 42.7521 71.3819C42.6503 71.4839 42.6503 71.5858 42.6503 71.7388L42.8031 72.8602C42.8031 72.9112 42.8031 72.9112 42.8031 72.9112H42.7521L41.8351 72.2485C41.7332 72.1465 41.5804 72.1466 41.4785 72.1466C41.3256 72.1466 41.2747 72.2485 41.1728 72.3504C41.0709 72.5034 41.0709 72.6563 41.1219 72.7582C41.1728 72.8602 41.2747 72.9621 41.3766 73.0131L42.4465 73.4719C42.4974 73.4719 42.4974 73.4719 42.4974 73.5229C42.4974 73.5229 42.4974 73.5738 42.4465 73.5738L41.3766 74.0326C41.2238 74.0836 41.1728 74.1855 41.1219 74.2875C41.0709 74.3894 41.0709 74.5424 41.1728 74.6443C41.2238 74.7463 41.3256 74.8482 41.4785 74.8482C41.6313 74.8482 41.7332 74.8482 41.8351 74.7463L42.7521 74.0326C42.8031 74.0326 42.8031 74.0326 42.8031 74.0326V74.0836L42.6503 75.205C42.6503 75.358 42.6503 75.4599 42.7521 75.5619C42.854 75.6638 42.9559 75.7148 43.1088 75.7148Z" fill="white"/>
+                                    <path d="M36.9446 75.7148C37.0974 75.7148 37.1993 75.6638 37.2503 75.5619C37.3522 75.4599 37.3522 75.358 37.3522 75.205L37.1993 74.0836C37.1993 74.0326 37.1993 74.0326 37.1993 74.0326H37.2503L38.1673 74.6953C38.2692 74.7972 38.422 74.7972 38.5239 74.7972C38.6258 74.7972 38.7277 74.6953 38.8296 74.5933C38.9315 74.4404 38.9315 74.2875 38.8805 74.1855C38.8296 74.0836 38.7277 73.9816 38.6258 73.9307L37.556 73.4719C37.505 73.4719 37.505 73.4719 37.505 73.4209C37.505 73.4209 37.505 73.3699 37.556 73.3699L38.6258 72.9112C38.7787 72.8602 38.8296 72.7582 38.8805 72.6563C38.9315 72.5543 38.8806 72.4014 38.8296 72.2995C38.7787 72.1975 38.6768 72.0956 38.5239 72.0956C38.422 72.0956 38.2692 72.0956 38.1673 72.1975L37.2503 72.9112C37.1993 72.9112 37.1993 72.9112 37.1993 72.9112V72.8602L37.3522 71.7388C37.3522 71.5858 37.3012 71.4839 37.2503 71.3819C37.1484 71.28 37.0465 71.229 36.8936 71.229C36.7408 71.229 36.6389 71.28 36.588 71.3819C36.4861 71.4839 36.4861 71.5858 36.4861 71.7388L36.6389 72.8602C36.6389 72.9112 36.6389 72.9112 36.6389 72.9112H36.588L35.6709 72.2485C35.569 72.1465 35.4162 72.1466 35.3143 72.1466C35.1615 72.1466 35.1105 72.2485 35.0086 72.3504C34.9067 72.5034 34.9067 72.6563 34.9577 72.7582C35.0086 72.8602 35.1105 72.9621 35.2124 73.0131L36.2823 73.4719C36.3332 73.4719 36.3332 73.4719 36.3332 73.5229C36.3332 73.5229 36.3332 73.5738 36.2823 73.5738L35.2124 74.0326C35.0596 74.0836 35.0086 74.1855 34.9577 74.2875C34.9067 74.3894 34.9067 74.5424 35.0086 74.6443C35.0596 74.7463 35.1615 74.8482 35.3143 74.8482C35.4671 74.8482 35.569 74.8482 35.6709 74.7463L36.588 74.0326C36.6389 74.0326 36.6389 74.0326 36.6389 74.0326V74.0836L36.4861 75.205C36.4861 75.358 36.4861 75.4599 36.588 75.5619C36.6389 75.6638 36.7918 75.7148 36.9446 75.7148Z" fill="white"/>
+                                    <path d="M30.7291 75.7148C30.882 75.7148 30.9838 75.6638 31.0348 75.5619C31.1367 75.4599 31.1367 75.358 31.1367 75.205L30.9838 74.0836C30.9838 74.0326 30.9838 74.0326 30.9838 74.0326H31.0348L31.9518 74.6953C32.0537 74.7972 32.2066 74.7972 32.3085 74.7972C32.4103 74.7972 32.5122 74.6953 32.6141 74.5933C32.716 74.4404 32.716 74.2875 32.6651 74.1855C32.6141 74.0836 32.5122 73.9816 32.4104 73.9307L31.3405 73.4719C31.2895 73.4719 31.2895 73.4719 31.2895 73.4209C31.2895 73.4209 31.2895 73.3699 31.3405 73.3699L32.4104 72.9112C32.5632 72.8602 32.6141 72.7582 32.6651 72.6563C32.716 72.5543 32.6651 72.4014 32.6141 72.2995C32.5122 72.1975 32.4613 72.0956 32.3085 72.0956C32.2066 72.0956 32.0537 72.0956 31.9518 72.1975L31.0348 72.9112C30.9838 72.9112 30.9838 72.9112 30.9838 72.9112V72.8602L31.1367 71.7388C31.1367 71.5858 31.0857 71.4839 31.0348 71.3819C30.9329 71.28 30.831 71.229 30.6782 71.229C30.5253 71.229 30.4234 71.28 30.3725 71.3819C30.2706 71.4839 30.2706 71.5858 30.2706 71.7388L30.4234 72.8602C30.4234 72.9112 30.4234 72.9112 30.4234 72.9112H30.3725L29.4555 72.2485C29.3536 72.1465 29.2007 72.1466 29.0988 72.1466C28.946 72.1466 28.895 72.2485 28.7932 72.3504C28.6913 72.5034 28.6913 72.6563 28.7422 72.7582C28.7932 72.8602 28.895 72.9621 28.9969 73.0131L30.0668 73.4719C30.1178 73.4719 30.1178 73.4719 30.1178 73.5229C30.1178 73.5229 30.1178 73.5738 30.0668 73.5738L28.9969 74.0326C28.8441 74.0836 28.7932 74.1855 28.7422 74.2875C28.6913 74.3894 28.6913 74.5424 28.7932 74.6443C28.8441 74.7463 28.946 74.8482 29.0988 74.8482C29.2517 74.8482 29.3536 74.8482 29.4555 74.7463L30.3725 74.0326C30.4234 74.0326 30.4234 74.0326 30.4234 74.0326V74.0836L30.2706 75.205C30.2706 75.358 30.2706 75.4599 30.3725 75.5619C30.4744 75.6638 30.5763 75.7148 30.7291 75.7148Z" fill="white"/>
+                                    <path d="M24.5646 75.7148C24.7174 75.7148 24.8193 75.6638 24.8703 75.5619C24.9722 75.4599 24.9722 75.358 24.9722 75.205L24.8193 74.0836C24.8193 74.0326 24.8193 74.0326 24.8193 74.0326H24.8703L25.7873 74.6953C25.8892 74.7972 26.042 74.7972 26.1439 74.7972C26.2458 74.7972 26.3477 74.6953 26.4496 74.5933C26.5515 74.4404 26.5515 74.2875 26.5006 74.1855C26.4496 74.0836 26.3477 73.9816 26.2458 73.9307L25.176 73.4719C25.125 73.4719 25.125 73.4719 25.125 73.4209C25.125 73.4209 25.125 73.3699 25.176 73.3699L26.2458 72.9112C26.3987 72.8602 26.4496 72.7582 26.5006 72.6563C26.5515 72.5543 26.5006 72.4014 26.4496 72.2995C26.3987 72.1975 26.2968 72.0956 26.1439 72.0956C26.042 72.0956 25.8892 72.0956 25.7873 72.1975L24.8703 72.9112C24.8193 72.9112 24.8193 72.9112 24.8193 72.9112V72.8602L24.9722 71.7388C24.9722 71.5858 24.9212 71.4839 24.8703 71.3819C24.7684 71.28 24.6665 71.229 24.5137 71.229C24.3608 71.229 24.2589 71.28 24.208 71.3819C24.1061 71.4839 24.1061 71.5858 24.1061 71.7388L24.2589 72.8602C24.2589 72.9112 24.2589 72.9112 24.2589 72.9112H24.208L23.2909 72.2485C23.1891 72.1465 23.0362 72.1466 22.9343 72.1466C22.7815 72.1466 22.7305 72.2485 22.6286 72.3504C22.5267 72.5034 22.5267 72.6563 22.5777 72.7582C22.6286 72.8602 22.7305 72.9621 22.8324 73.0131L23.9023 73.4719C23.9532 73.4719 23.9532 73.4719 23.9532 73.5229C23.9532 73.5229 23.9532 73.5738 23.9023 73.5738L22.8324 74.0326C22.6796 74.0836 22.6286 74.1855 22.5777 74.2875C22.5267 74.3894 22.5267 74.5424 22.6286 74.6443C22.6796 74.7463 22.7815 74.8482 22.9343 74.8482C23.0872 74.8482 23.1891 74.8482 23.2909 74.7463L24.208 74.0326C24.2589 74.0326 24.2589 74.0326 24.2589 74.0326V74.0836L24.1061 75.205C24.1061 75.358 24.1061 75.4599 24.208 75.5619C24.3099 75.6638 24.4118 75.7148 24.5646 75.7148Z" fill="#67ACFF"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_12402_39144">
+                                    <rect width="259" height="159" rx="6" transform="matrix(-1 0 0 1 259 0)" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-lg-12 padding-top-24">
+                        <div class="recomendation">
+                            <div class="p-14">
+                                <div class="text-b-b-18">
+                                    Recommended Candidates
+                                </div>    
+                                <div class="recomendation-details pb-14">
+                                    By default, we feature the most in-demand candidates. Once you search for your own preferred candidates, we will base the recommendations on your recent searches and orders.
+                                </div>  
+                            </div>
+                            <div class="d-flex ps-2 pe-2 pb-2 p-t-16">
+                                <div class="flex-fill w-260 recommendation-content">
+                                    <div class="r-title">JD-48603 (Johnny)</div>
+                                    <div class="r-salary">1900 USD</div>
+                                    <div class="p-t-12 r-skils-tags border-bottom p-b-6">
+                                        <button class="btn tag-pink">Figma</button>
+                                        <button class="btn tag-violet">Project Management</button>
+                                        <button class="btn tag-violet">Bootstrap</button>
+                                    </div>
+                                    <div class="p-t-12">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M7.41673 11.0334L12.1334 6.31671L11.3667 5.56671L7.41673 9.51671L5.41673 7.51671L4.66673 8.26671L7.41673 11.0334ZM8.40007 14.6667C7.48895 14.6667 6.62784 14.4917 5.81673 14.1417C5.00562 13.7917 4.29729 13.3139 3.69173 12.7084C3.08618 12.1028 2.6084 11.3945 2.2584 10.5834C1.9084 9.77226 1.7334 8.91115 1.7334 8.00004C1.7334 7.07782 1.9084 6.21115 2.2584 5.40004C2.6084 4.58893 3.08618 3.88337 3.69173 3.28337C4.29729 2.68337 5.00562 2.20837 5.81673 1.85837C6.62784 1.50837 7.48895 1.33337 8.40007 1.33337C9.32229 1.33337 10.189 1.50837 11.0001 1.85837C11.8112 2.20837 12.5167 2.68337 13.1167 3.28337C13.7167 3.88337 14.1917 4.58893 14.5417 5.40004C14.8917 6.21115 15.0667 7.07782 15.0667 8.00004C15.0667 8.91115 14.8917 9.77226 14.5417 10.5834C14.1917 11.3945 13.7167 12.1028 13.1167 12.7084C12.5167 13.3139 11.8112 13.7917 11.0001 14.1417C10.189 14.4917 9.32229 14.6667 8.40007 14.6667Z" fill="#00B600"/>
+                                                    </svg>
+                                                </td>
+                                                <td>
+                                                    <div class="scheduled ps-1">
+                                                        Scheduled!
+                                                    </div>                                                  
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td> 
+                                                    <div class="scheduled-time ps-1">
+                                                        25 June 2022 | 11:30 AM SGT!
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>                                                                        
+
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100 m-t-46">See My Interviews</button>
+                                    </div>  
+                                </div>
+                                <div class="flex-fill w-260 recommendation-content">
+                                    <div class="r-title">JD-48603 (Johnny)</div>
+                                    <div class="r-salary">1900 USD</div>
+                                    <div class="p-t-12 r-skils-tags">
+                                        <button class="btn tag-pink">Figma</button>
+                                        <button class="btn tag-violet">Project Management</button>
+                                        <button class="btn tag-violet">Bootstrap</button>
+                                    </div>
+                                    <div class="">
+                                        <span class="book-interview-label">Book an Interview</span>                                                                                                           
+
+                                    </div>
+                                    <div class="mt-2 book-interview">
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                    </div>  
+                                </div>
+                                <div class="flex-fill w-260 recommendation-content">
+                                    <div class="r-title">JD-48603 (Johnny)</div>
+                                    <div class="r-salary">1900 USD</div>
+                                    <div class="p-t-12 r-skils-tags">
+                                        <button class="btn tag-pink">Figma</button>
+                                        <button class="btn tag-violet">Project Management</button>
+                                        <button class="btn tag-violet">Bootstrap</button>
+                                    </div>
+                                    <div class="">
+                                        <span class="book-interview-label">Book an Interview</span>                                                                                                           
+
+                                    </div>
+                                    <div class="mt-2 book-interview">
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                    </div>  
+                                </div>
+                                <div class="flex-fill w-260 recommendation-content">
+                                    <div class="r-title">JD-48603 (Johnny)</div>
+                                    <div class="r-salary">1900 USD</div>
+                                    <div class="p-t-12 r-skils-tags">
+                                        <button class="btn tag-pink">Figma</button>
+                                        <button class="btn tag-violet">Project Management</button>
+                                        <button class="btn tag-violet">Bootstrap</button>
+                                    </div>
+                                    <div class="">
+                                        <span class="book-interview-label">Book an Interview</span>                                                                                                           
+
+                                    </div>
+                                    <div class="mt-2 book-interview">
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                    </div>  
+                                </div>
+                                <div class="flex-fill w-260 recommendation-content">
+                                    <div class="r-title">JD-48603 (Johnny)</div>
+                                    <div class="r-salary">1900 USD</div>
+                                    <div class="p-t-12 r-skils-tags">
+                                        <button class="btn tag-pink">Figma</button>
+                                        <button class="btn tag-violet">Project Management</button>
+                                        <button class="btn tag-violet">Bootstrap</button>
+                                    </div>
+                                    <div class="">
+                                        <span class="book-interview-label">Book an Interview</span>                                                                                                           
+
+                                    </div>
+                                    <div class="mt-2 book-interview">
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -867,9 +1443,290 @@ export default {
 }
 </script>
 <style> 
+    /* recomendation */
+    .recomendation{
+        border-radius: 6px;
+        background: white;
+    }
+    .recomendation-details{
+        color: #6D6D6D;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: RubikRegular;
+        padding-top:2px;
+    }
+    .recommendation-content{
+        border: 1px solid #EDEDED;
+        border-radius: 6px;
+        margin:7px;
+        padding:16px;
+        height: 308px;
+    }
+    .recommendation-content  .btn{
+        margin-right: 7px;
+        margin-bottom: 7px;
+    }
+    .recommendation-content .scheduled{
+        color: #00B600;
+        font-weight: 600;
+        font-size: 14px;
+        font-family: RubikLight;
+    } 
+    .recommendation-content .scheduled-time{
+        color: #00B600;
+        font-weight: 400;
+        font-size: 12px;
+        font-family: RubikRegular;
+    }
+    .r-title{
+        color: #27304C;
+        font-weight: 600;
+        font-size: 14px;
+        font-family: RubikRegular;
+    }
+    .r-salary{
+        color: #2C91FF;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: RubikRegular;
+        margin-top:6px;
+    }
+
+    .r-skils-tags .btn{
+        padding: 2px 6px !important;
+    }
+    .book-interview .btn{
+        padding: 5px 6px !important;
+        border-radius: 2px !important;
+    }
+
+    .see-my-interview{
+        color: #2C91FF;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        font-family: RubikRegular !important;
+    }
+    .book-interview-label{
+        color: #6D6D6D;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: RubikRegular !important;
+    }
+
+    /* end recomendation */
+
+    /* issue with talent */
+    .issue-with-talent{
+        background: #F1F8FF;
+        box-shadow: 0px 8px 15px #F3F4F5;
+        border-radius: 6px;
+        padding: 16px;
+    }
+    .issue-with-talent .any-issue-label{
+        color: #00B600;
+        font-weight: 600;
+        font-size: 18px;
+        font-family: RubikRegular;
+    } 
+    .issue-with-talent .any-issue-details{
+        color: #6D6D6D;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: RubikRegular;
+        margin-top:6px;
+    }
+    .btn-contact{
+        color: #00B600;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        font-family: RubikRegular;
+        text-align: center;
+        width: 90%;
+        padding: 10px;
+    }
+    .any-issue-svg-container svg{
+        margin-right: -10px;
+    }
+    /* end issue with talent */
+
+     /* pending-leave-request */
+
+     .pending-leave-request{
+        padding: 14px;
+        border-radius: 6px;
+        background: white;
+     }
+     .client-review-table{
+        width: 100%;
+     }
+     .client-review-table th{
+        font-weight: 600;
+        font-size: 12px;
+        color: #27304C;
+        font-family: RubikRegular;
+        background: #FAFAFA;
+        padding:10px;
+     }
+     .client-review-table svg{
+      margin-left: 6px;
+
+     }
+     .client-review-table td{
+        font-weight: 400;
+        font-size: 12px;
+        color: #6D6D6D !important;
+        font-family: RubikRegular;
+        padding:10px;
+        border-bottom: 1px solid #EDEDED;
+     }
+     .client-review-container{
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid gray;
+        border: 1px solid #EDEDED;
+        margin-top: 14px;
+     }
+
+    /* end pending-leave-request */
+
+    /* looking for skill scanner */
+    .see-matches{
+        padding-top:24px;
+    } 
+    .see-matches, button{
+        font-weight: 500 ;
+        font-size: 14px !important;
+        font-family: RubikRegular;
+    }
+
+    .skill-scanner-label{
+        color: #ACD4FF;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: RubikRegular;
+    }
+    .dash-what-is-skill-scanner{
+        color: #2C91FF;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 136%;
+        padding-top:4px;
+    }
+    
+    .primary-skills, .secondary-skills{
+        padding-top: 14px;
+        padding-left: unset !important;
+        padding-right: unset !important;
+    }
+    .primary-skills .asterisk, .secondary-skills .asterisk, .other-skills .asterisk {
+        font-weight: 500;
+        font-family: RubikRegular !important;
+        color: #FF4949;
+        font-size: 14px;
+    }
+
+    .looking-for-candidates .input-tag-container {
+        background: #E3F1FF;
+        height: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: unset;
+        box-shadow: 0 0 1px #b3b2b2;
+    }
+    .primary-skills .primary-label, .secondary-skills .secondary-label, .other-skills .other-label {
+        font-weight: 600;
+        font-family: RubikRegular !important;
+        color: #27304C;
+        font-size: 14px;
+    }
+
+    /* end looking for skill scanner */
+
+    /* Begin pending client review */
+
+    .pending-client-review{
+        background: white;
+        padding: 14px;
+        border-radius: 6px;
+        min-height:430px;
+        max-height:430px;
+    }
+    .looking-for-candidates{
+        background: white;
+        padding: 14px;
+        border-radius: 6px;
+        min-height: 428px;
+        max-height:428px;
+    }
+    .pending-client-label{
+        color: #2C91FF;
+        font-weight: 600;
+        font-size: 18px;
+        font-family: RubikRegular;
+    }
+    .pending-client-label-details{
+        color: #6D6D6D;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: RubikRegular;
+    }
+    .see-pull-pipe{
+        color: #2C91FF;
+        font-family: RubikRegular;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    .pending-client-table-container, .pending-client-table-container > div {
+        border-style: solid;
+        border-color: #EDEDED
+    }
+    .pending-client-table-container{
+        border-width: 1px 0 0 1px;
+        margin-top:14px;
+    }
+    .pending-client-table-container div{
+        flex: 1 0 auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+       
+        border-width: 0 1px 1px 0;
+    }
+    .pending-client-table-container .heading{
+        color: #FF9A2C;
+        font-weight: 600;
+        font-size: 16px;
+        font-family: RubikLight;
+    } 
+    .cv-review-details{
+        height: 262px;
+        overflow-y: auto;
+    }
+    .cv-review-details .profession{
+        color: #27304C;
+        font-weight: 600;
+        font-size: 14px;
+        font-family: RubikRegular;
+        background: #FAFAFA;
+    }
+    .cv-review-details .profession-ids .id{
+        color: #6D6D6D;
+        font-weight: 400;
+        font-size: 12px;
+        font-family: RubikRegular;
+        border-bottom: 1px solid #EDEDED;
+    }
+    .cv-review-details::-webkit-scrollbar {
+        width: 0px;
+    }
+
+
+    /* End pending client review */
+
+
+
     .dashboard{
         background: #f5f5f5 !important;
-        height: 100vh;
     } 
     .list-group .list-group-item{
         cursor: pointer;
@@ -918,6 +1775,9 @@ export default {
     .talent-card{
         height: 134px;
     }
+    .talent-card:hover{
+        box-shadow:  0 0 3px gray;
+    }
     .talent-name{
         color: #27304C;
         font-weight: 600;
@@ -931,7 +1791,9 @@ export default {
     .talent-card .card-body{
         padding:10px;
     }
-
+    .talent-list{
+        padding:6px;
+    }
     /* end my talent */
 
 

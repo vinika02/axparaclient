@@ -281,7 +281,7 @@
                                     <div class="flex-fill">
                                         <small class="">Primary Skill <span class="text-red">*</span></small>
                                         <div class="mt-2 primary-skill">
-                                            <input type="text" class="form-control custom-input" placeholder="Your text" data-bs-toggle="modal" data-bs-target="#skillScannModal"/>
+                                            <input type="text" class="form-control custom-input" placeholder="Your text" disabled data-bs-toggle="modal" data-bs-target="#skillScannModal"/>
                                         </div>
                                         <div>
                                            <small class="error-msg"> Please Select Primary Skill</small>
@@ -290,7 +290,7 @@
                                     <div class="flex-fill">
                                         <small class="">Secondary Skills</small>
                                         <div class="mt-2">
-                                            <input type="text" class="form-control custom-input" placeholder="Your text" data-bs-toggle="modal" data-bs-target="#skillScannModal"/>
+                                            <input type="text" class="form-control custom-input" placeholder="Your text" disabled data-bs-toggle="modal" data-bs-target="#skillScannModal"/>
                                         </div>
                                     </div>
                                 </div>
@@ -298,7 +298,7 @@
                                     <div class="flex-fill">
                                         <small class="">Other Skill</small>
                                         <div class="mt-2">
-                                            <input type="text" class="form-control custom-input" placeholder="Your text" data-bs-toggle="modal" data-bs-target="#skillScannModal"/>
+                                            <input type="text" class="form-control custom-input" placeholder="Your text" disabled data-bs-toggle="modal" data-bs-target="#skillScannModal"/>
                                         </div>
                                     </div>
                                 </div>
@@ -1125,7 +1125,7 @@
                     '<span class="tag-close js-tag-close" data-index="' + i + '">×</span>' +
                 '</div>'
             );
-            }).join('') + (tags.length === 5 ? '' : '<input class="js-tag-input">')
+            }).join('') + (tags.length === 5 ? '' : '<input class="js-tag-input" disabled>')
             ;
             
             $container.querySelector('.js-tag-input').focus();
@@ -1140,7 +1140,7 @@
             }, 
             checkLabel(e){            
                 this.anyLabel = e;            
-            },  
+            },             
             collapseClick(e){            
                 this.iconState = !this.iconState;
                 this.popupOverContent = `<div class="popover sched-interview-popup-over" ref='popupOverContent' role="popover">
