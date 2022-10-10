@@ -18,3 +18,41 @@
     background: #FFFFFF;
     border-radius: 4px;
 }
+
+
+/* Badge */
+
+.badge-red{
+    background: #FF4949;
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 10px;
+    color:white;
+    font-size: 12px;
+    height: 24px;
+}
+.badge-blue{
+    background: #2C91FF;
+    border-radius: 22px;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 10px;
+    gap: 10px;      
+    height: 24px;
+    color:white;
+    font-family: RubikRegular;
+    font-weight: 500;
+}
+.badge-orange{
+    background: #FF9A2C;
+    border-radius: 22px;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 10px;
+    gap: 10px;      
+    height: 24px;
+    color:white;
+    font-family: RubikRegular;
+    font-weight: 500;
+}
