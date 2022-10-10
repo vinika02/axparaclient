@@ -16,11 +16,11 @@
         <div class="modal-dialog modal-lg body">
             <div class="modal-content  ">
                 <div class=" f">
-                    <div class="x">
-                        <img src="@/assets/images/mytalents/close.png" alt="">
+                    <div class="x" data-bs-dismiss="modal" aria-label="Close">
+                        <img src="@/assets/images/mytalents/persona2/close.png" alt="">
                     </div>
                     <div class="outline-frame">
-                        <img src="@/assets/images/mytalents/Warn.png" alt="">
+                        <img src="@/assets/images/mytalents/persona2/Warn.png" alt="">
                     </div>
                 </div>
                 <div class="book-interview-box">
@@ -28,7 +28,7 @@
                         Book Interview?
                         <div class="book-candidate">
                             Book candidate XX-12345
-                            on 12 SEP | 10:35 AM
+                            <p>on 12 SEP | 10:35 AM</p>
                         </div>
                     </div>
                     <select class="form-select" id="inputGroupSelect01">
@@ -165,8 +165,8 @@
                         </div>
                     </div>
                     <div class="schedule-interview-button">
-                            <button type="button" class="interview-button">Confirm Change</button>
-                        </div>
+                        <button type="button" class="interview-button">Confirm Change</button>
+                    </div>
                 </div>
 
             </div>
@@ -202,6 +202,7 @@ export default {
 .modal-content {
     height: 402px;
     width: 350px;
+    
 }
 
 .content {
@@ -227,22 +228,6 @@ export default {
     color: #27304C;
 }
 
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 6px;
-    width: 1127px;
-    height: 40px;
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    
-}
-
 .f {
     display: flex;
     flex-direction: column;
@@ -251,23 +236,9 @@ export default {
     width: 349px;
     height: 164px;
     background: #FFAE58;
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
+
 }
 
-.x {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 8px 8px 8px 22px;
-    gap: 10px;
-
-    width: 350px;
-    height: 38px;
-}
 
 .outline-close {
     width: 22px;
@@ -275,6 +246,7 @@ export default {
     flex: none;
     order: 0;
     flex-grow: 0;
+  
 }
 
 .outline-close-beyond {
@@ -302,12 +274,10 @@ export default {
 
 .outline-frame {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0px 08px 08px;
     gap: 10px;
-
     width: 350px;
     height: 126px;
 }
@@ -625,16 +595,15 @@ export default {
 
 .x {
     display: flex;
+    justify-content: flex-end;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 8px;
-    width: 500px;
-    height: 22px;
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
+    width: 350px;
+    height: 38px;
+    padding: 8px 8px 8px 22px;
+   
 }
 
 .component-radio2 {
@@ -852,6 +821,4 @@ export default {
     order: 3;
     flex-grow: 0;
 }
-
-
 </style>
