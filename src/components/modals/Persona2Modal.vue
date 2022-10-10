@@ -16,11 +16,11 @@
         <div class="modal-dialog modal-lg body">
             <div class="modal-content  ">
                 <div class=" f">
-                    <div class="x">
-                        <img src="@/assets/images/mytalents/close.png" alt="">
+                    <div class="x" data-bs-dismiss="modal" aria-label="Close">
+                        <img src="@/assets/images/mytalents/persona2/close.png" alt="">
                     </div>
                     <div class="outline-frame">
-                        <img src="@/assets/images/mytalents/Warn.png" alt="">
+                        <img src="@/assets/images/mytalents/persona2/Warn.png" alt="">
                     </div>
                 </div>
                 <div class="book-interview-box">
@@ -28,7 +28,7 @@
                         Book Interview?
                         <div class="book-candidate">
                             Book candidate XX-12345
-                            on 12 SEP | 10:35 AM
+                            <p>on 12 SEP | 10:35 AM</p>
                         </div>
                     </div>
                     <select class="form-select" id="inputGroupSelect01">
@@ -125,7 +125,7 @@
         <div class="modal-dialog modal-lg body2">
             <div class="modal-content content3">
                 <div class="outline-interview3">
-                    <div class="asd">
+                    <div class="confirm">
                         Edit Confirmed Schedule
                     </div>
                     <div class="box-schedule2">
@@ -136,28 +136,25 @@
                             New: 25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)
                         </div>
                     </div>
-                    <div class="picksched">
-                        <div class="ss" >
+                    <div class="picksched2">
+                        <div class="ss">
                             Pick a Schedule
                         </div>
-                        <div class="section">
-                            <div class="section1">
-                                <div class="component-radio">
+                        <div class="sched-outline">
+                            <div class="quick">
+                                <div class="inside-quick">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault"
                                         id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1">
                                         Quick Schedule
                                     </label>
                                 </div>
-
-                            </div>
-                            <div class="date">
-                                <button type="button" class=" button-date">12 SEP | 10:35 AM</button>
-                                <button type="button" class=" button-date">12 SEP | 10:35 AM</button>
-                                <button type="button" class="button-date">12 SEP | 10:35 AM</button>
-                            </div>
-                            <div class="x">
-                                <div class="component-radio2">
+                                <div class="date2">
+                                    <button type="button" class=" button-date">12 SEP | 10:35 AM</button>
+                                    <button type="button" class=" button-date">12 SEP | 10:35 AM</button>
+                                    <button type="button" class="button-date">12 SEP | 10:35 AM</button>
+                                </div>
+                                <div class="custom-date">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault"
                                         id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1">
@@ -165,17 +162,14 @@
                                     </label>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="schedule-interview-button">
-                            <button type="button" class="interview-button">Schedule Interview</button>
                         </div>
                     </div>
-
+                    <div class="schedule-interview-button">
+                        <button type="button" class="interview-button">Confirm Change</button>
+                    </div>
                 </div>
 
             </div>
-
         </div>
     </div>
 </template>
@@ -208,6 +202,7 @@ export default {
 .modal-content {
     height: 402px;
     width: 350px;
+    
 }
 
 .content {
@@ -222,22 +217,15 @@ export default {
 
 }
 
-.ss{padding-top: 12px;
-padding-left: 12px;}
+.ss {
 
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 6px;
-    width: 306px;
-    height: 32px;
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
+    padding-left: 12px;
+    font-family: 'RubikMediumr';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #27304C;
 }
 
 .f {
@@ -248,23 +236,9 @@ padding-left: 12px;}
     width: 349px;
     height: 164px;
     background: #FFAE58;
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
+
 }
 
-.x {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 8px 8px 8px 22px;
-    gap: 10px;
-
-    width: 350px;
-    height: 38px;
-}
 
 .outline-close {
     width: 22px;
@@ -272,6 +246,7 @@ padding-left: 12px;}
     flex: none;
     order: 0;
     flex-grow: 0;
+  
 }
 
 .outline-close-beyond {
@@ -299,12 +274,10 @@ padding-left: 12px;}
 
 .outline-frame {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0px 08px 08px;
     gap: 10px;
-
     width: 350px;
     height: 126px;
 }
@@ -536,6 +509,20 @@ padding-left: 12px;}
     flex-grow: 0;
 }
 
+.section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 500px;
+    height: 96px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
 .component-radio {
     display: flex;
     flex-direction: row;
@@ -561,6 +548,16 @@ padding-left: 12px;}
     width: 500px;
     height: 32px;
 
+}
+
+.date2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 14px;
+    width: 500px;
+    height: 32px;
 }
 
 .button-date {
@@ -598,16 +595,15 @@ padding-left: 12px;}
 
 .x {
     display: flex;
+    justify-content: flex-end;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 8px;
-    width: 500px;
-    height: 22px;
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
+    width: 350px;
+    height: 38px;
+    padding: 8px 8px 8px 22px;
+   
 }
 
 .component-radio2 {
@@ -676,22 +672,24 @@ padding-left: 12px;}
     gap: 10px;
     width: 524px;
     height: 367px;
-    
+
     flex: none;
     order: 1;
     flex-grow: 0;
 }
-.box-schedule2{
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding:8px 12px;
-gap: 10px;
 
-width: 524px;
-height: 114px;
+.box-schedule2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 12px;
+    gap: 10px;
+
+    width: 524px;
+    height: 114px;
 }
-.box-schedule-text2{
+
+.box-schedule-text2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -710,13 +708,15 @@ height: 114px;
     align-items: center;
     color: #27304C;
 }
-.picksched2{
+
+.picksched2 {
     display: flex;
     flex-direction: column;
-    padding: 0px;
+    align-items: flex-start;
+    padding: 0px 0px 0px 12px;
     gap: 12px;
     width: 499px;
-    height: 156px;
+    height: 136px;
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -728,5 +728,97 @@ height: 114px;
     color: #27304C;
 
     opacity: 0.8;
+}
+
+.confirm {
+    width: 524px;
+    height: 42px;
+    width: 500px;
+    height: 26px;
+    font-family: 'RubikMediumr';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 145%;
+    display: flex;
+    align-items: center;
+    color: #2C91FF;
+
+
+}
+
+.sched-outline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 500px;
+    height: 96px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.quick {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 500px;
+    height: 62px;
+
+}
+
+.inside-quick {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    gap: 8px;
+
+    width: 480px;
+    height: 22px;
+    font-family: 'RubikMediumr';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    color: #2C91FF;
+}
+
+.custom-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px 0px 12px;
+    gap: 8px;
+
+    width: 500px;
+    height: 22px;
+    font-family: 'RubikRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+
+    color: #27304C;
+}
+
+.confirm-change {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 8px 12px;
+    gap: 10px;
+    width: 499px;
+    height: 48px;
+    border-top: 1px solid #EDEDED;
+    border-radius: 0px 0px 2px 2px;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
 }
 </style>
