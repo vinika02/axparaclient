@@ -9,19 +9,33 @@
                         </button>
                     </div>
                 </div>
-                <div>
-                    <div class="lets-get-started">
-                        <div class="started">
-                            Let's get started!
-                        </div>
-                        <div class="find-the-right-talent">
-                            Find the right talent for your team at Axpara.com. For concerns, you can contact our talent
-                            team
-                            or even our CEO via WhatsApp!
-                        </div>
-                        <img src="../../../assets/images/mytalents/Frame.svg" alt="" class="framesvg">
-                    </div>
+                <div class="button-wat">
+                    <button>asd</button>
+                    <button>asd</button>
                 </div>
+                <div class="outline-x">
+                    <div class="started">
+                        <div class="start-get-started">
+                            Let's get started!
+                            <div class="find-the-right-talent">
+                                Find the right talent for your team at Axpara.com. For concerns, you can contact our
+                                talent team or even our CEO via WhatsApp!
+                            </div>
+
+                            <div class="frame-img">
+                                <img src="@/assets/images/mytalents/persona2/Frame.png" alt="">
+                            </div>
+                        </div>
+                        <div class="button-wat">
+                            <button class="chat-app-button">Chat via WhatsApp</button>
+                            <button class="chat-app-button">Email Us</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
                 <div class="Table-1">
                     <div class="Search-from-our-Candidate-Database">
                         Search from our Candidate Database
@@ -41,8 +55,9 @@
                                 </svg>
                             </span>
                         </div>
+
                         <button type="button" class="btn filter btn-primary">
-                            <img src="../../../assets/images/mytalents/Vector.png">Filter</button>
+                            <img src="../../../assets/images/mytalents/persona2/Vector.png">Filter</button>
                         <div class="form-check1">
                             <div class="sgd">SGD</div>
                             <div class="form-check form-switch">
@@ -59,7 +74,7 @@
                                 <div class="talent-id2">
                                     Talent ID/Name
                                 </div>
-                                <img src="../../../assets/images/mytalents/Sort.png" alt="">
+                                <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
                             </div>
                             <div class="skills">
                                 <div class="skills2">
@@ -70,25 +85,25 @@
                                 <div class="rate">
                                     Monthly Rate
                                 </div>
-                                <img src="../../../assets/images/mytalents/Sort.png" alt="">
+                                <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
                             </div>
                             <div class="country">
                                 <div class="country2">
                                     Country
                                 </div>
-                                <img src="../../../assets/images/mytalents/Sort.png" alt="">
+                                <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
                             </div>
                             <div class="cv">
                                 <div class="cv2">
                                     CV / Intro Video
                                 </div>
-                                <img src="../../../assets/images/mytalents/Sort.png" alt="">
+                                <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
                             </div>
                             <div class="cv3">
                                 <div class="cv33">
                                     Schedule Interview
                                 </div>
-                                <img src="../../../assets/images/mytalents/Sort.png" alt="">
+                                <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
                             </div>
                         </div>
 
@@ -111,12 +126,12 @@
                                     Philippines
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
+                                <div class="schedule0">
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
@@ -144,12 +159,12 @@
                                     Indonesia
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
+                                <div class="schedule0">
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
@@ -176,17 +191,17 @@
                                     Vietnam
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
-                                    <img src="../../../assets/images/mytalents/outline.png">
+                                <div class="schedule0">
+                                    <img src="../../../assets/images/mytalents/persona2/outline.png">
                                     <div class="gmt">24 Jun 2022 (Sat) • 3:00pm (GMT + 4hrs)</div>
 
-                                    <div class="more cursor-pointer" >
-                                        <img src="../../../assets/images/mytalents/pencil.png" alt="">
+                                    <div class="more cursor-pointer">
+                                        <img src="../../../assets/images/mytalents/persona2/pencil.png" alt="">
                                     </div>
                                 </div>
 
@@ -209,17 +224,17 @@
                                     Sri Lanka
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
-                                    <img src="../../../assets/images/mytalents/outline.png">
+                                <div class="schedule0">
+                                    <img src="../../../assets/images/mytalents/persona2/outline.png">
                                     <div class="gmt">24 Jun 2022 (Sat) • 3:00pm (GMT + 4hrs)</div>
 
                                     <div class="more" data-bs-toggle="modal" data-bs-target="#editScheduleinterview">
-                                        <img src="../../../assets/images/mytalents/pencil.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/pencil.png" alt="">
                                     </div>
                                 </div>
 
@@ -242,12 +257,12 @@
                                     Philippines
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
+                                <div class="schedule0">
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
@@ -275,12 +290,12 @@
                                     Indonesia
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
+                                <div class="schedule0">
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
@@ -308,12 +323,12 @@
                                     Vietnam
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
+                                <div class="schedule0">
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
@@ -342,12 +357,12 @@
                                     Sri Lanka
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
+                                <div class="schedule0">
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
@@ -375,17 +390,17 @@
                                     Philippines
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
-                                    <img src="../../../assets/images/mytalents/outline.png">
+                                <div class="schedule0">
+                                    <img src="../../../assets/images/mytalents/persona2/outline.png">
                                     <div class="gmt">24 Jun 2022 (Sat) • 3:00pm (GMT + 4hrs)</div>
 
                                     <div class="more">
-                                        <img src="../../../assets/images/mytalents/pencil.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/pencil.png" alt="">
                                     </div>
                                 </div>
 
@@ -408,12 +423,12 @@
                                     Indonesia
                                 </div>
                                 <div class="cvintroTab">
-                                    <img src="../../../assets/images/mytalents/save.png" alt="">
+                                    <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
                                     <button class="btn playIcon">
-                                        <img src="../../../assets/images/mytalents/play.png" alt="">
+                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
                                     </button>
                                 </div>
-                                <div class="schedule">
+                                <div class="schedule0">
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn buttonSchedule">12 SEP | 10:35 AM</button>
                                     <button class="btn  buttonSchedule">12 SEP | 10:35 AM</button>
@@ -448,7 +463,7 @@
                             </div>
                             <div class="schedule1">
                                 <div class="iconSched">
-                                    <img src="../../../assets/images/mytalents/outline.png">
+                                    <img src="../../../assets/images/mytalents/persona2/outline.png">
                                 </div>
                                 <div class="schedule4">
                                     Scheduled!
@@ -456,7 +471,8 @@
 
                                 </div>
                             </div>
-                            <button class="btn  seemy " data-bs-toggle="modal" data-bs-target="#Scheduleinterview" >See My Interviews</button>
+                            <button class="btn  seemy " data-bs-toggle="modal" data-bs-target="#Scheduleinterview">See
+                                My Interviews</button>
                         </div>
                         <div class="johnny">
                             <div class="boxJ">
@@ -472,9 +488,12 @@
                             </div>
                             <div class="bookInterview">
                                 Book an Interview
-                                <button type="button" class="btn  seemy " data-bs-toggle="modal" data-bs-target="#editScheModal" >13 Sep, Mon | 11:00 AM</button>
-                                <button type="button" class="btn  seemy " data-bs-toggle="modal" data-bs-target="#editScheModal" >13 Sep, Mon | 11:00 AM</button>
-                                <button type="button" class="btn  seemy " data-bs-toggle="modal" data-bs-target="#editScheModal" >13 Sep, Mon | 11:00 AM</button>
+                                <button type="button" class="btn  seemy " data-bs-toggle="modal"
+                                    data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                <button type="button" class="btn  seemy " data-bs-toggle="modal"
+                                    data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                <button type="button" class="btn  seemy " data-bs-toggle="modal"
+                                    data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
                             </div>
                         </div>
                         <div class="johnny">
@@ -491,9 +510,12 @@
                             </div>
                             <div class="bookInterview">
                                 Book an Interview
-                                <button type="button" class="btn  seemy " data-bs-toggle="modal" data-bs-target="#editScheModal" >13 Sep, Mon | 11:00 AM</button>
-                                <button type="button" class="btn  seemy " data-bs-toggle="modal" data-bs-target="#editScheModal" >13 Sep, Mon | 11:00 AM</button>
-                                <button type="button" class="btn  seemy " data-bs-toggle="modal" data-bs-target="#editScheModal" >13 Sep, Mon | 11:00 AM</button>
+                                <button type="button" class="btn  seemy " data-bs-toggle="modal"
+                                    data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                <button type="button" class="btn  seemy " data-bs-toggle="modal"
+                                    data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                <button type="button" class="btn  seemy " data-bs-toggle="modal"
+                                    data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
                             </div>
                         </div>
                         <div class="johnny">
@@ -626,6 +648,8 @@
                             </div>
                             <div class="bookInterview">
                                 Book an Interview
+
+
                                 <button class="btn  seemy">13 Sep, Mon | 11:00 AM</button>
                                 <button class="btn  seemy">13 Sep, Mon | 11:00 AM</button>
                                 <button class="btn  seemy">13 Sep, Mon | 11:00 AM</button>
@@ -668,6 +692,11 @@ export default {
     font-family: "RubikRegular";
     src: local("Rubik"),
         url(../../../assets/Rubik/Rubik-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "RubikLight";
+    src: local("Rubik"),
+        url(../../../assets/Rubik/Rubik-Light.ttf) format("truetype");
 }
 
 .dashboard {
@@ -729,9 +758,7 @@ export default {
 }
 
 .table3 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
     padding: 18px;
     gap: 14px;
     margin-top: 24px;
@@ -747,13 +774,9 @@ export default {
 }
 
 .start-interview {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 12px;
-    width: 1356px;
-    height: 26px;
     flex: none;
     order: 0;
     align-self: stretch;
@@ -801,57 +824,91 @@ export default {
     width: 480px;
 }
 
-.lets-get-started {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px 0px 0px 24px;
-    gap: 62px;
-
-    width: 1392px;
-    height: 138px;
-
-    /* Color/primary/Blue01 */
-
-    background: #2C91FF;
-    border-radius: 6px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-}
-
+/* start lets get started */
 .started {
     width: 109px;
     height: 72px;
-    font-size: 26px;
-    color: #FFFFFF;
-    font-family: RubikMediumr !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    isolation: isolate;
+
+    width: 1025px;
+    height: 72px;
+}
+
+.outline-x {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    isolation: isolate;
+    width: 1392px;
+    height: 138px;
     flex: none;
     order: 0;
-    flex-grow: 0;
+    flex-grow: 1;
+    background: #2C91FF;
+    border-radius: 6px;
+}
+
+.start-get-started {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:0px 0px 0px 24px;
+    gap: 24px;
+    width: 1400px;
+    height: 72px;
+    font-family: 'RubikMediumr';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 140%;
+
+    color: #FFFFFF;
+
 }
 
 .find-the-right-talent {
-    width: 946.2px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 1446.2px;
     height: 60px;
-    color: #FFFFFF;
-    font-family: 'RubikRegular';
+    font-family: 'RubikLight';
     font-style: normal;
-    font-weight: 400;
     font-size: 22px;
     line-height: 136%;
+    color: #FFFFFF;
 }
 
-.Chat-via-Whatsapp {
+.chat-app {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    padding: 9px 16px;
+    padding: 0px;
+    gap: 16px;
+
+    position: absolute;
+    width: 1079.2px;
+    height: 40px;
+    left: -90px;
+    top: 49px;
+}
+
+.chat-app-button {
+    
+    align-items: center;
+    flex-direction: row;
+    
     gap: 8px;
     width: 157px;
     height: 40px;
@@ -860,7 +917,42 @@ export default {
     flex: none;
     order: 0;
     flex-grow: 0;
+    font-family: 'RubikMediumr';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    border: solid #FFFFFF;
+    align-items: center;
+    color: #2C91FF;
 }
+
+.frame-img {
+    width: 281px;
+    height: 138px;
+    border-radius: 6px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    left: 40px;
+}
+
+.button-wat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    width: 1079.2px;
+    height: 40px;
+    left: 1090px;
+    top: 230px;
+}
+
+
+/* end get started */
+
 
 .Table-1 {
     margin-top: 24px;
@@ -940,10 +1032,11 @@ export default {
     font-weight: 400;
     font-size: 14px;
     line-height: 160%;
-    width: 1127px;
     display: flex;
     align-items: center;
     color: #C9C9C9;
+
+
 }
 
 .skill-scann-modal-header {
@@ -982,8 +1075,28 @@ export default {
     flex-grow: 0;
 }
 
-.input-group {
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
     width: 1127px;
+    height: 40px;
+    border-radius: 2px;
+    font-family: 'RubikRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    /* or 22px */
+
+    display: flex;
+    align-items: center;
+
+    /* Color/Natural/09 */
+
+    color: #C9C9C9;
 }
 
 .form-check1 {
@@ -1815,7 +1928,7 @@ export default {
     flex-grow: 0;
 }
 
-.schedule {
+.schedule0 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1846,8 +1959,6 @@ export default {
     flex: none;
     order: 1;
     flex-grow: 0;
-
-
     font-family: 'RubikRegular';
     font-style: normal;
     font-weight: 500;
@@ -1859,7 +1970,7 @@ export default {
     color: #2C91FF;
 
 
-    
+
 
 
 }
@@ -2031,7 +2142,6 @@ export default {
 }
 
 .iconSched {
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 4px 0px 0px;
@@ -2081,12 +2191,6 @@ export default {
 
 .seemy {
     box-sizing: border-box;
-
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
     padding: 5px 16px;
     gap: 8px;
