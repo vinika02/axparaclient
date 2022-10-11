@@ -23,6 +23,11 @@ const router = createRouter({
       name: 'Persona2',
       component: () => import('../components/pages/dashboard/Persona2.vue')
     },
+    {
+      path: '/dashboard/persona3',
+      name: 'Persona3',
+      component: () => import('../components/pages/dashboard/Persona3.vue')
+    },
   ]
 })
 

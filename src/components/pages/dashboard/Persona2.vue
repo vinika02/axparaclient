@@ -2110,4 +2110,3 @@ export default {
 }
 </style>
 
-RubikMediumr
