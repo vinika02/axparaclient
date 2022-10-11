@@ -236,7 +236,7 @@
                             </div>
                             <div class="schedule1">
                                 <div class="iconSched">
-                                    <img src="../../../assets/images/mytalents/outline.png">
+                                    <img src="../../../assets/images/mytalents/persona2/outline.png">
                                 </div>
                                 <div class="schedule4">
                                     Scheduled!
