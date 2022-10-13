@@ -77,6 +77,7 @@
                             Schedule: <span style="color:#00B600">25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)</span>
                         </div>
                     </div>
+                    
                     <div class="picksched">
                         <div class="ss">
                             Pick a Schedule
@@ -112,12 +113,9 @@
                             <button type="button" class="interview-button">Schedule Interview</button>
                         </div>
                     </div>
-
                 </div>
-
+               </div>     
             </div>
-
-        </div>
     </div>
     <!-- edit sched modal -->
     <div class="modal fade " id="editScheduleinterview" tabindex="-1" aria-labelledby="editScheduleinterview"
@@ -130,14 +128,15 @@
                     </div>
                     <div class="box-schedule2">
                         <div class="box-schedule-text2">
-                            Schedule: 25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)
+                         
+                           Current:<span style="color:#00B600"> 25 Jun 2022 (sat), 3:00pm (GMT + 4hrs) </span>
                         </div>
                         <div class="box-schedule-text2">
-                            New: 25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)
+                            New: <span style="color:#00B600">25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)</span>
                         </div>
                     </div>
                     <div class="picksched2">
-                        <div class="ss">
+                        <div class="ss2">
                             Pick a Schedule
                         </div>
                         <div class="sched-outline">
@@ -193,7 +192,7 @@ export default {
 .body2 {
     width: 524px;
     height: 317px;
-}
+}  
 
 .form-select {
     border-radius: 1px;
@@ -218,7 +217,7 @@ export default {
 }
 
 .ss {
-
+    padding-top: 12px;
     padding-left: 12px;
     font-family: 'RubikMediumr';
     font-style: normal;
@@ -227,7 +226,15 @@ export default {
     line-height: 150%;
     color: #27304C;
 }
+.ss2 {
 
+    font-family: 'RubikMediumr';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #27304C;
+}
 .f {
     display: flex;
     flex-direction: column;
@@ -499,7 +506,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px;
+    padding: 0px 12px 12px 12px;
     gap: 12px;
     width: 476px;
     height: 96px;
@@ -595,20 +602,18 @@ export default {
 
 .x {
     display: flex;
-    justify-content: flex-end;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 8px;
-    width: 350px;
-    height: 38px;
-    padding: 8px 8px 8px 22px;
+    width: 500px;
+    height: 22px;
    
 }
 
 .component-radio2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: start;
     align-items: center;
     padding: 0px;
     gap: 8px;
@@ -684,7 +689,7 @@ export default {
     align-items: flex-start;
     padding: 8px 12px;
     gap: 10px;
-
+    border-bottom: 1px solid #EDEDED;
     width: 524px;
     height: 114px;
 }
@@ -776,7 +781,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 12px;
+    padding: 0px;
     gap: 8px;
 
     width: 480px;
@@ -793,7 +798,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px 0px 0px 12px;
+    padding: 0px;
     gap: 8px;
 
     width: 500px;
