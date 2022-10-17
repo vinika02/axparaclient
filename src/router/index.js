@@ -48,6 +48,11 @@ const router = createRouter({
       name: 'MyAccount',
       component: () => import('../components/pages/ComingSoon.vue')
     },
+    {
+      path: '/access-the-world',
+      name: 'AccessTheWorld',
+      component: () => import('../components/pages/AccessTheWorld.vue')
+    },
   ]
 })
 
