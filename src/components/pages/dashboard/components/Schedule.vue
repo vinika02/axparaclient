@@ -4,36 +4,33 @@
             <div class="flex-fill text-b-b-18">
                 Schedules
             </div>
-            <div class="flex-fill w-38">
-                <span class="badge-blue font-14">
-                    All
-                </span>
+            <div class="flex-fill w-38"  :class="{ 'schedule-badge-blue': elementMenu == 'all' }"  @click="setSheduleBadgeActive('all')">
+               <div class="all-sched text-center">
+                    <span class="cursor-pointer"  >
+                        All
+                    </span>
+               </div>
             </div>
-            <div class="flex-fill w-95">
-                <div class="interviews text-center">
-                    Interviews
+            <div class="flex-fill w-118 cursor-pointer  me-1 p-x-2"  :class="{ 'schedule-badge-blue': elementMenu == 'interview' }" @click="setSheduleBadgeActive('interview')">
+                <div class="interviews text-end ">
+                    Interviews 
+                    <span class="badge-red font-light">
+                        05
+                    </span>
                 </div>
-
             </div>
-            <div class="flex-fill w-31">
-                <span class="badge-red font-light">
-                    05
-                </span>
-
-            </div>
-            <div class="flex-fill w-70">
-                <div class="events text-center">
+            
+            <div class="flex-fill w-95 cursor-pointer p-x-2"  :class="{ 'schedule-badge-blue': elementMenu == 'events' }" @click="setSheduleBadgeActive('events')">
+                <div class="events text-end">
                     Events
+                    <span class="badge-red font-light">
+                        02
+                    </span>
                 </div>
-            </div>
-            <div class="flex-fill w-31">
-                <span class="badge-red font-light">
-                    02
-                </span>
             </div>
 
         </div>
-        <div class="schedule-list">
+        <div class="schedule-list" id="schedule-list">
             <ul class="list-group">
                 <li class="list-group-item active-item">
                     <div class="d-flex">
@@ -59,7 +56,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-green">
+                            <div class="text-green fw-medium">
                                 KR-02052 (Aubrey) | 3 Jun, Fri • 3:00 pm
                             </div>
                             <div class="sub-text-gray">
@@ -83,7 +80,7 @@
                                 <filter id="filter0_d_12065_26860" x="0" y="0" width="54" height="54" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
                                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                <feOffset/>
+                                <feOffset/>btn-outline-orange
                                 <feGaussianBlur stdDeviation="3"/>
                                 <feComposite in2="hardAlpha" operator="out"/>
                                 <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.603922 0 0 0 0 0.172549 0 0 0 0.2 0"/>
@@ -94,16 +91,18 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-orange">
+                            <div class="text-orange fw-medium">
                                 VM-83792 (Michelle) | 3 Jun, Fri • 4:00 pm
                             </div>
-                            <div class="sub-text-gray">
-                                Mobile Application Developer (Android)
-                            </div>
-                        </div>
-                        <div class="align-self-end text-end flex-fill">
-                            <button class="btn btn-sm btn-outline-orange m-right-8 m-bottom-8">Pending</button>
-                        </div>
+                            <div class="d-flex">
+                                <div class="sub-text-gray">
+                                    Mobile Application Developer (Android)
+                                </div>
+                                <div class="align-self-end text-end flex-fill">
+                                    <button class="btn btn-sm btn-outline-orange btn-badge-pending m-right-8 m-bottom-8">Pending</button>
+                                </div>
+                            </div>                           
+                        </div>                       
                     </div>
                 </li>
                 <li class="list-group-item">
@@ -129,7 +128,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-black">
+                            <div class="text-black fw-medium">
                                 BIRTHDAY : John Lloyd
                             </div>
                             <div class="sub-text-gray">
@@ -165,7 +164,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-green">
+                            <div class="text-green fw-medium">
                                 REG-89002 (Regina) | 6 Jun, Fri • 11:00 pm
                             </div>
                             <div class="sub-text-gray">
@@ -200,7 +199,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-black">
+                            <div class="text-black fw-medium">
                                 Public Holiday : Independence Day
                             </div>
                             <div class="sub-text-gray">
@@ -235,7 +234,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-black">
+                            <div class="text-black fw-medium">
                                 On Leave: Jane Cooper
                             </div>
                             <div class="sub-text-gray">
@@ -271,7 +270,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-green">
+                            <div class="text-green fw-medium">
                                 REG-89002 (Regina) | 6 Jun, Fri • 11:00 pm
                             </div>
                             <div class="sub-text-gray">
@@ -307,7 +306,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-green">
+                            <div class="text-green fw-medium">
                                 REG-89002 (Regina) | 6 Jun, Fri • 11:00 pm
                             </div>
                             <div class="sub-text-gray">
@@ -319,7 +318,7 @@
                         </div>
                     </div>
                 </li> 
-                <li class="list-group-item">
+                <li class="list-group-item"  v-for="n in 30" :key="n">
                     <div class="d-flex">
                         <div class="">
                             <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -343,7 +342,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-green">
+                            <div class="text-green fw-medium">
                                 REG-89002 (Regina) | 6 Jun, Fri • 11:00 pm
                             </div>
                             <div class="sub-text-gray">
@@ -372,13 +371,22 @@
         color: #2C91FF;
         font-weight: 400;
         font-size: 14px;
-        margin-top:2px;
+        margin-top:2.5px;
+        font-family: RubikRegular;
+    }
+    .schedule .all-sched{
+        color: #2C91FF;
+        font-weight: 400;
+        font-size: 14px;
+        margin-top:2.5px;
+        font-family: RubikRegular;
     }
     .schedule .events{
         color: #2C91FF;
         font-weight: 400;
         font-size: 14px;
-        margin-top:2px;
+        margin-top:2.5px;
+        font-family: RubikRegular;
     }
     .schedule .list-group{
         border-color: #2C91FF;
@@ -390,9 +398,10 @@
         padding-right: 6px;
     } 
     .schedule .sub-text-gray{
-        color: #27304C;
+        color: #606883 ;
         font-weight: 400;
         font-size: 14px;
+        font-family: RubikRegular;
     }
 
     .schedule .text-green{
@@ -412,20 +421,65 @@
     }
     .schedule-list{
         height: 430px;
-        overflow-y: auto;
+        overflow-y: overlay;
+        
     }
     .schedule-list .active-item{
         background: #CDE6FF;
     }
-    .schedule-list::-webkit-scrollbar {
-        width: 0px;
+
+    .schedule-list .list-group-item:hover{
+        background: #CDE6FF;
     }
 
-    /* end schedule card */
+
+    .schedule-badge-blue{
+        background: #2C91FF;
+     
+        border-radius: 50px;
+    }
+    .schedule-badge-blue div{
+        font-family: RubikRegular;
+        font-weight: 500; 
+        color:white !important;
+    }
+    .btn-badge-pending{
+        font-size: 12px !important; 
+        margin-left: 4px;
+    }
+
+    .schedule-list .scrollbar-thumb{
+        background: #C9C9C9; 
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 6px;
+    }
+    .schedule-list .scrollbar-track-y{
+       right:8px;
+      
+       background: transparent;
+    }
+
 </style>
 <script>
-
+ import Scrollbar from 'smooth-scrollbar';
   export default {
       name: 'Schedule',
+      data(){
+        return{
+            elementMenu:'all'
+        }
+      },
+      methods:{
+        setSheduleBadgeActive(elname){
+            this.elementMenu =  elname;
+        }
+      },
+      mounted(){
+        let options = {
+            alwaysShowTracks:true
+        }
+        Scrollbar.init(document.querySelector('#schedule-list'), options);
+      }
   }
 </script>

@@ -2,3 +2,6 @@
     .border-bottom{
         border-bottom: 1px solid #EDEDED !important;
     }
+    .border-radius-0{
+        border-radius: 0px;
+    }

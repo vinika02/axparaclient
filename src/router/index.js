@@ -24,9 +24,29 @@ const router = createRouter({
       component: () => import('../components/pages/dashboard/Persona2.vue')
     },
     {
-      path: '/dashboard/persona3',
-      name: 'Persona3',
-      component: () => import('../components/pages/dashboard/Persona3.vue')
+      path: '/my-talent',
+      name: 'MyTalent',
+      component: () => import('../components/pages/ComingSoon.vue')
+    },
+    {
+      path: '/my-orders',
+      name: 'MyTOrders',
+      component: () => import('../components/pages/ComingSoon.vue')
+    },
+    {
+      path: '/my-interview',
+      name: 'MyInterview',
+      component: () => import('../components/pages/ComingSoon.vue')
+    },
+    {
+      path: '/candidate-db',
+      name: 'CandidateDatabase',
+      component: () => import('../components/pages/ComingSoon.vue')
+    },
+    {
+      path: '/my-account',
+      name: 'MyAccount',
+      component: () => import('../components/pages/ComingSoon.vue')
     },
   ]
 })

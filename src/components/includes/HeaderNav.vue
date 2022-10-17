@@ -19,9 +19,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav nav-menu-left">
                     <li class="nav-item cursor-pointer" v-for="(menu) in menus" :key="menu.id">
-                        <router-link class="nav-link" v-on:click="selectMenu(menu.id)" v-bind:class="{ 'active-menu': (menu.id === activeMenuId) }" :to="menu.route">{{menu.menuName}}</router-link>
-                    </li>
-                    
+                        <router-link class="nav-link" active-class="active-menu" v-on:click="selectMenu(menu.id)" v-bind:class="{ 'active-menu': (menu.id === activeMenuId) }" :to="menu.route">{{menu.menuName}}</router-link>
+                    </li>                    
                 </ul>
                 <ul class="navbar-nav ms-auto nav-menu-right">
                     <li class="nav-item">
@@ -53,12 +52,12 @@ export default {
         return{
             menus:[
                 {id: 1, menuName: 'My Dashboard', route: '/dashboard/persona1'},
-                {id: 2, menuName: 'My Talent', route: '/'},
-                {id: 3, menuName: 'My Orders', route: '/'},
-                {id: 4, menuName: 'My Interviews', route: '/'},
+                {id: 2, menuName: 'My Talent', route: '/my-talent'},
+                {id: 3, menuName: 'My Orders', route: '/my-orders'},
+                {id: 4, menuName: 'My Interviews', route: '/my-interview'},
                 {id: 5, menuName: 'Skill Scanner', route: '/skillscanner'},
-                {id: 6, menuName: 'Candidate Database', route: '/'},
-                {id: 7, menuName: 'My Account', route: '/'},
+                {id: 6, menuName: 'Candidate Database', route: '/candidate-db'},
+                {id: 7, menuName: 'My Account', route: '/my-account'},
             ],
             activeMenuId: 0
         }

@@ -1176,19 +1176,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="popupFooter text-end">
-                                                    <button type="button" class="btn btn-primary btn-save-changes ">Schedule Interview</button>
+                                                    <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal" data-bs-target="#book-interview">Schedule Interview</button>
                                                 </div>
                                             </div>
                                         </div>`;
                 setTimeout(() => Slider.classList.toggle("slide-down"), 1);
                 this.$nextTick(() => {
-                const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-                const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
-                    html: true,
-                    sanitize: false
-                }));  
-                            
-        });
+                    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+                    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
+                        html: true,
+                        sanitize: false
+                    }));  
+                                
+                 });
             },      
         }
     }
@@ -1212,62 +1212,7 @@
         padding:16px;    
     } 
 
-    /* Begin popup over */
-        .form-check-label.quickSched{
-            color: #2C91FF;
-            font-weight: 600;
-            font-size: 14px;
-            padding-left:6px;
-            margin-top:-3px;
-        }
-        .form-check-label.custoDateTime{
-            color: #27304C;
-            font-weight: 600;
-            font-size: 14px;
-            padding-left:6px;
-            margin-top:-3px;
-        }
-        .sched-interview-popup-over .form-check{
-            padding-left: 0px;
-            
-        }   
-        .sched-interview-popup-over .normal-radio, .sched-interview-popup-over .normal-check-box{
-            accent-color: #2C91FF;
-            -ms-transform: scale(1.4); /* IE 9 */
-            -webkit-transform: scale(1.4); /* Chrome, Safari, Opera */
-            transform: scale(1.4);
-        }
-        
-        .pick-a-sched{
-            font-weight: 600;
-            font-size: 16px;
-            color: #27304C;
-            opacity: 0.8;
-        }
-        .sched-interview-popup-over{
-            width: 524px !important;
-            --bs-popover-max-width: 524px !important;
-            font-family: RubikLight !important;
-            box-shadow: 0px 0px 15px 1px #eee;
-            /* left: -213px !important; */
-            border-radius: unset !important;
-        }
-        .popupHead{
-            padding: 8px 14px 8px 14px;
-            border-bottom: 1px solid #DCDCDC;
-            font-weight: 600;
-            font-size: 18px;
-            color: #2C91FF;
-        }
-
-        .popupFooter{
-            padding: 8px 14px 8px 14px;
-            border-top: 1px solid #DCDCDC;
-            color: #2C91FF;
-        }
-    /* End popup over */
-
-    
+       
     .collapse-icon{
         transition: transform .5s ease-in-out;
         transform: rotate(180deg) !important;

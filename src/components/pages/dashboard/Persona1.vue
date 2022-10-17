@@ -3,7 +3,10 @@
         <div class="container-fluid app-container ">
             <div class="content-container dashboard padding-24">
                <div class="d-flex persona-header">
-                    <div class="flex-fill persona-1 w-420">Hello, Leslie Alexander</div>
+                    <div class="flex-fill persona-1 w-420">Hello, Leslie Alexander
+                        <a class="me-2" href="/dashboard/persona1">1</a>
+                        <a href="/dashboard/persona2">2</a>
+                    </div>
                     <div class="flex-fill text-end">
                         <button class="btn btn-outline-blue btn-lg btn-dashboard-date">1 June 2022, Wed  |   1:23 pm </button>
                     </div>
@@ -18,61 +21,7 @@
                         
                     </div>
                     <div class="col padding-top-24">
-                        <div class="my-talent ">
-                            <div class="d-flex">
-                                <div class="flex-fill text-b-b-18">
-                                    My Talents
-                                </div>
-                                <div class="flex-fill text-end">
-                                    <button class="btn btn-sm">
-                                        <span class="present-dot">
-                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="7" cy="7" r="6.125" fill="#00B600"/>
-                                            </svg>
-
-                                        </span>
-                                        <span class="label"> Present</span>
-                                    </button>
-                                    <button class="btn btn-sm">
-                                        <span class="leave-dot">
-                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                               <circle cx="7" cy="7" r="6.125" fill="#2C91FF"/>
-                                            </svg>
-
-                                        </span>
-                                        <span class="label">Leave</span>
-                                    </button>
-                                    <button class="btn btn-sm">
-                                        <span class="holiday-dot">
-                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="7" cy="7" r="6.125" fill="#FFC700"/>
-                                            </svg>
-                                        </span>
-                                        <span class="label">Public Holiday</span>
-                                    </button>
-                                </div>  
-                                                       
-                            </div>
-                            <div class="talent-list">
-                                <div class="row">
-                                    <div class="col-sm-4 p-6 " v-for="talent in talents" :key="talent">
-                                        <div class="card talent-card " v-bind:class="talent.classColor">
-                                            <div class="card-body cursor-pointer">
-                                                <div class="text-center talent-image">           
-                                                    <img  v-bind:src="require('../../../assets/images/mytalents/'+talent.image)" /> 
-                                                </div>
-                                                <div class="text-center talent-name font-regular mt-1">           
-                                                    {{talent.name}}
-                                                </div>
-                                                <div class="text-center talent-details font-regular">           
-                                                    {{talent.details}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>     
-                        </div>
+                      <MyTalentCard></MyTalentCard>
                     </div>
                </div>
                <div class="row ">
@@ -80,33 +29,33 @@
                         <div class="pending-client-review">
                             <div class="d-flex">
                                 <div class="flex-fill">
-                                    <div class="text-b-b-18">
-                                        Pending Client Review / Feedback
+                                    <div class="">
+                                        <a href="/my-orders" class="link text-semi-bold-18">Pending Client Review / Feedback</a>                                     
                                     </div>
                                     <div class="pending-client-label-details">
                                         Summary of all pending actions for you to review on My Orders
                                     </div>
                                 </div>
                                 <div class="flex-fill text-end align-self-center">
-                                    <span class="see-pull-pipe">
-                                        See Full Pipeline
+                                    <span class="see-pull-pipe">                                    
+                                        <a href="/my-orders" class="link text-blue">See Full Pipeline</a>
                                     </span>
                                 </div>
                             </div>
                             <div class="d-flex pending-client-table-container">
-                                <div class="flex-fill p-14">
-                                    <div class="d-flex p-b-10 border-bottom">
-                                        <div class="cv-review heading flex-fill">
+                                <div class="flex-fill w-296">
+                                    <div class="d-flex p-14 p-b-10 border-bottom">
+                                        <div class="cv-review heading flex-fill cursor-pointer">
                                             CVs for Review
                                         </div>
                                         <div class="flex-fill text-end  p-0 pt-1 badge">
-                                            <span class="badge-orange  font-light font-12">
+                                            <span class="badge-orange   font-force-light font-12">
                                                 06
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="p-t-14 ">
-                                        <div class="cv-review-details">
+                                    <div class="p-t-14 p-l-14 p-r-4 p-b-14">
+                                        <div class="cv-review-details cv-reviews">
                                             <div class="mb-2">
                                                <div class="profession p-x-12 p-y-4">Backend Developer</div>
                                                <div class="profession-ids">
@@ -145,9 +94,9 @@
                                                     </div>                                                    
                                                </div>
                                             </div>
-                                            <div class="mb-2">
-                                               <div class="profession p-x-12 p-y-4">Frontend Dev</div>
-                                               <div class="profession-ids">
+                                            <div class="mb-2"  v-for="f in 8" :key="f">
+                                               <div class="profession p-x-12 p-y-4">{{f}}  Frontend Dev</div>
+                                                <div class="profession-ids">
                                                     <div class="d-flex id p-x-12 p-y-4">
                                                         <div>CV-24618</div>
                                                         <div class="text-end">2 days ago</div>
@@ -169,19 +118,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex-fill p-14">                                
-                                    <div class="d-flex p-b-10 border-bottom">
-                                        <div class="interview-feedback heading">
+                                <div class="flex-fill w-296">                                
+                                    <div class="d-flex p-14 p-b-10 border-bottom">
+                                        <div class="interview-feedback heading cursor-pointer">
                                             Interview Feedback
                                         </div>
                                         <div class="flex-fill p-0 pt-1 text-end badge">
-                                            <span class="badge-orange font-light font-12">
+                                            <span class="badge-orange  font-force-light font-12">
                                                 04
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="p-t-14 ">
-                                        <div class="cv-review-details">
+                                    <div class="p-t-14 p-l-14 p-r-4 p-b-14">
+                                        <div class="cv-review-details intenal-feedback">
                                             <div class="mb-2">
                                                <div class="profession p-x-12 p-y-4">Backend Developer</div>
                                                <div class="profession-ids">
@@ -195,8 +144,8 @@
                                                     </div>                                           
                                                </div>
                                             </div>
-                                            <div class="mb-2">
-                                               <div class="profession p-x-12 p-y-4">Software Engineer</div>
+                                            <div class="mb-2" v-for="item in 13" :key="item">
+                                               <div class="profession p-x-12 p-y-4">{{item}}  Software Engineer</div>
                                                <div class="profession-ids">
                                                     <div class="d-flex id p-x-12 p-y-4">
                                                         <div>CV-24618</div>
@@ -213,19 +162,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex-fill p-14">                                   
-                                    <div class="d-flex p-b-10 border-bottom">
-                                        <div class="interview-feedback heading">
+                                <div class="flex-fill w-296">                                   
+                                    <div class="d-flex p-14 p-b-10 border-bottom">
+                                        <div class="interview-feedback heading cursor-pointer">
                                             Assessment Feedback
                                         </div>
                                         <div class="flex-fill text-end p-0 pt-1 badge">
-                                            <span class="badge-orange  font-light font-12">
+                                            <span class="badge-orange  font-force-light font-12">
                                                 02
                                             </span>
                                         </div>
                                      </div>
-                                     <div class="p-t-14 ">
-                                        <div class="cv-review-details">
+                                     <div class="p-t-14 p-l-14 p-r-4 p-b-14">
+                                        <div class="cv-review-details assesment-feedback">
                                             <div class="mb-2">
                                                <div class="profession p-x-12 p-y-4">Backend Developer</div>
                                                <div class="profession-ids">
@@ -248,6 +197,19 @@
                                                     </div>                                                                                                  
                                                </div>
                                             </div>
+                                            <div class="mb-2" v-for="item in 13" :key="item">
+                                               <div class="profession p-x-12 p-y-4"> {{item}} Backend Developer</div>
+                                               <div class="profession-ids">
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>CV-24618</div>
+                                                        <div class="text-end">3 days ago</div>
+                                                    </div> 
+                                                    <div class="d-flex id p-x-12 p-y-4">
+                                                        <div>RT-24547</div>
+                                                        <div class="text-end">4 days ago</div>
+                                                    </div>                                           
+                                               </div>
+                                            </div>
                                             
                                         </div>
                                     </div>
@@ -256,9 +218,9 @@
                         </div>                        
                     </div>
                     <div class="col-lg-4  padding-top-24">
-                        <div class="looking-for-candidates">
-                            <div class="skill-scanner-label">
-                                SkillScanner
+                        <div class="looking-for-candidates what-skills-are-you">
+                            <div >
+                                <a href="/skillscanner" class="skill-scanner-label">  SkillScanner</a>
                             </div>
                             <div class="dash-what-is-skill-scanner">
                                 What skills are you looking for in a candidate?
@@ -268,11 +230,11 @@
                                 <span class="primary-label">Primary Skill </span>
                                 <span class="asterisk">*</span>
                             </div>
-                            <div class="p-t-6">
+                            <div class="p-t-6 cursor-pointer" data-bs-toggle="modal" data-bs-target="#skillScannModal">
                                 <section class="container-input-content input-tag-container">
                                     <section class="inner">                                      
                                         <div class="">
-                                        <input class="js-tag-input" disabled  placeholder="Pick 1 primary skill"/>
+                                        <input class="js-tag-input cursor-pointer" disabled  placeholder="Pick 1 primary skill"/>
                                         </div>
                                     </section>
                                 </section>                               
@@ -283,11 +245,11 @@
                                 <span class="secondary-label">Secondary Skill </span>
                                 <span class="asterisk">*</span>
                             </div>
-                            <div class="p-t-6">
+                            <div class="p-t-6 cursor-pointer" data-bs-toggle="modal" data-bs-target="#skillScannModal">
                                 <section class="container-input-content input-tag-container">
                                     <section class="inner">                                      
                                         <div class="tag-field js-tags">                                       
-                                        <input class="js-tag-input" disabled  placeholder="Pick 2 secondary skills"/>
+                                        <input class="js-tag-input cursor-pointer" disabled  placeholder="Pick 2 secondary skills"/>
                                         </div>
                                     </section>
                                 </section>                               
@@ -297,20 +259,22 @@
                             <div>
                                 <span class="secondary-label">Other Skill </span>
                             </div>
-                            <div class="p-t-6">
+                            <div class="p-t-6 cursor-pointer" data-bs-toggle="modal" data-bs-target="#skillScannModal">
                                 <section class="container-input-content input-tag-container">
                                     <section class="inner">                                      
                                         <div class="tag-field js-tags">
-                                        <input class="js-tag-input w-100"   disabled placeholder="Optional skills that are nice to have"/>
+                                        <input class="js-tag-input w-100 cursor-pointer"   disabled placeholder="Optional skills that are nice to have"/>
                                         </div>
                                     </section>
                                 </section>                               
                             </div>
                         </div>
                         <div class="text-end see-matches">
-                            <button class="btn btn-primary btn-custom-blue ">
-                                See Matches
-                            </button>
+                            <a href="/skillscanner">
+                                <button class="btn btn-primary btn-custom-blue ">
+                                    See Matches
+                                </button>
+                            </a>client-review-table
                         </div>
                             
                         </div>
@@ -321,8 +285,8 @@
                <div class="row ">
                     <div class="col-lg-8 padding-top-24">
                         <div class="pending-leave-request">
-                            <div class="text-b-b-18">
-                                Pending Leave Requests
+                            <div class="">
+                                <a href="/my-talent" class="text-b-b-18 link">Pending Leave Requests</a>
                             </div>       
                             <div class="client-review-container">
                                 <table class="client-review-table">
@@ -357,7 +321,7 @@
                                                     <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
                                             </svg>
                                         </th>
-                                        <th class="text-center">
+                                        <th class="text-center" width="80">
                                             Action
                                         </th>
                                     </tr>
@@ -393,7 +357,7 @@
 
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr v-for="index in 10" :key="index">
                                         <td>Kristin Watson</td>
                                         <td>30 Jun, Thurs</td>
                                         <td>6 Jul, Wed</td>
@@ -588,9 +552,9 @@
 
                                     </div>
                                     <div class="mt-2 book-interview">
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
                                     </div>  
                                 </div>
                                 <div class="flex-fill w-260 recommendation-content">
@@ -606,9 +570,9 @@
 
                                     </div>
                                     <div class="mt-2 book-interview">
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
                                     </div>  
                                 </div>
                                 <div class="flex-fill w-260 recommendation-content">
@@ -624,9 +588,9 @@
 
                                     </div>
                                     <div class="mt-2 book-interview">
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
                                     </div>  
                                 </div>
                                 <div class="flex-fill w-260 recommendation-content">
@@ -642,9 +606,9 @@
 
                                     </div>
                                     <div class="mt-2 book-interview">
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
-                                        <button class="btn btn-outline-blue see-my-interview  w-100">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
+                                        <button class="btn btn-outline-blue see-my-interview  w-100"  data-bs-toggle="modal" data-bs-target="#editScheModal">13 Sep, Mon | 11:00 AM</button>
                                     </div>  
                                 </div>
                             </div>
@@ -654,6 +618,7 @@
             </div>
         </div>
         <SkillScannerModal></SkillScannerModal>    
+        <Persona2Modal></Persona2Modal>    
         
     </div>
 </template>
@@ -661,6 +626,9 @@
 import SkillScannerModal from '../../modals/SkillScannerModal.vue';
 import Schedule from './components/Schedule';
 import NotificationCard from './components/NotificationCard';
+import MyTalentCard from './components/MyTalentCard';
+import Persona2Modal from '@/components/modals/Persona2Modal.vue';
+import Scrollbar from 'smooth-scrollbar';
 export default {
     name: 'Persona1',
     data() {
@@ -681,13 +649,20 @@ export default {
     components:{
         SkillScannerModal,
         NotificationCard,
-        Schedule
+        Schedule,
+        Persona2Modal,
+        MyTalentCard
     },
-    created(){         
-        
+    created(){                 
 
     },
     mounted(){
+        let options = {
+            alwaysShowTracks:true
+        }
+        // Scrollbar.init(document.querySelector('.cv-reviews'), options);
+        // Scrollbar.init(document.querySelector('.intenal-feedback'), options);
+        // Scrollbar.init(document.querySelector('.assesment-feedback'), options);
     },
     methods:{    
     }
@@ -810,11 +785,20 @@ export default {
      .client-review-table{
         width: 100%;
      }
+     .client-review-table tr:nth-child(odd) {
+        background: #FAFAFA
+    }
+     .client-review-table>tr>th {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        z-index: 2;
+    } 
      .client-review-table th{
-        font-weight: 600;
+        font-weight: 500;
         font-size: 12px;
         color: #27304C;
-        font-family: RubikRegular;
+        font-family: RubikMedium;
         background: #FAFAFA;
         padding:10px;
      }
@@ -832,11 +816,27 @@ export default {
      }
      .client-review-container{
         border-radius: 6px;
-        overflow: hidden;
+        overflow: overlay;
         border: 1px solid gray;
         border: 1px solid #EDEDED;
         margin-top: 14px;
+        height: 162px;
      }
+
+    .client-review-container::-webkit-scrollbar{
+        width: 6px;     
+    }
+
+    .client-review-container::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    .client-review-container::-webkit-scrollbar-thumb {
+        background: #C9C9C9; 
+        border-radius: 6px;
+    }
+    .talent-list::-webkit-scrollbar-thumb:hover {
+        background: transparent; 
+    } 
 
     /* end pending-leave-request */
 
@@ -854,7 +854,8 @@ export default {
         color: #ACD4FF;
         font-weight: 500;
         font-size: 16px;
-        font-family: RubikRegular;
+        font-family: RubikMedium;
+        text-decoration: none;
     }
     .dash-what-is-skill-scanner{
         color: #2C91FF;
@@ -862,6 +863,7 @@ export default {
         font-size: 22px;
         line-height: 136%;
         padding-top:4px;
+        font-family: RubikMedium;
     }
     
     .primary-skills, .secondary-skills{
@@ -877,13 +879,20 @@ export default {
     }
 
     .looking-for-candidates .input-tag-container {
-        background: #E3F1FF;
+        background: #F1F8FF;
         height: 40px;
         padding-left: 10px;
         padding-right: 10px;
+        font-size: 14px;
+        color: #8C8C8C;
         width: unset;
-        box-shadow: 0 0 1px #b3b2b2;
+        box-shadow: unset;
     }
+    .looking-for-candidates .js-tag-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #8C8C8C !important;
+        opacity: 1; /* Firefox */
+        font-family: RubikRegular;
+    }   
     .primary-skills .primary-label, .secondary-skills .secondary-label, .other-skills .other-label {
         font-weight: 600;
         font-family: RubikRegular !important;
@@ -940,14 +949,32 @@ export default {
     }
     .pending-client-table-container .heading{
         color: #FF9A2C;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 16px;
-        font-family: RubikLight;
+        font-family: RubikMedium;
     } 
     .cv-review-details{
         height: 262px;
         overflow-y: auto;
     }
+
+    .cv-review-details::-webkit-scrollbar{
+        width: 6px;
+     
+    }
+    .cv-review-details::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    .cv-review-details::-webkit-scrollbar-thumb {
+        background: #C9C9C9; 
+        border-radius: 6px;
+    }
+    .cv-review-details::-webkit-scrollbar-thumb:hover {
+        background: transparent; 
+    } 
+
+
+
     .cv-review-details .profession{
         color: #27304C;
         font-weight: 600;
@@ -962,15 +989,8 @@ export default {
         font-family: RubikRegular;
         border-bottom: 1px solid #EDEDED;
     }
-    .cv-review-details::-webkit-scrollbar {
-        width: 0px;
-    }
-
 
     /* End pending client review */
-
-
-
     .dashboard{
         background: #f5f5f5 !important;
     } 
@@ -982,8 +1002,9 @@ export default {
         width: 209px;
         height: 42px;
         padding: 10px;
-        font-weight: 600;
-        font-size: 14px;
+        font-weight: 500 ;
+        font-size: 14px !important;
+        font-family: RubikMedium !important;
     }
     .padding-24{
         padding: 24px;
@@ -999,70 +1020,7 @@ export default {
         width: 480px;
     }
 
-    /* My talent */
-
-    .my-talent{
-        background: white;
-        padding: 14px;
-        border-radius: 6px;
-        height: 500px;
-    }
-    .my-talent button .label{
-        color: #27304C;
-        font-weight: 600;
-        font-size: 12px;
-        font-family: RubikLight;
-        margin-left:6px;
-    }
-    .my-talent button{
-        border: 1px solid #EDEDED;
-        margin-left:8px;
-    }
-    .talent-card{
-        height: 134px;
-    }
-    .talent-card:hover{
-        box-shadow:  0 0 3px gray;
-    }
-    .talent-name{
-        color: #27304C;
-        font-weight: 600;
-        font-size: 16px;
-    }
-    .talent-details{
-        color: #6D6D6D;
-        font-weight: 400;
-        font-size: 12px;
-    }
-    .talent-card .card-body{
-        padding:10px;
-    }
-    .talent-list{
-        padding:6px;
-    }
-    /* end my talent */
-
-
-
-    
-    /* notification card */
-
-    /* end notification card */
-
-    /* Track */
-    /* ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-    } */
-    
-    /* Handle */
-    /* ::-webkit-scrollbar-thumb {
-    background: #888; 
-    } */
-
-    /* Handle on hover */
-    /* ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-    } */
+      
    
     
 </style>

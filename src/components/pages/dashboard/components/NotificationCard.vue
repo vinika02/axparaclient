@@ -4,35 +4,33 @@
             <div class="flex-fill text-orange-b-18">
                 Notifications
             </div>
-            <div class="flex-fill w-38">
-                <span class="badge-orange font-14">
-                    All
-                </span>
+            <div class="flex-fill w-38"  :class="{ 'notification-badge-orange': elementMenu == 'all' }"  @click="setNotifBadgeActive('all')">
+               <div class="all-sched text-center">
+                    <span class="cursor-pointer"  >
+                        All
+                    </span>
+               </div>
             </div>
-            <div class="flex-fill w-70">
-                <div class="urgent text-center">
-                    Urgent
+            <div class="flex-fill w-95 cursor-pointer  me-1 p-x-2"  :class="{ 'notification-badge-orange': elementMenu == 'urgent' }" @click="setNotifBadgeActive('urgent')">
+                <div class="urgent text-end ">
+                    Urgent 
+                    <span class="badge-red font-light">
+                        02
+                    </span>
                 </div>
-
             </div>
-            <div class="flex-fill w-31">
-                <span class="badge-red font-light">
-                    02
-                </span>
-
-            </div>
-            <div class="flex-fill w-70">
-                <div class="others text-center">
+            
+            <div class="flex-fill w-95 cursor-pointer p-x-2"  :class="{ 'notification-badge-orange': elementMenu == 'others' }" @click="setNotifBadgeActive('others')">
+                <div class="others text-end">
                     Others
+                    <span class="badge-red font-light">
+                        05
+                    </span>
                 </div>
-            </div>
-            <div class="flex-fill w-31">
-                <span class="badge-red font-light">
-                    05
-                </span>
             </div>
 
         </div>
+       
         <div class="notification-list ">
             <ul class="list-group">
                 <li class="list-group-item active-item">
@@ -59,7 +57,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-black">
+                            <div class="text-black fw-medium">
                                 Recommendation for Order: Beauty Writer
                             </div>
                             <div class="sub-text-gray">
@@ -99,7 +97,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-black">
+                            <div class="text-black fw-medium">
                                 Leave Request: Alyssa Alilin
                             </div>
                             <div class="sub-text-gray">
@@ -140,7 +138,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-black">
+                            <div class="text-black fw-medium">
                                 SkillScanner Match: HTML
                             </div>
                             <div class="sub-text-gray">
@@ -181,7 +179,7 @@
 
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-black w-300 text-truncate">
+                            <div class="text-black w-300 text-truncate fw-medium">
                                 Recommendation for Order:  Software Engineer (May 2020)
                             </div>
                             <div class="sub-text-gray">
@@ -221,7 +219,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-red w-300 text-truncate">
+                            <div class="text-red w-300 text-truncate fw-medium">
                                 Pending Feedback: Interview
                             </div>
                             <div class="sub-text-gray">
@@ -261,7 +259,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-red w-300 text-truncate">
+                            <div class="text-red w-300 text-truncate fw-medium">
                                 Pending Review: CVs
                             </div>
                             <div class="sub-text-gray">
@@ -301,7 +299,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-red w-300 text-truncate">
+                            <div class="text-red w-300 text-truncate fw-medium">
                                 Pending Review: CVs
                             </div>
                             <div class="sub-text-gray">
@@ -341,7 +339,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-red w-300 text-truncate">
+                            <div class="text-red w-300 text-truncate fw-medium">
                                 Pending Review: CVs
                             </div>
                             <div class="sub-text-gray">
@@ -358,7 +356,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item" v-for="n in 30" :key="n">
                     <div class="d-flex">
                         <div>
                             <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -381,7 +379,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 mt-1">
-                            <div class="text-red w-300 text-truncate">
+                            <div class="text-red w-300 text-truncate fw-medium">
                                 Pending Review: CVs
                             </div>
                             <div class="sub-text-gray">
@@ -414,13 +412,22 @@
         color: #FF9A2C;
         font-weight: 400;
         font-size: 14px;
-        margin-top:2px;
+        margin-top:2.5px;
+        font-family: RubikRegular;
+    }
+    .notification .all-sched{
+        color: #FF9A2C;
+        font-weight: 400;
+        font-size: 14px;
+        margin-top:2.5px;
+        font-family: RubikRegular;
     }
     .notification .others{
         color: #FF9A2C;
         font-weight: 400;
         font-size: 14px;
-        margin-top:2px;
+        margin-top:2.5px;
+        font-family: RubikRegular;
     }
     .notification .list-group{
         border-color: #FF9A2C;
@@ -432,9 +439,10 @@
         padding-right: 6px;
     } 
     .notification .sub-text-gray{
-        color: #27304C;
+        color: #606883 ;
         font-weight: 400;
         font-size: 14px;
+        font-family: RubikRegular;
     }
 
     .notification .text-green{
@@ -467,14 +475,52 @@
     .notification .x-button{
        margin-top:-8px !important;
     }
-    
-    .notification-list::-webkit-scrollbar {
-        width: 0px;
+    .notification-list .list-group-item:hover{
+        background: #FFDEB9;
     }
+    
+    .notification-badge-orange{
+        background: #FF9A2C;     
+        border-radius: 50px;
+    }
+    .notification-badge-orange div{
+        font-family: RubikRegular;
+        font-weight: 500; 
+        color:white !important;
+    }
+
+    
+    .notification .scrollbar-thumb{
+        background: #C9C9C9; 
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 6px;
+    }
+    .notification .scrollbar-track-y{
+       right:8px;
+       background: transparent;
+    }
+
 </style>
 <script>
-
+    import Scrollbar from 'smooth-scrollbar';
     export default {
         name: 'NotificationCard',
+        data(){
+        return{
+            elementMenu:'all'
+        }
+      },
+      methods:{
+        setNotifBadgeActive(elname){
+            this.elementMenu =  elname;
+        }
+      },
+      mounted(){
+        let options = {
+            alwaysShowTracks:true
+        }
+        Scrollbar.init(document.querySelector('.notification-list'), options);
+      }
     }
 </script>
