@@ -37,9 +37,13 @@
 
     <!--bottom bar star -->
     <div class="v-bottom-bar">
-      <a href="javascript:void(0)" v-for="i in 8" :key="i"
-        ><img :src="require(`../../assets/images/brand${i}.svg`)" :alt="`brand${i}.svg`"
-      /></a>
+      <div class="v-links">
+        <a class="brand-link" href="javascript:void(0)" v-for="i in 14" :key="i"
+          ><img
+            :src="require(`../../assets/images/brand${i}.svg`)"
+            :alt="`brand${i}.svg`"
+        /></a>
+      </div>
     </div>
     <!-- bottom bar end -->
   </div>
@@ -50,7 +54,12 @@ export default {
 };
 </script>
 <style>
+body {
+  background-color: black;
+}
 .main {
+  background-color: rgb(255, 255, 255);
+
   font-family: "RubikRegular";
   width: 1920px;
   height: 1024px;
@@ -186,24 +195,54 @@ export default {
 
 .v-bottom-bar {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
   padding: 25px 10px;
-  gap: 10px;
-
   position: absolute;
-  width: 1920px;
   height: 130px;
   left: 0px;
   bottom: -3px;
 
   /* Grey-2/19 */
-
   background: #f3f4f5;
 }
 
 .brand-link {
   position: relative;
+  margin-right: 30px;
+  margin-left: 30px;
+  transition: 2s;
+}
+
+.v-links {
+  display: flex;
+  position: relative;
+}
+.v-links {
+  animation: slideSide 15s forwards infinite alternate 2s;
+}
+
+@keyframes slideSide {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-10%);
+  }
+  30% {
+    transform: translateX(-20%);
+  }
+  70% {
+    transform: translateX(-30%);
+  }
+  85% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+
+  
 }
 </style>
