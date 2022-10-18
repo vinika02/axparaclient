@@ -11,7 +11,7 @@
           Enter your e-mail address and input your one-time password. No sign-up required.
         </div>
         <!-- loginEmailForm start -->
-        <form id="loginEmailForm" class="v-form" v-on:submit="validateEmail()">
+        <form id="loginEmailForm" class="v-form" @submit.prevent="validateEmail()">
           <div id="emailField" class="field">
             <label>Email</label>
             <input
@@ -262,7 +262,6 @@ export default {
     });
 
     this.slides = document.getElementsByClassName("slide");
-    console.log(this.slides);
     this.slides[0].style.zIndex = 102;
     this.slides[1].style.zIndex = 100;
     this.slides[2].style.zIndex = 101;
@@ -281,7 +280,6 @@ export default {
         otp = otp + a.value;
       }
       // code start here
-      console.log("OTP: ", otp); // otp value
       this.optInvalid = this.optInvalid; // replace for api otp check
       // code end here
       const pinField = document.getElementById("pinField");
@@ -291,13 +289,12 @@ export default {
         : pinField.classList.add("error");
     },
     validateEmail(event) {
-      event.preventDefault();
-      const formEl = event.target;
+      // event.preventDefault();
+      const formEl = document.getElementById("loginEmailForm")
       const formData = new FormData(formEl);
       const formProps = Object.fromEntries(formData);
       // code start here
       const email = formProps.email;
-      console.log("e-mail: ", email); // email value
       this.emailIsValid = this.emailIsValid; // replace for api email check
       // code end here
       const emailField = document.getElementById("emailField");
@@ -325,7 +322,6 @@ export default {
 
     resetSlide(n) {
       clearInterval(slideInterval);
-
       slideInterval = setInterval(this.nextSlide, this.timeout);
       showSlide(n);
     },
@@ -355,7 +351,6 @@ export default {
 
       var zIndex = 100;
       this.slidesIndexes.forEach((index) => {
-        console.log(zIndex);
         this.slides[index].style.zIndex = zIndex;
         zIndex++;
       });
