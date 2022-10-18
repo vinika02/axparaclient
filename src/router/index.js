@@ -3,10 +3,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    
     {
       path: '/',
       name: 'CommingSoon',
       component: () => import('../components/pages/ComingSoon.vue')
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../components/authentication/Login.vue')
     },
     {
       path: '/skillscanner',
@@ -47,11 +53,6 @@ const router = createRouter({
       path: '/my-account',
       name: 'MyAccount',
       component: () => import('../components/pages/ComingSoon.vue')
-    },
-    {
-      path: '/access-the-world',
-      name: 'AccessTheWorld',
-      component: () => import('../components/pages/AccessTheWorld.vue')
     },
   ]
 })

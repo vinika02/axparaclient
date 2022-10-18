@@ -3,15 +3,25 @@
   import { RouterLink, RouterView } from 'vue-router';
   import Header from './components/includes/HeaderNav.vue'
     export default {
-    name: 'App',
-    components: {
-      Header
-    },
+    
+      name: 'App',
+      data(){
+        return{
+          routeName: ''
+        }
+      },
+      components: {
+        Header
+      },
+      mounted(){
+        this.routeName = window.location.pathname;
+        console.log(this.routeName)
+      }
 }
 </script>
 
 <template>
-  <Header></Header>
+  <Header v-if="this.routeName != '/login'"></Header>
   <RouterView/>
 </template>
 

@@ -20,6 +20,11 @@
         src: local("Rubik"),
         url(../../assets/Rubik/Rubik-SemiBold.ttf) format("truetype");
     }   
+    @font-face {
+        font-family: "RubikBold";
+        src: local("Rubik"),
+        url(../../assets/Rubik/Rubik-Bold.ttf) format("truetype");
+    } 
     .text-pink{
         color: #EF5DA8 !important;
     } 
