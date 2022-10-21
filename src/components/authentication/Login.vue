@@ -15,6 +15,7 @@
           <div id="emailField" class="field">
             <label>Email</label>
             <input
+              autocomplete="off"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -376,6 +377,7 @@ export default {
   width: 828px;
   height: 790px;
   left: 612px;
+  overflow: hidden;
 }
 
 #loginContainer {
@@ -944,6 +946,7 @@ input[type="number"] {
   width: 402px;
   height: 253px;
   z-index: 100;
+  filter: drop-shadow(-2px -2px 24px rgba(0, 0, 0, 0.1));
 }
 
 .slide-img-1 > .slide1-image96 {
@@ -953,6 +956,7 @@ input[type="number"] {
   width: 380px;
   height: 241px;
   z-index: 100;
+  filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.2));
 }
 
 .slide-img-1 > .slide1-image94 {
@@ -982,6 +986,7 @@ input[type="number"] {
   top: 78px;
   transform: scale(1.2);
   z-index: 100;
+  filter: drop-shadow(-2px 4px 24px rgba(0, 0, 0, 0.14));
 }
 
 .slide-img-3 > .slide3-image31 {
