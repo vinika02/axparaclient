@@ -366,13 +366,8 @@ export default {
   
 /* Begin login */
 
-#main {
-  margin: auto;
-  /*padding-top: 8vh;*/
-  /* width: 1440px; */
-  min-height: 900px;
-  position: relative;
-  overflow: hidden;
+body {
+  overflow-y: hidden !important;
 }
 
 #carouselContainer {
@@ -397,10 +392,10 @@ export default {
   position: absolute;
   width: 481px;
   height: 481px;
-  bottom: 0;
-  left: 10%;
+  bottom: -50px;
+  left: 100px;
   opacity: 0.08;
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 #brand {
