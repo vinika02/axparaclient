@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <div id="main">
@@ -215,6 +216,7 @@
 </template>
 
 <script>
+ 
 export default {
   name: "Login",
   data() {
@@ -360,31 +362,34 @@ export default {
 };
 </script>
 
-<style>
+<style type="text/css">
+  
 /* Begin login */
 
 #main {
   margin: auto;
-  padding-top: 8vh;
-  width: 1440px;
-  height: 100vh;
+  /*padding-top: 8vh;*/
+  /* width: 1440px; */
+  min-height: 900px;
   position: relative;
   overflow: hidden;
 }
 
 #carouselContainer {
   position: absolute;
-  width: 828px;
-  height: 790px;
-  left: 612px;
+  width: 50%;
+  height: 100%;
+  /*left: 612px;*/
+  right: 0;
   overflow: hidden;
+  /*transform: scale(1.5);*/
 }
 
 #loginContainer {
   position: absolute;
   width: 330px;
   height: 292px;
-  left: 142px;
+  left: 20%;
   top: 249px;
 }
 
@@ -392,8 +397,10 @@ export default {
   position: absolute;
   width: 481px;
   height: 481px;
-  top: 417px;
+  bottom: 0;
+  left: 10%;
   opacity: 0.08;
+  transform: scale(2);
 }
 
 #brand {
@@ -624,12 +631,13 @@ input[type="number"] {
 }
 
 /* OTP END */
+
 /* End login */
 
 /* Begin slider */
 .slider {
-  width: 828px;
-  height: 790px;
+  /*width: 828px;*/
+  height: 100%;
   /* overflow: hidden; */
   /* background-color: red; */
 
@@ -638,14 +646,19 @@ input[type="number"] {
 
 .slides {
   position: relative;
-  width: 828px;
-  height: 790px;
+  width: 100%;
+  height: 100%;
   display: flex;
   /* background-color: rgba(255, 0, 0, 0); */
+  /*transform: scale(1.5);*/
 }
 
 .slides input {
   display: none;
+}
+
+.slide > img {
+  transform: scale(1.5);
 }
 
 .slide-img-1 {
@@ -656,6 +669,7 @@ input[type="number"] {
   /* right: -593px; */
   right: 0;
   top: 0;
+  /*transform: scale(2);*/
 }
 
 .slide-img-2 {
@@ -666,6 +680,7 @@ input[type="number"] {
   /* right: -569px; */
   right: 0;
   top: 0;
+  /*transform: scale(2);*/
 }
 
 .slide-img-3 {
@@ -676,6 +691,7 @@ input[type="number"] {
   /* right: -590px; */
   right: 0;
   top: 0;
+  /*transform: scale(1.5);*/
 }
 
 .slide-text-1 {
@@ -714,29 +730,16 @@ input[type="number"] {
   animation: fadeIn3 10s forwards;
 }
 
-/* 
-#radio1:checked ~ .slide-img-1 {
-  animation: fadeIn1 10s forwards;
-}
-
-#radio2:checked ~ .slide-img-2 {
-  animation: fadeIn1 10s forwards;
-}
-
-#radio3:checked ~ .slide-img-3 {
-  animation: fadeIn1 10s forwards;
-} */
-
 #radio1:checked ~ .slide-text-1 {
   animation: slideUp1 10s forwards;
 }
 
 #radio2:checked ~ .slide-text-2 {
-  animation: slideUp2 10s forwards;
+  animation: slideUp1 10s forwards;
 }
 
 #radio3:checked ~ .slide-text-3 {
-  animation: slideUp3 10s forwards;
+  animation: slideUp1 10s forwards;
 }
 
 @keyframes slideLeft1 {
@@ -795,7 +798,7 @@ input[type="number"] {
 
 @keyframes slideUp1 {
   0% {
-    bottom: -281px;
+    bottom: -100%;
   }
 
   25% {
@@ -806,44 +809,12 @@ input[type="number"] {
     bottom: 0;
   }
 
-  100% {
-    bottom: -281px;
-  }
-}
-
-@keyframes slideUp2 {
-  0% {
-    bottom: -281px;
-  }
-
-  25% {
-    bottom: 0;
-  }
-
-  75% {
-    bottom: 0;
+   95% {
+    bottom: -50%;
   }
 
   100% {
-    bottom: -281px;
-  }
-}
-
-@keyframes slideUp3 {
-  0% {
-    bottom: -281px;
-  }
-
-  25% {
-    bottom: 0;
-  }
-
-  75% {
-    bottom: 0;
-  }
-
-  100% {
-    bottom: -281px;
+    bottom: -100%;
   }
 }
 
@@ -886,8 +857,8 @@ input[type="number"] {
 }
 
 .slide {
-  width: 828px;
-  height: 790px;
+  /*width: 100%;
+  height: 100%;*/
   object-fit: cover;
   position: absolute;
   left: 0;
@@ -899,11 +870,11 @@ input[type="number"] {
   position: absolute;
   width: 155px;
   height: 133px;
+  transform: scale(1.5);
   left: 2px;
   top: 0px;
-  z-index: 10;
+  z-index: 500;
   opacity: 0.4;
-  z-index: 103;
 }
 
 .title {
@@ -939,13 +910,21 @@ input[type="number"] {
   z-index: 103;
 }
 
+.slide > div {
+  transform: scale(1.2);
+  position: absolute;
+  top: 10%;
+  /*right: 0;*/
+}
+
+
 .slide-img-1 > .slide1-image95 {
   position: absolute;
   top: 80px;
   right: 182px;
   width: 402px;
   height: 253px;
-  z-index: 100;
+  z-index: 500;
   filter: drop-shadow(-2px -2px 24px rgba(0, 0, 0, 0.1));
 }
 
@@ -955,7 +934,7 @@ input[type="number"] {
   right: 0;
   width: 380px;
   height: 241px;
-  z-index: 100;
+  z-index: 500;
   filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.2));
 }
 
@@ -966,7 +945,7 @@ input[type="number"] {
   left: 343px;
   top: 301px;
   transform: scale(1.4);
-  z-index: 100;
+  z-index: 500;
 }
 
 .slide-img-2 > .slide2-image90 {
@@ -975,7 +954,7 @@ input[type="number"] {
   height: 265px;
   left: 244px;
   bottom: 288px;
-  z-index: 100;
+  z-index: 500;
 }
 
 .slide-img-2 > .slide2-image89 {
@@ -985,7 +964,7 @@ input[type="number"] {
   left: 359px;
   top: 78px;
   transform: scale(1.2);
-  z-index: 100;
+  z-index: 500;
   filter: drop-shadow(-2px 4px 24px rgba(0, 0, 0, 0.14));
 }
 
@@ -995,7 +974,7 @@ input[type="number"] {
   height: 237px;
   left: 244px;
   top: 96px;
-  z-index: 100;
+  z-index: 500;
 }
 
 .slide-img-3 > .slide3-image88 {
@@ -1005,7 +984,7 @@ input[type="number"] {
   left: 452px;
   top: 214px;
   transform: scale(1.2);
-  z-index: 100;
+  z-index: 500;
 }
 
 .slide-img-3 > .slide3-image95 {
@@ -1015,14 +994,14 @@ input[type="number"] {
   left: 265px;
   top: 273px;
   transform: scale(1.3);
-  z-index: 100;
+  z-index: 500;
 }
 
 /*css for manual slide navigation*/
 
 .navigation-manual {
   position: absolute;
-  width: 828px;
+  width: 100%;
   display: flex;
   justify-content: center;
   bottom: 38px;
