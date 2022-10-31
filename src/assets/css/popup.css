@@ -34,10 +34,12 @@
     width: 524px !important;
     --bs-popover-max-width: 524px !important;
     font-family: RubikLight !important;
-    box-shadow: 0px 0px 15px 1px #eee;
+    box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 15%);
     /* left: -213px !important; */
     border-radius: unset !important;
+    border:1px solid #ccc;
     z-index:0;
+    position: absolute;
 }
 .popupHead{
     padding: 8px 14px 8px 14px;
@@ -74,8 +76,29 @@
     font-family: RubikMedium !important;
     border-radius: 3px !important;
 }
-.sched-interview-popup-over .btn-custom-btn-outline-blue:hover{
+.sched-interview-popup-over .btn-custom-outline-blue:hover{
     background-color: #2C91FF !important;
     color: white !important;
 }
+
+
+
+.arrow-popup:before, .arrow-popup:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+  }
+  .arrow-popup:before {
+    right: 24px;
+    border: 11px solid transparent;
+    border-bottom-color: #ddd;
+  }
+  .arrow-popup:after {
+    right: 25px;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+  }
 /* End popup over */

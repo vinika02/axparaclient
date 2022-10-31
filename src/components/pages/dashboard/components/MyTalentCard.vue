@@ -78,6 +78,9 @@
         margin-left: 5px !important;
        
     }
+    .see-all-talent-btn:hover{
+        color:gray !important;
+    }
     .present-dot, .leave-dot, .holiday-dot{
         margin-top: 6px;
     }

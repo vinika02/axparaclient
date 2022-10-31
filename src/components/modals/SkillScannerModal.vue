@@ -791,6 +791,12 @@
             ...mapState("skills", ["skills"]),
         },
         methods:{
+            checkCountry(e){            
+                this.anyCountry = e;            
+            }, 
+            checkLabel(e){            
+                this.anyLabel = e;            
+            },    
             ...mapActions("skills", [ 
                 'setSkills'
             ]),

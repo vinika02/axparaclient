@@ -2,17 +2,8 @@
     <div class="bg-gray  pt-0">
         <div class="container-fluid app-container">
             <div class="content-container dashboard padding-24">
-                <div class="d-flex persona-header">
-                    <div class="flex-fill persona-1 w-420">Hello, Leslie Alexander
-                        <a class="me-2" href="/dashboard/persona1">1</a>
-                        <a href="/dashboard/persona2">2</a>
-                    </div>
-                    <div class="flex-fill text-end">
-                        <button class="btn btn-outline-blue btn-lg btn-dashboard-date">1 June 2022, Wed  |   1:23 pm </button>
-                    </div>
-               </div>
-
-                <div class="outline-x">
+               <HelloHeader></HelloHeader>
+                <div class="outline-x m-t-24">
                     <div class="started">
                         <div class="d-flex start-get-started-container">
                             <div class="start-get-started flex-fill">
@@ -26,8 +17,12 @@
                                     <div class="d-flex">
                                         <div class="flex-fill">   team or even our CEO via WhatsApp!</div>
                                         <div class="flex-fill chat-button">
-                                            <button class="chat-app-button">Chat via WhatsApp</button>
-                                            <button class="chat-app-button-email">Email Us</button>
+                                            <a href="https://wa.me/6582003305" target="_blank">
+                                             <button class="chat-app-button">Chat via WhatsApp</button>
+                                            </a>
+                                            <a href="mailto:keith@axpara.com">
+                                                <button class="chat-app-button-email">Email Us</button>
+                                            </a>
                                         </div>
                                     </div>                                  
                                 </div>
@@ -696,12 +691,15 @@
             </div>
         </div>
     </div>
+    <SkillScannerModal></SkillScannerModal>  
     <Persona2Modal></Persona2Modal>
 </template>
 <script>
 import * as bootstrap  from 'bootstrap';
 import Persona2Modal from '@/components/modals/Persona2Modal.vue';
 import StartInterview from './components/StartInterview';
+import HelloHeader from './components/HelloHeader';
+import SkillScannerModal from '../../modals/SkillScannerModal.vue';
 export default {
     name: "Persona2",
     data() {
@@ -819,7 +817,7 @@ export default {
              });
         },
     },
-    components: { Persona2Modal, StartInterview}
+    components: { Persona2Modal, StartInterview, HelloHeader,SkillScannerModal}
 }
 </script>
 <style>
@@ -830,6 +828,9 @@ export default {
     .candidate-data{
         width: 100%;
         margin-top: 12px;
+    }
+    .candidate-data tr:nth-child(odd) {
+        background: #FAFAFA
     }
     .candidate-data th{
         font-style: normal;
@@ -869,6 +870,7 @@ export default {
     
     .candidate-data .cv-intro{
         margin-right:18px;    
+        cursor: pointer;
     } 
     .candidate-data .schedule-button button{
         margin-right:12px;    
@@ -925,26 +927,9 @@ export default {
     height: 1428px;
 
 }
-.dashboard .btn-dashboard-date{
-    background: #E3F1FF;
-    width: 209px;
-    height: 42px;
-    padding: 10px;
-    font-weight: 500 ;
-    font-size: 14px !important;
-    font-family: RubikMedium !important;
-}
 
 .padding-24 {
     padding: 24px;
-}
-
-.persona-header {
-    color: #27304C;
-    font-family: RubikRegular;
-    font-weight: bold;
-    font-size: 22px;
-    padding-bottom: 24px;
 }
 
 .w-480 {
@@ -1109,6 +1094,9 @@ export default {
     background: #2C91FF;
     border-radius: 2px;
 }
+.playIcon:hover{
+    background: #1764b8 !important;
+}
 
 
 .buttonSchedule {
@@ -1136,6 +1124,9 @@ export default {
     font-weight: 400;
     font-size: 12px;
     color: #A8B2BA;
+}
+.more:hover{
+    color:#2C91FF;
 }
 
 </style>

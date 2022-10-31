@@ -38,7 +38,9 @@
 
                 </div>
                 <div>
-                    <button class="btn btn-outline-blue see-my-interview  w-100 m-t-46">See My Interviews</button>
+                    <a  href="/my-interview">
+                       <button class="btn btn-outline-blue see-my-interview  w-100 m-t-46">See My Interviews</button>
+                    </a>
                 </div>  
             </div>
             <div class="flex-fill w-260 recommendation-content">

@@ -3,7 +3,7 @@
     <!-- bar start -->
     <div class="bar">
       <img src="../../assets/images/AxparaLogo.svg" alt="" class="barLogo" />
-      <button class="v-button v-align-right v-bg-primary" type="button">E-mail Us</button>
+      <a class="m-t-7" href="mailto:keith@axpara.com"><button class="v-button v-align-right v-bg-primary" type="button">E-mail Us</button></a>
     </div>
     <!-- bar end -->
     <!-- content end -->
@@ -25,11 +25,14 @@
           <span class="v-text-primary">borderless employment</span>
         </div>
         <div class="actions">
-          <button type="button" class="v-button v-button-outline v-mr-16">
-            I'm a Talent
-          </button>
-
-          <button type="button" class="v-button v-button-outline">I'm an Employer</button>
+          <a href="/login">
+              <button type="button" class="v-button v-button-outline v-mr-16">        
+               I'm a Talent
+            </button>
+          </a>
+          <a href="/login">
+             <button type="button" class="v-button v-button-outline">I'm an Employer</button>
+          </a>
         </div>
       </div>
     </div>
@@ -37,9 +40,13 @@
 
     <!--bottom bar star -->
     <div class="v-bottom-bar">
-      <a href="javascript:void(0)" v-for="i in 8" :key="i"
-        ><img :src="require(`../../assets/images/brand${i}.svg`)" :alt="`brand${i}.svg`"
-      /></a>
+      <div class="v-links">
+        <a class="brand-link" href="javascript:void(0)" v-for="i in 14" :key="i"
+          ><img
+            :src="require(`../../assets/images/brand${i}.svg`)"
+            :alt="`brand${i}.svg`"
+        /></a>
+      </div>
     </div>
     <!-- bottom bar end -->
   </div>
@@ -50,9 +57,13 @@ export default {
 };
 </script>
 <style>
+body {
+  background-color: black;
+}
 .main {
+  background-color: rgb(255, 255, 255);
+
   font-family: "RubikRegular";
-  width: 1920px;
   height: 1024px;
   position: relative;
   margin: auto;
@@ -61,17 +72,15 @@ export default {
 
 .v-body {
   position: relative;
-  width: 1920px;
   height: 1024px;
 }
 
 .bg-1 {
-  position: absolute;
-  width: 366.51px;
-  height: 370.47px;
-  /* left: 1611.16px; */
-  right: -20px;
-  top: 30.16px;
+    position: absolute;
+    width: 366.51px;
+    height: 421.47px;
+    right: -60px;
+    top: 6.16px;
 }
 
 .bg-2 {
@@ -85,20 +94,19 @@ export default {
 .bg-3 {
   position: absolute;
   left: 0;
-  top: 488px;
+  top: 485px;
   opacity: 0.12;
 }
-
-.img-1 {
-  position: absolute;
-  right: 299px;
-  top: 192px;
+.img-1{
+    position: absolute;
+    right: 281px;
+    top: 193px;
 }
 .img-2 {
-  position: absolute;
-  right: 208px;
-  top: 497px;
-  border: 8px solid white;
+    position: absolute;
+    right: 183px;
+    top: 489px;
+    border: 8px solid white;
 }
 
 .v-align-right {
@@ -119,9 +127,7 @@ export default {
 }
 
 .bar {
-  display: flex;
-  align-items: center;
-
+  display: flex;  
   padding: 2px 200px;
   position: absolute;
   width: 100%;
@@ -145,11 +151,12 @@ export default {
   padding: 10px 24px;
   background: #ffffff;
   color: #ffffff;
-  border: 0;
+  border: 0;  
 }
 
 .v-button-outline {
-  padding: 14px 63px;
+  padding: 10px;
+  width: 230px;
   background: #ffffff;
   color: #2c91ff;
   border: 1px solid #3c9aff;
@@ -157,6 +164,11 @@ export default {
   font-style: normal;
   font-weight: 500;
   font-size: 19px;
+}
+
+.v-button-outline:hover {
+  color: #ffffff;
+  background: #2c91ff;
 }
 
 .v-card {
@@ -186,24 +198,98 @@ export default {
 
 .v-bottom-bar {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
   padding: 25px 10px;
-  gap: 10px;
-
   position: absolute;
-  width: 1920px;
   height: 130px;
   left: 0px;
   bottom: -3px;
 
   /* Grey-2/19 */
-
   background: #f3f4f5;
 }
 
 .brand-link {
   position: relative;
+  margin-right: 30px;
+  margin-left: 30px;
+  transition: 2s;
+}
+
+.v-links {
+  display: flex;
+  position: relative;
+}
+.v-links {
+  animation: slideSide 15s forwards infinite alternate 2s;
+}
+
+@keyframes slideSide {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-10%);
+  }
+  30% {
+    transform: translateX(-20%);
+  }
+  70% {
+    transform: translateX(-30%);
+  }
+  85% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }  
+}
+
+@media only screen and (max-width: 1440px){
+  .main{
+    height: 100vh;
+  }
+  .barLogo {
+      left: 88px;
+  }
+  .v-align-right {
+    right: 85px;
+  }
+  .v-card {
+      left: 94px;
+      top: 187px;
+  }
+  .v-card > .header {
+      font-size: 48px;
+      width: 450px;
+      height: unset;
+  }
+  .bg-2 {   
+    left: 624px;
+    top: 110px;
+  }
+  .bg-3 {
+      left: -100px;
+      top: 310px;
+      height: 536px;
+  }
+  .img-1{
+    right: 220px;
+    top: 177px;
+    width: 528px;
+    height: 378px;
+  }
+  .bg-1 {
+      height: 348.47px;
+      right: -91px;
+      top: 6.16px;
+  }
+  .img-2 {
+      right: 125px;
+      top: 420px;
+      width: 350px;
+  }
 }
 </style>

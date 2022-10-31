@@ -318,7 +318,7 @@
                                 <div class="d-flex">
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input input-radio" type="radio" name="anycountry" id="anycountry" checked>
+                                            <input class="form-check-input input-radio" type="radio" @click="checkCountry(true)" value="any" name="anycountry" id="anycountry" checked>
                                             <label class="form-check-label" for="anycountry">
                                                 Any Country
                                             </label>
@@ -326,7 +326,7 @@
                                     </div>
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" id="Indonesia">
+                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" :disabled="anyCountry" id="Indonesia">
                                             <label class="form-check-label" for="Indonesia">
                                                 Indonesia
                                             </label>
@@ -334,7 +334,7 @@
                                     </div>
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" id="Philippines">
+                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" :disabled="anyCountry" id="Philippines">
                                             <label class="form-check-label" for="Philippines">
                                                 Philippines
                                             </label>
@@ -344,7 +344,7 @@
                                 <div class="d-flex mt-2">
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input input-radio" type="radio" name="anycountry" id="specificCountry" >
+                                            <input class="form-check-input input-radio" type="radio" name="anycountry"  @click="checkCountry(false)" id="specificCountry" >
                                             <label class="form-check-label" for="specificCountry">
                                                 Specific Countries
                                             </label>
@@ -352,7 +352,7 @@
                                     </div>
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" id="sriLanka">
+                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" :disabled="anyCountry" id="sriLanka">
                                             <label class="form-check-label" for="sriLanka">
                                                 Sri Lanka
                                             </label>
@@ -360,7 +360,7 @@
                                     </div>
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" id="Vietnam">
+                                            <input class="form-check-input check-box" type="checkbox" value="" name="country" :disabled="anyCountry" id="Vietnam">
                                             <label class="form-check-label" for="Vietnam">
                                                 Vietnam
                                             </label>
@@ -384,7 +384,7 @@
                                 <div class="d-flex">
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input input-radio" type="radio" name="expLabel" id="expLabel">
+                                            <input class="form-check-input input-radio" type="radio" @click="checkLabel(true)" name="expLabel" id="expLabel">
                                             <label class="form-check-label" for="expLabel">
                                                 Any Level
                                             </label>
@@ -392,7 +392,7 @@
                                     </div>
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input check-box" type="checkbox" value="" name="level" id="junior">
+                                            <input class="form-check-input check-box" type="checkbox" value="" :disabled="anyLabel" name="level" id="junior">
                                             <label class="form-check-label" for="junior">
                                                 Junior (1-3 yrs)
                                             </label>
@@ -400,7 +400,7 @@
                                     </div>
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input check-box" type="checkbox" value="" name="level" id="senior">
+                                            <input class="form-check-input check-box" type="checkbox" value="" :disabled="anyLabel" name="level" id="senior">
                                             <label class="form-check-label" for="senior">
                                                 Senior (8+ yrs)
                                             </label>
@@ -410,7 +410,7 @@
                                 <div class="d-flex mt-2">
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input input-radio" type="radio" name="expLabel" id="specificLabel" checked>
+                                            <input class="form-check-input input-radio" type="radio" @click="checkLabel(false)" name="expLabel" id="specificLabel" checked>
                                             <label class="form-check-label" for="specificLabel">
                                                 Specific Levels
                                             </label>
@@ -418,7 +418,7 @@
                                     </div>
                                     <div class="flex-custom">
                                         <div class="form-check">
-                                            <input class="form-check-input check-box" type="checkbox" value="" name="level" id="midLevel">
+                                            <input class="form-check-input check-box" type="checkbox" value="" :disabled="anyLabel" name="level" id="midLevel">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Mid-Level (4-7 yrs)
                                             </label>
@@ -453,539 +453,248 @@
                                         <th class="main-thead">Filter</th>
                                         <th></th>
                                     </tr>
-                                    <tr class="border-bottom">
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                                            </div>
-                                        </td>
-                                        <td>
-                                           <div class="d-flex tags">
-                                              <div class="tag-pink">Copywriting</div>
-                                              <div class="tag-violet">React JS</div>
-                                              <div class="tag-violet">Vue.js</div>
-                                              <div class="tag-orange">Vue.js</div>
-                                           </div>
-                                        </td>
-                                        <td class="td-text-skye-blue">
-                                            Any Country | Junior, Mid-level
-                                        </td>
-                                        <td class="td-filter">
-                                            <span class="td-text-blue me-1">
-                                                3 Matches!
-                                            </span>
-                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
-                                            </svg>
-                                            <span class="td-text-yellow-green ms-1">
-                                                1 Shortlisted
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
-                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#editPreferencesModal">
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill text-end">
-                                                    <svg width="12" height="8" :class="[iconState ? 'collapse-icon' : 'collapse-icon-down']" @click="collapseClick()" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                      <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-bottom skills-table-details" v-if="iconState">
-                                        <td colspan="5" class="td-talent-details">
-                                             <div class="talent-details slide-up" id="Slider">
-                                                <div>
-                                                    <div class="table-head">
-                                                        <table class="table-talent-details border-sparate">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="col-talent-id" width="155">
-                                                                        Talent ID
-                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
-                                                                        </svg>
-                                                                    </th>
-                                                                    <th width="155">
-                                                                        Name
-                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
-                                                                        </svg>
-                                                                    </th>
-                                                                    <th width="155">
-                                                                        Monthly Rate
-                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
-                                                                        </svg>
-                                                                    </th> 
-                                                                    <th width="155">
-                                                                        <span class="text-pink">Angular</span>
-                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
-                                                                        </svg>
-                                                                    </th>
-                                                                    <th width="155">
-                                                                        <span class="text-violet">Drupal</span>
-                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
-                                                                        </svg>
-                                                                    </th>
-                                                                    <th width="155">
-                                                                        <span class="text-violet">JavaScript</span>
-                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
-                                                                        </svg>
-                                                                    </th>
-                                                                    <th width="155">
-                                                                        <span class="text-orange">More Skills</span>
-                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
-                                                                        </svg>
-                                                                    </th> 
-                                                                    <th class="col-action">
-                                                                        Action
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                    </table>   
-                                                </div>
-                                                <table class="table-talent-details td">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td width="155">BC-12345</td>
-                                                            <td width="155">Stanislav</td>
-                                                            <td width="155">6000 SGD</td>
-                                                            <td width="155"><span class="text-pink">7 years</span></td>
-                                                            <td width="155"><span class="text-violet">2 years</span></td>
-                                                            <td width="155"><span class="text-violet">7 years</span></td>
-                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
-                                                            <td>
-                                                                <div class="d-flex">
-                                                                    <div class="me-2">
-                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
-                                                                    </div>
-                                                                    <div>
-                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" html="true" data-bs-content='<div></div>' 
-                                                                            :data-bs-template='popupOverContent'>
-                                                                            Interview</button>                                                                        
-                                                                    </div>
+                                    <tr class="border-bottom" v-for="data in tableData" :key="data.id">
+                                   
+                                            <td colspan="5" class="p-0">
+                                                <table class="w-100 table-sub-data">
+                                                    <tr :class="{ 'border-bottom ':subData == data.id, 'row-disabled': !data.isEnable}">
+                                                        <td width="120">
+                                                            <div class="form-check form-switch">
+                                                                <input @click='selectRow($event, data)' :checked="data.isEnable" class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                                                            </div>
+                                                        </td>
+                                                        <td width="460">
+                                                            <div class="d-flex tags">
+                                                                <div class="tag-pink">Copywriting</div>
+                                                                <div class="tag-violet">React JS</div>
+                                                                <div class="tag-violet">Vue.js</div>
+                                                                <div class="tag-orange">Vue.js</div>
+                                                            </div>
+                                                        </td>
+                                                        <td width="380" class="td-text-skye-blue">
+                                                            <div class="td-country">
+                                                                Any Country | Junior, Mid-level
+                                                            </div>
+                                                        </td>
+                                                        <td class="td-filter">
+                                                            <span class="td-text-blue me-1">
+                                                                3 Matches!
+                                                            </span>
+                                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
+                                                            </svg>
+                                                            <span class="td-text-yellow-green ms-1">
+                                                                1 Shortlisted
+                                                            </span>
+                                                        </td>
+                                                        <td class="main-thead">
+                                                            <div class="d-flex">
+                                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
+                                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
+                                                                    </svg>
                                                                 </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="155">CB-13455</td>
-                                                            <td width="155">Peter</td>
-                                                            <td width="155">5000 SGD</td>
-                                                            <td width="155"><span class="text-pink">7 years</span></td>
-                                                            <td width="155"><span class="text-violet">2 years</span></td>
-                                                            <td width="155"><span class="text-violet">7 years</span></td>
-                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
-                                                            <td>
-                                                                <div class="d-flex">
-                                                                    <div class="me-2">
-                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
-                                                                    </div>
-                                                                    <div>
-                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" html="true" data-bs-content='<div></div>' 
-                                                                            :data-bs-template='popupOverContent'>
-                                                                            Interview</button>                                                                        
-                                                                    </div>
+                                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#editPreferencesModal">
+                                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
+                                                                    </svg>
                                                                 </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="155">XC-23042</td>
-                                                            <td width="155">Thomas</td>
-                                                            <td width="155">4400 SGD</td>
-                                                            <td width="155"><span class="text-pink">7 years</span></td>
-                                                            <td width="155"><span class="text-violet">2 years</span></td>
-                                                            <td width="155"><span class="text-violet">7 years</span></td>
-                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
-                                                            <td>
-                                                                <div class="d-flex">
-                                                                    <div class="me-2">
-                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
-                                                                    </div>
-                                                                    <div>
-                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" html="true" data-bs-content='<div></div>' 
-                                                                            :data-bs-template='popupOverContent'>
-                                                                            Interview</button>                                                                        
-                                                                    </div>
+                                                                <div class="flex-fill text-end">
+                                                                    <svg width="12" height="8" :class="[iconState && subData == data.id ? 'collapse-icon' : 'collapse-icon-down']" @click="collapseClick(data.id)" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
+                                                                    </svg>
                                                                 </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="155">NG-99020</td>
-                                                            <td width="155">Ammer</td>
-                                                            <td width="155">3400 SGD</td>
-                                                            <td width="155"><span class="text-pink">7 years</span></td>
-                                                            <td width="155"><span class="text-violet">2 years</span></td>
-                                                            <td width="155"><span class="text-violet">7 years</span></td>
-                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
-                                                            <td>
-                                                                <div class="d-flex">
-                                                                    <div class="me-2">
-                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
-                                                                    </div>
-                                                                    <div>
-                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" html="true" data-bs-content='<div></div>' 
-                                                                            :data-bs-template='popupOverContent'>
-                                                                            Interview</button>                                                                        
-                                                                    </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class=" skills-table-details" v-if="subData == data.id">
+                                                        <td colspan="5" class="td-talent-details">
+                                                            <div class="talent-details slide-up" id="Slider">
+                                                                <div>
+                                                                    <div class="table-head">
+                                                                        <table class="table-talent-details border-sparate">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th class="col-talent-id" width="155">
+                                                                                        Talent ID
+                                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
+                                                                                        </svg>
+                                                                                    </th>
+                                                                                    <th width="155">
+                                                                                        Name
+                                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
+                                                                                        </svg>
+                                                                                    </th>
+                                                                                    <th width="155">
+                                                                                        Monthly Rate
+                                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
+                                                                                        </svg>
+                                                                                    </th> 
+                                                                                    <th width="155">
+                                                                                        <span class="text-pink">Angular</span>
+                                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
+                                                                                        </svg>
+                                                                                    </th>
+                                                                                    <th width="155">
+                                                                                        <span class="text-violet">Drupal</span>
+                                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
+                                                                                        </svg>
+                                                                                    </th>
+                                                                                    <th width="155">
+                                                                                        <span class="text-violet">JavaScript</span>
+                                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
+                                                                                        </svg>
+                                                                                    </th>
+                                                                                    <th width="155">
+                                                                                        <span class="text-orange">More Skills</span>
+                                                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M11.0833 5.83333L6.99999 1.75L2.91666 5.83333L11.0833 5.83333ZM11.0833 8.16667L2.91666 8.16667L6.99999 12.25L11.0833 8.16667Z" fill="#DCDCDC"/>
+                                                                                        </svg>
+                                                                                    </th> 
+                                                                                    <th class="col-action">
+                                                                                        Action
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                    </table>   
                                                                 </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="155">AA-49294</td>
-                                                            <td width="155">Ansel</td>
-                                                            <td width="155">3200 SGD</td>
-                                                            <td width="155"><span class="text-pink">7 years</span></td>
-                                                            <td width="155"><span class="text-violet">2 years</span></td>
-                                                            <td width="155"><span class="text-violet">7 years</span></td>
-                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
-                                                            <td>
-                                                                <div class="d-flex">
-                                                                    <div class="me-2">
-                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
-                                                                    </div>
-                                                                    <div>
-                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" html="true" data-bs-content='<div></div>' 
-                                                                            :data-bs-template='popupOverContent'>
-                                                                            Interview</button>                                                                        
-                                                                    </div>
+                                                                <table class="table-talent-details td">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="155">BC-12345</td>
+                                                                            <td width="155">Stanislav</td>
+                                                                            <td width="155">6000 SGD</td>
+                                                                            <td width="155"><span class="text-pink">7 years</span></td>
+                                                                            <td width="155"><span class="text-violet">2 years</span></td>
+                                                                            <td width="155"><span class="text-violet">7 years</span></td>
+                                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
+                                                                            <td>
+                                                                                <div class="d-flex">
+                                                                                    <div class="me-2">
+                                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" @click="interview($event)" >Interview</button>                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="155">CB-13455</td>
+                                                                            <td width="155">Peter</td>
+                                                                            <td width="155">5000 SGD</td>
+                                                                            <td width="155"><span class="text-pink">7 years</span></td>
+                                                                            <td width="155"><span class="text-violet">2 years</span></td>
+                                                                            <td width="155"><span class="text-violet">7 years</span></td>
+                                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
+                                                                            <td>
+                                                                                <div class="d-flex">
+                                                                                    <div class="me-2">
+                                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" @click="interview($event)" >Interview</button>                                                               
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="155">XC-23042</td>
+                                                                            <td width="155">Thomas</td>
+                                                                            <td width="155">4400 SGD</td>
+                                                                            <td width="155"><span class="text-pink">7 years</span></td>
+                                                                            <td width="155"><span class="text-violet">2 years</span></td>
+                                                                            <td width="155"><span class="text-violet">7 years</span></td>
+                                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
+                                                                            <td>
+                                                                                <div class="d-flex">
+                                                                                    <div class="me-2">
+                                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" @click="interview($event)" >Interview</button>                                                         
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="155">NG-99020</td>
+                                                                            <td width="155">Ammer</td>
+                                                                            <td width="155">3400 SGD</td>
+                                                                            <td width="155"><span class="text-pink">7 years</span></td>
+                                                                            <td width="155"><span class="text-violet">2 years</span></td>
+                                                                            <td width="155"><span class="text-violet">7 years</span></td>
+                                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
+                                                                            <td>
+                                                                                <div class="d-flex">
+                                                                                    <div class="me-2">
+                                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" @click="interview($event)" >Interview</button>                                                             
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="155">AA-49294</td>
+                                                                            <td width="155">Ansel</td>
+                                                                            <td width="155">3200 SGD</td>
+                                                                            <td width="155"><span class="text-pink">7 years</span></td>
+                                                                            <td width="155"><span class="text-violet">2 years</span></td>
+                                                                            <td width="155"><span class="text-violet">7 years</span></td>
+                                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
+                                                                            <td>
+                                                                                <div class="d-flex">
+                                                                                    <div class="me-2">
+                                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" @click="interview($event)" >Interview</button>                                                              
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="155">KT-32438</td>
+                                                                            <td width="155">Matt</td>
+                                                                            <td width="155">2000 SGD</td>
+                                                                            <td width="155"><span class="text-pink">7 years</span></td>
+                                                                            <td width="155"><span class="text-violet">2 years</span></td>
+                                                                            <td width="155"><span class="text-violet">7 years</span></td>
+                                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
+                                                                            <td>
+                                                                                <div class="d-flex">
+                                                                                    <div class="me-2">
+                                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <!-- <button class="btn btn-sm btn-custom-blue btn-interview" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" html="true" data-bs-content='<div></div>' 
+                                                                                            :data-bs-template='popupOverContent'>
+                                                                                            Interview</button> -->
+                                                                                            <button class="btn btn-sm btn-custom-blue btn-interview" @click="interview($event)" >Interview</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>   
                                                                 </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="155">KT-32438</td>
-                                                            <td width="155">Matt</td>
-                                                            <td width="155">2000 SGD</td>
-                                                            <td width="155"><span class="text-pink">7 years</span></td>
-                                                            <td width="155"><span class="text-violet">2 years</span></td>
-                                                            <td width="155"><span class="text-violet">7 years</span></td>
-                                                            <td width="170"><span class="text-orange">5 more skills</span></td>
-                                                            <td>
-                                                                <div class="d-flex">
-                                                                    <div class="me-2">
-                                                                        <button class="btn btn-sm btn-custom-green btn-add-order">Add to Order</button>                                                        
-                                                                    </div>
-                                                                    <div>
-                                                                        <button class="btn btn-sm btn-custom-blue btn-interview" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" html="true" data-bs-content='<div></div>' 
-                                                                            :data-bs-template='popupOverContent'>
-                                                                            Interview</button>                                                                        
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table>   
-                                                </div>
-                                            </div>
-                                        </td>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>                                        
                                     </tr>
-                                    <tr class="border-bottom">
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                                            </div>
-                                        </td>
-                                        <td>
-                                           <div class="d-flex tags">
-                                              <div class="tag-pink">Copywriting</div>
-                                              <div class="tag-violet">React JS</div>
-                                              <div class="tag-violet">Vue.js</div>
-                                              <div class="tag-orange">Vue.js</div>
-                                           </div>
-                                        </td>
-                                        <td class="td-text-skye-blue">
-                                            Any Country | Junior, Mid-level
-                                        </td>
-                                        <td class="td-filter">
-                                            <span class="td-text-blue me-1">
-                                                3 Matches!
-                                            </span>
-                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
-                                            </svg>
-                                            <span class="td-text-yellow-green ms-1">
-                                                1 Shortlisted
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
-                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#editPreferencesModal">
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill text-end">
-                                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                      <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-bottom"> 
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                                            </div>
-                                        </td>
-                                        <td>
-                                           <div class="d-flex tags">
-                                              <div class="tag-pink">Copywriting</div>
-                                              <div class="tag-violet">React JS</div>
-                                              <div class="tag-violet">Vue.js</div>
-                                              <div class="tag-orange">Vue.js</div>
-                                           </div>
-                                        </td>
-                                        <td class="td-text-skye-blue">
-                                            Any Country | Junior, Mid-level
-                                        </td>
-                                        <td class="td-filter">
-                                            <span class="td-text-blue me-1">
-                                                3 Matches!
-                                            </span>
-                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
-                                            </svg>
-                                            <span class="td-text-yellow-green ms-1">
-                                                1 Shortlisted
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
-                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#editPreferencesModal">
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill text-end">
-                                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                       <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
-                                                    </svg>
-
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-bottom">
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                                            </div>
-                                        </td>
-                                        <td>
-                                           <div class="d-flex tags">
-                                              <div class="tag-pink">Copywriting</div>
-                                              <div class="tag-violet">React JS</div>
-                                              <div class="tag-violet">Vue.js</div>
-                                              <div class="tag-orange">Vue.js</div>
-                                           </div>
-                                        </td>
-                                        <td class="td-text-skye-blue">
-                                            Any Country | Junior, Mid-level
-                                        </td>
-                                        <td class="td-filter">
-                                            <span class="td-text-blue me-1">
-                                                3 Matches!
-                                            </span>
-                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
-                                            </svg>
-                                            <span class="td-text-yellow-green ms-1">
-                                                1 Shortlisted
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
-                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#editPreferencesModal">
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill text-end">
-                                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
-                                                    </svg> 
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-
-                                    <tr class="border-bottom text-disabled">
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-                                            </div>
-                                        </td>
-                                        <td>
-                                           <div class="d-flex tags">
-                                              <div class="tag-gray">Copywriting</div>
-                                              <div class="tag-gray">React JS</div>
-                                              <div class="tag-gray">Vue.js</div>
-                                              <div class="tag-gray">Vue.js</div>
-                                           </div>
-                                        </td>
-                                        <td class="td-text-gray">
-                                            Any Country | Junior, Mid-level
-                                        </td>
-                                        <td class="td-filter">
-                                            <span class="td-text-gray me-1">
-                                                3 Matches!
-                                            </span>
-                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
-                                            </svg>
-                                            <span class="td-text-gray ms-1">
-                                                1 Shortlisted
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
-                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#editPreferencesModal">
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill text-end">
-                                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
-                                                    </svg> 
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-bottom text-disabled">
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-                                            </div>
-                                        </td>
-                                        <td>
-                                           <div class="d-flex tags">
-                                              <div class="tag-gray">Copywriting</div>
-                                              <div class="tag-gray">React JS</div>
-                                              <div class="tag-gray">Vue.js</div>
-                                              <div class="tag-gray">Vue.js</div>
-                                           </div>
-                                        </td>
-                                        <td class="td-text-gray">
-                                            Any Country | Junior, Mid-level
-                                        </td>
-                                        <td class="td-filter">
-                                            <span class="td-text-gray me-1">
-                                                3 Matches!
-                                            </span>
-                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
-                                            </svg>
-                                            <span class="td-text-gray ms-1">
-                                                1 Shortlisted
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
-                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#editPreferencesModal">
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill text-end">
-                                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
-                                                    </svg> 
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-bottom text-disabled">
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input check-input-switch check-input-switch-custom" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-                                            </div>
-                                        </td>
-                                        <td>
-                                           <div class="d-flex tags">
-                                              <div class="tag-gray">Copywriting</div>
-                                              <div class="tag-gray">React JS</div>
-                                              <div class="tag-gray">Vue.js</div>
-                                              <div class="tag-gray">Vue.js</div>
-                                           </div>
-                                        </td>
-                                        <td class="td-text-gray">
-                                            Any Country | Junior, Mid-level
-                                        </td>
-                                        <td class="td-filter">
-                                            <span class="td-text-gray me-1">
-                                                3 Matches!
-                                            </span>
-                                            <svg width="3" height="14" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M1.104 13.496C1.024 13.496 0.956 13.468 0.9 13.412C0.844 13.356 0.816 13.288 0.816 13.208V0.536C0.816 0.456 0.844 0.388 0.9 0.331999C0.956 0.276 1.024 0.248 1.104 0.248H1.884C1.964 0.248 2.032 0.276 2.088 0.331999C2.144 0.388 2.172 0.456 2.172 0.536V13.208C2.172 13.288 2.144 13.356 2.088 13.412C2.032 13.468 1.964 13.496 1.884 13.496H1.104Z" fill="#6D6D6D"/>
-                                            </svg>
-                                            <span class="td-text-gray ms-1">
-                                                1 Shortlisted
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <div class="flex-fill cursor-pointer" data-bs-toggle="modal" data-bs-target="#deleteSkillModal">
-                                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill">
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.545 4.765L9.235 5.455L2.44 12.25H1.75V11.56L8.545 4.765ZM11.245 0.25C11.0575 0.25 10.8625 0.325 10.72 0.4675L9.3475 1.84L12.16 4.6525L13.5325 3.28C13.825 2.9875 13.825 2.515 13.5325 2.2225L11.7775 0.4675C11.6275 0.3175 11.44 0.25 11.245 0.25ZM8.545 2.6425L0.25 10.9375V13.75H3.0625L11.3575 5.455L8.545 2.6425Z" fill="#C9C9C9"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="flex-fill text-end">
-                                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.2075 0.874023L6 5.07236L1.7925 0.874023L0.5 2.16652L6 7.66652L11.5 2.16652L10.2075 0.874023Z" fill="#2C91FF"/>
-                                                    </svg> 
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    
+                                    
 
                                     <tr class="border-bottom ">
                                         <td>
@@ -1007,7 +716,7 @@
                                         <td class="td-filter">
                                           
                                         </td>
-                                        <td>
+                                        <td width="120">
                                             <div class="d-flex">
                                                 <div class="flex-fill invisible">
                                                     <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1034,29 +743,587 @@
                 </div>
             </div>
         </div>
-        <SkillScannerModal></SkillScannerModal>           
-         
+        <SkillScannerModal></SkillScannerModal>
+
+        <div class="popover sched-interview-popup-over arrow-popup"  :style="popupStyle" v-if="showPopup">
+       
+            <div class="popover-inner">
+                <div class="popupHead">
+                    Schedule Interview    
+                </div>
+                <div class="p-14">
+                    <div class='pick-a-sched'>
+                        Pick a Schedule
+                    </div>
+                    <div>
+                        <div class="form-check mt-3">
+                            <input class="normal-check-box  normal-radio input-radio" type="radio" v-on:click="customDate($event)"   name="sched" value="qsched" id="quickSched" checked >
+                            <label class="form-check-label quickSched" for="quickSched">
+                                Quick Schedule
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-sm btn-outline-blue fw-bold px-3 me-2" >12 SEP | 10:35 AM</button>
+                        <button class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">12 SEP | 10:35 AM</button>
+                        <button class="btn btn-sm btn-outline-blue fw-bold px-3">12 SEP | 10:35 AM</button>
+                    </div>
+                    <div>    
+                        <div class="form-check mt-3">
+                            <input class="normal-check-box normal-radio input-radio" type="radio" v-on:click="customDate($event)" value="customDate"  name="sched" id="custoDateTime">
+                            <label class="form-check-label custoDateTime" for="custoDateTime">
+                                Custom Date & Time
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button v-if="customeDate" class="btn btn-sm btn-outline-blue fw-bold px-3 me-2" >{{customeDate}}</button>
+                    </div>
+                </div>
+                <div class="popupFooter text-end">
+                    <button type="button" class="btn btn-primary btn-save-changes " @click="scheduleInterview()" data-bs-toggle="modal" data-bs-target="#book-interview">Schedule Interview</button>
+                </div>
+            </div>
+        </div>
+        <axdatepicker 
+            :style="dateStyle"
+            v-if="showPopUpOver"
+            :isDateShown="dateConfig.isDateShown" 
+            :type="dateConfig.type" 
+            :label="dateConfig.label" 
+            :calendar="dateConfig.calendar" 
+            :startTime="dateConfig.startTime" 
+            :endTime="dateConfig.endTime" 
+            @clicked="onClickOkBtn"
+            :timeZone="dateConfig.timeZone">
+       </axdatepicker>
     </div>
 </template>
 <script>
     import * as bootstrap  from 'bootstrap';
     import SkillScannerModal from '../modals/SkillScannerModal.vue';
+    import axdatepicker from '../datepicker/axdatepicker.vue';
+    import {compile} from "vue"
     export default {
         name: 'SkillScanner',
         data() {
             return {
-                tableData:{
-                    isEnable: true,
-                    skilss: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
-                },
+                tableData:[
+                    {
+                        id: 1,
+                        isEnable: true,
+                        skills: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
+                        country: 'Any Country',
+                        experience: 'Junior, Mid-level',
+                        filter: ['3 Matches!', ' 1 Shortlisted'],
+                        data:[
+                            {
+                                id:1,
+                                talentId: 'BC-12345',
+                                name: 'Stanislav',
+                                monthlyRate: '6000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:2,
+                                talentId: 'CB-13455',
+                                name: 'Peter',
+                                monthlyRate: '5000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:3,
+                                talentId: 'XC-23042',
+                                name: 'Thomas',
+                                monthlyRate: '4400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:4,
+                                talentId: 'NG-99020',
+                                name: 'Ammer',
+                                monthlyRate: '3400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:5,
+                                talentId: 'AA-49294',
+                                name: 'Ansel',
+                                monthlyRate: '3200 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:6,
+                                talentId: 'KT-32438',
+                                name: 'Matt',
+                                monthlyRate: '2000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            }
+                         ]
+                    },
+                    {
+                        id: 2,
+                        isEnable: true,
+                        skills: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
+                        country: 'Any Country',
+                        experience: 'Junior, Mid-level',
+                        filter: ['3 Matches!', ' 1 Shortlisted'],
+                        data:[
+                            {
+                                id:7,
+                                talentId: 'BC-12345',
+                                name: 'Stanislav',
+                                monthlyRate: '6000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:8,
+                                talentId: 'CB-13455',
+                                name: 'Peter',
+                                monthlyRate: '5000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:9,
+                                talentId: 'XC-23042',
+                                name: 'Thomas',
+                                monthlyRate: '4400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:10,
+                                talentId: 'NG-99020',
+                                name: 'Ammer',
+                                monthlyRate: '3400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:11,
+                                talentId: 'AA-49294',
+                                name: 'Ansel',
+                                monthlyRate: '3200 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:12,
+                                talentId: 'KT-32438',
+                                name: 'Matt',
+                                monthlyRate: '2000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            }
+                         ]
+                    },
+                    {
+                        id: 3,
+                        isEnable: true,
+                        skills: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
+                        country: 'Any Country',
+                        experience: 'Junior, Mid-level',
+                        filter: ['3 Matches!', ' 1 Shortlisted'],
+                        data:[
+                            {
+                                id:13,
+                                talentId: 'BC-12345',
+                                name: 'Stanislav',
+                                monthlyRate: '6000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:14,
+                                talentId: 'CB-13455',
+                                name: 'Peter',
+                                monthlyRate: '5000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:15,
+                                talentId: 'XC-23042',
+                                name: 'Thomas',
+                                monthlyRate: '4400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:16,
+                                talentId: 'NG-99020',
+                                name: 'Ammer',
+                                monthlyRate: '3400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:17,
+                                talentId: 'AA-49294',
+                                name: 'Ansel',
+                                monthlyRate: '3200 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:18,
+                                talentId: 'KT-32438',
+                                name: 'Matt',
+                                monthlyRate: '2000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            }
+                         ]
+                    },
+                    {
+                        id: 4,
+                        isEnable: false,
+                        skills: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
+                        country: 'Any Country',
+                        experience: 'Junior, Mid-level',
+                        filter: ['3 Matches!', ' 1 Shortlisted'],
+                        data:[
+                            {
+                                id:19,
+                                talentId: 'BC-12345',
+                                name: 'Stanislav',
+                                monthlyRate: '6000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:20,
+                                talentId: 'CB-13455',
+                                name: 'Peter',
+                                monthlyRate: '5000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:21,
+                                talentId: 'XC-23042',
+                                name: 'Thomas',
+                                monthlyRate: '4400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:22,
+                                talentId: 'NG-99020',
+                                name: 'Ammer',
+                                monthlyRate: '3400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:23,
+                                talentId: 'AA-49294',
+                                name: 'Ansel',
+                                monthlyRate: '3200 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:24,
+                                talentId: 'KT-32438',
+                                name: 'Matt',
+                                monthlyRate: '2000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            }
+                         ]
+                    },
+                    {
+                        id: 5,
+                        isEnable: false,
+                        skills: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
+                        country: 'Any Country',
+                        experience: 'Junior, Mid-level',
+                        filter: ['3 Matches!', ' 1 Shortlisted'],
+                        data:[
+                            {
+                                id:25,
+                                talentId: 'BC-12345',
+                                name: 'Stanislav',
+                                monthlyRate: '6000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:26,
+                                talentId: 'CB-13455',
+                                name: 'Peter',
+                                monthlyRate: '5000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:27,
+                                talentId: 'XC-23042',
+                                name: 'Thomas',
+                                monthlyRate: '4400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:28,
+                                talentId: 'NG-99020',
+                                name: 'Ammer',
+                                monthlyRate: '3400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:29,
+                                talentId: 'AA-49294',
+                                name: 'Ansel',
+                                monthlyRate: '3200 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:30,
+                                talentId: 'KT-32438',
+                                name: 'Matt',
+                                monthlyRate: '2000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            }
+                         ]
+                    },
+                    {
+                        id: 6,
+                        isEnable: false,
+                        skills: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
+                        country: 'Any Country',
+                        experience: 'Junior, Mid-level',
+                        filter: ['3 Matches!', ' 1 Shortlisted'],
+                        data:[
+                            {
+                                id:31,
+                                talentId: 'BC-12345',
+                                name: 'Stanislav',
+                                monthlyRate: '6000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:32,
+                                talentId: 'CB-13455',
+                                name: 'Peter',
+                                monthlyRate: '5000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:33,
+                                talentId: 'XC-23042',
+                                name: 'Thomas',
+                                monthlyRate: '4400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:34,
+                                talentId: 'NG-99020',
+                                name: 'Ammer',
+                                monthlyRate: '3400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:35,
+                                talentId: 'AA-49294',
+                                name: 'Ansel',
+                                monthlyRate: '3200 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:36,
+                                talentId: 'KT-32438',
+                                name: 'Matt',
+                                monthlyRate: '2000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            }
+                         ]
+                    },
+                    {
+                        id: 7,
+                        isEnable: false,
+                        skills: ['Copywriting', 'React JS', 'Vue.js', 'Vue.js' ],
+                        country: 'Any Country',
+                        experience: 'Junior, Mid-level',
+                        filter: ['3 Matches!', ' 1 Shortlisted'],
+                        data:[
+                            {
+                                id:37,
+                                talentId: 'BC-12345',
+                                name: 'Stanislav',
+                                monthlyRate: '6000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:38,
+                                talentId: 'CB-13455',
+                                name: 'Peter',
+                                monthlyRate: '5000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:39,
+                                talentId: 'XC-23042',
+                                name: 'Thomas',
+                                monthlyRate: '4400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:40,
+                                talentId: 'NG-99020',
+                                name: 'Ammer',
+                                monthlyRate: '3400 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:41,
+                                talentId: 'AA-49294',
+                                name: 'Ansel',
+                                monthlyRate: '3200 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            },
+                            {
+                                id:42,
+                                talentId: 'KT-32438',
+                                name: 'Matt',
+                                monthlyRate: '2000 SGD',
+                                angular: '2 years',
+                                drupal: '7 years',
+                                javascript: '7 years',
+                                moreSkills: {length:5},
+                            }
+                         ]
+                    }
+                ],
                 iconState: false,
+                subData: '',
                 anyCountry:true,
                 anyLabel:false,
-                popupOverContent: '',   
+                showPopUpOver:false,
+                showPopup:false,
+                popupOverContent: '',
+                customeDate: '',
+                dateConfig:{
+                    isDateShown:true,
+                    type:"radio",
+                    label:"Custom Date & Time",
+                    calendar:new Date(),
+                    startTime:{time:'10:00',timeConvention:'AM'},
+                    endTime:{time:'10:00',timeConvention:'AM'},
+                    timeZone:'(GMT -05:00) Eastern Time (US & Canada)'
+                },
+                popupStyle: {},
+                dateStyle: {},             
             }
         },
         components:{
-            SkillScannerModal
+            SkillScannerModal,
+            axdatepicker,
         },
         mounted(){
             var tags = [];
@@ -1133,62 +1400,136 @@
 
             }
         },
-        methods:{
-        
+        methods:{     
+            onClickOkBtn(data){
+                console.log(data);
+                this.showPopUpOver = false;
+                this.customeDate = data.dateData.date+" "+data.dateData.shortMonth+" | "+data.timeData.startTime.time+" "+data.timeData.startTime.timeConvention;;
+            },   
+            interview(e){
+                this.showPopup = !this.showPopup;
+                this.showPopUpOver = false;
+                this.popupStyle = {
+                   "left": (e.layerX-480)+'px',
+                   "top": (e.layerY+30)+'px',
+                }
+                this.dateStyle = {
+                   "left": (e.layerX-995)+'px',
+                   "top": (e.layerY+30)+'px',
+                }
+            },
+            scheduleInterview(){
+                this.showPopup = false;
+                this.showPopUpOver = false;
+            },
+            selectRow(event, data){       
+                if(event.target.checked == false){
+                    this.iconState = false;
+                    this.subData = '';
+                    this.tableData.map(x =>{
+                        if(x.id == data.id){
+                            x.isEnable = false;
+                        }
+                        return x;
+                    })
+                  
+                }else{                    
+                    this.tableData.map(x =>{
+                        if(x.id == data.id){
+                            x.isEnable = true;
+                        }
+                        return x;
+                    })
+
+                    this.subData = '';
+                }                    
+            },
             checkCountry(e){            
                 this.anyCountry = e;            
             }, 
             checkLabel(e){            
                 this.anyLabel = e;            
-            },             
-            collapseClick(e){            
+            },      
+            customDate(e){     
+                this.customeDate = ''          
+                if(e.target.value == "customDate"){
+                    this.showPopUpOver = true;
+                    this.dateConfig = {
+                        isDateShown:true,
+                        type:"radio",
+                        label:"Custom Date & Time",
+                        calendar:new Date(),
+                        startTime:{time:'10:00',timeConvention:'AM'},
+                        endTime:{time:'10:00',timeConvention:'AM'},
+                        timeZone: '(GMT -05:00) Eastern Time (US & Canada)'
+                    }
+                 }else{
+                    this.showPopUpOver = false;
+                    this.dateConfig = {                      
+                        isDateShown:true,
+                        type:"radio",
+                        label:"Custom Date & Time",
+                        calendar:new Date(),
+                        startTime:{time:'10:00',timeConvention:'AM'},
+                        endTime:{time:'10:00',timeConvention:'AM'},
+                        timeZone: '(GMT -05:00) Eastern Time (US & Canada)'
+                    }
+                }
+            },  
+            collapseClick(id){       
+                let subData= this.subData;     
+                this.subData = id;
                 this.iconState = !this.iconState;
-                this.popupOverContent = `<div class="popover sched-interview-popup-over" ref='popupOverContent' role="popover">
-                                            <div class="popover-arrow  sched-interview-popover-arrow"></div>
-                                            <div class="popover-inner">
-                                                <div class="popupHead">
-                                                    Schedule Interview    
-                                                </div>
-                                                <div class="p-14">
-                                                    <div class='pick-a-sched'>
-                                                        Pick a Schedule
-                                                    </div>
-                                                    <div>
-                                                        <div class="form-check mt-3">
-                                                            <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched" id="quickSched" checked >
-                                                            <label class="form-check-label quickSched" for="quickSched">
-                                                                Quick Schedule
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mt-2">
-                                                        <button class="btn btn-sm btn-outline-blue fw-bold px-3 me-2" >12 SEP | 10:35 AM</button>
-                                                        <button class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">12 SEP | 10:35 AM</button>
-                                                        <button class="btn btn-sm btn-outline-blue fw-bold px-3">12 SEP | 10:35 AM</button>
-                                                    </div>
-                                                    <div>
-                                                        <div class="form-check mt-3">
-                                                            <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched" id="custoDateTime">
-                                                            <label class="form-check-label custoDateTime" for="custoDateTime">
-                                                                Custom Date & Time
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="popupFooter text-end">
-                                                    <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal" data-bs-target="#book-interview">Schedule Interview</button>
-                                                </div>
-                                            </div>
-                                        </div>`;
-                setTimeout(() => Slider.classList.toggle("slide-down"), 1);
-                this.$nextTick(() => {
-                    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-                    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
-                        html: true,
-                        sanitize: false
-                    }));  
+                if(!this.iconState && subData == id){
+                    this.subData = "";
+                }else{
+                    setTimeout(() => Slider.classList.toggle("slide-down"), 1);
+                }
+                // this.popupOverContent = `<div class="popover sched-interview-popup-over" ref='popupOverContent' role="popover">
+                //                             <div class="popover-arrow  sched-interview-popover-arrow"></div>
+                //                             <div class="popover-inner">
+                //                                 <div class="popupHead">
+                //                                     Schedule Interview    
+                //                                 </div>
+                //                                 <div class="p-14">
+                //                                     <div class='pick-a-sched'>
+                //                                         Pick a Schedule
+                //                                     </div>
+                //                                     <div>
+                //                                         <div class="form-check mt-3">
+                //                                             <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched" id="quickSched" checked >
+                //                                             <label class="form-check-label quickSched" for="quickSched">
+                //                                                 Quick Schedule
+                //                                             </label>
+                //                                         </div>
+                //                                     </div>
+                //                                     <div class="mt-2">
+                //                                         <button class="btn btn-sm btn-outline-blue fw-bold px-3 me-2" >12 SEP | 10:35 AM</button>
+                //                                         <button class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">12 SEP | 10:35 AM</button>
+                //                                         <button class="btn btn-sm btn-outline-blue fw-bold px-3">12 SEP | 10:35 AM</button>
+                //                                     </div>
+                //                                     <div>    
+                //                                         <div class="form-check mt-3">
+                //                                             <input class="normal-check-box normal-radio input-radio" type="radio" v-on:click="customDate()"  name="sched" id="custoDateTime">
+                //                                             <label class="form-check-label custoDateTime" for="custoDateTime">
+                //                                                 Custom Date & Time
+                //                                             </label>
+                //                                         </div>
+                //                                     </div>
+                //                                 </div>
+                //                                 <div class="popupFooter text-end">
+                //                                     <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal" data-bs-target="#book-interview">Schedule Interview</button>
+                //                                 </div>
+                //                             </div>
+                //                         </div>`;
+                //  this.$nextTick(() => {
+                //     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+                //     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
+                //         html: true,
+                //         sanitize: false
+                //     }));  
                                 
-                 });
+                //  });
             },      
         }
     }
@@ -1422,5 +1763,12 @@
     } 
     .cursor-pointer{
         cursor:pointer;
+    }
+    .row-disabled .tags div{
+        color:gray;
+        background:#EDEDED;
+    }
+    .row-disabled .td-country, .row-disabled  .td-filter span{
+        color:gray !important;
     }
 </style>

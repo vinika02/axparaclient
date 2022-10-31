@@ -1,0 +1,149 @@
+
+.date-container {
+  position: absolute;
+  
+}
+
+.date-container .normal-radio{
+  accent-color: #2C91FF;
+  transform: scale(1.4);
+}
+
+.calendar {
+  width: 280px;
+  background-color: #ffff;
+  border-right: 1px solid #EDEDED; 
+}
+.date-container .time-and-date{
+  box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 15%);
+  background-color: #ffff;
+  border:1px solid #ccc;
+}
+.radio-cofig-label{
+  color: #27304C;
+  font-weight: 600;
+  font-size: 14px;
+  padding-left: 6px;
+}
+.time-select .form-control{
+  width: 100px;
+}
+.time-select .form-select{
+  width: 80px;
+}
+.time-zone{
+  width: 191px !important;
+}
+.month {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 8px;
+  text-align: center;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.month i {
+  cursor: pointer;
+}
+
+.month .month-header, .time .time-header {
+  font-weight: 500;
+  font-size: 14px;
+  align-items: center;
+  text-align: center;
+  font-family: RubikMedium;
+  font-style: normal;
+  margin-top: 5px;
+}
+.time-header2{
+  font-weight: 500;
+  font-size: 14px;
+  font-family: RubikMedium;
+  font-style: normal;
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+.time{
+  width: 220px;
+  padding: 9px 8px;
+  border-bottom: 1px solid #EDEDED;
+
+}
+
+.month p {
+  font-size: 1.6rem;
+}
+.days .selected-date{
+  background-color: #5D5FEF;
+  border-radius: 2px;
+  color: white;
+}
+
+.weekdays {
+  width: 100%;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font-family: RubikRegular;
+  color: #27304C;
+}
+
+.weekdays div {
+  font-weight: 400;
+  font-size: 14px;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.days div {
+  font-size: 14px;
+  margin: 0.3rem;
+  width: calc(12.5rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  transition: background-color 0.2s;
+  font-family: RubikRegular;
+  color: #27304C;
+  height: 30px;
+}
+
+.days div:hover:not(.today) {
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.today {
+  background-color: #2C91FF;
+  border-radius: 2px;
+  color: white !important;
+}
+.ax-calendar-button{
+  border-top: 1px solid #EDEDED;
+  padding: 8px;
+}
+.ax-calendar-button .btn-ok{
+  color:white;
+  padding-left: 14px;
+  padding-right: 14px;
+}

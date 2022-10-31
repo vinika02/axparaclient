@@ -15,7 +15,6 @@ const getters = {
 const mutations = {
     SET_SKILLSS(state, data) {       
         state.skills = data;
-        console.log(state);
     }
 }
 const actions = {

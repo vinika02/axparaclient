@@ -3,10 +3,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    
     {
       path: '/',
-      name: 'CommingSoon',
-      component: () => import('../components/pages/ComingSoon.vue')
+      name: 'AccessTheWorld',
+      component: () => import('../components/pages/AccessTheWorld.vue')
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../components/authentication/Login.vue')
     },
     {
       path: '/skillscanner',
@@ -22,6 +28,11 @@ const router = createRouter({
       path: '/dashboard/persona2',
       name: 'Persona2',
       component: () => import('../components/pages/dashboard/Persona2.vue')
+    },
+    {
+      path: '/dashboard/persona3',
+      name: 'Persona3',
+      component: () => import('../components/pages/dashboard/Persona3.vue')
     },
     {
       path: '/my-talent',
@@ -47,11 +58,6 @@ const router = createRouter({
       path: '/my-account',
       name: 'MyAccount',
       component: () => import('../components/pages/ComingSoon.vue')
-    },
-    {
-      path: '/access-the-world',
-      name: 'AccessTheWorld',
-      component: () => import('../components/pages/AccessTheWorld.vue')
     },
   ]
 })
