@@ -224,12 +224,7 @@
                                 </td>
                                 <td width="20">
                                     <div class="more" 
-                                         data-bs-container="body" 
-                                         data-bs-toggle="popover" 
-                                         data-bs-placement="bottom" 
-                                         html="true" 
-                                         data-bs-content='<div></div>'                                                                             
-                                         :data-bs-template='popupOverContent'>
+                                     @click="schecduleInterview($event)">
                                             more
                                     </div>
                                 </td>
@@ -275,12 +270,7 @@
                                 </td>
                                 <td width="20">
                                     <div class="more" 
-                                         data-bs-container="body" 
-                                         data-bs-toggle="popover" 
-                                         data-bs-placement="bottom" 
-                                         html="true" 
-                                         data-bs-content='<div></div>'                                                                             
-                                         :data-bs-template='popupOverContent'>
+                                     @click="schecduleInterview($event)">
                                             more
                                     </div>
                                 </td>
@@ -324,13 +314,8 @@
                                 <td align="right">
                                     <div class="morepen">
                                         <img src="../../../assets/images/mytalents/persona2/pencil.png" alt=""
-                                          data-bs-container="body" 
-                                          data-bs-toggle="popover" 
-                                          data-bs-placement="bottom" 
-                                          html="true" 
-                                          data-bs-content='<div></div>'                                                                             
-                                          :data-bs-template='popupEditConfirm'
-                                         >
+                                          @click="editConfirm($event)"
+                                          >
                                     </div>   
                                 </td>
                             </tr>     
@@ -372,12 +357,8 @@
                                 <td align="right">
                                     <div class="morepen">
                                         <img src="../../../assets/images/mytalents/persona2/pencil.png" alt=""
-                                          data-bs-container="body" 
-                                          data-bs-toggle="popover" 
-                                          data-bs-placement="bottom" 
-                                          html="true" 
-                                          data-bs-content='<div></div>'                                                                             
-                                          :data-bs-template='popupEditConfirm'>
+                                          @click="editConfirm($event)"
+                                          >
                                     </div>   
                                 </td>
                             </tr>   
@@ -421,12 +402,7 @@
                                 </td>
                                 <td>
                                     <div class="more" 
-                                         data-bs-container="body" 
-                                         data-bs-toggle="popover" 
-                                         data-bs-placement="bottom" 
-                                         html="true" 
-                                         data-bs-content='<div></div>'                                                                             
-                                         :data-bs-template='popupOverContent'>
+                                     @click="schecduleInterview($event)">
                                             more
                                     </div>
                                 </td>
@@ -471,12 +447,7 @@
                                 </td>
                                 <td>
                                     <div class="more" 
-                                         data-bs-container="body" 
-                                         data-bs-toggle="popover" 
-                                         data-bs-placement="bottom" 
-                                         html="true" 
-                                         data-bs-content='<div></div>'                                                                             
-                                         :data-bs-template='popupOverContent'>
+                                     @click="schecduleInterview($event)">
                                             more
                                     </div>
                                 </td>
@@ -521,12 +492,7 @@
                                 </td>
                                 <td>
                                     <div class="more" 
-                                         data-bs-container="body" 
-                                         data-bs-toggle="popover" 
-                                         data-bs-placement="bottom" 
-                                         html="true" 
-                                         data-bs-content='<div></div>'                                                                             
-                                         :data-bs-template='popupOverContent'>
+                                     @click="schecduleInterview($event)">
                                             more
                                     </div>
                                 </td>
@@ -571,12 +537,7 @@
                                 </td>
                                 <td>
                                     <div class="more" 
-                                         data-bs-container="body" 
-                                         data-bs-toggle="popover" 
-                                         data-bs-placement="bottom" 
-                                         html="true" 
-                                         data-bs-content='<div></div>'                                                                             
-                                         :data-bs-template='popupOverContent'>
+                                     @click="schecduleInterview($event)">
                                             more
                                     </div>
                                 </td>
@@ -619,12 +580,7 @@
                                 <td align="right">
                                     <div class="morepen">
                                         <img src="../../../assets/images/mytalents/persona2/pencil.png" alt=""
-                                          data-bs-container="body" 
-                                          data-bs-toggle="popover" 
-                                          data-bs-placement="bottom" 
-                                          html="true" 
-                                          data-bs-content='<div></div>'                                                                             
-                                          :data-bs-template='popupEditConfirm'
+                                          @click="editConfirm($event)"
                                           >
                                     </div>   
                                 </td>
@@ -669,12 +625,7 @@
                                 </td>
                                 <td>
                                     <div class="more" 
-                                         data-bs-container="body" 
-                                         data-bs-toggle="popover" 
-                                         data-bs-placement="bottom" 
-                                         html="true" 
-                                         data-bs-content='<div></div>'                                                                             
-                                         :data-bs-template='popupOverContent'>
+                                     @click="schecduleInterview($event)">
                                             more
                                     </div>
                                 </td>
@@ -686,83 +637,52 @@
 
                 <!-- table 3 -->
                 <StartInterview></StartInterview>
-                
-               
-            </div>
-        </div>
-    </div>
-    <SkillScannerModal></SkillScannerModal>  
-    <Persona2Modal></Persona2Modal>
-</template>
-<script>
-import * as bootstrap  from 'bootstrap';
-import Persona2Modal from '@/components/modals/Persona2Modal.vue';
-import StartInterview from './components/StartInterview';
-import HelloHeader from './components/HelloHeader';
-import SkillScannerModal from '../../modals/SkillScannerModal.vue';
-export default {
-    name: "Persona2",
-    data() {
-        return {
-            table1: {
-                frameword: ["Copywriting", "React JS", "Vue.JS", "Project Management", "Php", "Fullstack", "Typescript", "Node.js", "Docker", "Agile", "Python", "Rest API",],
-            },
-            popupOverContent: '',   
-            popupEditConfirm: '',   
-        };
-    },
-    created() {
-    },
-    mounted() {
-        this.loadPoupOver();
-   },
-    methods: {
-        loadPoupOver(){            
-                     this.popupOverContent =
-                        `<div class="popover sched-interview-popup-over" ref='popupOverContent' role="popover">
-                            <div class="popover-arrow  sched-interview-popover-arrow"></div>
-                                <div class="popover-inner">
-                                    <div class="popupHead">
-                                            Schedule Interview    
-                                    </div>
-                                    <div class="popupSubHead">
-                                        <div>
-                                            <span>Schedule:</span> <span class='text-green'>25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)</span> 
-                                        </div> 
-                                    </div>
-                                    <div class="p-14">
-                                        <div class='pick-a-sched'>
-                                            Pick a Schedule
-                                        </div>
-                                        <div>
-                                            <div class="form-check mt-3">
-                                                <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched" id="quickSched" checked >
-                                                <label class="form-check-label quickSched" for="quickSched">
-                                                    Quick Schedule
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="mt-2">
-                                            <button class="btn btn-custom-outline-blue px-3 me-2" >12 SEP | 10:35 AM</button>
-                                            <button class="btn btn-custom-outline-blue px-3 me-2">12 SEP | 10:35 AM</button>
-                                            <button class="btn btn-custom-outline-blue px-3">12 SEP | 10:35 AM</button>
-                                        </div>
-                                        <div>
-                                            <div class="form-check mt-3">
-                                                <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched" id="custoDateTime">
-                                                <label class="form-check-label custoDateTime" for="custoDateTime">
-                                                    Custom Date & Time
-                                                </label>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div class="popupFooter text-end">
-                                    <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal" data-bs-target="#book-interview">Schedule Interview</button>
-                                </div>
+                <div class="popover sched-interview-popup-over arrow-popup"  :style="popupStyle" v-if="popupSchedInterview">
+                    <div class="popover-arrow  sched-interview-popover-arrow"></div>
+                        <div class="popover-inner">
+                            <div class="popupHead">
+                                    Schedule Interview    
                             </div>
-                        </div>`;
-                this.popupEditConfirm =
-                `<div class="popover sched-interview-popup-over" ref='popupOverContent' role="popover">
+                            <div class="popupSubHead">
+                                <div>
+                                    <span>Schedule:</span> <span class='text-green'>25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)</span> 
+                                </div> 
+                            </div>
+                            <div class="p-14">
+                                <div class='pick-a-sched'>
+                                    Pick a Schedule
+                                </div>
+                                <div>
+                                    <div class="form-check mt-3"> 
+                                        <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched"  v-on:click="showCustomDate($event)" id="quickSched" checked >
+                                        <label class="form-check-label quickSched" for="quickSched">
+                                            Quick Schedule
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <button class="btn btn-custom-outline-blue px-3 me-2" >12 SEP | 10:35 AM</button>
+                                    <button class="btn btn-custom-outline-blue px-3 me-2">12 SEP | 10:35 AM</button>
+                                    <button class="btn btn-custom-outline-blue px-3">12 SEP | 10:35 AM</button>
+                                </div>
+                                <div>
+                                    <div class="form-check mt-3">
+                                        <input class="normal-check-box  normal-radio input-radio" type="radio" v-on:click="showCustomDate($event)" value="customDate" name="sched" id="custoDateTime">
+                                        <label class="form-check-label custoDateTime" for="custoDateTime">
+                                            Custom Date & Time
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <button v-if="customeDate" class="btn btn-sm btn-outline-blue fw-bold px-3 me-2" >{{customeDate}}</button>
+                                </div>
+                        </div>
+                        <div class="popupFooter text-end">
+                            <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal" data-bs-target="#book-interview">Schedule Interview</button>
+                        </div>
+                    </div>
+                </div>    
+                <div class="popover sched-interview-popup-over arrow-popup" :style="popupStyle1" v-if="popupEditConfirm">
                     <div class="popover-arrow  sched-interview-popover-arrow"></div>
                         <div class="popover-inner">
                             <div class="popupHead">
@@ -782,7 +702,7 @@ export default {
                                 </div>
                                 <div>
                                     <div class="form-check mt-3">
-                                        <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched" id="quickSched" checked >
+                                        <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched"  v-on:click="showCustomDate($event)" id="quickSched" checked >
                                         <label class="form-check-label quickSched" for="quickSched">
                                             Quick Schedule
                                         </label>
@@ -795,29 +715,134 @@ export default {
                                 </div>
                                 <div>
                                     <div class="form-check mt-3">
-                                        <input class="normal-check-box  normal-radio input-radio" type="radio"  name="sched" id="custoDateTime">
+                                        <input class="normal-check-box  normal-radio input-radio" type="radio" v-on:click="showCustomDate($event)" value="customDate"  name="sched" id="custoDateTime">
                                         <label class="form-check-label custoDateTime" for="custoDateTime">
                                             Custom Date & Time
                                         </label>
                                     </div>
+                                </div>
+                                <div class="mt-2">
+                                    <button v-if="customeDate" class="btn btn-sm btn-outline-blue fw-bold px-3 me-2" >{{customeDate}}</button>
                                 </div>
                         </div>
                         <div class="popupFooter text-end">
                             <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal" data-bs-target="#book-interview">Schedule Interview</button>
                         </div>
                     </div>
-                </div>`;
-                this.$nextTick(() => {
-                    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-                    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
-                        html: true,
-                        sanitize: false
-                }));  
-                        
-             });
-        },
+                    
+                </div> 
+                <axdatepicker 
+                    :style="dateStyle"
+                    v-if="datePopUp"
+                    :isDateShown="dateConfig.isDateShown" 
+                    :type="dateConfig.type" 
+                    :label="dateConfig.label" 
+                    :calendar="dateConfig.calendar" 
+                    :startTime="dateConfig.startTime" 
+                    :endTime="dateConfig.endTime" 
+                    @clicked="onClickOkBtn"
+                    :timeZone="dateConfig.timeZone">
+                </axdatepicker>             
+            </div>
+        </div>
+    </div>
+    <SkillScannerModal></SkillScannerModal>  
+    <Persona2Modal></Persona2Modal>
+   
+</template>
+<script>
+import Persona2Modal from '@/components/modals/Persona2Modal.vue';
+import StartInterview from './components/StartInterview';
+import HelloHeader from './components/HelloHeader';
+import SkillScannerModal from '../../modals/SkillScannerModal.vue';
+import axdatepicker from '../../datepicker/axdatepicker.vue';
+export default {
+    name: "Persona2",
+    data() {
+        return {
+            table1: {
+                frameword: ["Copywriting", "React JS", "Vue.JS", "Project Management", "Php", "Fullstack", "Typescript", "Node.js", "Docker", "Agile", "Python", "Rest API",],
+            },
+            popupSchedInterview: false,   
+            popupEditConfirm: false,   
+            datePopUp: false,   
+            popupStyle:{},
+            dateConfig:{
+                isDateShown:true,
+                type:"radio",
+                label:"Custom Date & Time",
+                calendar:new Date(),
+                startTime:{time:'10:00',timeConvention:'AM'},
+                endTime:{time:'10:00',timeConvention:'AM'},
+                timeZone:'(GMT -05:00) Eastern Time (US & Canada)'
+            },
+        };
     },
-    components: { Persona2Modal, StartInterview, HelloHeader,SkillScannerModal}
+    created() {
+    },
+    mounted() {
+    },
+    methods: {
+        onClickOkBtn(data){
+            this.datePopUp = false;
+            this.customeDate = data.dateData.date+" "+data.dateData.shortMonth+" | "+data.timeData.startTime.time+" "+data.timeData.startTime.timeConvention;;
+        },   
+        showCustomDate(e){     
+            this.customeDate = ''          
+             if(e.target.value == "customDate"){
+                this.datePopUp = true;
+                this.dateConfig = {
+                    isDateShown:true,
+                    type:"radio",
+                    label:"Custom Date & Time",
+                    calendar:new Date(),
+                    startTime:{time:'10:00',timeConvention:'AM'},
+                    endTime:{time:'10:00',timeConvention:'AM'},
+                    timeZone: '(GMT -05:00) Eastern Time (US & Canada)'
+                }
+             }else{
+                this.datePopUp = false;
+                this.dateConfig = {                      
+                    isDateShown:true,
+                    type:"radio",
+                    label:"Custom Date & Time",
+                    calendar:new Date(),
+                    startTime:{time:'10:00',timeConvention:'AM'},
+                    endTime:{time:'10:00',timeConvention:'AM'},
+                    timeZone: '(GMT -05:00) Eastern Time (US & Canada)'
+                }
+               
+            }
+        },  
+        schecduleInterview(e){
+            this.customeDate = '';  
+            this.popupSchedInterview = !this.popupSchedInterview
+            this.datePopUp = false;
+            this.popupStyle = {
+                "left": (e.layerX-480)+'px',
+                "top": (e.layerY+30)+'px',
+            }
+            this.dateStyle = {
+                "left": (e.layerX-995)+'px',
+                "top": (e.layerY+30)+'px',
+            }
+        },
+        editConfirm(e){
+            this.customeDate = '';  
+            this.popupEditConfirm = !this.popupEditConfirm;
+            this.datePopUp = false;
+            this.popupStyle1 = {
+                "left": (e.layerX-480)+'px',
+                "top": (e.layerY+30)+'px',
+            }
+            this.dateStyle = {
+                "left": (e.layerX-995)+'px',
+                "top": (e.layerY+30)+'px',
+            }
+        },
+        
+    },
+    components: { Persona2Modal, StartInterview, HelloHeader,SkillScannerModal, axdatepicker}
 }
 </script>
 <style>

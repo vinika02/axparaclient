@@ -232,7 +232,7 @@ export default {
 
         this.calendarHeader = months[this.date.getMonth()] +' '+this.date.getFullYear();
 
-        let monthShortName = monthShort[this.date.getMonth()]
+        let monthShortName = monthShort[this.date.getMonth()].toUpperCase();
         let days = "";
         this.monthDays = [];
 

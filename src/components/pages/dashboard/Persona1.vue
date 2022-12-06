@@ -507,9 +507,9 @@ export default {
     }
     .recommendation-content .scheduled{
         color: #00B600;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
-        font-family: RubikLight;
+        font-family: RubikMedium;
     } 
     .recommendation-content .scheduled-time{
         color: #00B600;
@@ -532,7 +532,9 @@ export default {
     }
 
     .r-skils-tags .btn{
-        padding: 2px 6px !important;
+        padding:4px 8px !important;
+        font-size: 12px !important;
+        font-family: RubikRegular;
     }
     .book-interview .btn{
         padding: 5px 6px !important;

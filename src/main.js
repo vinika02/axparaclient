@@ -12,6 +12,7 @@ import './assets/css/table.css'
 import './assets/css/cards.css'
 import './assets/css/popup.css'
 import './assets/css/date.css'
+import "toastify-js/src/toastify.css"
 
 
 import router from './router'

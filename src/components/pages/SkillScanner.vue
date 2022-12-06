@@ -800,10 +800,8 @@
     </div>
 </template>
 <script>
-    import * as bootstrap  from 'bootstrap';
     import SkillScannerModal from '../modals/SkillScannerModal.vue';
     import axdatepicker from '../datepicker/axdatepicker.vue';
-    import {compile} from "vue"
     export default {
         name: 'SkillScanner',
         data() {
@@ -1402,7 +1400,6 @@
         },
         methods:{     
             onClickOkBtn(data){
-                console.log(data);
                 this.showPopUpOver = false;
                 this.customeDate = data.dateData.date+" "+data.dateData.shortMonth+" | "+data.timeData.startTime.time+" "+data.timeData.startTime.timeConvention;;
             },   

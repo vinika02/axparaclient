@@ -108,6 +108,12 @@
         height: 12px;
         border-radius:  50px;
     }
+    .dot-red{
+        background: #FF4949;
+        width: 12px;
+        height: 12px;
+        border-radius:  50px;
+    }
     .dot-blue{
         background: #2C91FF;
         width: 12px;

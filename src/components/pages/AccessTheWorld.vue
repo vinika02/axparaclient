@@ -25,17 +25,18 @@
           <span class="v-text-primary">borderless employment</span>
         </div>
         <div class="actions">
-          <a href="/login">
+          <a href="https://talent.axpara.com/login">
               <button type="button" class="v-button v-button-outline v-mr-16">        
                I'm a Talent
             </button>
           </a>
-          <a href="/login">
+          <span data-bs-toggle="modal" data-bs-target="#LocationModal">
              <button type="button" class="v-button v-button-outline">I'm an Employer</button>
-          </a>
+          </span>
         </div>
       </div>
     </div>
+    <LocationModal></LocationModal>
     <!-- content end -->
 
     <!--bottom bar star -->
@@ -52,8 +53,12 @@
   </div>
 </template>
 <script>
+import LocationModal from '../modals/LocationModal'
 export default {
   name: "AccessTheWorld",
+  components:{
+    LocationModal
+  }
 };
 </script>
 <style>

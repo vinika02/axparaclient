@@ -91,6 +91,9 @@ input.js-tag-input {
     font-size: 12px;
     border-radius: 2px;
 }
+.tag-pink:hover{
+    border: 1px solid #EF5DA8 !important;
+}
 .tag-gray{
     background: #EDEDED;
     gap: 4px;
@@ -99,6 +102,9 @@ input.js-tag-input {
     font-weight: 400;
     font-size: 12px;
     border-radius: 2px;
+}
+.tag-gray:hover{
+    border: 1px solid #EDEDED !important;
 }
 .tag-violet{
     background: #E3E4FF;
@@ -109,6 +115,9 @@ input.js-tag-input {
     font-size: 12px;
     border-radius: 2px;
 }
+.tag-violet:hover{
+    border: 1px solid #5D5FEF !important;
+}
 .tag-orange{
     background: #FFF2E3;
     gap: 4px;
@@ -117,6 +126,9 @@ input.js-tag-input {
     font-weight: 400;
     font-size: 12px;
     border-radius: 2px;
+}
+.tag-orange:hover{
+    border: 1px solid orange !important;
 }
 .js-tag-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #C9C9C9 !important;

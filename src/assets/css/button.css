@@ -46,6 +46,14 @@
 .btn-outline-red:hover{
     background-color: #ffd9d9 !important;
 }
+.btn-red{
+    background: #FF4949 !important;
+    border-color: #FF4949 !important;    
+    border-radius: 2px;
+}
+.btn-red:hover{
+    background-color: #9f3333 !important;
+}
 
 .btn-save-changes{
     border: 1px solid #2C91FF !important;
@@ -66,10 +74,47 @@
     border-color: #2C91FF !important;    
     border-radius: 2px;
 }
+.btn-sky-blue{       
+    background: #E3F1FF !important;
+    border-color: #E3F1FF !important;    
+    border-radius: 2px;
+}
+.btn-sky-blue:hover{       
+    background: #2C91FF !important;
+}
 .btn-custom-green{       
     background: #00B600 !important;
     border-color: #00B600 !important;
     border-radius: 2px !important;
+}
+.btn-custom-green:hover{       
+    background: #218221 !important;
+}
+.btn-dark-green{       
+    background: #439243 ;
+    border-color: #439243;
+    border-radius: 2px;
+}
+.btn-dark-green:hover{       
+    background: #00B600 !important;
+}
+.btn-white{       
+    background: #FFFFFF ;
+    border-color: #FFFFFF;
+    border-radius: 2px;
+}
+.btn-white:hover{       
+    background: #eee !important ;
+    border-color: #eee;
+}
+.btn-outline-white{       
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+}
+.btn-outline-white:hover{       
+    background: transparent;
+    border: 1px solid #ccc !important;
 }
 .btn-alert{
     width: 114px;
@@ -110,4 +155,20 @@
     font-weight: 400;
     font-size: 12px;
     font-family: RubikRegular;
+}
+
+.custom-pagination .page-link:not(.border-0) {
+    border-radius: 50px !important;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 35px;
+    font-family: 'RubikRegular';
+    font-style: normal;
+    color: #8C8C8C;
+}
+.custom-pagination .active{
+    color: white !important;
+    background: #2C91FF;
 }

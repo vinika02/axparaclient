@@ -1,0 +1,62 @@
+
+definitions:
+  steps:
+    - step: &build
+        image: node:18.5
+        name: Build
+        caches:
+          - node
+        script:
+          - npm install
+          - npm run build
+        artifacts:
+          - dist/**
+
+    - step: &deploy
+        name: Deploy
+        clone:
+          enabled: false
+        script:
+          - rsync -avh dist/ ${USERNAME}@${HOST}:/usr/share/${USERNAME}/${SERVICENAME}/ --delete-after
+#          - rsync -avh environments/${BITBUCKET_DEPLOYMENT_ENVIRONMENT}/environment.json ${USERNAME}@${HOST}:/usr/share/${USERNAME}/${SERVICENAME}/assets/environments/environment.json
+
+pipelines:
+  branches:
+#    dev:
+#      - step: *build
+#
+#      - step:
+#          <<: *deploy
+#          name: Deploy TEST
+#          deployment: Test
+
+    master:
+      - step: *build
+
+      - step:
+          <<: *deploy
+          name: Deploy STAGING
+          deployment: Staging
+
+#      - step:
+#          name: Deploy PRODUCTION
+#          deployment: Production
+#          trigger: manual
+#          clone:
+#            enabled: false
+#          script:
+#            -
+#
+#      - step:
+#          name: Add build tag
+#          script:
+#            - git tag -am "Tagging for release ${BITBUCKET_BUILD_NUMBER}" release-${BITBUCKET_BUILD_NUMBER}
+#            - git push origin release-${BITBUCKET_BUILD_NUMBER}
+
+    staging:
+      - step: *build
+
+      - step:
+          <<: *deploy
+          name: Deploy STAGING
+          deployment: StagingQA

@@ -200,7 +200,11 @@
             this.elementMenu =  elname;
         },
         filterTalentList(type){
-            this.filterTalent =  type;
+            if(this.filterTalent == type){
+               this.filterTalent = "all"
+            }else{
+                this.filterTalent =  type;
+            }           
         }
       },
       mounted(){
