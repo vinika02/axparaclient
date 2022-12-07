@@ -5,8 +5,8 @@
                 <div class="content-container dashboard " >
                     <div class="enabled-border-less">
                         <div class="enabled-border-bg-blue">
-                            <img src="../../../../assets/images/candidatedb/Frame.svg" class="frame">
-                            <img src="../../../../assets/images/candidatedb/Frame1.svg" class="frame1">
+                            <img src="@/assets/images/candidatedb/Frame.svg" class="frame">
+                            <img src="@/assets/images/candidatedb/Frame1.svg" class="frame1">
                         
                             <div class="d-block text-details">
                                 <div class="flex-fill">
@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-fill">
-                                    <img src="../../../../assets/Axpara_Icon/Outline/CancelWhite.svg" @click="closeBanner()" class="btn-cancel">
+                                    <img src="@/assets/Axpara_Icon/Outline/CancelWhite.svg" @click="closeBanner()" class="btn-cancel">
                                 </div>
                             
                             </div>
@@ -50,7 +50,7 @@
     }
     .enabled-border-less{     
         left: 256px;    
-        background-image: url('../../../../assets/images/candidatedb/axpara-banner-960x240.svg');    
+        background-image: url('@/assets/images/candidatedb/axpara-banner-960x240.svg');    
         border-radius: 8px;
        
     }

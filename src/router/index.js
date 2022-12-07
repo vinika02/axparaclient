@@ -59,6 +59,7 @@ const router = createRouter({
     //   name: 'MyAccount',
     //   component: () => import('../components/pages/ComingSoon.vue')
     // },  
+    
     {
       path: '/',
       name: 'EmployerLandingPage',
@@ -74,6 +75,7 @@ const router = createRouter({
       name: 'CandidateDatabaseTable',
       component: () => import('../components/pages/employer/CandidateDatabaseTable.vue')
     },
+    
   ]
 })
 

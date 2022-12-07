@@ -56,3 +56,35 @@
     font-family: RubikRegular;
     font-weight: 500;
 }
+.topnav {
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #8C8C8C;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'RubikRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid #2C91FF;
+}
+.topnav a.active {
+    border-bottom: 3px solid #2C91FF;
+}
+.topnav .active-tab-menu{
+    color: #2C91FF !important;
+    font-family: 'RubikMedium' !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    border-bottom: 3px solid #2C91FF;
+}

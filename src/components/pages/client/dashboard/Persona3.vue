@@ -20,7 +20,7 @@
 
                 <div class="col padding-top-24">
                     <div class="card card-contact-img">
-                        <img src="../../../assets/images/mytalents/persona3/callcenter.png" alt="Banner" class="card-img-top">
+                        <img src="@/assets/images/mytalents/persona3/callcenter.png" alt="Banner" class="card-img-top">
                         <div class="card-body">
                             <h3>Need assistance with your orders? We can help!</h3>
                         </div>
@@ -52,7 +52,7 @@ import StartInterview from './components/StartInterview';
 import HelloHeader from './components/HelloHeader';
 import PendingClientReview from './components/PendingClientReview';
 import Persona2Modal from '@/components/modals/Persona2Modal.vue';
-import SkillScannerModal from '../../modals/SkillScannerModal.vue';
+import SkillScannerModal from '@/components/modals/SkillScannerModal.vue';
 export default {
     name: 'Persona3',
     components: {
@@ -71,7 +71,7 @@ export default {
     @font-face {
         font-family: "RubikMediumr";
         src: local("Rubik"),
-            url(../../../assets/Rubik/Rubik-Medium.ttf) format("truetype");
+            url(@/assets/Rubik/Rubik-Medium.ttf) format("truetype");
     }
     .card-footer{
         padding:14px;

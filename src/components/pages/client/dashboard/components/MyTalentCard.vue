@@ -47,7 +47,7 @@
                         <div class="card talent-card " v-bind:class="talent.classColor">
                             <div class="card-body cursor-pointer">
                                 <div class="text-center talent-image">           
-                                    <img  v-bind:src="require('../../../../assets/images/mytalents/'+talent.image)" /> 
+                                    <img  v-bind:src="require('@/assets/images/mytalents/'+talent.image)" /> 
                                 </div>
                                 <div class="text-center talent-name font-regular mt-1">           
                                     {{talent.name}}

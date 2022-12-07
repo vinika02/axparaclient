@@ -132,21 +132,21 @@
                                 <th>
                                     <div class="d-flex">
                                         <div>  Talent ID/Name  </div>
-                                        <div>  <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">    </div>
+                                        <div>  <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">    </div>
                                     </div>
                                                                    
                                 </th>
                                 <th width="300">
                                     <div class="d-flex">
                                         <div>  Skills  </div>
-                                        <div>  <img src="../../../assets/images/mytalents/persona2/Sort.png" alt=""> </div>
+                                        <div>  <img src="@/assets/images/mytalents/persona2/Sort.png" alt=""> </div>
                                     </div>                                                                        
                                 </th>
                                 <th>
-                                    Monthly Rate     <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
+                                    Monthly Rate     <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">
                                 </th>
                                 <th>
-                                    Country     <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
+                                    Country     <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">
                                 </th>
                                 <th>
                                     CV / Intro Video   
@@ -173,22 +173,22 @@
                                     <div class="d-flex cv-intro-content">                                       
                                              <div class="cv-intro" v-if="data.CVLink">              
                                                 <a :href="data.CVLink" target="_blank">                             
-                                                  <img src="../../../assets/images/mytalents/persona2/cv.svg" alt="">
+                                                  <img src="@/assets/images/mytalents/persona2/cv.svg" alt="">
                                                 </a>
                                             </div>
                                             <div class="cv-intro" v-else>              
-                                                <img src="../../../assets/images/mytalents/persona2/cv-gray.svg" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/cv-gray.svg" alt="">
                                             </div>
                                             <div class="cv-intro" v-if="data.VideoLink">
                                                  <a :href="data.VideoLink" target="_blank">                            
                                                     <button class="btn playIcon">
-                                                        <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                        <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                                     </button>
                                                  </a>
                                             </div>  
                                             <div class="cv-intro" v-else>     
                                                 <button class="btn grayPlayIcon">
-                                                    <img src="../../../assets/images/mytalents/persona2/grayplay.png" alt="">
+                                                    <img src="@/assets/images/mytalents/persona2/grayplay.png" alt="">
                                                 </button>
                                             </div>                                           
                                     </div>

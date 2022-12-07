@@ -147,7 +147,7 @@
                         </div>
 
                         <button type="button" class="btn filter btn-custom-blue">
-                            <img src="../../../assets/images/mytalents/persona2/Vector.png" class="filter-img me-2">Filter
+                            <img src="@/assets/images/mytalents/persona2/Vector.png" class="filter-img me-2">Filter
                         </button>
                         <div class="form-check1 ms-3">
                             <div class="sgd me-2">SGD</div>
@@ -164,16 +164,16 @@
                         <table class="candidate-data">
                             <tr>
                                 <th>
-                                    Talent ID/Name  <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">                                   
+                                    Talent ID/Name  <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">                                   
                                 </th>
                                 <th>
-                                    Skills <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">                                    
+                                    Skills <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">                                    
                                 </th>
                                 <th>
-                                    Monthly Rate     <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
+                                    Monthly Rate     <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">
                                 </th>
                                 <th>
-                                    Country     <img src="../../../assets/images/mytalents/persona2/Sort.png" alt="">
+                                    Country     <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">
                                 </th>
                                 <th>
                                     CV / Intro Video   
@@ -203,11 +203,11 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>
@@ -249,11 +249,11 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>
@@ -296,24 +296,24 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
                                 </td>   
                                 <td width="300">
                                     <div class="d-flex">
-                                        <img src="../../../assets/images/mytalents/persona2/check-icon.svg">
+                                        <img src="@/assets/images/mytalents/persona2/check-icon.svg">
                                          <div class="gmt ms-2 text-green">24 Jun 2022 (Sat) • 3:00pm (GMT + 4hrs)</div>            
                                     </div>                                                       
                                 </td>
                                 <td align="right">
                                     <div class="morepen">
-                                        <img src="../../../assets/images/mytalents/persona2/pencil.png" alt=""
+                                        <img src="@/assets/images/mytalents/persona2/pencil.png" alt=""
                                           @click="editConfirm($event)"
                                           >
                                     </div>   
@@ -339,24 +339,24 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
                                 </td>   
                                 <td width="300">
                                     <div class="d-flex">
-                                        <img src="../../../assets/images/mytalents/persona2/check-icon.svg">
+                                        <img src="@/assets/images/mytalents/persona2/check-icon.svg">
                                         <div class="gmt ms-2 text-green">24 Jun 2022 (Sat) • 3:00pm (GMT + 4hrs)</div>            
                                     </div>                                                       
                                 </td>
                                 <td align="right">
                                     <div class="morepen">
-                                        <img src="../../../assets/images/mytalents/persona2/pencil.png" alt=""
+                                        <img src="@/assets/images/mytalents/persona2/pencil.png" alt=""
                                           @click="editConfirm($event)"
                                           >
                                     </div>   
@@ -382,11 +382,11 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
@@ -427,11 +427,11 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
@@ -472,11 +472,11 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
@@ -517,11 +517,11 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
@@ -562,24 +562,24 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
                                 </td>   
                                 <td width="300">
                                     <div class="d-flex">
-                                        <img src="../../../assets/images/mytalents/persona2/check-icon.svg">
+                                        <img src="@/assets/images/mytalents/persona2/check-icon.svg">
                                         <div class="gmt ms-2 text-green">24 Jun 2022 (Sat) • 3:00pm (GMT + 4hrs)</div>            
                                     </div>                                                       
                                 </td>
                                 <td align="right">
                                     <div class="morepen">
-                                        <img src="../../../assets/images/mytalents/persona2/pencil.png" alt=""
+                                        <img src="@/assets/images/mytalents/persona2/pencil.png" alt=""
                                           @click="editConfirm($event)"
                                           >
                                     </div>   
@@ -605,11 +605,11 @@
                                 <td> 
                                     <div class="d-flex cv-intro-content">
                                         <div class="cv-intro">
-                                            <img src="../../../assets/images/mytalents/persona2/save.png" alt="">
+                                            <img src="@/assets/images/mytalents/persona2/save.png" alt="">
                                          </div>
                                          <div class="cv-intro">
                                             <button class="btn playIcon">
-                                                <img src="../../../assets/images/mytalents/persona2/play.png" alt="">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
                                             </button>
                                          </div>
                                     </div>                                 
@@ -754,8 +754,8 @@
 import Persona2Modal from '@/components/modals/Persona2Modal.vue';
 import StartInterview from './components/StartInterview';
 import HelloHeader from './components/HelloHeader';
-import SkillScannerModal from '../../modals/SkillScannerModal.vue';
-import axdatepicker from '../../datepicker/axdatepicker.vue';
+import SkillScannerModal from '@/components/modals/SkillScannerModal.vue';
+import axdatepicker from '@/components/datepicker/axdatepicker.vue';
 export default {
     name: "Persona2",
     data() {

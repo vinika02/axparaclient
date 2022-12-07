@@ -71,7 +71,7 @@
         <LoginModal v-if="this.routeName == 'employer'"></LoginModal>
         <nav class="navbar navbar-expand-lg navbar-dark bg-custom-blue" v-if="this.routeName != 'employer'">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/client">
                     <svg width="112" height="32" viewBox="0 0 112 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="112" height="32" fill="url(#pattern0)"/>
                         <defs>
@@ -121,13 +121,13 @@ export default {
     data() {
         return{
             menus:[
-                {id: 1, menuName: 'My Dashboard', route: '/dashboard/persona1'},
-                {id: 2, menuName: 'My Talent', route: '/my-talent'},
-                {id: 3, menuName: 'My Orders', route: '/my-orders'},
-                {id: 4, menuName: 'My Interviews', route: '/my-interview'},
-                {id: 5, menuName: 'Skill Scanner', route: '/skillscanner'},
-                {id: 6, menuName: 'Candidate Database', route: '/candidate-db'},
-                {id: 7, menuName: 'My Account', route: '/my-account'},
+                {id: 1, menuName: 'My Dashboard', route: '/client/dashboard/persona1'},
+                {id: 2, menuName: 'My Talent', route: '/client/my-talent'},
+                {id: 3, menuName: 'My Orders', route: '/client/my-orders'},
+                {id: 4, menuName: 'My Interviews', route: '/client/my-interview'},
+                {id: 5, menuName: 'Skill Scanner', route: '/client/skillscanner'},
+                {id: 6, menuName: 'Candidate Database', route: '/client/candidate-db'},
+                {id: 7, menuName: 'My Account', route: '/client/my-account'},
             ],
             employerMenu:[
                 {id: 1, menuName: 'My Dashboard', route: '/dashboard/persona1'},

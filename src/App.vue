@@ -39,7 +39,15 @@
 <style>
   html, body{
     background-color: #f5f5f5;
-  }      
+  }     
+  @media only screen and (max-width: 600px){
+    body{
+      zoom: 40%;
+    }
+    html, body, #app, .main, .v-body{
+      height: 100% !important;
+    }
+  } 
   .app-container{         
         width: 1440px;
         max-width: 1440px !important;

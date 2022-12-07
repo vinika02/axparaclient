@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gray">
         <div class="container-fluid app-container">
-            <div class="content-container">
+            <div class="content-container p-16 bg-white">
                 <div class="what-is-skill-scanner">
                     <div class="d-flex row-adjusted">
                         <div class="p-0 flex-fill first-block">
@@ -800,8 +800,8 @@
     </div>
 </template>
 <script>
-    import SkillScannerModal from '../modals/SkillScannerModal.vue';
-    import axdatepicker from '../datepicker/axdatepicker.vue';
+    import SkillScannerModal from '@/components/modals/SkillScannerModal.vue';
+    import axdatepicker from '../../datepicker/axdatepicker.vue';
     export default {
         name: 'SkillScanner',
         data() {
@@ -1537,19 +1537,13 @@
      @font-face {
         font-family: "RubikRegular";
         src: local("Rubik"),
-        url(../../assets/Rubik/Rubik-Regular.ttf) format("truetype");
+        url(@/assets/Rubik/Rubik-Regular.ttf) format("truetype");
     }
     @font-face {
         font-family: "RubikLight";
         src: local("Rubik"),
-        url(../../assets/Rubik/Rubik-Light.ttf) format("truetype");
+        url(@/assets/Rubik/Rubik-Light.ttf) format("truetype");
     }
-    
-    .content-container{
-        background: white;
-        padding:16px;    
-    } 
-
        
     .collapse-icon{
         transition: transform .5s ease-in-out;

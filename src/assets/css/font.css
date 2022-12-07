@@ -28,7 +28,9 @@
     .text-pink{
         color: #EF5DA8 !important;
     } 
-    
+    .align-self-end{
+        align-self:end;
+    }
     .text-violet{
         color: #5D5FEF;
     }

@@ -432,7 +432,7 @@
     </div>
 </template>
 <script>
-import SkillScannerModal from '../../modals/SkillScannerModal.vue';
+import SkillScannerModal from '@/components/modals/SkillScannerModal.vue';
 import Schedule from './components/Schedule';
 import NotificationCard from './components/NotificationCard';
 import MyTalentCard from './components/MyTalentCard';

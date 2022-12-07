@@ -4,6 +4,9 @@
 .p-6{
     padding:6px;
 }   
+.p-16{
+    padding:16px;
+}  
 
 .p-r-10{
     padding-right: 13px;
@@ -151,6 +154,7 @@
 }
 .w-70{
     max-width: 70px;
+    width: 70px;
 }
 .w-85{
     max-width: 85px;

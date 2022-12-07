@@ -38,20 +38,23 @@ pipelines:
           name: Deploy STAGING
           deployment: Staging
 
-#      - step:
-#          name: Deploy PRODUCTION
-#          deployment: Production
-#          trigger: manual
-#          clone:
-#            enabled: false
-#          script:
-#            -
-#
-#      - step:
-#          name: Add build tag
-#          script:
-#            - git tag -am "Tagging for release ${BITBUCKET_BUILD_NUMBER}" release-${BITBUCKET_BUILD_NUMBER}
-#            - git push origin release-${BITBUCKET_BUILD_NUMBER}
+      - step:
+          name: Deploy PRODUCTION
+          image: atlassian/pipelines-awscli
+          deployment: Production
+          trigger: manual
+          clone:
+            enabled: false
+          script:
+            - echo main
+            - aws s3 sync ./dist s3://new-client.axpara.com/employer --acl public-read --delete --cache-control max-age=0 --exclude "*" --include "index.html"
+            - aws s3 sync ./dist s3://new-client.axpara.com/employer --acl public-read --cache-control max-age=3600
+
+      - step:
+          name: Add build tag
+          script:
+            - git tag -am "Tagging for release ${BITBUCKET_BUILD_NUMBER}" release-${BITBUCKET_BUILD_NUMBER}
+            - git push origin release-${BITBUCKET_BUILD_NUMBER}
 
     staging:
       - step: *build

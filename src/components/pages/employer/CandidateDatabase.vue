@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="content-panel">
-                                    <img src="../../../assets/images/candidatedb/FrameImage.svg">
+                                    <img src="@/assets/images/candidatedb/FrameImage.svg">
                                 </div>
                             </div>
                         </div>
@@ -209,7 +209,7 @@
         <div class=" bg-gray p-b-80 p-t-40">
             <div class="container-fluid app-container">
                 <div class="content-container dashboard ">
-                    <img src="../../../assets/images/candidatedb/ourteamframe.svg" class="ourteamframe">
+                    <img src="@/assets/images/candidatedb/ourteamframe.svg" class="ourteamframe">
                     <div>
                         <div class="our-team text-center" id="about-axpara">
                             Our Team
@@ -219,7 +219,7 @@
                             shareholder in our business, which means we collectively work harder for you.
                         </div>
                         <div class="text-center m-t-52">
-                            <img src="../../../assets/images/candidatedb/ourteam.png" class="ourteam">
+                            <img src="@/assets/images/candidatedb/ourteam.png" class="ourteam">
                         </div>
                     </div>
                 </div>
@@ -319,7 +319,7 @@
                                     </div>
                                     <div class="manange-talent-card-content">
                                         <div>
-                                        <img src="../../../assets/images/candidatedb/Rectangle1.png">
+                                        <img src="@/assets/images/candidatedb/Rectangle1.png">
                                         </div>
                                         <div class="manange-talent-details">
                                             We’re making it seamless and convenient to hire and manage talent across the world and we are here to be your on-the-ground human resource team in every country in which you might want to operate.
@@ -340,7 +340,7 @@
                                     </div>
                                     <div class="manange-talent-card-content">
                                         <div>
-                                          <img src="../../../assets/images/candidatedb/Rectangle2.png">
+                                          <img src="@/assets/images/candidatedb/Rectangle2.png">
                                         </div>
                                         <div class="manange-talent-details">
                                             We take care of everything - payroll, taxes, pension fund contributions, private insurance, rice allowance, clothing allowance, facilitation payments to local authorities, office space, laptop and computer equipment, annual dinners, holiday presents, and so on.
@@ -361,7 +361,7 @@
                                     </div>
                                     <div class="manange-talent-card-content">
                                         <div>
-                                           <img src="../../../assets/images/candidatedb/Rectangle3.png">
+                                           <img src="@/assets/images/candidatedb/Rectangle3.png">
                                         </div>
                                         <div class="manange-talent-details">
                                             You don’t need to figure out complex labour laws or local norms and customs. It means you get back more time and energy to focus on whatever it is that you do best - be it product management, sales and marketing, or building your Roman Empire.
@@ -846,11 +846,11 @@
 <script>
 import Banner from './components/Banner';
 import CandidateTalentCard from './components/CandidateTalentCard';
-import * as d3 from '../../../assets/js/d3map/d3.v7.min.js?version=1'
-import * as topojson from '../../../assets/js/d3map/topojson.v1.min.js?version=1'
-import candidatecsv from '../../../helper/candidatecsv'
+import * as d3 from '@/assets/js/d3map/d3.v7.min.js?version=1'
+import * as topojson from '@/assets/js/d3map/topojson.v1.min.js?version=1'
+import candidatecsv from '@/helper/candidatecsv'
 export default {
-    name: 'Header',
+    name: 'CandidateDatabase',
     props: {
     msg: String
     },
@@ -882,7 +882,7 @@ export default {
         Banner
     },
     mounted(){     
-        
+       
         let data = candidatecsv.getData();
         this.talent = data[0];
 
