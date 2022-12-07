@@ -150,7 +150,13 @@
     .talent-list::-webkit-scrollbar-thumb:hover {
         background: transparent; 
     } 
-
+    @media screen and (max-width: 600px) {
+        .talent-image img{
+            width:  50px !important;
+            height:  50px;
+        }
+    }
+   
 </style>
     
 <script>

@@ -7,7 +7,7 @@
             <div class="container-fluid app-container bg-gray">
                 <div class="content-container dashboard ">
                     <div class="row justify-content-center">
-                        <div class="col-10 col-md-6 col-lg-4 pe-2">
+                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 pe-2">
                             <div class="text-blue header-card">Hire</div>
                             <div class="sub-text-card sub-text">
                                 From software developers to accountants, we use our local expertise to help you hire the right talent for your needs.
@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10 col-md-6 col-lg-4 pe-2 ps-4 manage">
+                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 pe-2 ps-4 manage">
                             <div class="text-blue header-card">Manage</div>
                             <div class="sub-text-card sub-text">
                                 We are your in-country HR partner. We handle employee contracting, payroll and statutory payments. <br>
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10 col-md-6 col-lg-4 ps-4 build">
+                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 ps-4 build">
                             <div class="text-blue header-card">Build</div>
                             <div class="sub-text-card sub-text1">
                                 With projects teams in Vietnam and Ukraine, we build customized software systems to power your enterprise and productivity needs.
@@ -110,7 +110,7 @@
                                 Singapore, Philippines, Indonesia, Vietnam, <br> and Sri Lanka.
                             </div>
                         </div>
-                        <div class="col-10 col-md-12 col-lg-8 clock">
+                        <div class="col-12 col-sm-10 col-md-12 col-lg-8 clock">
                             <div class="time_block">
                                 <div class="row">
                                     <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-end mb-4">
@@ -237,7 +237,7 @@
                         </div>
 
                         <div class="row emergin-market">
-                              <div class="col-sm-12 col-md-6 col-lg-4 pe-2">
+                              <div class="col-11  col-md-6 col-lg-4 pe-2">
                                  <div class="emerging-card">
                                     <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="66" height="66" rx="4" fill="#E0F9E0"/>
@@ -257,7 +257,7 @@
                                     </div>
                                  </div>
                               </div>
-                              <div class="col-sm-12 col-md-6 col-lg-4 pe-2">
+                              <div class="col-11 col-md-6 col-lg-4 pe-2">
                                 <div class="emerging-card">
                                     <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="0.666992" width="66" height="66" rx="4" fill="#E3E4FF"/>
@@ -276,7 +276,7 @@
                                     </div>
                                 </div>
                               </div>
-                              <div class="col-sm-12 col-md-12 col-lg-4 pe-2">
+                              <div class="col-11 col-md-12 col-lg-4 pe-2">
                                 <div class="emerging-card">
                                     <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="0.333008" width="66" height="66" rx="4" fill="#FFF8DE"/>
@@ -830,6 +830,13 @@
         .sub-text-card.sub-text{
             height: 100px;
         }
+        .emergin-market{
+            justify-content: center !important;;
+        }
+        .emergin-market .emerging-card{
+            height: unset;
+        }
+      
     }
     @media screen and (max-width: 600px) {
         .build, .manage{
@@ -838,7 +845,36 @@
         .sub-text-card.sub-text{
             height: unset;
         }
+     
+        .emergin-market .emerging-card{
+            width: unset;
+        }
+        .content-panel img{
+            width: 100%;
+        }
+        .manange-talent-card img{
+            width: 100%;
+        }
+        .enabled-border-bg-blue{
+            overflow: hidden;
+        }
+        .ourteamframe{
+            width: 100%;
+        }
     }
+    @media screen and (max-width: 360px) { 
+                  
+       .enable-borderless-text{
+           font-size: 35px;
+       }
+       .enable-borderless-sub-text{
+          font-size: 14px;
+       }
+       .manange-talent-card{
+            width: 350.67px;
+            height: unset;
+        }
+   }
 
     
    

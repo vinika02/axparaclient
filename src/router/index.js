@@ -54,11 +54,11 @@ const router = createRouter({
     //   name: 'CandidateDatabase',
     //   component: () => import('../components/pages/ComingSoon.vue')
     // },
-    // {
-    //   path: '/my-account',
-    //   name: 'MyAccount',
-    //   component: () => import('../components/pages/ComingSoon.vue')
-    // },  
+    {
+      path: '/my-account',
+      name: 'MyAccount',
+      component: () => import('../components/pages/ComingSoon.vue')
+    },  
     
     {
       path: '/',

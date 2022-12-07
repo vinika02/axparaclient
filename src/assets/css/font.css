@@ -128,3 +128,11 @@
         height: 12px;
         border-radius:  50px;
     }
+    @media screen and (max-width: 435px) { 
+        .text-b-b-18{
+            font-size: 15px;
+        }
+        .my-talent button .label{
+            font-size: 11px !important;
+        }
+    }
