@@ -24,7 +24,8 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <UserAndRates v-if="tab == 'Users & Rates'"></UserAndRates>                 
+                        <UserAndRates v-if="tab == 'Users & Rates'"></UserAndRates>  
+                        <Invoices v-if="tab == 'Invoices'"></Invoices>                          
                     </div>
                 </div>
             </div>
@@ -34,11 +35,13 @@
 </template>
 <script>
     import UserAndRates from './myaccount/UserAndRates.vue'
+    import Invoices from './myaccount/Invoices.vue'
     export default {
         name: 'MyAccount',
         data(){
             return{
-                tab: 'Users & Rates'
+                tab: 'Users & Rates',
+                tab: 'Invoices'
             }
         },
         methods:{
@@ -47,7 +50,8 @@
             }
         },
         components:{
-            UserAndRates
+            UserAndRates,
+            Invoices
         }
     }
 </script>

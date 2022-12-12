@@ -19,21 +19,7 @@ const router = createRouter({
     //   name: 'SkillScanner',
     //   component: () => import('../components/pages/SkillScanner.vue')
     // },
-    // {
-    //   path: '/dashboard/persona1',
-    //   name: 'Persona1',
-    //   component: () => import('../components/pages/dashboard/Persona1.vue')
-    // },
-    // {
-    //   path: '/dashboard/persona2',
-    //   name: 'Persona2',
-    //   component: () => import('../components/pages/dashboard/Persona2.vue')
-    // },
-    // {
-    //   path: '/dashboard/persona3',
-    //   name: 'Persona3',
-    //   component: () => import('../components/pages/dashboard/Persona3.vue')
-    // },
+    
     // {
     //   path: '/my-talent',
     //   name: 'MyTalent',
@@ -59,6 +45,38 @@ const router = createRouter({
     //   name: 'MyAccount',
     //   component: () => import('../components/pages/ComingSoon.vue')
     // },  
+    {
+      path: '/client',
+      name: 'Client',
+      component: () => import('../components/pages/client/Client.vue'),
+      children:[
+            {
+              path: 'my-account',
+              name: 'MyAccount',
+              component: () => import('../components/pages/client/MyAccount.vue')
+            },  
+            {
+              path: 'dashboard/persona1',
+              name: 'Persona1',
+              component: () => import('../components/pages/client/dashboard/Persona1.vue')
+            },
+            {
+              path: 'dashboard/persona2',
+              name: 'Persona2',
+              component: () => import('../components/pages/client/dashboard/Persona2.vue')
+            },
+            {
+              path: 'dashboard/persona3',
+              name: 'Persona3',
+              component: () => import('../components/pages/client/dashboard/Persona3.vue')
+            },
+            {
+                path: 'skillscanner',
+                name: 'SkillScanner',
+                component: () => import('../components/pages/client/SkillScanner.vue')
+            },
+          ]
+        },
     
     {
       path: '/',

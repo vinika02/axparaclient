@@ -82,7 +82,7 @@
                         </defs>
                      </svg>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -156,8 +156,8 @@ export default {
 
         },
         scrollToBottom(){
-            this.routeName1 = window.location.pathname.split('/')[2];
-            if(this.routeName1 == 'about-axpara'){
+           
+            if(this.routeName1[2] == 'about-axpara'){
                 const element = document.getElementById("about-axpara");
                 element.scrollIntoView();         
             } 
@@ -168,6 +168,12 @@ export default {
     },
     mounted(){
         this.myLocation  =  localStorage.getItem('location');
+        this.routeName1 = window.location.pathname.split('/');
+        if(this.routeName1[1] == 'client'){
+            this.routeName = this.routeName1[1]
+        }else{
+            this.routeName = 'employer'
+        }
     }
  
 }

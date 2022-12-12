@@ -33,7 +33,7 @@
 <template>
   <Header v-if="this.routeName[1] != 'login'"></Header>
   <RouterView/>
-  <Footer v-if="this.routeName[1] != 'candidate-db-table'"></Footer>
+  <Footer v-if="this.routeName[1] != 'candidate-db-table' && this.routeName[1] != 'client'"></Footer>
 </template>
 
 <style>
