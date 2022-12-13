@@ -16,7 +16,7 @@
             </svg>
             Download
         </button>
-        <div class="date1">20-11-08 <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+        <button class="date1" data-bs-toggle="modal" data-bs-target="#datepick">20-11-08 <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M21.3217 14.4765L17.088 8.35882C17.0108 8.24714 16.9124 8.15684 16.8002 8.09469C16.688 8.03255 16.5648 8.00017 16.4401 8H14.7673C14.5943 8 14.4988 8.22647 14.6046 8.38235L18.3297 13.7647H2.70652C2.59293 13.7647 2.5 13.8706 2.5 14V15.7647C2.5 15.8941 2.59293 16 2.70652 16H20.6711C21.363 16 21.7476 15.0941 21.3217 14.4765Z"
@@ -28,7 +28,7 @@
                     d="M7 11H9V13H7V11ZM21 6V20C21 21.1 20.1 22 19 22H5C3.89 22 3 21.1 3 20L3.01 6C3.01 4.9 3.89 4 5 4H6V2H8V4H16V2H18V4H19C20.1 4 21 4.9 21 6ZM5 8H19V6H5V8ZM19 20V10H5V20H19ZM15 13H17V11H15V13ZM11 13H13V11H11V13Z"
                     fill="#8C8C8C" />
             </svg>
-        </div>
+        </button>
     </div>
     <div>
         <table class="table invoice-table">
@@ -65,7 +65,7 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="flex">
                 <tr v-for="user in invoice" :key="user.id">
                     <td style="width: 40px; height: 38px;" class="checkbox"><input class="form-check-input"
                             type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" checked></td>
@@ -75,14 +75,15 @@
                     <td style="width:330px; height: 38px;">{{ (user.dueDate) }}</td>
                 </tr>
             </tbody>
-        </table>
-
-
+        </table>       
     </div>
+    
 </template>
 <script>
 
+
 export default {
+    
     name: 'Invoices',
     data() {
         return {
@@ -132,7 +133,8 @@ export default {
                 }
             ],
         }
-    }
+    },
+   
 }
 </script>
 <style>

@@ -631,8 +631,7 @@
                                 </td>
                             </tr>                         
                         </table>
-                    </div>                  
-
+                    </div>                 
                 </div>
 
                 <!-- table 3 -->
