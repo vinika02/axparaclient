@@ -76,27 +76,7 @@
                 </tr>
             </tbody>
         </table>
-        <div class="delete-tab">
-            <div class="delete">
-                <svg class="error-out" width="73" height="73" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M11 15H13V17H11V15ZM11 7H13V13H11V7ZM11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z"
-                        fill="#FFFFFF" />
-                </svg>
-            </div>
-            <div class="delete-body">
-                <div class="delete-user">
-                    Delete User
-                </div>
-                <div class="delete-con">
-                    Are you sure you want to delete this user?
-                </div>
-                <button type="button" class="btn btn-default btn-outline-gray book-interview-no-btn" data-bs-dismiss="modal">NO</button>
-                <button type="button" class="btn btn-default btn-custom-green book-interview-yes-btn" data-bs-toggle="modal" data-bs-target="#book-interview-done"> YES</button>
-            </div>
 
-        </div>
 
     </div>
 </template>
@@ -227,8 +207,6 @@ export default {
 
 }
 
-
-
 /* end table */
 
 /* add user */
@@ -241,7 +219,6 @@ export default {
 }
 
 .adduser {
-
     gap: 18px;
     font-family: 'RubikSemiBold';
     font-style: normal;
@@ -249,8 +226,6 @@ export default {
     font-size: 18px;
     color: #2C91FF;
 }
-
-
 
 .form-control {
     border: 1px solid #EDEDED;
@@ -260,15 +235,8 @@ export default {
     font-weight: 400;
     font-size: 14px;
     color: #C9C9C9;
-
 }
 
-
-.buttons {
-    display: flex;
-    padding: 12px;
-    justify-content: flex-end;
-}
 
 /* end add user */
 </style>

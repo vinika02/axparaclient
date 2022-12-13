@@ -287,16 +287,16 @@ export default {
 }
 
 .users-table .form-control-sm::placeholder {
-    color: #C9C9C9;
+    color: #C9C9C9 !important;
 }
 
 .users-table thead {
-    font-family: 'RubikRegular';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    color: #27304C;
-    background: #FAFAFA;
+    font-family: 'RubikRegular'!important;
+    font-style: normal!important;
+    font-weight: 500!important;
+    font-size: 12px!important;
+    color: #27304C!important;
+    background: #FAFAFA!important;
 
 }
 
