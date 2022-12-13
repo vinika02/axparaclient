@@ -11,7 +11,8 @@
                 </div>
             </div>
             <div class="col-sm-2 align-self-end text-end">
-                <button class="btn btn-large btn-custom-blue btn-add-user " data-bs-toggle="modal" data-bs-target="#AddUserModal">
+                <button class="btn btn-large btn-custom-blue btn-add-user " data-bs-toggle="modal"
+                    data-bs-target="#AddUserModal">
                     Add User
                 </button>
             </div>
@@ -63,9 +64,10 @@
                         <td>{{ (user.email) }}</td>
                         <td>
                             <button class="btn btn-sm btn-outline-blue w-70 me-2">
-                                Edit 
+                                Edit
                             </button>
-                            <button class="btn btn-sm btn-outline-blue w-70" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <button class="btn btn-sm btn-outline-blue w-70" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal">
                                 Delete
                             </button>
                         </td>
@@ -118,8 +120,8 @@
                                 <tbody>
                                     <tr v-for="user in managementFee" :key="user.id">
                                         <td>{{ (user.days) }}</td>
-                                        <td >{{ (user.fee) }}</td>
-                                     
+                                        <td>{{ (user.fee) }}</td>
+
                                     </tr>
                                 </tbody>
                             </table>
@@ -140,8 +142,8 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="user in managementFee" :key="user.id">
-                                        <td >{{ (user.days) }}</td>
-                                        <td >{{ (user.fee) }}</td>
+                                        <td>{{ (user.days) }}</td>
+                                        <td>{{ (user.fee) }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -160,9 +162,9 @@ import UserAndRatesAddUserModal from '@/components/modals/UserAndRatesAddUserMod
 import deleteModal from '@/components/modals/deleteModal.vue';
 
 export default {
-    
+
     name: 'UserAndRates',
-            
+
     data() {
         return {
             usersData: [
@@ -235,9 +237,70 @@ export default {
 
                 },
             ],
+            input: {
+                fname: "",
+                designation: '',
+                contact: 0,
+                email: "",
+            },
+            editIndex: 0,
+
+            editInput: {
+                fname: "",
+                designation: '',
+                contact: 0,
+                email: "",
+            }
         }
     },
-    components:{ UserAndRatesAddUserModal,deleteModal },
+    methods: {
+        //function to add data to table
+        add: function() {
+            this.persons.push({
+                fname: this.input.fname,
+                designation: this.input.fname,
+                contact: this.input.contact,
+                email: this.input.email,                
+            });
+
+            for (var key in this.input) {
+                this.input[key] = "";
+            }
+            this.persons.sort(ordonner);
+            this.$refs.fname.focus();
+        },
+        //function to handle data edition
+        edit: function(index) {
+            this.editInput.fname = this.persons[index].fname;
+            this.editInput.designation = this.persons[index].designation;
+            this.editInput.contact = this.persons[index].contact;
+            this.editInput.email = this.persons[index].email;
+            
+
+            this.editIndex = index;
+            $(".modal").modal();
+        },
+        //function to update data
+        update: function() {
+            this.persons.splice(this.editIndex, 1);
+            this.persons.push({
+                lname: this.editInput.lname,
+                fname: this.editInput.fname,
+                age: this.editInput.age,
+                job: this.editInput.job,
+                address: this.editInput.address
+            });
+            for (var key in this.editInput) {
+                this.editInput[key] = "";
+            }
+            $(".modal").modal('hide');
+        },
+        //function to defintely delete data
+        deletePerson: function(index) {
+            this.persons.splice(index, 1);
+        }
+    },
+    components: { UserAndRatesAddUserModal, deleteModal },
 }
 </script>
 <style>
@@ -291,12 +354,12 @@ export default {
 }
 
 .users-table thead {
-    font-family: 'RubikRegular'!important;
-    font-style: normal!important;
-    font-weight: 500!important;
-    font-size: 12px!important;
-    color: #27304C!important;
-    background: #FAFAFA!important;
+    font-family: 'RubikRegular' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: #27304C !important;
+    background: #FAFAFA !important;
 
 }
 
@@ -330,14 +393,17 @@ export default {
     font-size: 18px;
     color: #2C91FF;
 }
-.table-management-fee tbody tr:nth-child(even){
+
+.table-management-fee tbody tr:nth-child(even) {
     background: #FAFAFA;
 }
-.table-acquisition-fee tbody tr:nth-child(even){
+
+.table-acquisition-fee tbody tr:nth-child(even) {
     background: #FAFAFA;
 }
+
 .table-management-fee,
-.table-acquisition-fee tbody{
+.table-acquisition-fee tbody {
     font-family: 'RubikRegular';
     font-style: normal;
     font-weight: 400;
@@ -346,15 +412,17 @@ export default {
 }
 
 .table-acquisition-fee th {
-   padding:9px 9px 9px 12px;
-   
-   
+    padding: 9px 9px 9px 12px;
+
+
 }
-.table-management-fee thead{
+
+.table-management-fee thead {
     background: #FAFAFA;
     border: 1px solid #EDEDED;
 }
-.table-management-fee th{
-    padding:9px 9px 9px 12px;
+
+.table-management-fee th {
+    padding: 9px 9px 9px 12px;
 }
 </style>
