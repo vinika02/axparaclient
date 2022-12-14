@@ -58,7 +58,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="user in usersData" :key="user.id">
-                        <td>{{ (user.name) }}</td>
+                        <td>{{ (user.fname) }} {{ (user.lname) }}</td>
                         <td>{{ (user.designation) }}</td>
                         <td>{{ (user.contact) }}</td>
                         <td>{{ (user.email) }}</td>
@@ -118,10 +118,9 @@
                                     <th style="width:324px">Management Fee</th>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="user in managementFee" :key="user.id">
+                                    <tr v-for="(user) in managementFee" :key="user.id">
                                         <td>{{ (user.days) }}</td>
                                         <td>{{ (user.fee) }}</td>
-
                                     </tr>
                                 </tbody>
                             </table>
@@ -152,6 +151,55 @@
                 </div>
             </div>
         </div>
+<!-- add user modal -->
+        <div>
+            <div class="modal fade modal-alert" id="AddUserModal" tabindex="-1" aria-labelledby="AddUserModal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class=" adduser modal-title" id="exampleModalLabel">Add User</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="user-box">
+                                <form class="row g-2">
+                                    <div class="col-md-6">
+                                        <label for="inputEmail4" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="fname" placeholder="Your Text" v-model="input.fname">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputPassword4" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lname" placeholder="Your Text" v-model="input.lname">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputEmail4" class="form-label">Designation</label>
+                                        <input type="text" class="form-control" id="designation"
+                                            placeholder="Your Text" v-model="input.designation">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputPassword4" class="form-label">Contact Number</label>
+                                        <input type="text" class="form-control" id="contact" placeholder="Your Text" v-model="input.contact">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputAddress" class="form-label">Email Address</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Your Text" v-model="input.email">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer buttons">
+                            <button type="button" class="btn btn-outline-blue btn-lg btn-cancel"
+                                data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-save-changes btn-lg"
+                                data-bs-dismiss="modal" @click="add">Add
+                                User</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end adduser modal -->
     </div>
     <UserAndRatesAddUserModal></UserAndRatesAddUserModal>
     <deleteModal></deleteModal>
@@ -170,42 +218,46 @@ export default {
             usersData: [
                 {
                     id: 1,
-                    name: 'Annette Black',
+                    fname: 'Annette',
+                    lname: 'Black',
                     designation: 'Senior Developer',
                     contact: '+62 878 66253820',
                     email: 'nevaeh.simmons@example.com',
                 },
                 {
                     id: 1,
-                    name: 'Guy Hawkins',
+                    fname: 'Guy',
+                    lname: 'Hawkins',
                     designation: 'UX Designer',
                     contact: '+62 851 77629086',
                     email: 'dolores.chambers@example.com',
                 },
                 {
                     id: 1,
-                    name: 'Darlene Robertson',
+                    fname: 'Darlene',
+                    lname:' Robertson',
                     designation: 'Front End Developer',
                     contact: '+62 811 09998263',
                     email: 'sara.cruz@example.com',
                 },
                 {
                     id: 1,
-                    name: 'Bessie Cooper',
+                    fname: 'Bessie Cooper',
                     designation: 'Chief Executive Officer',
                     contact: '+62 899 00192732',
                     email: 'deanna.curtis@example.com',
                 },
                 {
                     id: 1,
-                    name: 'Robert Fox',
+                    fname: 'Robert Fox',
                     designation: 'Human Resource Manager',
                     contact: '+62 822 35327889',
                     email: 'tim.jennings@example.com',
                 },
                 {
                     id: 1,
-                    name: 'Cody Fisher',
+                    fname: 'Cody',
+                    lname:'Fisher',
                     designation: 'Chief Executive Officer',
                     contact: '+62 899 00192732',
                     email: 'willie.jennings@example.com',
@@ -239,51 +291,44 @@ export default {
             ],
             input: {
                 fname: "",
+                lname:"",
                 designation: '',
-                contact: 0,
+                contact: '',
                 email: "",
             },
             editIndex: 0,
-
             editInput: {
-                fname: "",
+                fname: '',
                 designation: '',
-                contact: 0,
-                email: "",
+                contact: '',
+                email: '',
             }
         }
     },
     methods: {
         //function to add data to table
-        add: function() {
-            this.persons.push({
+        add: function () {
+            this.usersData.push({
                 fname: this.input.fname,
-                designation: this.input.fname,
+                lname:this.input.lname,
+                designation: this.input.designation,
                 contact: this.input.contact,
-                email: this.input.email,                
+                email: this.input.email,
             });
-
-            for (var key in this.input) {
-                this.input[key] = "";
-            }
-            this.persons.sort(ordonner);
-            this.$refs.fname.focus();
         },
         //function to handle data edition
         edit: function(index) {
-            this.editInput.fname = this.persons[index].fname;
-            this.editInput.designation = this.persons[index].designation;
-            this.editInput.contact = this.persons[index].contact;
-            this.editInput.email = this.persons[index].email;
-            
-
+            this.editInput.fname = this.usersData[index].fname;
+            this.editInput.designation = this.usersData[index].designation;
+            this.editInput.contact = this.usersData[index].contact;
+            this.editInput.email = this.usersData[index].email;
             this.editIndex = index;
             $(".modal").modal();
         },
         //function to update data
         update: function() {
-            this.persons.splice(this.editIndex, 1);
-            this.persons.push({
+            this.usersData.splice(this.editIndex, 1);
+            this.usersData.push({
                 lname: this.editInput.lname,
                 fname: this.editInput.fname,
                 age: this.editInput.age,

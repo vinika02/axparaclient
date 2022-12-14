@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <!-- <div>
         <div class="modal fade modal-alert" id="AddUserModal" tabindex="-1"
             aria-labelledby="AddUserModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -13,23 +13,23 @@
                             <form class="row g-2">
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Your Text">
+                                    <input type="text" class="form-control" id="fname" placeholder="Your Text">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputPassword4" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="inputPassword4" placeholder="Your Text">
+                                    <input type="text" class="form-control" id="lname" placeholder="Your Text">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Designation</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Your Text">
+                                    <input type="text" class="form-control" id="designation" placeholder="Your Text">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputPassword4" class="form-label">Contact Number</label>
-                                    <input type="text" class="form-control" id="inputPassword4" placeholder="Your Text">
+                                    <input type="text" class="form-control" id="contact" placeholder="Your Text">
                                 </div>
                                 <div class="col-12">
                                     <label for="inputAddress" class="form-label">Email Address</label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="Your Text">
+                                    <input type="text" class="form-control" id="email" placeholder="Your Text">
                                 </div>
                             </form>
                         </div>
@@ -43,9 +43,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-    </div>
+        </div>        
+    </div> -->
 </template>
 <script>
 export default {
