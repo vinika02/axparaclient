@@ -1,7 +1,7 @@
 <template>
     <div>       
         <div class="modal fade modal-alert delete-alert" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false"
-            tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+            tabindex="-1" aria-labelledby="" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content content-modal">
                     <div class="modal-header">
@@ -18,19 +18,17 @@
                             </svg>
                         </div>
                         <div class="confirm-label text-center">
-                            Delete User?
+                            Delete asdhf?
                         </div>
                         <div class="confirm-sub-label text-center">
-                            Are you sure you want to delete this user? <br>
-                           
-                        </div>
-                      
+                            Are you sure you want to delete this user? <br>                           
+                        </div>                      
                     </div>
                     <div class="modal-footer footer-delete text-center mb-2">
                         <button type="button" class="btn btn-default  btn-outline-gray book-interview-no-btn"
                             data-bs-dismiss="modal">No, cancel!</button>
                         <button type="button" class="btn btn-default btn-custom-green book-interview-yes-btn"
-                            data-bs-toggle="modal" data-bs-target="#book-interview-done"> YES</button>
+                            data-bs-toggle="modal" data-bs-target="#book-interview-done" > YES</button>
                     </div>
                 </div>
             </div>

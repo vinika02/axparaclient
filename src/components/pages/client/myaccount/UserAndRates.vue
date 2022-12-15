@@ -57,39 +57,43 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="user in usersData" :key="user.id">
+                    <tr v-for="(user, index) in usersData" :key="index">
                         <td>{{ (user.fname) }} {{ (user.lname) }}</td>
                         <td>{{ (user.designation) }}</td>
                         <td>{{ (user.contact) }}</td>
                         <td>{{ (user.email) }}</td>
                         <td>
-                            <button class="btn btn-sm btn-outline-blue w-70 me-2">
+                            <button class="btn btn-sm btn-outline-blue w-70 me-2" @click="edit(index)">
                                 Edit
                             </button>
                             <button class="btn btn-sm btn-outline-blue w-70" data-bs-toggle="modal"
-                                data-bs-target="#deleteModal">
+                                data-bs-target="#deleteModal" @click="deleterow(index)">
                                 Delete
                             </button>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" class="form-control form-control-sm" placeholder="Full Name">
+                            <input type="text" class="form-control form-control-sm" placeholder="Full Name"
+                                v-model="editInput.lname">
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-sm" placeholder="Designation">
+                            <input type="text" class="form-control form-control-sm" placeholder="Designation"
+                                v-model="editInput.designation">
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-sm" placeholder="Contact number">
+                            <input type="text" class="form-control form-control-sm" placeholder="Contact number"
+                                v-model="editInput.contact">
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-sm" placeholder="Email address">
+                            <input type="text" class="form-control form-control-sm" placeholder="Email address"
+                                v-model="editInput.email">
                         </td>
                         <td>
-                            <button class="btn btn-sm btn-outline-blue w-70 me-2">
+                            <button class="btn btn-sm btn-outline-blue w-70 me-2" @click="update()">
                                 Save
                             </button>
-                            <button class="btn btn-sm btn-outline-blue w-70">
+                            <button class="btn btn-sm btn-outline-blue w-70" @click="resetInput">
                                 Cancel
                             </button>
                         </td>
@@ -151,7 +155,7 @@
                 </div>
             </div>
         </div>
-<!-- add user modal -->
+        <!-- add user modal -->
         <div>
             <div class="modal fade modal-alert" id="AddUserModal" tabindex="-1" aria-labelledby="AddUserModal"
                 aria-hidden="true">
@@ -166,24 +170,28 @@
                                 <form class="row g-2">
                                     <div class="col-md-6">
                                         <label for="inputEmail4" class="form-label">First Name</label>
-                                        <input type="text" class="form-control" id="fname" placeholder="Your Text" v-model="input.fname">
+                                        <input type="text" class="form-control" id="fname" placeholder="Your Text"
+                                            v-model="input.fname">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="inputPassword4" class="form-label">Last Name</label>
-                                        <input type="text" class="form-control" id="lname" placeholder="Your Text" v-model="input.lname">
+                                        <input type="text" class="form-control" id="lname" placeholder="Your Text"
+                                            v-model="input.lname">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="inputEmail4" class="form-label">Designation</label>
-                                        <input type="text" class="form-control" id="designation"
-                                            placeholder="Your Text" v-model="input.designation">
+                                        <input type="text" class="form-control" id="designation" placeholder="Your Text"
+                                            v-model="input.designation">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="inputPassword4" class="form-label">Contact Number</label>
-                                        <input type="text" class="form-control" id="contact" placeholder="Your Text" v-model="input.contact">
+                                        <input type="text" class="form-control" id="contact" placeholder="Your Text"
+                                            v-model="input.contact">
                                     </div>
                                     <div class="col-12">
                                         <label for="inputAddress" class="form-label">Email Address</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Your Text" v-model="input.email">
+                                        <input type="text" class="form-control" id="email" placeholder="Your Text"
+                                            v-model="input.email">
                                     </div>
                                 </form>
                             </div>
@@ -200,6 +208,45 @@
             </div>
         </div>
         <!-- end adduser modal -->
+        <!-- start delete modal -->
+        <div>
+            <div class="modal fade modal-alert delete-alert" id="deleteModal" data-bs-backdrop="static"
+                data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content content-modal">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        </div>
+                        <div class="modal-body body-modal-delete">
+                            <div class="text-center bg-orange">
+                                <svg width="88" height="88" viewBox="0 0 88 88" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M40.3333 55.0002H47.6666V62.3335H40.3333V55.0002ZM40.3333 25.6668H47.6666V47.6668H40.3333V25.6668ZM43.9632 7.3335C23.7233 7.3335 7.33325 23.7602 7.33325 44.0002C7.33325 64.2402 23.7233 80.6668 43.9632 80.6668C64.2399 80.6668 80.6666 64.2402 80.6666 44.0002C80.6666 23.7602 64.2399 7.3335 43.9632 7.3335ZM43.9999 73.3335C27.7933 73.3335 14.6666 60.2068 14.6666 44.0002C14.6666 27.7935 27.7933 14.6668 43.9999 14.6668C60.2066 14.6668 73.3333 27.7935 73.3333 44.0002C73.3333 60.2068 60.2066 73.3335 43.9999 73.3335Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                            <div class="confirm-label text-center">
+                                Delete User?
+                            </div>
+                            <div class="confirm-sub-label text-center">
+                                Are you sure you want to delete this user? <br>
+                            </div>
+                        </div>
+                        <div class="modal-footer footer-delete text-center mb-2">
+                            <button type="button" class="btn btn-default  btn-outline-gray book-interview-no-btn"
+                                data-bs-dismiss="modal">No, cancel!</button>
+                            <button type="button" class="btn btn-default btn-custom-green book-interview-yes-btn"
+                                data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                @click="usersData.splice(editIndex, 1)">
+                                YES</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end start -->
     </div>
     <UserAndRatesAddUserModal></UserAndRatesAddUserModal>
     <deleteModal></deleteModal>
@@ -215,6 +262,7 @@ export default {
 
     data() {
         return {
+            editIndex: null,
             usersData: [
                 {
                     id: 1,
@@ -235,21 +283,23 @@ export default {
                 {
                     id: 1,
                     fname: 'Darlene',
-                    lname:' Robertson',
+                    lname: ' Robertson',
                     designation: 'Front End Developer',
                     contact: '+62 811 09998263',
                     email: 'sara.cruz@example.com',
                 },
                 {
                     id: 1,
-                    fname: 'Bessie Cooper',
+                    fname: 'Bessie',
+                    lname: 'Cooper',
                     designation: 'Chief Executive Officer',
                     contact: '+62 899 00192732',
                     email: 'deanna.curtis@example.com',
                 },
                 {
                     id: 1,
-                    fname: 'Robert Fox',
+                    fname: 'Robert',
+                    lname: 'Fox',
                     designation: 'Human Resource Manager',
                     contact: '+62 822 35327889',
                     email: 'tim.jennings@example.com',
@@ -257,7 +307,7 @@ export default {
                 {
                     id: 1,
                     fname: 'Cody',
-                    lname:'Fisher',
+                    lname: 'Fisher',
                     designation: 'Chief Executive Officer',
                     contact: '+62 899 00192732',
                     email: 'willie.jennings@example.com',
@@ -291,14 +341,15 @@ export default {
             ],
             input: {
                 fname: "",
-                lname:"",
+                lname: "",
                 designation: '',
                 contact: '',
                 email: "",
             },
-            editIndex: 0,
+            editIndexx: 0,
             editInput: {
                 fname: '',
+                lname: "",
                 designation: '',
                 contact: '',
                 email: '',
@@ -306,43 +357,53 @@ export default {
         }
     },
     methods: {
+        // reset input field
+        resetInput() {
+            this.editInput.fname = "";
+            this.editInput.lname = "";
+            this.editInput.designation = "";
+            this.editInput.contact = "";
+            this.editInput.email = "";
+        },
         //function to add data to table
         add: function () {
             this.usersData.push({
                 fname: this.input.fname,
-                lname:this.input.lname,
+                lname: this.input.lname,
                 designation: this.input.designation,
                 contact: this.input.contact,
                 email: this.input.email,
             });
         },
         //function to handle data edition
-        edit: function(index) {
+        edit: function (index) {
             this.editInput.fname = this.usersData[index].fname;
+            this.editInput.lname = this.usersData[index].lname;
             this.editInput.designation = this.usersData[index].designation;
             this.editInput.contact = this.usersData[index].contact;
             this.editInput.email = this.usersData[index].email;
-            this.editIndex = index;
-            $(".modal").modal();
+
+
         },
         //function to update data
-        update: function() {
-            this.usersData.splice(this.editIndex, 1);
+        update: function () {
+            this.usersData.splice(this.editIndexx, 1);
             this.usersData.push({
-                lname: this.editInput.lname,
                 fname: this.editInput.fname,
-                age: this.editInput.age,
-                job: this.editInput.job,
-                address: this.editInput.address
+                lname: this.editInput.lname,
+                designation: this.editInput.designation,
+                contact: this.editInput.contact,
+                email: this.editInput.email,
+
             });
             for (var key in this.editInput) {
                 this.editInput[key] = "";
             }
-            $(".modal").modal('hide');
         },
         //function to defintely delete data
-        deletePerson: function(index) {
-            this.persons.splice(index, 1);
+        deleterow: function (index) {
+            this.editIndex = index
+
         }
     },
     components: { UserAndRatesAddUserModal, deleteModal },
