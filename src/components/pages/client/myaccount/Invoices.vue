@@ -1,7 +1,7 @@
 <template>
     <div class="invoice-box">
-        <input type="text" placeholder="Search Invoice" class="input">
-        <button class="btn btn-print"><svg top="5px" width="17" height="24" viewBox="0 0 24 24" fill="none"
+        <input type="text" placeholder="Search Invoice" class="input" v-model="searchQuery">
+        <button class="btn btn-print" onclick="print()"><svg top="5px" width="17" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M19 8H18V3H6V8H5C3.34 8 2 9.34 2 11V17H6V21H18V17H22V11C22 9.34 20.66 8 19 8ZM8 5H16V8H8V5ZM16 19H8V15H16V19ZM18 15V13H6V15H4V11C4 10.45 4.45 10 5 10H19C19.55 10 20 10.45 20 11V15H18Z"
@@ -31,7 +31,7 @@
         </button>
     </div>
     <div>
-        <table class="table invoice-table">
+        <table class="table invoice-table printable">
             <thead>
                 <tr>
                     <th></th>
@@ -66,7 +66,7 @@
                 </tr>
             </thead>
             <tbody class="flex">
-                <tr v-for="user in invoice" :key="user.id">
+                <tr v-for="user of resultquery" :key="user.id">
                     <td style="width: 40px; height: 38px;" class="checkbox"><input class="form-check-input"
                             type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" checked></td>
                     <td style="width:330px; height: 38px;">{{ (user.date) }}</td>
@@ -87,57 +87,79 @@ export default {
     name: 'Invoices',
     data() {
         return {
+            searchQuery: null,
             invoice: [
                 {
                     id: 1,
 
                     date: "01 Feb 2020",
-                    invoiceNumber: "INV- 0001",
-                    reference: "P.O.5117167923",
+                    invoiceNumber: "INV- 0004",
+                    reference: "A.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
                     date: "04 Feb 2020",
-                    invoiceNumber: "INV- 0001",
-                    reference: "P.O.5117167923",
+                    invoiceNumber: "INV- 0005",
+                    reference: "C.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
                     date: "04 Feb 2020",
-                    invoiceNumber: "INV- 0001",
-                    reference: "P.O.5117167923",
+                    invoiceNumber: "INV- 0006",
+                    reference: "B.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
                     date: "08 Feb 2020",
-                    invoiceNumber: "INV- 0001",
-                    reference: "P.O.5117167923",
+                    invoiceNumber: "INV- 0009",
+                    reference: "T.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
                     date: "12 Feb 2020",
-                    invoiceNumber: "INV- 0001",
-                    reference: "P.O.5117167923",
+                    invoiceNumber: "INV- 0023",
+                    reference: "Z.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
                     date: "12 Feb 2020",
-                    invoiceNumber: "INV- 0001",
-                    reference: "P.O.5117167923",
+                    invoiceNumber: "INV- 00099",
+                    reference: "Y.O.5117167923",
                     dueDate: "01 Feb 2020"
                 }
             ],
         }
     },
+    computed:{
+        resultquery(){
+            if(this.searchQuery) {
+                return this.invoice.filter(item => {
+                    return this.searchQuery.toLowerCase().split("").every(v => item.invoiceNumber.toLowerCase().includes(v));
+                });
+            }else{
+                return this.invoice;
+            }
+        }
+    },
+    methods:{
+    
+    }
    
 }
 </script>
 <style>
+@media print {
+         *{visibility:hidden}
+         .printable,.printable *{
+            visibility:visible
+         }
+      }
+      
 .invoice-box {
     display: flex;
     gap: 14px;
