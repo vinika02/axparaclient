@@ -7,7 +7,8 @@
       name: 'App',
       data(){
         return{
-          routeName: ''
+          routeName: '',
+          isLogin: true,
         }
       },
       components: {
@@ -33,7 +34,7 @@
 <template>
   <Header v-if="this.routeName[1] != 'login'"></Header>
   <RouterView/>
-  <Footer v-if="this.routeName[1] != 'candidate-db-table' && this.routeName[1] != 'client'"></Footer>
+  <Footer v-if="this.routeName[1] != '' && this.routeName[1] != 'candidate-db-table' && this.routeName[2] != 'candidate-db-table' && !isLogin"></Footer>
 </template>
 
 <style>
@@ -71,4 +72,5 @@
           width: 100%;
     }
   }
+ 
 </style>

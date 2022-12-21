@@ -1,16 +1,15 @@
-.btn-outline-gray {
+.btn-outline-gray{
     font-family: RubikRegular !important;
     margin-right: 12px !important;
     border: 1px solid #27304C !important;
-    color: #27304C !important;
+    color:#27304C !important;
     border-radius: 2px !important;
 }
-
-.btn-outline-gray:hover {
+.btn-outline-gray:hover{
     background-color: #eee !important;
 }
 
-.btn-outline-blue {
+.btn-outline-blue{
     border: 1px solid #2C91FF !important;
     color: #2C91FF !important;
     font-weight: 500 !important;
@@ -18,13 +17,11 @@
     font-family: RubikRegular !important;
     border-radius: 3px !important;
 }
-
-.btn-outline-blue:hover {
+.btn-outline-blue:hover{
     background-color: #2C91FF !important;
     color: white !important;
 }
-
-.btn-outline-green {
+.btn-outline-green{
     border: 1px solid #00B600 !important;
     color: #00B600 !important;
     font-weight: 500 !important;
@@ -32,14 +29,13 @@
     font-family: RubikRegular !important;
     border-radius: 3px !important;
 }
-
-.btn-outline-green:hover {
+.btn-outline-green:hover{
     background-color: #00B600 !important;
     color: white !important;
 }
 
 
-.btn-outline-red {
+.btn-outline-red{
     border: 1px solid #FF4949 !important;
     color: #FF4949 !important;
     font-weight: 500 !important;
@@ -47,22 +43,19 @@
     font-family: RubikRegular !important;
     border-radius: 3px !important;
 }
-
-.btn-outline-red:hover {
+.btn-outline-red:hover{
     background-color: #ffd9d9 !important;
 }
-
-.btn-red {
+.btn-red{
     background: #FF4949 !important;
-    border-color: #FF4949 !important;
+    border-color: #FF4949 !important;    
     border-radius: 2px;
 }
-
-.btn-red:hover {
+.btn-red:hover{
     background-color: #9f3333 !important;
 }
 
-.btn-save-changes {
+.btn-save-changes{
     border: 1px solid #2C91FF !important;
     background: #2C91FF !important;
     font-weight: 500 !important;
@@ -70,74 +63,61 @@
     font-family: RubikRegular !important;
     border-radius: 3px !important;
 }
-
-.btn-cancel {
+.btn-cancel{
     font-weight: 500 !important;
     font-size: 14px !important;
     font-family: RubikRegular !important;
     margin-right: 12px !important;
 }
 
-.btn-custom-blue {
+.btn-custom-blue{       
     background: #2C91FF !important;
-    border-color: #2C91FF !important;
+    border-color: #2C91FF !important;    
     border-radius: 2px;
-
 }
-
-.btn-sky-blue {
+.btn-sky-blue{       
     background: #E3F1FF !important;
-    border-color: #E3F1FF !important;
+    border-color: #E3F1FF !important;    
     border-radius: 2px;
 }
-
-.btn-sky-blue:hover {
+.btn-sky-blue:hover{       
     background: #2C91FF !important;
 }
-
-.btn-custom-green {
+.btn-custom-green{       
     background: #00B600 !important;
     border-color: #00B600 !important;
     border-radius: 2px !important;
 }
-
-.btn-custom-green:hover {
+.btn-custom-green:hover{       
     background: #218221 !important;
 }
-
-.btn-dark-green {
-    background: #439243;
+.btn-dark-green{       
+    background: #439243 ;
     border-color: #439243;
     border-radius: 2px;
 }
-
-.btn-dark-green:hover {
+.btn-dark-green:hover{       
     background: #00B600 !important;
 }
-
-.btn-white {
-    background: #FFFFFF;
+.btn-white{       
+    background: #FFFFFF ;
     border-color: #FFFFFF;
     border-radius: 2px;
 }
-
-.btn-white:hover {
-    background: #eee !important;
+.btn-white:hover{       
+    background: #eee !important ;
     border-color: #eee;
 }
-
-.btn-outline-white {
+.btn-outline-white{       
     background: transparent;
     border: 1px solid #FFFFFF;
     border-radius: 2px;
 }
-
-.btn-outline-white:hover {
+.btn-outline-white:hover{       
     background: transparent;
     border: 1px solid #ccc !important;
 }
-
-.btn-alert {
+.btn-alert{
     width: 114px;
     height: 40px;
     font-weight: 500 !important;
@@ -145,8 +125,7 @@
     font-family: RubikRegular;
     margin-top: -15px;
 }
-
-.btn-add-order {
+.btn-add-order{
     justify-content: center;
     align-items: center;
     width: 105px;
@@ -157,7 +136,7 @@
     font-family: RubikRegular;
 }
 
-.btn-interview {
+.btn-interview{
     justify-content: center;
     align-items: center;
     width: 87px;
@@ -167,8 +146,7 @@
     color: white !important;
     font-family: RubikRegular;
 }
-
-.btn-outline-orange {
+.btn-outline-orange{
     background: #FFF2E3;
     border: 1px solid #FF9A2C;
     border-radius: 100px;
@@ -181,22 +159,26 @@
 }
 
 .custom-pagination .page-link:not(.border-0) {
+    text-indent: 0px;
     border-radius: 50px !important;
     margin-left: 5px;
     margin-right: 5px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding: 4px;
+    padding-bottom: 4px !important;
     width: 35px;
+    height: 34px;
     font-family: 'RubikRegular';
     font-style: normal;
     color: #8C8C8C;
-}
+    text-align: center;
+    vertical-align: middle;
+    line-height:25px;
 
-.custom-pagination .active {
+}
+.custom-pagination .active{
     color: white !important;
     background: #2C91FF;
 }
-
 .btn-print {
     background: #2C91FF !important;
     border-radius: 2px;
@@ -210,7 +192,4 @@
     color: #FFFFFF;
     gap: 8px;
     width: 94px;
-
 }
-
-

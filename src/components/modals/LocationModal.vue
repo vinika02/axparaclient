@@ -1,10 +1,10 @@
-<template>    
+<template>
      <div class="modal fade modal-location" id="LocationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="LocationModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                
+
             </div>
             <div class="modal-body">
                 <div class="text-center bg-orange">
@@ -61,7 +61,7 @@
                   </ul>
                 </div>
                 </div>
-                
+
             </div>
             </div>
         </div>
@@ -71,19 +71,19 @@
  export default {
      name: 'LocationModal',
      data() {
-         return { 
+         return {
           myLocation: 'Select Location'
          }
      },
      mounted() {
-       
+
 
     },
     methods: {
       clickLocation(loc){
         this.myLocation = loc;
         localStorage.setItem('location', loc);
-        window.location.replace('/employer')
+        window.location.replace('/client')
       }
     },
  }
@@ -144,12 +144,12 @@
  .modal-location .modal-header{
      background-color: #FFAE58 !important;
      border-radius: unset;
-     border-bottom: unset;     
- } 
+     border-bottom: unset;
+ }
  .modal-location.done .modal-header{
      background: #47C9A2 !important;
      border-radius: unset;
-     border-bottom: unset;     
+     border-bottom: unset;
  }
  .modal-location .modal-body{
      padding:unset;
@@ -181,12 +181,12 @@
      background-color: #FFAE58 !important;
      border-radius: unset;
      padding-bottom:30px;
- } 
+ }
  .modal-location.done .modal-body .bg-green{
      background-color:#47C9A2 !important;
      border-radius: unset;
      padding-bottom:30px;
  }
   /* End Modal Alert */
- 
+
  </style>

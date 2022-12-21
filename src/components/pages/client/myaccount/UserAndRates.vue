@@ -248,14 +248,10 @@
         </div>
         <!-- end start -->
     </div>
-    <UserAndRatesAddUserModal></UserAndRatesAddUserModal>
-    <deleteModal></deleteModal>
+
 </template>
 
 <script>
-import UserAndRatesAddUserModal from '@/components/modals/UserAndRatesAddUserModal.vue';
-import deleteModal from '@/components/modals/deleteModal.vue';
-
 export default {
 
     name: 'UserAndRates',
@@ -406,7 +402,7 @@ export default {
 
         }
     },
-    components: { UserAndRatesAddUserModal, deleteModal },
+    components: { },
 }
 </script>
 <style>
@@ -530,5 +526,172 @@ export default {
 
 .table-management-fee th {
     padding: 9px 9px 9px 12px;
+}
+.delete {
+    align-items: center;
+    display: flex;
+    background: #FFAE58;
+    width: 350px;
+    height: 164px;
+    justify-content: center;
+
+}
+
+.delete-user {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    font-family: 'RubikMedium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.delete-con {
+    display: flex;
+    justify-content: center;
+    font-family: 'RubikRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #6D6D6D;
+}
+
+.delete-body {
+    gap: 12px;
+    padding: 22px;
+    align-items: center;
+    width: 350px;
+}
+
+#inputGroupSelect01 {
+    font-family: RubikRegular;
+}
+
+/* Book interview */
+.book-interview-no-btn {
+    color: #27304C;
+    font-weight: 500;
+    width: 146px;
+    font-size: 14px;
+    font-family: RubikMedium !important;
+}
+
+.book-interview-yes-btn {
+    color: #FFFFFF;
+    font-weight: 500;
+    width: 146px;
+    font-size: 14px;
+}
+
+.book-ineterview-option {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.book-ineterview-option select {
+    font-weight: 400;
+    font-size: 14px;
+    border: 1px solid #EDEDED;
+    border-radius: 2px;
+}
+
+.view-plan-interviews {
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 200px;
+    height: 38px;
+
+}
+
+/* end Book interview */
+
+/* Begin Modal Alert */
+.delete-alert .footer-delete {
+    justify-content: center;
+    border-top: unset;
+}
+
+.delete-alert .content-modal {
+    border-radius: unset;
+    max-width: 350px;
+    width: 350px;
+    margin: 0px auto;
+}
+
+.delete-alert .alert-cancel-btn {
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.delete-alert .alert-yes-btn {
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.delete-alert .btn-close {
+    font-size: 12px;
+    background: transparent url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffff%27%3e%3cpath d=%27M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z%27/%3e%3c/svg%3e') center/1em auto no-repeat !important;
+}
+
+.delete-alert .modal-header {
+    background-color: #FFAE58 !important;
+    border-radius: unset;
+    border-bottom: unset;
+}
+
+.delete-alert.done .modal-header {
+    background: #47C9A2 !important;
+    border-radius: unset;
+    border-bottom: unset;
+}
+
+.modal-alert .body-modal-delete {
+    padding: unset;
+}
+
+.modal-alert  .body-modal-delete .confirm-label {
+    font-weight: 600 !important;
+    font-size: 22px;
+    color: #27304C;
+    font-family: RubikRegular !important;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-alert  .body-modal-delete .confirm-sub-label {
+    font-weight: 400;
+    font-size: 14px;
+    color: #6D6D6D;
+    font-family: RubikMedium !important;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.modal-alert  .body-modal-delete .confirm-sub-label.done {
+    font-weight: 400;
+    font-size: 16px;
+    color: #626F7A;
+}
+
+.modal-alert  .body-modal-delete .bg-orange {
+    background-color: #FFAE58 !important;
+    border-radius: unset;
+    padding-bottom: 30px;
+}
+
+.modal-alert.done  .body-modal-delete .bg-green {
+    background-color: #47C9A2 !important;
+    border-radius: unset;
+    padding-bottom: 30px;
 }
 </style>

@@ -1,163 +1,141 @@
-@font-face {
-    font-family: "RubikRegular";
-    src: local("Rubik"),
+
+       
+    @font-face {
+        font-family: "RubikRegular";
+        src: local("Rubik"),
         url(../../assets/Rubik/Rubik-Regular.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "RubikLight";
-    src: local("Rubik"),
+    }
+    @font-face {
+        font-family: "RubikLight";
+        src: local("Rubik"),
         url(../../assets/Rubik/Rubik-Light.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "RubikMedium";
-    src: local("Rubik"),
+    }  
+    @font-face {
+        font-family: "RubikMedium";
+        src: local("Rubik"),
         url(../../assets/Rubik/Rubik-Medium.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "RubikSemiBold";
-    src: local("Rubik"),
+    }   
+    @font-face {
+        font-family: "RubikSemiBold";
+        src: local("Rubik"),
         url(../../assets/Rubik/Rubik-SemiBold.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "RubikBold";
-    src: local("Rubik"),
+    }   
+    @font-face {
+        font-family: "RubikBold";
+        src: local("Rubik"),
         url(../../assets/Rubik/Rubik-Bold.ttf) format("truetype");
-}
-
-.text-pink {
-    color: #EF5DA8 !important;
-}
-
-.align-self-end {
-    align-self: end;
-}
-
-.text-violet {
-    color: #5D5FEF;
-}
-
-.text-orange {
-    color: #FF9A2C;
-}
-
-.fw-medium {
-    font-family: RubikMedium;
-}
-
-.error-msg {
-    font-size: 12px;
-    line-height: 170%;
-    color: #E54141;
-    font-weight: 400;
-    font-family: RubikRegular;
-}
-
-.font-12 {
-    font-size: 12px;
-}
-
-.font-14 {
-    font-size: 14px;
-}
-
-.link {
-    text-decoration: none;
-}
-
-.text-red {
-    color: #E54141
-}
-
-.text-b-b-18 {
-    color: #2C91FF;
-    font-weight: 500;
-    font-size: 18px;
-    font-family: RubikMedium;
-}
-
-.text-semi-bold-18 {
-    color: #2C91FF;
-    font-weight: 500;
-    font-size: 18px;
-    font-family: RubikSemiBold;
-}
-
-.text-semi-bold {
-    font-family: RubikSemiBold;
-}
-
-.text-medium-bold {
-    font-family: RubikMedium;
-}
-
-.text-orange-b-18 {
-    color: #FF9A2C;
-    font-weight: 500;
-    font-size: 18px;
-    font-family: RubikMedium;
-}
-
-.text-blue {
-    color: #2C91FF;
-}
-
-.text-green {
-    color: #00B600;
-}
-
-.fw-force-medium {
-    font-family: RubikMedium !important;
-}
-
-
-.font-regular {
-    font-family: RubikRegular;
-}
-
-.font-light {
-    font-family: RubikLight;
-}
-
-.font-force-light {
-    font-family: RubikLight !important;
-}
-
-.dot-green {
-    background: #00B600;
-    width: 12px;
-    height: 12px;
-    border-radius: 50px;
-}
-
-.dot-red {
-    background: #FF4949;
-    width: 12px;
-    height: 12px;
-    border-radius: 50px;
-}
-
-.dot-blue {
-    background: #2C91FF;
-    width: 12px;
-    height: 12px;
-    border-radius: 50px;
-}
-
-.dot-orange {
-    background: #FFC700;
-    width: 12px;
-    height: 12px;
-    border-radius: 50px;
-}
-
-.form-label {
-    font-family: 'RubikMedium';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    color: #27304C;
-}
+    } 
+    .text-pink{
+        color: #EF5DA8 !important;
+    } 
+    .align-self-end{
+        align-self:end;
+    }
+    .text-violet{
+        color: #5D5FEF;
+    }
+    .text-orange{
+        color: #FF9A2C;
+    }
+    .fw-medium{
+        font-family: RubikMedium;
+    }
+    .error-msg{
+        font-size: 12px;
+        line-height: 170%;
+        color:#E54141;
+        font-weight: 400;
+        font-family: RubikRegular;
+    }
+    .font-12{
+        font-size: 12px;
+    } 
+    .font-14{
+        font-size: 14px;
+    }
+    .link{
+        text-decoration: none;
+    }
+    
+    .text-red{
+        color: #E54141
+    }
+    .text-b-b-18{
+        color: #2C91FF;
+        font-weight: 500;
+        font-size: 18px;
+        font-family: RubikMedium;
+    }
+    .text-semi-bold-18{
+        color: #2C91FF;
+        font-weight: 500;
+        font-size: 18px;
+        font-family: RubikSemiBold;
+    }
+    .text-semi-bold{
+        font-family: RubikSemiBold;
+    }
+    .text-medium-bold{
+        font-family: RubikMedium;
+    }
+    .text-orange-b-18{
+        color: #FF9A2C;
+        font-weight: 500;
+        font-size: 18px;
+        font-family:  RubikMedium;
+    }
+    .text-blue{
+        color: #2C91FF;
+    }
+    .text-green{
+        color: #00B600;
+    }
+    .fw-force-medium{
+        font-family: RubikMedium !important;
+    }
+       
+    
+    .font-regular{
+        font-family: RubikRegular;
+    }
+    .font-light{
+        font-family: RubikLight;
+    }
+    .font-force-light{
+        font-family: RubikLight !important;
+    }
+    .dot-green{
+        background: #00B600;
+        width: 12px;
+        height: 12px;
+        border-radius:  50px;
+    }
+    .dot-red{
+        background: #FF4949;
+        width: 12px;
+        height: 12px;
+        border-radius:  50px;
+    }
+    .dot-blue{
+        background: #2C91FF;
+        width: 12px;
+        height: 12px;
+        border-radius:  50px;
+    }  
+    .dot-orange{
+        background: #FFC700;
+        width: 12px;
+        height: 12px;
+        border-radius:  50px;
+    }
+    @media screen and (max-width: 650px) { 
+        .content-panel{
+            height: unset !important;
+        }
+    }
+    @media screen and (max-device-width: 600px){
+               
+        .content-panel{
+            height: unset !important;
+        }
+     }

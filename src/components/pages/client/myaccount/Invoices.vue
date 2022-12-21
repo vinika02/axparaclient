@@ -1,7 +1,7 @@
 <template>
     <div class="invoice-box">
         <input type="text" placeholder="Search Invoice" class="input" v-model="searchQuery">
-        <button class="btn btn-print" onclick="print()"><svg top="5px" width="17" height="24" viewBox="0 0 24 24" fill="none"
+        <button class="btn btn-print " onclick="print()"><svg top="5px" width="17" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M19 8H18V3H6V8H5C3.34 8 2 9.34 2 11V17H6V21H18V17H22V11C22 9.34 20.66 8 19 8ZM8 5H16V8H8V5ZM16 19H8V15H16V19ZM18 15V13H6V15H4V11C4 10.45 4.45 10 5 10H19C19.55 10 20 10.45 20 11V15H18Z"
@@ -16,13 +16,15 @@
             </svg>
             Download
         </button>
-        <button class="date1" data-bs-toggle="modal" data-bs-target="#datepick">20-11-08 <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+        <button class="date1" @click="showDatePicker($event)" ref="datePicker">
+            {{dateFrom}}
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M21.3217 14.4765L17.088 8.35882C17.0108 8.24714 16.9124 8.15684 16.8002 8.09469C16.688 8.03255 16.5648 8.00017 16.4401 8H14.7673C14.5943 8 14.4988 8.22647 14.6046 8.38235L18.3297 13.7647H2.70652C2.59293 13.7647 2.5 13.8706 2.5 14V15.7647C2.5 15.8941 2.59293 16 2.70652 16H20.6711C21.363 16 21.7476 15.0941 21.3217 14.4765Z"
                     fill="#8C8C8C" />
             </svg>
-            20-12-23
+            {{dateTo}}
             <svg width="24" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M7 11H9V13H7V11ZM21 6V20C21 21.1 20.1 22 19 22H5C3.89 22 3 21.1 3 20L3.01 6C3.01 4.9 3.89 4 5 4H6V2H8V4H16V2H18V4H19C20.1 4 21 4.9 21 6ZM5 8H19V6H5V8ZM19 20V10H5V20H19ZM15 13H17V11H15V13ZM11 13H13V11H11V13Z"
@@ -76,58 +78,86 @@
                 </tr>
             </tbody>
         </table>       
+        <AxDateRagePicker 
+            :style="dateStyle"
+            v-if="showPopUpOver"
+            :isDateShown="dateConfig.isDateShown" 
+            :type="dateConfig.type" 
+            :label="dateConfig.label" 
+            :calendar="dateConfig.calendar" 
+            :startTime="dateConfig.startTime" 
+            :endTime="dateConfig.endTime" 
+            @clicked="onClickOkBtn"
+            :timeZone="dateConfig.timeZone">
+       </AxDateRagePicker>
     </div>
     
 </template>
 <script>
 
-
+import AxDateRagePicker from '../../../datepicker/AxDateRagePicker.vue';
 export default {
     
     name: 'Invoices',
+    components:{
+        AxDateRagePicker,
+    },
     data() {
         return {
             searchQuery: null,
+            showPopUpOver:false,
+            dateStyle: {},   
+            dateFrom: moment(new Date()).format('YYYY-MM-DD'),
+            dateTo: moment(new Date()).format('YYYY-MM-DD'),
+            dateConfig:{
+                isDateShown:true,
+                type:"radio",
+                label:"Custom Date & Time",
+                calendar:new Date(),
+                startTime:{time:'10:00',timeConvention:'AM'},
+                endTime:{time:'10:00',timeConvention:'AM'},
+                timeZone:'(GMT -05:00) Eastern Time (US & Canada)'
+            },
             invoice: [
                 {
                     id: 1,
 
-                    date: "01 Feb 2020",
+                    date:  moment(new Date('01 Feb 2020')).format('DD MMM YYYY'),
                     invoiceNumber: "INV- 0004",
                     reference: "A.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
-                    date: "04 Feb 2020",
+                    date: moment(new Date('04 Feb 2020')).format('DD MMM YYYY'),
                     invoiceNumber: "INV- 0005",
                     reference: "C.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
-                    date: "04 Feb 2020",
+                    date: moment(new Date('04 Feb 2020')).format('DD MMM YYYY'),
                     invoiceNumber: "INV- 0006",
                     reference: "B.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
-                    date: "08 Feb 2020",
+                    date: moment(new Date('08 Feb 2020')).format('DD MMM YYYY'),
                     invoiceNumber: "INV- 0009",
                     reference: "T.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
-                    date: "12 Feb 2020",
+                    date: moment(new Date('12 Feb 2020')).format('DD MMM YYYY'),
                     invoiceNumber: "INV- 0023",
                     reference: "Z.O.5117167923",
                     dueDate: "01 Feb 2020"
                 },
                 {
                     id: 1,
-                    date: "12 Feb 2020",
+                    date: moment(new Date('12 Feb 2020')).format('DD MMM YYYY'),
                     invoiceNumber: "INV- 00099",
                     reference: "Y.O.5117167923",
                     dueDate: "01 Feb 2020"
@@ -147,18 +177,28 @@ export default {
         }
     },
     methods:{
-    
-    }   
+        onClickOkBtn(date){
+            this.dateFrom = date.dateFrom;
+            this.dateTo = date.dateTo;
+        },
+        showDatePicker(e){
+            this.showPopUpOver = !this.showPopUpOver;
+            this.dateStyle = {
+                "left": (this.$refs.datePicker.offsetLeft-430)+'px',
+                "top": (this.$refs.datePicker.offsetTop+45)+'px'
+            }
+        }
+        
+    }
 }
 </script>
 <style>
 @media print {
-         *{visibility:hidden}
-         .printable,.printable *{
-            visibility:visible
-         }
-      }
-      
+    *{visibility:hidden}
+    .printable,.printable *{
+         visibility:visible  
+    }
+}
 .invoice-box {
     display: flex;
     gap: 14px;
@@ -186,7 +226,7 @@ export default {
 .date1 {
     display: flex;
     align-items: center;
-    width: 248px;
+    width: 290px;
     border: 1px solid #EDEDED;
     padding: 9px 12px;
     gap: 19px;

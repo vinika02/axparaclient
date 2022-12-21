@@ -4,137 +4,193 @@
         <div class="container-fluid app-container p-t-24">
             <div class="content-container dashboard ">
                 <div class="Table-1">
-                    <div class="modal-header p-0">
-                        <div class="input-group search-skill"
-                                >
-                            <input type="text" class="form-control input-skill-scanner-keyword"
-                                v-model="addSkillFilter"
-                                @click="openSkills($event, true)"
-                                :data-skills="true"
-                                @keyup="suggestSkills($event)"
-                                placeholder="Search keywords or select skills"
-                                aria-label="Search keywords or select skills" aria-describedby="input-skill-scanner-keyword">
-                            <span class="input-group-text search-icon" id="input-skill-scanner-keyword" @click="filterData($event)">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.9167 9.66667H10.2583L10.025 9.44167C10.8417 8.49167 11.3333 7.25833 11.3333 5.91667C11.3333 2.925 8.90833 0.5 5.91667 0.5C2.925 0.5 0.5 2.925 0.5 5.91667C0.5 8.90833 2.925 11.3333 5.91667 11.3333C7.25833 11.3333 8.49167 10.8417 9.44167 10.025L9.66667 10.2583V10.9167L13.8333 15.075L15.075 13.8333L10.9167 9.66667ZM5.91667 9.66667C3.84167 9.66667 2.16667 7.99167 2.16667 5.91667C2.16667 3.84167 3.84167 2.16667 5.91667 2.16667C7.99167 2.16667 9.66667 3.84167 9.66667 5.91667C9.66667 7.99167 7.99167 9.66667 5.91667 9.66667Z" fill="#EDEDED"/>
-                                </svg>
-                            </span>
-                            <div class="skills-dropdown" @click="skillsDropdown($event)" v-if="showSkills">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="filter-primary-skills" v-for="(s, index) in skills.primarySkills" :key="index">
-                                            <div @click="addToFilter($event, s)" class="cursor-pointer">
-                                                {{s}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="most-search">
-                                            Most searched skills:
-                                        </div> 
-                                        <div class="" >                                            
-                                            <button v-for="(o, index) in moreSkill" :key="index" class="btn btn-sm btn-sky-blue btn-filter-skill cursor-pointer">
-                                                +
-                                                <span @click="addToFilter($event, o)">
-                                                    {{o}}
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <div class="text-end">
-                                            <button class="btn btn-sm btn-custom-blue btn-see-all-skills" @click="seeAll($vent)" v-if="seeAllSkill">
-                                                See All Skills
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="all-skills" v-if="otherSkillsPopup" @click="skillsDropdown($event)">
-                                <div class="input-group other-skill-search mb-3">
-                                    <input type="text" class="form-control" data-skills="other-skills" placeholder="Search skills" v-model="filter.otherSkill" @keyup="suggestSkills($event)" aria-label="Search skills" aria-describedby="basic-addon2">
-                                    <span class="input-group-text clear-other-skill bg-white" id="basic-addon2" @click="clearOtherSkill($event)">
-                                        <svg width="15" height="15" class=" " viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M10.0399 8.99906L15.3134 2.71312C15.4018 2.60866 15.3274 2.44995 15.1908 2.44995H13.5877C13.4933 2.44995 13.4029 2.49214 13.3406 2.56446L8.99129 7.7495L4.64196 2.56446C4.58169 2.49214 4.49129 2.44995 4.39486 2.44995H2.79173C2.65513 2.44995 2.5808 2.60866 2.66919 2.71312L7.94263 8.99906L2.66919 15.285C2.64939 15.3083 2.63669 15.3368 2.63259 15.367C2.62849 15.3973 2.63317 15.4282 2.64607 15.4559C2.65898 15.4836 2.67956 15.507 2.70538 15.5234C2.7312 15.5397 2.76117 15.5483 2.79173 15.5482H4.39486C4.48928 15.5482 4.57968 15.506 4.64196 15.4337L8.99129 10.2486L13.3406 15.4337C13.4009 15.506 13.4913 15.5482 13.5877 15.5482H15.1908C15.3274 15.5482 15.4018 15.3895 15.3134 15.285L10.0399 8.99906Z" fill="#EDEDED"/>
-                                        </svg>
-                                    </span>                                    
-
-                                    <span class="input-group-text border-left-6D6D6D search-icon bg-white" id="basic-addon3" @click="filterData($event)">
+                    <div class="filter-container">
+                        <div class="row g-3 filter-content p-0">
+                            <div class="filter-col col-12 col-sm-12 col-md-4 col-lg-4">                                
+                                <div class="input-group search-skill"
+                                        >
+                                    <input type="text" class="form-control input-skill-scanner-keyword"
+                                        v-model="addSkillFilter"
+                                        @click="openSkills($event, true)"
+                                        :data-skills="true"
+                                        v-on:keydown="suggestSkills($event)"
+                                        placeholder="Search keywords or select skills"
+                                        aria-label="Search keywords or select skills" aria-describedby="input-skill-scanner-keyword">
+                                    <span class="input-group-text search-icon" id="input-skill-scanner-keyword" @click="filterData($event)">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.9167 9.66667H10.2583L10.025 9.44167C10.8417 8.49167 11.3333 7.25833 11.3333 5.91667C11.3333 2.925 8.90833 0.5 5.91667 0.5C2.925 0.5 0.5 2.925 0.5 5.91667C0.5 8.90833 2.925 11.3333 5.91667 11.3333C7.25833 11.3333 8.49167 10.8417 9.44167 10.025L9.66667 10.2583V10.9167L13.8333 15.075L15.075 13.8333L10.9167 9.66667ZM5.91667 9.66667C3.84167 9.66667 2.16667 7.99167 2.16667 5.91667C2.16667 3.84167 3.84167 2.16667 5.91667 2.16667C7.99167 2.16667 9.66667 3.84167 9.66667 5.91667C9.66667 7.99167 7.99167 9.66667 5.91667 9.66667Z" fill="#EDEDED"/>
                                         </svg>
                                     </span>
-                                </div>
-                                <div>
-                                    <div class="d-flex align-content-start flex-wrap">
-                                        <div class="other-skill-card" v-for="otherSkill in otherSkills" :key="otherSkill">
-                                            <div class="other-skill-name">{{otherSkill.name}}</div>
-                                            <div class="other-skill-data" v-for="s, index in otherSkill.data" :key="index">
-                                                <div class="mt-2" :class="{'other-skill-name':s.skill=='Design'}">{{s.skill}}</div>                                                
-                                                <button v-for="(o, index) in s.data" :key="index" class="btn btn-sm btn-sky-blue btn-filter-skill cursor-pointer">
-                                                    +
-                                                    <span @click="addToFilter($event, o)">
-                                                        {{o}}
-                                                    </span>
-                                                </button>
+                                    <div class="skills-dropdown" @click="skillsDropdown($event)" v-if="showSkills">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="filter-primary-skills" v-for="(s, index) in skills.primarySkills" :key="index">
+                                                    <div @click="addToFilter($event, s)" class="cursor-pointer">
+                                                        {{s}}
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>                                       
+                                            <div class="col-sm-6">
+                                                <div class="most-search">
+                                                    Most searched skills:
+                                                </div> 
+                                                <div class="" >                                            
+                                                    <button v-for="(o, index) in moreSkill" :key="index" class="btn btn-sm btn-sky-blue btn-filter-skill cursor-pointer">
+                                                        +
+                                                        <span @click="addToFilter($event, o)">
+                                                            {{o}}
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="text-end">
+                                                    <button class="btn btn-sm btn-custom-blue btn-see-all-skills" @click="seeAll($vent)" v-if="seeAllSkill">
+                                                        See All Skills
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="p-3">
-                                        <div class="text-end">
-                                            <button class="btn btn-custom-blue btn-see-all-skills" @click="closeOtherSkills($event)">
-                                                Back to Search
-                                            </button>
+                                    <div class="all-skills" v-if="otherSkillsPopup" @click="skillsDropdown($event)">
+                                        <div class="input-group other-skill-search mb-3">
+                                            <input type="text" class="form-control" data-skills="other-skills" placeholder="Search skills" v-model="filter.otherSkill" v-on:keydown="suggestSkills($event)" aria-label="Search skills" aria-describedby="basic-addon2">
+                                            <span class="input-group-text clear-other-skill bg-white" id="basic-addon2" @click="clearOtherSkill($event)">
+                                                <svg width="15" height="15" class=" " viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10.0399 8.99906L15.3134 2.71312C15.4018 2.60866 15.3274 2.44995 15.1908 2.44995H13.5877C13.4933 2.44995 13.4029 2.49214 13.3406 2.56446L8.99129 7.7495L4.64196 2.56446C4.58169 2.49214 4.49129 2.44995 4.39486 2.44995H2.79173C2.65513 2.44995 2.5808 2.60866 2.66919 2.71312L7.94263 8.99906L2.66919 15.285C2.64939 15.3083 2.63669 15.3368 2.63259 15.367C2.62849 15.3973 2.63317 15.4282 2.64607 15.4559C2.65898 15.4836 2.67956 15.507 2.70538 15.5234C2.7312 15.5397 2.76117 15.5483 2.79173 15.5482H4.39486C4.48928 15.5482 4.57968 15.506 4.64196 15.4337L8.99129 10.2486L13.3406 15.4337C13.4009 15.506 13.4913 15.5482 13.5877 15.5482H15.1908C15.3274 15.5482 15.4018 15.3895 15.3134 15.285L10.0399 8.99906Z" fill="#EDEDED"/>
+                                                </svg>
+                                            </span>                                    
+
+                                            <span class="input-group-text border-left-6D6D6D search-icon bg-white" id="basic-addon3" @click="filterData($event)">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10.9167 9.66667H10.2583L10.025 9.44167C10.8417 8.49167 11.3333 7.25833 11.3333 5.91667C11.3333 2.925 8.90833 0.5 5.91667 0.5C2.925 0.5 0.5 2.925 0.5 5.91667C0.5 8.90833 2.925 11.3333 5.91667 11.3333C7.25833 11.3333 8.49167 10.8417 9.44167 10.025L9.66667 10.2583V10.9167L13.8333 15.075L15.075 13.8333L10.9167 9.66667ZM5.91667 9.66667C3.84167 9.66667 2.16667 7.99167 2.16667 5.91667C2.16667 3.84167 3.84167 2.16667 5.91667 2.16667C7.99167 2.16667 9.66667 3.84167 9.66667 5.91667C9.66667 7.99167 7.99167 9.66667 5.91667 9.66667Z" fill="#EDEDED"/>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex align-content-start flex-wrap">
+                                                <div class="other-skill-card" v-for="otherSkill in otherSkills" :key="otherSkill">
+                                                    <div class="other-skill-name">{{otherSkill.name}}</div>
+                                                    <div class="other-skill-data" v-for="s, index in otherSkill.data" :key="index">
+                                                        <div class="mt-2" :class="{'other-skill-name':s.skill=='Design'}">{{s.skill}}</div>                                                
+                                                        <button v-for="(o, index) in s.data" :key="index" class="btn btn-sm btn-sky-blue btn-filter-skill cursor-pointer">
+                                                            +
+                                                            <span @click="addToFilter($event, o)">
+                                                                {{o}}
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>                                       
+                                            </div>
+                                            <div class="p-3">
+                                                <div class="text-end">
+                                                    <button class="btn btn-custom-blue btn-see-all-skills" @click="closeOtherSkills($event)">
+                                                        Back to Search
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="input-group search-skill w-378 ps-3">
-                            <div class="d-flex select-country form-control">
-                                <div class="flex-fill d-flex cursor-pointer"  @click="countryDropdownEvent($event)">
-                                    <div class="flex-fill country-name">Country</div>
-                                    <div class="flex-fill text-end">
-                                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8.825 0.158203L5 3.97487L1.175 0.158203L0 1.3332L5 6.3332L10 1.3332L8.825 0.158203Z" fill="#27304C"/>
-                                        </svg>
+                            <div class="col-12 filter-col filter-country-container col-sm-12 col-md-2 col-lg-2">                                
+                                <div class="input-group ">
+                                    <div class="d-flex select-country form-control search-skill" :class="{'ios-input-filter': deviceName == 'iOS'}">
+                                        <div class="flex-fill d-flex cursor-pointer"  @click="countryDropdownEvent($event)">
+                                            <div class="flex-fill country-name" v-if="this.selecteCountry.length == 0 || this.selecteCountry.length > 1 ">Country</div>
+                                            <div class="flex-fill country-name" v-if="this.selecteCountry.length == 1">{{this.selecteCountry[0]}}</div>
+                                            <div class="flex-fill text-end">
+                                                <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.825 0.158203L5 3.97487L1.175 0.158203L0 1.3332L5 6.3332L10 1.3332L8.825 0.158203Z" fill="#27304C"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="country-dropdown" :class="{'d-none':!countryDropdown}">
+                                            <div class="form-check" v-for="(ctry, index) in countries" :key="index">
+                                                <input class="form-check-input country-check" :data-checkbox="true" :checked="ctry == 'All Country'" type="checkbox" @change="filterData($event)" :value="ctry" :id="ctry">
+                                                <label class="form-check-label" :for="ctry">
+                                                {{ctry}}
+                                                </label>
+                                            </div>                                    
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="country-dropdown" :class="{'d-none':!countryDropdown}">
-                                    <div class="form-check" v-for="(ctry, index) in countries" :key="index">
-                                        <input class="form-check-input country-check" :data-checkbox="true" :checked="ctry == 'All Country'" type="checkbox" @change="filterData($event)" :value="ctry" :id="ctry">
-                                        <label class="form-check-label" :for="ctry">
-                                           {{ctry}}
-                                        </label>
-                                    </div>                                    
+                            </div>
+                            <div class="col-12 filter-col col-sm-12 col-md-4 col-lg-4 monthly-rate">Monthly Rate</div>
+                            <div class="col-12 filter-col col-sm-12 col-md-4 col-lg-4">                
+                                <div class="input-group">
+                                    <div class="d-flex">
+                                      
+                                        <div class="fill-flex">
+                                            <input type="number" class="form-control select-input w-100 search-skill" :class="{'ios-input-filter': deviceName == 'iOS'}" v-on:keydown="filterData($event)" placeholder="Min" v-model="filter.monthlyRateMin">
+                                        </div>
+                                        <div class="to-separator">to</div>
+                                        <div class="flex-fill">
+                                            <input type="number" class="form-control select-input w-100 search-skill" :class="{'ios-input-filter': deviceName == 'iOS'}" v-on:keydown="filterData($event)" placeholder="Max" v-model="filter.monthlyRateMax">
+                                        </div>
+                                    </div>                           
                                 </div>
+                            </div>           
+                        </div>
+                    </div>
+
+                    <!-- begin for mobile-->
+                    <div class="row d-sm-flex d-md-none d-lg-none justify-content-center">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-4 content-panel candidate-content" v-for="data in candidateDBdata" :key="data">
+                            <div class="flex-fill candidate-content-details">
+                                <div class="d-flex cv-intro-content">       
+                                    <div class="r-title">{{data.TalentID}}</div>                                
+                                    <div class="cv-intro ps-3 pe-3 ms-auto" v-if="data.CVLink">              
+                                        <a :href="data.CVLink" target="_blank">                             
+                                            <img src="@/assets/images/mytalents/persona2/cv.svg" height="25" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cv-intro ps-3 pe-3 ms-auto" v-else>              
+                                        <img src="@/assets/images/mytalents/persona2/cv-gray.svg" height="25"  alt="">
+                                    </div>
+                                    <div class="cv-intro " v-if="data.VideoLink">
+                                            <a :href="data.VideoLink" target="_blank">                            
+                                            <button class="btn playIcon">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
+                                            </button>
+                                            </a>
+                                    </div>  
+                                    <div class="cv-intro" v-else>     
+                                        <button class="btn grayPlayIcon">
+                                            <img src="@/assets/images/mytalents/persona2/grayplay.png" alt="">
+                                        </button>
+                                    </div>                                           
+                                </div>    
+                                <div class="mobile-country">{{data.Country}}</div>                           
+                                <div class="r-salary">{{data.MonthlyRate}}</div>
+                                <div class="p-t-2 candidate-interview-skils-tags d-flex flex-wrap">
+                                    <div v-for="skill, index in data.Skills" :key="index">              
+                                        <button class="btn tag-pink custom-skills" :title="skill" :class="{'tag-pink': index == 0, 'tag-violet': index > 0 }"> {{skill}}</button>                                
+                                    </div>                                  
+
+                                </div>
+                               
+                                <div class="pt-1">
+                                    <span class="candidate-book-interview-label">Book an Interview</span>                                                                                                           
+                                </div>
+                                <div class="candidate-book-interview p-t-1">
+                                    <button class="btn btn-outline-blue see-my-interview custom-btn-interview  w-100" v-for="slot, index in data.InterviewSlots" :key="index" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                                        <span class="custom-btn-interview-text">{{slot}}</span>
+                                    </button>
+                                </div>  
                             </div>
                         </div>
-                        <div class="input-group w-835 ps-3">
-                            <div class="d-flex">
-                                <div class="monthly-rate">Monthly Rate</div>
-                                <div >
-                                    <input type="number" class="form-control select-input w-100 " @keyup="filterData($event)" placeholder="Min" v-model="filter.monthlyRateMin">
-                                </div>
-                                <div class="to-separator">to</div>
-                                <div c>
-                                    <input type="number" class="form-control select-input w-100 " @keyup="filterData($event)" placeholder="Max" v-model="filter.monthlyRateMax">
-                                </div>
-                            </div>                           
-                        </div>                       
-
-                        
                     </div>
+                    <!-- end for mobile-->
                     <!-- table view -->
 
-                    <div>
+                    <div class="candidate-container d-none d-sm-none d-md-flex d-lg-flex justify-content-center">
                         <table class="candidate-data" id="cadidate-db">
                             <tr>
-                                <th>
+                                <th class="th-talent-id">
                                     <div class="d-flex">
                                         <div>  Talent ID/Name  </div>
                                         <div>  <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">    </div>
-                                    </div>
-                                                                   
+                                    </div>                                                                   
                                 </th>
                                 <th width="300">
                                     <div class="d-flex">
@@ -142,7 +198,7 @@
                                         <div>  <img src="@/assets/images/mytalents/persona2/Sort.png" alt=""> </div>
                                     </div>                                                                        
                                 </th>
-                                <th>
+                                <th class="th-monthly-rate">
                                     Monthly Rate     <img src="@/assets/images/mytalents/persona2/Sort.png" alt="">
                                 </th>
                                 <th>
@@ -157,7 +213,7 @@
                                 <th></th>
                             </tr>
                             <tr v-for="data in candidateDBdata" :key="data" class="tr-list-data">
-                                <td> <a :href="data.CVLink" class="talent-id" target="_blank">{{data.TalentID}}</a></td>
+                                <td :class="{'td-talent-id':deviceName == 'iOS'}"> <a :href="data.CVLink" class="talent-id" target="_blank">{{data.TalentID}}</a></td>
                                 <td>
                                     <div class="d-flex flex-wrap skills-badge-content">
                                         <div v-for="skill, index in data.Skills" :key="index">                                           
@@ -167,7 +223,7 @@
                                         </div>                                         
                                     </div>            
                                 </td>
-                                <td :data-monthly-rate="data.SalaryRate">{{data.MonthlyRate}}</td>
+                                <td :class="{'td-salary-rate':deviceName == 'iOS'}" :data-monthly-rate="data.SalaryRate">{{data.MonthlyRate}}</td>
                                 <td>{{data.Country}}</td>
                                 <td> 
                                     <div class="d-flex cv-intro-content">                                       
@@ -214,7 +270,7 @@
                         
                     </div>                  
                     <nav class="mt-5" aria-label="Page navigation">
-                        <ul class="pagination custom-pagination justify-content-end">
+                        <ul class="pagination custom-pagination justify-content-center justify-content-md-end justify-content-lg-end ">
                             <li class="page-item" data-bs-toggle="modal" data-bs-target="#LoginModal">
                                 <a class="page-link  border-0" href="#" aria-label="Previous">
                                     <span aria-hidden="true">
@@ -432,6 +488,7 @@
         -webkit-user-select: none; /* Safari */
         -ms-user-select: none; /* IE 10 and IE 11 */
         user-select: none;
+        z-index: 1;
     }
     .country-name{
         font-family: "RubikRegular";
@@ -462,19 +519,19 @@
         font-family: "RubikRegular";
         font-size: 14px;
         color: #6D6D6D;
-        width: 140px;
+        width: 120px !important;
         align-self: center;
     }
     .all-skills{
         background: #fff;
         position: absolute;
-        width: 150%;
+        width: 250%;
         top: 0px;
         left: 2px;
         box-shadow: 0px 1px 1px #ccc;
         border:1px solid #eee;
         border-radius: 2px;
-        z-index: 2;
+        z-index: 4;
     }
     .skills-dropdown{
         background: #fff;
@@ -486,6 +543,7 @@
         border:1px solid #eee;
         border-radius: 2px;
         padding:14px;       
+        z-index: 2;
     }
     .btn-see-all-skills{
         font-family: "RubikRegular";
@@ -639,6 +697,7 @@
         color: #8C8C8C !important;
         box-shadow: none !important;      
         border-color: #EDEDED !important;
+        height: 43px !important;
     }
 
     .search-icon {
@@ -694,7 +753,9 @@
     .grayPlayIcon:hover{
         background: #A8B2BA !important;
     }
-
+    .mobile-country{
+        font-family: 'RubikRegular' !important;
+    }
 
     .buttonSchedule {
         
@@ -746,6 +807,143 @@
     .start-get-started-container{
         align-items: center;
     }
+    .content-panel{
+        background: #FFFFFF;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+   
+    }
+    .candidate-content{
+        margin-top: 14px;;
+    }
+    .candidate-talent-card{
+        padding: 14px;
+    }
+    .candidate-content-details{
+        padding: 20px;;
+        background: #FFFFFF;
+        border: 1px solid #EDEDED;
+        border-radius: 6px;
+    }
+    .candidate-content-details .r-title{
+        font-family: 'RubikMedium';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        color: #27304C;
+    }
+    .candidate-content-details .r-salary{
+        font-family: 'RubikMedium';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        color: #2C91FF;
+    }
+    .candidate-interview-skils-tags .btn{
+        margin-right: 10px;
+        margin-top: 10px;
+        padding:6px 12px;
+        font-weight: 400;
+        font-family: 'RubikRegular';
+        font-size: 14px;
+    }
+    .candidate-book-interview-label{
+        color: #6D6D6D;
+        font-family: 'RubikRegular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    
+    .candidate-book-interview .btn{
+        color: #2C91FF;
+        font-family: 'RubikMedium' !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        font-size: 16px !important;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top:8px;
+    }
+    @media screen and (max-width: 1440px) {
+        body {
+            zoom:75%
+        }
+    }
+    @media screen and (max-width: 935px){
+                
+        .candidate-container{
+            overflow: auto;
+        }
+    }
+    @media screen and (max-device-width: 935px){
+                  
+        .candidate-container{
+            overflow: auto;
+        }
+        /* .filter-content .filter-col{
+            margin-top: 8px ;        
+        }
+        .filter-country-container{
+            margin-top: 8px !important;
+        } */
+    }
+    @media screen and (max-device-width: 775px){
+                  
+        .all-skills{
+            width: unset !important;
+        }
+        .btn-see-all-skills{
+            margin-top: 10px;
+        }
+        .search-skill {
+            height: 48px !important;
+        }
+        .monthly-rate{
+            width: 100% !important;
+        }
+    }
+    @media screen and (max-device-width: 920px){                  
+        .candidate-data{
+            width: 1293px;
+        }
+    }
+    @media screen and (max-device-width: 600px){                  
+        .candidate-data{
+            width: 1493px !important;
+            display:block;
+        }
+        .td-salary-rate{
+            width: 150px !important;
+        }
+        .td-talent-id{
+            width: 150px !important;
+        }
+        .custom-btn-interview-text{
+            font-size: 14px !important;
+            font-family: 'RubikRegular';
+            padding-top: 1px !important;
+        }
+        .custom-btn-interview{
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+        .custom-skills{
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+       
+    }
+    @media screen and (max-width: 775px){
+        
+        .all-skills{
+            width: unset !important;
+        }
+        .btn-see-all-skills{
+            margin-top: 10px;
+        }
+    }
+
 
      /* End Candidate Table */
 </style>
@@ -754,7 +952,8 @@ import Banner from './components/Banner';
 import Persona2Modal from '../../modals/Persona2Modal';
 import SkillScannerModal from '../../modals/SkillScannerModal';
 import axdatepicker from '../../datepicker/axdatepicker.vue';
-import candidatecsv from '../../../helper/candidatecsv'
+import candidatecsv from '../../../helper/candidatecsv';
+import device from '@/helper/device.js'
 export default {
     name: 'CandidateDatabaseTable',
     props: {
@@ -799,6 +998,7 @@ export default {
              ],
              selecteCountry: [],
              otherSkills: [],
+             deviceName:''
         }
        
     },
@@ -809,6 +1009,7 @@ export default {
         SkillScannerModal
     },
     mounted(){
+        this.deviceName = device.get();
         this.skills = candidatecsv.getSkills();
         this.otherSkills = candidatecsv.getOtherSkills();
         let count = 0;

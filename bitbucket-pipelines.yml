@@ -18,19 +18,10 @@ definitions:
           enabled: false
         script:
           - rsync -avh dist/ ${USERNAME}@${HOST}:/usr/share/${USERNAME}/${SERVICENAME}/ --delete-after
-#          - rsync -avh environments/${BITBUCKET_DEPLOYMENT_ENVIRONMENT}/environment.json ${USERNAME}@${HOST}:/usr/share/${USERNAME}/${SERVICENAME}/assets/environments/environment.json
 
 pipelines:
   branches:
-#    dev:
-#      - step: *build
-#
-#      - step:
-#          <<: *deploy
-#          name: Deploy TEST
-#          deployment: Test
-
-    master:
+    dev:
       - step: *build
 
       - step:
@@ -38,17 +29,25 @@ pipelines:
           name: Deploy STAGING
           deployment: Staging
 
+    master:
+      - step: *build
+
+#      - step:
+#          <<: *deploy
+#          name: Deploy STAGING
+#          deployment: Staging
+
       - step:
           name: Deploy PRODUCTION
           image: atlassian/pipelines-awscli
           deployment: Production
-          trigger: manual
+#          trigger: manual
           clone:
             enabled: false
           script:
             - echo main
-            - aws s3 sync ./dist s3://new-client.axpara.com/employer --acl public-read --delete --cache-control max-age=0 --exclude "*" --include "index.html"
-            - aws s3 sync ./dist s3://new-client.axpara.com/employer --acl public-read --cache-control max-age=3600
+            - aws s3 sync ./dist s3://new-client.axpara.com --acl public-read --delete --cache-control max-age=0 --exclude "*" --include "index.html"
+            - aws s3 sync ./dist s3://new-client.axpara.com --acl public-read --cache-control max-age=3600
 
       - step:
           name: Add build tag
@@ -56,10 +55,3 @@ pipelines:
             - git tag -am "Tagging for release ${BITBUCKET_BUILD_NUMBER}" release-${BITBUCKET_BUILD_NUMBER}
             - git push origin release-${BITBUCKET_BUILD_NUMBER}
 
-    staging:
-      - step: *build
-
-      - step:
-          <<: *deploy
-          name: Deploy STAGING
-          deployment: StagingQA

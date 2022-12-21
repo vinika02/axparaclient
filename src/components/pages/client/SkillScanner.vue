@@ -1,6 +1,6 @@
 <template>
     <div class="bg-gray">
-        <div class="container-fluid app-container">
+        <div class="container-fluid app-container pb-4">
             <div class="content-container p-16 bg-white">
                 <div class="what-is-skill-scanner">
                     <div class="d-flex row-adjusted">
@@ -1308,7 +1308,7 @@
                 customeDate: '',
                 dateConfig:{
                     isDateShown:true,
-                    type:"radio",
+                    type:"multiple",
                     label:"Custom Date & Time",
                     calendar:new Date(),
                     startTime:{time:'10:00',timeConvention:'AM'},
