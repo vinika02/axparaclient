@@ -210,7 +210,14 @@
     color: #FFFFFF;
     gap: 8px;
     width: 94px;
-
+}
+.btn-filer{margin-top: 4px;
+    font-family: 'RubikRegular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+    
 }
 
 

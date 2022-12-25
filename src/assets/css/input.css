@@ -109,7 +109,7 @@ input.js-tag-input {
 .tag-violet{
     background: #E3E4FF;
     gap: 4px;
-    padding: 3px 8px;
+    padding: 3px 8px ;
     color:#5D5FEF;
     font-weight: 400;
     font-size: 12px;
@@ -134,7 +134,6 @@ input.js-tag-input {
     color: #C9C9C9 !important;
     opacity: 1; /* Firefox */
 }   
-
 
 .custom-input{
     height: 40px;

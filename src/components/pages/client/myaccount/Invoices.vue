@@ -221,8 +221,6 @@ export default {
     font-weight: 400;
     font-size: 12px;
     color: #6D6D6D;
-
-
 }
 
 .form-check-input[type=checkbox] {
@@ -237,7 +235,6 @@ export default {
     width: 542px;
     height: 366px;
     border: solid 1px #6D6D6D;
-
     border-radius: 5px;
 }
 
