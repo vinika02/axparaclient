@@ -75,6 +75,11 @@ const router = createRouter({
                 name: 'SkillScanner',
                 component: () => import('../components/pages/client/SkillScanner.vue')
             },
+            {
+              path: 'candidate-db',
+              name: 'CandidateDB',
+              component: () => import('../components/pages/client/CandidateDatabase/CandidateDB.vue')
+          },
           ]
         },
     
