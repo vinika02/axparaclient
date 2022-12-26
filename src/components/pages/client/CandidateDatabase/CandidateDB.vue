@@ -20,7 +20,7 @@
             </div>
 
             <div>
-                <table class="table data">
+                <table class="table data ">
                     <thead>
                         <tr>
                             <th style="width: 152px;">
@@ -41,15 +41,15 @@
                             <th style="width: 494px;">
                                 Schedule Interview
                             </th>
-                        
-                            
+
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="talent in talents" :key="talent.id">
                             <td>{{ (talent.talentID) }}</td>
                             <td class=" ">
-                                <div class="skills-badge-content">
+                                <div class="skills-badge-content d-flex">
                                     <span class="badge tag-pink">
                                         {{ (talent.skills1) }}
                                     </span>
@@ -60,33 +60,63 @@
                                         {{ (talent.skills3) }}
                                     </span>
                                 </div>
-
-
                             </td>
+
                             <td>{{ (talent.rate) }}</td>
                             <td>{{ (talent.country) }}</td>
-                            <td><img v-bind:src="cv"></td>
+                            <td>
+                                <!-- <img v-bind:src="talent.cvImage"> -->
+                                <div class="d-flex cv-intro-content gap-3">
+                                    <div class="cv-intro" v-if="talent.cvlink">
+                                        <a :href="talent.cvlink" target="_blank">
+                                            <img src="@/assets/images/mytalents/persona2/cv.svg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cv-intro" v-else>
+                                        <img src="@/assets/images/mytalents/persona2/cv.svg" alt="">
+                                    </div>
+                                    <div class="cv-intro" v-if="talent.VideoLink">
+                                        <a :href="talent.VideoLink" target="_blank">
+                                            <button class="btn playIcon">
+                                                <img src="@/assets/images/mytalents/persona2/play.png" alt="">
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="cv-intro" v-else>
+                                        <button class="btn grayPlayIcon">
+                                            <img src="@/assets/images/mytalents/persona2/grayplay.png" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
                             <td class="btnGroup">
-                                <button class="butt button-sced btn btn-outline-blue buttonSchedule" data-bs-toggle="modal"
-                                    data-bs-target="#editScheModal">{{ (talent.schedule) }} </button>
+                                <button class="butt button-sced btn btn-outline-blue buttonSchedule"
+                                    data-bs-toggle="modal" data-bs-target="#editScheModal">{{ (talent.schedule) }}
+                                </button>
                                 <button class="button-sced btn btn-outline-blue buttonSchedule" data-bs-toggle="modal"
                                     data-bs-target="#editScheModal">{{ (talent.schedule) }} </button>
                                 <button class="button-sced btn btn-outline-blue buttonSchedule" data-bs-toggle="modal"
                                     data-bs-target="#editScheModal">{{ (talent.schedule) }} </button>
-                                    {{ (talent.more) }}
-                            </td>                          
+                                    
+                                <span class="ms-2" v-if="talent.cvlink">{{ (talent.more) }}</span>
+                                <span v-else class="ms-4"><img src="../CandidateDatabase/images/edit.png" alt=""></span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
                 <div>
+
                     <nav class="mt-3" aria-label="Page navigation">
                         <ul class="pagination custom-pagination justify-content-end">
                             <li class="page-item" data-bs-toggle="modal" data-bs-target="#LoginModal">
                                 <a class="page-link  border-0" href="#" aria-label="Previous">
                                     <span aria-hidden="true">
-                                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z" fill="#8C8C8C"/>
-                                            <path d="M14.41 1.41L13 0L7 6L13 12L14.41 10.59L9.83 6L14.41 1.41Z" fill="#8C8C8C"/>
+                                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z"
+                                                fill="#8C8C8C" />
+                                            <path d="M14.41 1.41L13 0L7 6L13 12L14.41 10.59L9.83 6L14.41 1.41Z"
+                                                fill="#8C8C8C" />
                                         </svg>
                                     </span>
                                 </a>
@@ -94,22 +124,31 @@
                             <li class="page-item" data-bs-toggle="modal" data-bs-target="#LoginModal">
                                 <a class="page-link border-0" href="#" aria-label="Previous">
                                     <span aria-hidden="true">
-                                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z" fill="#8C8C8C"/>
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z"
+                                                fill="#8C8C8C" />
                                         </svg>
                                     </span>
                                 </a>
                             </li>
                             <li class="page-item "><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal" data-bs-target="#LoginModal">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal" data-bs-target="#LoginModal">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal" data-bs-target="#LoginModal">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal" data-bs-target="#LoginModal">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#LoginModal">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#LoginModal">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#LoginModal">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#LoginModal">5</a></li>
                             <li class="page-item" data-bs-toggle="modal" data-bs-target="#LoginModal">
                                 <a class="page-link border-0" href="#" aria-label="Next">
                                     <span aria-hidden="true">
-                                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                         <path d="M2.00009 0L0.590088 1.41L5.17009 6L0.590088 10.59L2.00009 12L8.00009 6L2.00009 0Z" fill="#8C8C8C"/>
+                                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.00009 0L0.590088 1.41L5.17009 6L0.590088 10.59L2.00009 12L8.00009 6L2.00009 0Z"
+                                                fill="#8C8C8C" />
                                         </svg>
                                     </span>
                                 </a>
@@ -117,9 +156,12 @@
                             <li class="page-item" data-bs-toggle="modal" data-bs-target="#LoginModal">
                                 <a class="page-link border-0" href="#" aria-label="Next">
                                     <span aria-hidden="true">
-                                        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.41 0L0 1.41L4.58 6L0 10.59L1.41 12L7.41 6L1.41 0Z" fill="#8C8C8C"/>
-                                            <path d="M7.41 0L6 1.41L10.58 6L6 10.59L7.41 12L13.41 6L7.41 0Z" fill="#8C8C8C"/>
+                                        <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.41 0L0 1.41L4.58 6L0 10.59L1.41 12L7.41 6L1.41 0Z"
+                                                fill="#8C8C8C" />
+                                            <path d="M7.41 0L6 1.41L10.58 6L6 10.59L7.41 12L13.41 6L7.41 0Z"
+                                                fill="#8C8C8C" />
                                         </svg>
                                     </span>
                                 </a>
@@ -147,7 +189,10 @@ export default {
                     country: 'Philippines',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: ""
+
                 },
                 {
                     talentID: 'KR-02053',
@@ -158,7 +203,9 @@ export default {
                     country: 'Indonesia',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a"
                 },
                 {
                     talentID: 'KR-02054',
@@ -169,7 +216,9 @@ export default {
                     country: 'Vietnam',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                  
+                    cvlink: "",
+                    // more: require('../CandidateDatabase/images/Vector.jpg')
+
                 },
                 {
                     talentID: 'KR-02055',
@@ -179,7 +228,9 @@ export default {
                     rate: '4000 USD',
                     country: 'Sri Lanka',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
-                    schedule: '12 SEP | 10:35 AM'
+                    schedule: '12 SEP | 10:35 AM',
+                    cvlink: "",
+                    VideoLink: "n/a"
                 },
                 {
                     talentID: 'KR-02056',
@@ -190,7 +241,8 @@ export default {
                     country: 'Philippines',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
+                    more: 'more',
+                    cvlink: "n/a"
                 },
                 {
                     talentID: 'KR-02056',
@@ -201,7 +253,8 @@ export default {
                     country: 'JavaScript',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
+                    more: 'more',
+                    cvlink: "n/a"
                 },
                 {
                     talentID: 'KR-02056',
@@ -212,7 +265,9 @@ export default {
                     country: 'Philippines',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a"
                 },
                 {
                     talentID: 'KR-02056',
@@ -223,7 +278,10 @@ export default {
                     country: 'Indonesia',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a",
+
                 },
                 {
                     talentID: 'KR-02056',
@@ -233,7 +291,9 @@ export default {
                     rate: '6400 USD',
                     country: 'Vietnam',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
-                    schedule: '12 SEP | 10:35 AM'
+                    schedule: '12 SEP | 10:35 AM',
+                    cvlink: "",
+                    VideoLink: "n/a"
                 },
                 {
                     talentID: 'KR-02056',
@@ -244,7 +304,9 @@ export default {
                     country: 'Sri Lanka',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a"
                 },
                 {
                     talentID: 'KR-02056',
@@ -255,8 +317,10 @@ export default {
                     country: 'Indonesia',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
-                   
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a"
+
                 },
                 {
                     talentID: 'KR-02056',
@@ -267,8 +331,9 @@ export default {
                     country: 'Indonesia',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                   
-                   
+                    cvlink: ""
+
+
                 },
                 {
                     talentID: 'KR-02056',
@@ -279,8 +344,10 @@ export default {
                     country: 'Indonesia',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
-                   
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a"
+
                 },
                 {
                     talentID: 'KR-02056',
@@ -291,8 +358,10 @@ export default {
                     country: 'Indonesia',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
-                   
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a"
+
                 },
                 {
                     talentID: 'KR-02056',
@@ -303,8 +372,10 @@ export default {
                     country: 'Indonesia',
                     cvImage: require('../CandidateDatabase/images/Vector.jpg'),
                     schedule: '12 SEP | 10:35 AM',
-                    more:'more'
-                   
+                    more: 'more',
+                    cvlink: "n/a",
+                    VideoLink: "n/a"
+
                 },
 
             ]
@@ -406,6 +477,7 @@ export default {
 }
 
 .data td {
+
     font-family: 'RubikRegular';
     font-style: normal;
     font-weight: 400;
@@ -421,14 +493,42 @@ export default {
     margin-right: 14px;
 }
 
-.data .badge{
+.data .badge {
     height: 26px;
 }
-.butt{
+
+.butt {
     width: 132px;
 }
-.btnGroup{
+
+.btnGroup {
     color: #A8B2BA;
+}
+
+.cv-intro-content {
+    align-items: center;
+}
+
+.skills-badge-content {
+    align-items: center;
+}
+
+.playIcon {
+    display: flex;
+    padding: 3px 16px;
+    width: 52px;
+    height: 26px;
+    background: #2C91FF;
+    border-radius: 2px;
+}
+
+.grayPlayIcon {
+    display: flex;
+    padding: 3px 16px;
+    width: 52px;
+    height: 26px;
+    background: #EDEDED;
+    border-radius: 2px;
 }
 
 /* end table */
