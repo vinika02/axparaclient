@@ -531,5 +531,12 @@ export default {
     border-radius: 2px;
 }
 
+.ms-2{
+    color: #A8B2BA;
+    font-family: 'RubikRegular';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+}
 /* end table */
 </style>
