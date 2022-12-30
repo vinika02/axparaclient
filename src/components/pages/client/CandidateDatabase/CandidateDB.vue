@@ -97,7 +97,7 @@
                                     data-bs-target="#editScheModal">{{ (talent.schedule) }} </button>
                                 <button class="button-sced btn btn-outline-blue buttonSchedule" data-bs-toggle="modal"
                                     data-bs-target="#editScheModal">{{ (talent.schedule) }} </button>
-                                    
+
                                 <span class="ms-2" v-if="talent.cvlink">{{ (talent.more) }}</span>
                                 <span v-else class="ms-4"><img src="../CandidateDatabase/images/edit.png" alt=""></span>
                             </td>
@@ -460,7 +460,12 @@ export default {
     margin-top: 14px;
     border: 1px solid #EDEDED;
 }
-
+.table>:not(caption)>*>* {
+    padding: 5.5px;
+    background-color: var(--bs-table-bg);   
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
 .data thead {
     font-family: 'RubikRegular';
     font-style: normal;
@@ -468,16 +473,15 @@ export default {
     font-size: 12px;
     color: #27304C;
     background: #FAFAFA;
-
 }
 
 .badge {
+    text-align: center;
     justify-content: center;
     margin-right: 8px;
 }
 
 .data td {
-
     font-family: 'RubikRegular';
     font-style: normal;
     font-weight: 400;
@@ -490,11 +494,18 @@ export default {
 }
 
 .btnGroup .btn {
+    align-items: center;
+    justify-content: center;
+    height: 26px;
     margin-right: 14px;
+    display: inline-flex;
 }
 
 .data .badge {
+    display: flex;
+    align-items: center;
     height: 26px;
+    text-align: center !important;
 }
 
 .butt {
@@ -531,12 +542,17 @@ export default {
     border-radius: 2px;
 }
 
-.ms-2{
+.ms-2 {
     color: #A8B2BA;
     font-family: 'RubikRegular';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
 }
+
+.data tr {
+    vertical-align: middle;
+}
+
 /* end table */
 </style>
