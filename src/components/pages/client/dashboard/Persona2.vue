@@ -856,8 +856,7 @@
                                 </div>
                             </div>
                             <div class="mt-2">
-                                <button v-if="customeDate"
-                                    class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">{{ customeDate }}</button>
+                                <button v-if="customeDate" class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">{{customeDate}}</button>
                             </div>
                         </div>
                         <div class="popupFooter text-end">
@@ -911,8 +910,7 @@
                                 </div>
                             </div>
                             <div class="mt-2">
-                                <button v-if="customeDate"
-                                    class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">{{ customeDate }}</button>
+                                <button v-if="customeDate" class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">{{customeDate}}</button>
                             </div>
                         </div>
                         <div class="popupFooter text-end">

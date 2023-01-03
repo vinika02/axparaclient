@@ -2,8 +2,17 @@
     <div class="bg-gray ">
         <div class="container-fluid start">
             <div class="component-search">
-                <input class="form-control i    nput-skill-scanner-keyword search-icon" type="text"
+                <input class="form-control input-skill-scanner-keyword" type="text"
                     placeholder="Search keywords or select skills">
+                <span class="search-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.9167 9.66667H10.2583L10.025 9.44167C10.8417 8.49167 11.3333 7.25833 11.3333 5.91667C11.3333 2.925 8.90833 0.5 5.91667 0.5C2.925 0.5 0.5 2.925 0.5 5.91667C0.5 8.90833 2.925 11.3333 5.91667 11.3333C7.25833 11.3333 8.49167 10.8417 9.44167 10.025L9.66667 10.2583V10.9167L13.8333 15.075L15.075 13.8333L10.9167 9.66667ZM5.91667 9.66667C3.84167 9.66667 2.16667 7.99167 2.16667 5.91667C2.16667 3.84167 3.84167 2.16667 5.91667 2.16667C7.99167 2.16667 9.66667 3.84167 9.66667 5.91667C9.66667 7.99167 7.99167 9.66667 5.91667 9.66667Z"
+                            fill="#EDEDED" />
+                    </svg>
+                </span>
+
+
                 <div class="filter1">
                     <button type="button" class="btn btn-filer  btn-custom-blue">
                         <img src="@/assets/images/mytalents/persona2/Vector.png" class="filter-imgg me-2">Filter
@@ -98,8 +107,11 @@
                                 <button class="button-sced btn btn-outline-blue buttonSchedule" data-bs-toggle="modal"
                                     data-bs-target="#editScheModal">{{ (talent.schedule) }} </button>
 
-                                <span class="ms-2" v-if="talent.cvlink">{{ (talent.more) }}</span>
-                                <span v-else class="ms-4"><img src="../CandidateDatabase/images/edit.png" alt=""></span>
+                                <span class="ms-2" v-if="talent.cvlink" @click="schecduleInterview($event)">{{
+        (talent.more)
+}}</span>
+                                <span v-else class="ms-4" @click="editConfirm($event)"><img
+                                        src="../CandidateDatabase/images/edit.png" alt=""></span>
                             </td>
                         </tr>
                     </tbody>
@@ -171,14 +183,144 @@
                 </div>
             </div>
         </div>
+
+        <div class="popover sched-interview-popup-over arrow-popup" :style="popupStyle" v-if="popupSchedInterview">
+            <div class="popover-arrow  sched-interview-popover-arrow"></div>
+            <div class="popover-inner">
+                <div class="popupHead">
+                    Schedule Interview
+                </div>
+                <div class="popupSubHead">
+                    <div>
+                        <span>Schedule:</span> <span class='text-green'>25 Jun 2022 (sat), 3:00pm (GMT +
+                            4hrs)</span>
+                    </div>
+                </div>
+                <div class="p-14">
+                    <div class='pick-a-sched'>
+                        Pick a Schedule
+                    </div>
+                    <div>
+                        <div class="form-check mt-3">
+                            <input class="normal-check-box  normal-radio input-radio" type="radio" name="sched"
+                                v-on:click="showCustomDate($event)" id="quickSched" checked>
+                            <label class="form-check-label quickSched" for="quickSched">
+                                Quick Schedule
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-custom-outline-blue px-3 me-2">12 SEP | 10:35 AM</button>
+                        <button class="btn btn-custom-outline-blue px-3 me-2">12 SEP | 10:35 AM</button>
+                        <button class="btn btn-custom-outline-blue px-3">12 SEP | 10:35 AM</button>
+                    </div>
+                    <div>
+                        <div class="form-check mt-3">
+                            <input class="normal-check-box  normal-radio input-radio" type="radio"
+                                v-on:click="showCustomDate($event)" value="customDate" name="sched" id="custoDateTime">
+                            <label class="form-check-label custoDateTime" for="custoDateTime">
+                                Custom Date & Time
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button v-if="customeDate"
+                            class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">{{ customeDate }}</button>
+                    </div>
+                </div>
+                <div class="popupFooter text-end">
+                    <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal"
+                        data-bs-target="#book-interview">Schedule Interview</button>
+                </div>
+            </div>
+        </div>
+        <div class="popover sched-interview-popup-over arrow-popup" :style="popupStyle1" v-if="popupEditConfirm">
+            <div class="popover-arrow  sched-interview-popover-arrow"></div>
+            <div class="popover-inner">
+                <div class="popupHead">
+                    Edit Confirmed Schedule
+                </div>
+                <div class="popupSubHead">
+                    <div>
+                        <span>Current:</span> <span class='text-green'>25 Jun 2022 (sat), 3:00pm (GMT +
+                            4hrs)</span>
+                    </div>
+                    <div>
+                        <span>New:</span> <span class='text-green'>25 Jun 2022 (sat), 3:00pm (GMT + 4hrs)</span>
+                    </div>
+                </div>
+                <div class="p-14">
+                    <div class='pick-a-sched'>
+                        Pick a Schedule
+                    </div>
+                    <div>
+                        <div class="form-check mt-3">
+                            <input class="normal-check-box  normal-radio input-radio" type="radio" name="sched"
+                                v-on:click="showCustomDate($event)" id="quickSched" checked>
+                            <label class="form-check-label quickSched" for="quickSched">
+                                Quick Schedule
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-custom-outline-blue px-3 me-2">12 SEP | 10:35 AM</button>
+                        <button class="btn btn-custom-outline-blue px-3 me-2">12 SEP | 10:35 AM</button>
+                        <button class="btn btn-custom-outline-blue px-3">12 SEP | 10:35 AM</button>
+                    </div>
+                    <div>
+                        <div class="form-check mt-3">
+                            <input class="normal-check-box  normal-radio input-radio" type="radio"
+                                v-on:click="showCustomDate($event)" value="customDate" name="sched" id="custoDateTime">
+                            <label class="form-check-label custoDateTime" for="custoDateTime">
+                                Custom Date & Time
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button v-if="customeDate" class="btn btn-sm btn-outline-blue fw-bold px-3 me-2">{{ customeDate
+}}</button>
+                    </div>
+                </div>
+                <div class="popupFooter text-end">
+                    <button type="button" class="btn btn-primary btn-save-changes " data-bs-toggle="modal"
+                        data-bs-target="#book-interview">Schedule Interview</button>
+                </div>
+            </div>
+
+        </div>
+        <axdatepicker :style="dateStyle" v-if="datePopUp" :isDateShown="dateConfig.isDateShown" :type="dateConfig.type"
+            :label="dateConfig.label" :calendar="dateConfig.calendar" :startTime="dateConfig.startTime"
+            :endTime="dateConfig.endTime" @clicked="onClickOkBtn" :timeZone="dateConfig.timeZone">
+        </axdatepicker>
     </div>
+
+    <SkillScannerModal></SkillScannerModal>
+    <Persona2Modal></Persona2Modal>
 </template>
 <script>
+
+import axdatepicker from '@/components/datepicker/axdatepicker.vue';
+import SkillScannerModal from '@/components/modals/SkillScannerModal.vue';
+import StartInterview from '@/components/pages/client/dashboard/components/StartInterview.vue';
+import Persona2Modal from '@/components/modals/Persona2Modal.vue';
 
 export default {
     name: 'CandidateDB',
     data() {
         return {
+            popupSchedInterview: false,
+            popupEditConfirm: false,
+            datePopUp: false,
+            popupStyle: {},
+            dateConfig: {
+                isDateShown: true,
+                type: "radio",
+                label: "Custom Date & Time",
+                calendar: new Date(),
+                startTime: { time: '10:00', timeConvention: 'AM' },
+                endTime: { time: '10:00', timeConvention: 'AM' },
+                timeZone: '(GMT -05:00) Eastern Time (US & Canada)'
+            },
             talents: [
                 {
                     talentID: 'KR-02052',
@@ -361,7 +503,6 @@ export default {
                     more: 'more',
                     cvlink: "n/a",
                     VideoLink: "n/a"
-
                 },
                 {
                     talentID: 'KR-02056',
@@ -375,15 +516,79 @@ export default {
                     more: 'more',
                     cvlink: "n/a",
                     VideoLink: "n/a"
-
                 },
 
             ]
         }
-    }
+    },
+    methods: {
+        onClickOkBtn(data) {
+            this.datePopUp = false;
+            this.customeDate = data.dateData.date + " " + data.dateData.shortMonth + " | " + data.timeData.startTime.time + " " + data.timeData.startTime.timeConvention;;
+        },
+        showCustomDate(e) {
+            this.customeDate = ''
+            if (e.target.value == "customDate") {
+                this.datePopUp = true;
+                this.dateConfig = {
+                    isDateShown: true,
+                    type: "radio",
+                    label: "Custom Date & Time",
+                    calendar: new Date(),
+                    startTime: { time: '10:00', timeConvention: 'AM' },
+                    endTime: { time: '10:00', timeConvention: 'AM' },
+                    timeZone: '(GMT -05:00) Eastern Time (US & Canada)'
+                }
+            } else {
+                this.datePopUp = false;
+                this.dateConfig = {
+                    isDateShown: true,
+                    type: "radio",
+                    label: "Custom Date & Time",
+                    calendar: new Date(),
+                    startTime: { time: '10:00', timeConvention: 'AM' },
+                    endTime: { time: '10:00', timeConvention: 'AM' },
+                    timeZone: '(GMT -05:00) Eastern Time (US & Canada)'
+                }
+
+            }
+        },
+        schecduleInterview(e) {
+            this.customeDate = '';
+            this.popupSchedInterview = !this.popupSchedInterview
+            this.datePopUp = false;
+            this.popupStyle = {
+                "left": (e.layerX - 480) + 'px',
+                "top": (e.layerY + 30) + 'px',
+            }
+            this.dateStyle = {
+                "left": (e.layerX - 995) + 'px',
+                "top": (e.layerY + 30) + 'px',
+            }
+        },
+        editConfirm(e) {
+            this.customeDate = '';
+            this.popupEditConfirm = !this.popupEditConfirm;
+            this.datePopUp = false;
+            this.popupStyle1 = {
+                "left": (e.layerX - 480) + 'px',
+                "top": (e.layerY + 30) + 'px',
+            }
+            this.dateStyle = {
+                "left": (e.layerX - 995) + 'px',
+                "top": (e.layerY + 30) + 'px',
+            }
+        },
+
+    },
+    components: { Persona2Modal, StartInterview, SkillScannerModal, axdatepicker }
 }
 </script>
 <style>
+.search-icon {
+    color: #C9C9C9
+}
+
 .start {
     background: #FFFFFF;
     width: 1394px;
@@ -397,13 +602,12 @@ export default {
 }
 
 .component-search input {
-    width: 1127px;
+    width: 1045px;
     font-family: 'RubikRegular';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     color: #C9C9C9;
-    border: 1px solid #EDEDED;
     border-radius: 2px;
 }
 
@@ -460,13 +664,16 @@ export default {
     margin-top: 14px;
     border: 1px solid #EDEDED;
 }
+
 .table>:not(caption)>*>* {
-    padding: 5.5px;
-    background-color: var(--bs-table-bg);   
+    padding: 5.4px;
+    background-color: var(--bs-table-bg);
     border-bottom-width: 1px;
     box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
+
 .data thead {
+    height: 38px;
     font-family: 'RubikRegular';
     font-style: normal;
     font-weight: 500;
@@ -543,6 +750,7 @@ export default {
 }
 
 .ms-2 {
+    cursor: pointer;
     color: #A8B2BA;
     font-family: 'RubikRegular';
     font-style: normal;
@@ -555,4 +763,21 @@ export default {
 }
 
 /* end table */
+
+.input-skill-scanner-keyword {
+    border-right: none !important;
+    border-top-left-radius: 3px !important;
+    border-bottom-left-radius: 3px !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+    font-family: RubikRegular;
+    font-weight: 400 !important;
+    color: #8C8C8C !important;
+    box-shadow: none !important;
+    border-color: #EDEDED !important;
+}
+
+.search-icon:hover {
+    background: #2C91FF !important;
+}
 </style>

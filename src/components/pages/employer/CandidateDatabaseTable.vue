@@ -5,8 +5,7 @@
             <div class="content-container dashboard ">
                 <div class="Table-1">
                     <div class="modal-header p-0">
-                        <div class="input-group search-skill"
-                                >
+                        <div class="input-group search-skill">
                             <input type="text" class="form-control input-skill-scanner-keyword"
                                 v-model="addSkillFilter"
                                 @click="openSkills($event, true)"
@@ -336,7 +335,7 @@
                             </div>
                         </div>
                         <div class="mt-2">
-                            <button class="btn btn-custom-outline-blue px-3 me-2" >12 SEP | 10:35 AM</button>
+                            <button class="btn btn-custom-outline-blue px-3 me-2"  >12 SEP | 10:35 AM</button>
                             <button class="btn btn-custom-outline-blue px-3 me-2">12 SEP | 10:35 AM</button>
                             <button class="btn btn-custom-outline-blue px-3">12 SEP | 10:35 AM</button>
                         </div>
