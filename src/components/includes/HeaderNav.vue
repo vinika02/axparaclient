@@ -165,6 +165,9 @@ export default {
             }                  
 
         },
+        clickMenuButon(){
+            this.isShowMenu = !this.isShowMenu;
+        }
     },
     created(){
        
@@ -196,11 +199,6 @@ export default {
         this.isLogin = this.auth.isLogin;
       
     },
-    methods:{
-        clickMenuButon(){
-            this.isShowMenu = !this.isShowMenu;
-        }
-    }
 }
 </script>
 <style>
