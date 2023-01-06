@@ -113,13 +113,13 @@
                                             </svg>
                                         </th> 
                                         <th>
-                                            # of W. Days
+                                            Days
                                             <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
                                             </svg>
                                         </th>
                                         <th>
-                                            Reason
+                                            Descriptiion
                                             <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M9.08337 4.83333L5.00004 0.75L0.916707 4.83333L9.08337 4.83333ZM9.08337 7.16667L0.916707 7.16667L5.00004 11.25L9.08337 7.16667Z" fill="#DCDCDC"/>
                                             </svg>

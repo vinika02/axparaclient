@@ -1,8 +1,8 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-custom-blue" :class="{ 'pt-2 pb-2': myLocation == 'Others'}" v-if="this.routeName == 'employer'">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom-blue" :class="{ 'pt-2 pb-2': myLocation == 'Others'}" v-if="!isLogin">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="/client/">
                     <svg width="112" height="32" viewBox="0 0 112 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="112" height="32" fill="url(#pattern0)"/>
                         <defs>
@@ -13,21 +13,19 @@
                         </defs>
                      </svg>
                 </a>
-                <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-navbar-toggler " :class="{ 'toggle-button-border': !isShowMenu }" @click="clickMenuButon()" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav nav-menu-left">
                     <li class="nav-item cursor-pointer" v-for="(menu) in employerMenu" :key="menu.id">
-                        <router-link class="nav-link" active-class="active-menu" v-if="!isLogin && myLocation != ''" v-on:click="selectMenu(menu.id)" v-bind:class="{ 'active-menu': (menu.id === activeMenuId) }"  :data-bs-toggle=" menu.menuName != 'Candidate Database' ? 'modal': ''" :href=" menu.menuName != 'Candidate Database' ? '#LoginModal': ''" :to="menu.route">{{menu.menuName}}</router-link>
-                        <router-link class="nav-link" active-class="active-menu" v-if="isLogin && myLocation != ''"  v-on:click="selectMenu(menu.id)" v-bind:class="{ 'active-menu': (menu.id === activeMenuId) }" :to="menu.route">{{menu.menuName}}</router-link>
-                    </li>    
-                    <!-- <li>                        
-                        <router-link class="nav-link" v-if="!isLogin && myLocation != 'Philippines'"  to="/employer/candidate-db-table" v-on:click="selectMenu(20)" v-bind:class="{ 'active-menu': (20 === activeMenuId) }">Candidate Database</router-link>
+                        <a class="nav-link" active-class="active-menu" v-if="!isLogin && myLocation != ''" v-on:click="selectMenu(menu.id)" v-bind:class="{ 'active-menu': (menu.id === activeMenuId) }"  :data-bs-toggle="menu.menuName != 'Candidate Database' && menu.menuName != 'About Axpara'  ? 'modal': ''" :href=" menu.menuName != 'Candidate Database' && menu.menuName != 'About Axpara' ? '#LoginModal': menu.route">{{menu.menuName}}</a>
+                        <a class="nav-link" active-class="active-menu" v-if="isLogin && myLocation != ''"  v-on:click="selectMenu(menu.id)" v-bind:class="{ 'active-menu': (menu.id === activeMenuId) }" :href="menu.route">{{menu.menuName}}</a>
+                        
+                    </li>
+                    <!-- <li>
+                        <router-link class="nav-link" v-if="!isLogin && myLocation != 'Philippines'"  to="/client/candidate-db-table" v-on:click="selectMenu(20)" v-bind:class="{ 'active-menu': (20 === activeMenuId) }">Candidate Database</router-link>
                     </li>   -->
-                    <li>                        
-                        <router-link class="nav-link"  to="/about-axpara" v-if="myLocation != ''" v-on:click="selectMenu(22)" v-bind:class="{ 'active-menu': (activeMenuId == 22) }">About Axpara</router-link>
-                    </li>                
                 </ul>
                 <ul class="navbar-nav ms-auto nav-menu-right">
                     <li class="nav-item">
@@ -54,7 +52,7 @@
                             </button>
                         </a>
                     </li>
-                    
+
                     <li class="nav-item ">
                         <a class="nav-link login p-y-f-0" href="#">
                             <button class="btn btn-sm btn-outline-white btn-login header-btn" data-bs-toggle="modal" data-bs-target="#LoginModal">
@@ -68,8 +66,8 @@
                 </div>
             </div>
         </nav>
-        <LoginModal v-if="this.routeName == 'employer'"></LoginModal>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-custom-blue" v-if="this.routeName != 'employer'">
+        <LoginModal v-if="!isLogin"></LoginModal>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom-blue" v-if="isLogin">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/client">
                     <svg width="112" height="32" viewBox="0 0 112 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -89,7 +87,7 @@
                 <ul class="navbar-nav nav-menu-left">
                     <li class="nav-item cursor-pointer" v-for="(menu) in menus" :key="menu.id">
                         <router-link class="nav-link" active-class="active-menu" v-on:click="selectMenu(menu.id)" v-bind:class="{ 'active-menu': (menu.id === activeMenuId) }" :to="menu.route">{{menu.menuName}}</router-link>
-                    </li>                    
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto nav-menu-right">
                     <li class="nav-item">
@@ -113,6 +111,8 @@
 </template>
 <script>
 import LoginModal from '../modals/LoginModal.vue';
+import device from '@/helper/device.js';
+import { mapActions, mapState } from "vuex";
 export default {
     name: 'Header',
     props: {
@@ -121,65 +121,96 @@ export default {
     data() {
         return{
             menus:[
+                {id: 1, menuName: 'My Dashboard', route: '/client/v2/dashboard/persona1'},
+                {id: 2, menuName: 'My Talent', route: '/client/v2/my-talent'},
+                {id: 3, menuName: 'My Orders', route: '/client/v2/my-orders'},
+                {id: 4, menuName: 'My Interviews', route: '/client/v2/my-interview'},
+                {id: 5, menuName: 'Skill Scanner', route: '/client/v2/skillscanner'},
+                {id: 6, menuName: 'Candidate Database', route: '/client/v2/candidate-db'},
+                {id: 7, menuName: 'My Account', route: '/client/v2/my-account'},
+            ],
+            employerMenu:[
                 {id: 1, menuName: 'My Dashboard', route: '/client/dashboard/persona1'},
                 {id: 2, menuName: 'My Talent', route: '/client/my-talent'},
                 {id: 3, menuName: 'My Orders', route: '/client/my-orders'},
                 {id: 4, menuName: 'My Interviews', route: '/client/my-interview'},
                 {id: 5, menuName: 'Skill Scanner', route: '/client/skillscanner'},
-                {id: 6, menuName: 'Candidate Database', route: '/client/candidate-db'},
+                {id: 6, menuName: 'Candidate Database', route: '/client/candidate-db-table'},
                 {id: 7, menuName: 'My Account', route: '/client/my-account'},
-            ],
-            employerMenu:[
-                {id: 1, menuName: 'My Dashboard', route: '/dashboard/persona1'},
-                {id: 2, menuName: 'My Talent', route: '/my-talent'},
-                {id: 3, menuName: 'My Orders', route: '/my-orders'},
-                {id: 4, menuName: 'My Interviews', route: '/my-interview'},
-                {id: 5, menuName: 'Skill Scanner', route: '/skillscanner'},
-                {id: 6, menuName: 'Candidate Database', route: '/candidate-db-table'},
-                {id: 7, menuName: 'My Account', route: '/my-account'},
+                {id: 8, menuName: 'About Axpara', route: '/client/about-axpara'},
             ],
             activeMenuId: 0,
             routeName: 'employer',
             routeName1: '',
-            myLocation: ''
+            myLocation: '',
+            isLogin:false,
+            isShowMenu:false
         }
+    },
+    computed:{
+        ...mapState("auth", ["auth"]),
     },
     components:{
         LoginModal
     },
     methods:{
-        selectMenu(id){          
-            setTimeout(this.scrollToBottom, 200);           
+        ...mapActions("auth", [ 
+            'setLogin'
+        ]),
+        selectMenu(id){
             this.activeMenuId = id;
-            var toggleButton = document.getElementById('navbar-toggler');
-            toggleButton.click();
+            if(device.get() != "unknown" && device.get() != ""){
+                var toggleButton = document.getElementById('navbar-toggler');
+                  toggleButton.click();
+            }                  
 
         },
-        scrollToBottom(){
-            this.routeName1 = window.location.pathname.split('/')[2];
-            if(this.routeName1 == 'about-axpara'){
-                const element = document.getElementById("about-axpara");
-                element.scrollIntoView();         
-            } 
-        }
     },
     created(){
-     
+       
     },
     mounted(){
+        
         this.myLocation  =  localStorage.getItem('location');
+
+        if(this.routeName == 'employer'){
+            let activeMenu = this.employerMenu.filter(a=>{
+                if(a.route == window.location.pathname){
+                    return a;
+                }              
+            });
+            if(activeMenu.length > 0){
+                this.activeMenuId = activeMenu[0].id;
+            }     
+        }     
+        let route = window.location.pathname.split('/');
+        if(route[1]== 'client'){
+            this.routeName = 'client'
+        }
+        if(route[2] ==  'v2'){
+           this.setLogin(true);
+        }else{
+           this.setLogin(false);
+        }     
+
+        this.isLogin = this.auth.isLogin;
+      
+    },
+    methods:{
+        clickMenuButon(){
+            this.isShowMenu = !this.isShowMenu;
+        }
     }
- 
 }
 </script>
 <style>
-   
+
     @media screen and (max-width: 1622px) {
         body {
             zoom:90%
         }
     }
-    
+
     @media screen and (max-width: 1450px) {
         body {
             zoom:80%
@@ -196,15 +227,10 @@ export default {
             margin: 5px;
         }
     }
-     @font-face {
-        font-family: "RubikLight";
-        src: local("Rubik"),
-        url(../../assets/Rubik/Rubik-Light.ttf) format("truetype");
-    }
     .nav-link-not-click:hover, .nav-link-not-click:focus{
         color:white !important;
     }
-   
+
     .bg-custom-blue{
         background-color: rgba(44, 145, 255, 1);
         padding-top:0px !important;
@@ -213,19 +239,19 @@ export default {
     .navbar-nav li a{
         color:white;
         padding-top:18px ;
-        padding-bottom:18px ;      
-    } 
+        padding-bottom:18px ;
+    }
     .navbar-nav li{
         padding-left: 5px;
         padding-right: 5px;
-    } 
+    }
     .nav-menu-right li{
         padding-left: 1px;
         padding-right: 1px;
     }
     .container-fluid{
         padding-left: 24px !important;
-        padding-right: 24px !important;       
+        padding-right: 24px !important;
     }
     .nav-menu-left{
         margin-left: 35px !important;
@@ -253,7 +279,7 @@ export default {
         align-items: center;
         color: #FFFFFF !important;
         font-family: RubikMedium !important;
-        
+
     }
     .btn-telegram{
         font-weight: 500;
@@ -271,4 +297,30 @@ export default {
         font-family: RubikMedium !important;
         height: 31.5px;
     }
+    .navbar{
+        z-index: 2;
+    }
+   
+    .custom-navbar-toggler {
+        border: unset !important;
+    }
+    .toggle-button-border{
+        box-shadow: unset !important;
+    }
+    @media screen and (max-device-width: 600px){
+        body{
+          -webkit-text-size-adjust: none !important;
+        }
+        .header-btn{
+            height: 43px !important;
+            border-radius: 5px !important;
+        }
+    }
+     @font-face {
+        font-family: "RubikLight";
+        src: local("Rubik"),
+        url(../../assets/Rubik/Rubik-Light.ttf) format("truetype");
+    }
+   
+   
 </style>

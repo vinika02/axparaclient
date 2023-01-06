@@ -69,6 +69,7 @@
     font-family: RubikRegular !important;
     margin-right: 12px !important;
 }
+
 .btn-custom-blue{       
     background: #2C91FF !important;
     border-color: #2C91FF !important;    
@@ -158,17 +159,49 @@
 }
 
 .custom-pagination .page-link:not(.border-0) {
+    text-indent: 0px;
     border-radius: 50px !important;
     margin-left: 5px;
     margin-right: 5px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding: 4px;
+    padding-bottom: 4px !important;
     width: 35px;
+    height: 34px;
     font-family: 'RubikRegular';
     font-style: normal;
     color: #8C8C8C;
+    text-align: center;
+    vertical-align: middle;
+    line-height:25px;
+
 }
 .custom-pagination .active{
     color: white !important;
     background: #2C91FF;
+}
+.btn-print {
+    background: #2C91FF !important;
+    border-radius: 2px;
+    padding:9px, 16px, 9px, 16px;
+    height: 40px;
+    margin-bottom: 3px;
+    font-family: 'RubikRegular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+    gap: 8px;
+    width: 94px;
+}
+
+.playIcon {
+    display: flex;
+    padding: 3px 16px;
+    width: 52px;
+    height: 26px;
+    background: #2C91FF;
+    border-radius: 2px;
+}
+.playIcon:hover{
+    background: #1764b8 !important;
 }

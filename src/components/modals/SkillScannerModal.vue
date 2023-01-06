@@ -80,7 +80,7 @@
 
                             </div>
                             <div class="edit-label">
-                                Choose a Primary and Secondary Skill Required From Your Candidate.
+                                Choose Which Countries You Would Like Your Candidate to Be From.
                             </div>                                                   
                         </div>
                         <div class="edit-country-form">
@@ -284,7 +284,7 @@
 
                             </div>
                             <div class="edit-label">
-                                Choose a Primary and Secondary Skill Required From Your Candidate.
+                                Choose Which Countries You Would Like Your Candidate to Be From.
                             </div>                                                   
                         </div>
                         <div class="edit-country-form">
@@ -1087,9 +1087,6 @@
     }
     .skill-scann-modal-header{
         padding: 14px !important
-    }
-    .search-skill{
-        margin-right:15px;
     }
     .skill-scan-close-btn{
         margin-right: 5px !important;

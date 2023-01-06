@@ -1,9 +1,10 @@
 import { createStore } from "vuex";
 import skills from "./modules/skills";
-
+import auth from "./modules/auth";
 export const store = new createStore({
     modules: {
-        skills
+        skills,
+        auth
     },
     state: {},
     getters: {},

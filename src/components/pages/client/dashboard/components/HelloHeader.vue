@@ -1,11 +1,11 @@
 <template>
     <div class="d-flex persona-header">
         <div class="flex-fill persona-1 w-420">
-            <span v-if="this.routeName != '/client/dashboard/persona2'">Hello, Leslie Alexander </span>
-            <span v-if="this.routeName == '/client/dashboard/persona2'">Hello there! </span>
-            <router-link class="me-2" to="/client/dashboard/persona1">1</router-link>
-            <router-link class="me-2" to="/client/dashboard/persona2">2</router-link>
-            <router-link  to="/client/dashboard/persona3">3</router-link>
+            <span v-if="this.routeName != '/client/v2/dashboard/persona2'">Hello, Leslie Alexander </span>
+            <span v-if="this.routeName == '/client/v2/dashboard/persona2'">Hello there! </span>
+            <router-link class="me-2" to="/client/v2/dashboard/persona1">1</router-link>
+            <router-link class="me-2" to="/client/v2/dashboard/persona2">2</router-link>
+            <router-link  to="/client/v2/dashboard/persona3">3</router-link>
            
         </div>
         <div class="flex-fill text-end">

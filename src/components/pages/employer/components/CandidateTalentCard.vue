@@ -1,8 +1,8 @@
 <template>
         <div class="my-talent ">
-            <div class="d-flex p-6 pb-0">
-                <div class="flex-fill cursor-pointer" >
-                    <a href="/my-talent" class="link text-b-b-18"> My Talents</a>
+            <div class="d-block d-sm-flex d-md-flex d-lg-flex p-6 pb-0">
+                <div class="flex-fill" >
+                    <span class="link text-b-b-18" :class="{'ios-mytalent':deviceName == 'iOS'}"> My Talents</span>
                 </div>
                 <div class="flex-fill text-end">
                     <button class="btn btn-sm border-radius-0 talent-present" :class="{ 'active-talent-btn': filterTalent == 'present'}" @click="filterTalentList('present')">
@@ -12,7 +12,7 @@
                                 </div>
                             </div>
                             <div>
-                                <span class="label"> Present</span>
+                                <span class="label" :class="{'ios-label': deviceName == 'iOS'}"> Present</span>
                             </div>
                         </div>
                     </button>
@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div>
-                                <span class="label"> Leave</span>
+                                <span class="label" :class="{'ios-label':deviceName== 'iOS'}"> Leave</span>
                             </div>
                         </div>                        
                     </button>
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div>
-                                <span class="label"> Public Holiday</span>
+                                <span class="label" :class="{'ios-label':deviceName== 'iOS'}"> Public Holiday</span>
                             </div>
                         </div>                         
                     </button>
@@ -49,7 +49,7 @@
                                 <div class="text-center talent-image">           
                                     <img  v-bind:src="require('@/assets/images/mytalents/'+talent.image)" /> 
                                 </div>
-                                <div class="text-center talent-name font-regular mt-1">           
+                                <div class="text-center talent-name font-regular mt-1" :class="{'ios-talent-name': deviceName == 'iOS'}">           
                                     {{talent.TalentID}}
                                 </div>
                                 <div class="text-center talent-details font-regular">           
@@ -63,8 +63,8 @@
         </div>
 </template>
 <style>
-    /* My talent */
-    
+    /* My talent */   
+   
     .see-all-talent-btn{
         font-family: RubikRegular;
         height: 40px;
@@ -152,21 +152,39 @@
     } 
     @media screen and (max-width: 600px) {
         .talent-image img{
-            width:  50px !important;
-            height:  50px;
+            width:  60px !important;
+            height:  60px;
         }
+    }
+    @media screen and (max-device-width: 600px){
+       .my-talent button{
+          margin-left:4px;
+       }
+       .ios-talent-name{
+         font-size: 9px !important;
+       }
+       .talent-details{
+        margin-top: 8px;
+       }
+    }
+    @media screen and (max-device-width: 400px){
+       .talent-name{
+          font-size: 11px;
+       }
     }
    
 </style>
     
 <script>
 import candidatecsv from '@/helper/candidatecsv'
+import device from '@/helper/device.js';
     export default {
         name: 'CandidateTalentCard',
         data() {
             return {
                 filterTalent: 'all',
-                talents:[]
+                talents:[],
+                deviceName:''
             }
         },
       methods:{
@@ -178,9 +196,16 @@ import candidatecsv from '@/helper/candidatecsv'
                this.filterTalent = "all"
             }else{
                 this.filterTalent =  type;
-            }
-           
+            }           
         }
+      },
+      mounted(){
+        if(device.get() == 'Android'){
+          this.deviceName = 'Android'
+        }
+        if(device.get() == 'iOS'){
+          this.deviceName = 'iOS'
+        }   
       },
       created(){
 

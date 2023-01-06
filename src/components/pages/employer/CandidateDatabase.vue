@@ -7,7 +7,7 @@
             <div class="container-fluid app-container bg-gray">
                 <div class="content-container dashboard ">
                     <div class="row justify-content-center">
-                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 pe-2">
+                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 pe-lg-2">
                             <div class="text-blue header-card">Hire</div>
                             <div class="sub-text-card sub-text">
                                 From software developers to accountants, we use our local expertise to help you hire the right talent for your needs.
@@ -26,9 +26,58 @@
                                         <div class="dot dot-green"></div>
                                     </div>
                                 </div>
-                                <div class="content-panel candidate-content">
+                                <!-- begin for mobile-->
+                                <div class="d-sm-flex d-md-none d-lg-none justify-content-center">
+                                    <div class="col-12 content-panel candidate-content">
+                                        <div class="flex-fill candidate-content-details">
+                                            <div class="d-flex cv-intro-content">       
+                                                <div class="r-title">{{talent.TalentID}} (Alyn)</div>                                
+                                                <div class="cv-intro ps-3 pe-3 ms-auto" v-if="talent.CVLink">              
+                                                    <a :href="talent.CVLink" target="_blank">                             
+                                                        <img src="@/assets/images/mytalents/persona2/cv.svg" height="25" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="cv-intro ps-3 pe-3 ms-auto" v-else>              
+                                                    <img src="@/assets/images/mytalents/persona2/cv-gray.svg" height="25"  alt="">
+                                                </div>
+                                                <div class="cv-intro " v-if="talent.VideoLink">
+                                                        <a :href="talent.VideoLink" target="_blank">                            
+                                                        <button class="btn playIcon">
+                                                            <img src="@/assets/images/mytalents/persona2/play.png" alt="">
+                                                        </button>
+                                                        </a>
+                                                </div>  
+                                                <div class="cv-intro" v-else>     
+                                                    <button class="btn grayPlayIcon">
+                                                        <img src="@/assets/images/mytalents/persona2/grayplay.png" alt="">
+                                                    </button>
+                                                </div>                                           
+                                            </div>    
+                                            <div class="mobile-country">{{talent.Country}}</div>                           
+                                            <div class="r-salary">{{talent.MonthlyRate}}</div>
+                                            <div class="p-t-2 candidate-interview-skils-tags d-flex flex-wrap">
+                                                <div v-for="skill, index in talent.Skills" :key="index">              
+                                                    <button class="btn tag-pink custom-skills" :title="skill" :class="{'tag-pink': index == 0, 'tag-violet': index > 0 }"> {{skill}}</button>                                
+                                                </div>                                  
+
+                                            </div>
+                                        
+                                            <div class="pt-1">
+                                                <span class="candidate-book-interview-label">Book an Interview</span>                                                                                                           
+                                            </div>
+                                            <div class="candidate-book-interview p-t-1">
+                                                <button class="btn btn-outline-blue see-my-interview custom-btn-interview  w-100" v-for="slot, index in talent.InterviewSlots" :key="index" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                                                    <span class="custom-btn-interview-text">{{slot}}</span>
+                                                </button>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end for mobile-->
+                                <div class="content-panel candidate-content d-none d-sm-none d-md-flex d-lg-flex ">
                                     <div class="flex-fill candidate-content-details">
                                         <div class="r-title">{{talent.TalentID}} (Alyn)</div>
+                                           <div class="mobile-country">{{talent.Country}}</div>                  
                                         <div class="r-salary">{{talent.MonthlyRate}}</div>
                                         <div class="p-t-2 candidate-interview-skils-tags d-flex">
                                             <div v-for="skill, index in talent.Skills" :key="index">              
@@ -46,11 +95,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 pe-2 ps-4 manage">
+                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 pe-lg-2 ps-lg-4  manage">
                             <div class="text-blue header-card">Manage</div>
                             <div class="sub-text-card sub-text">
                                 We are your in-country HR partner. We handle employee contracting, payroll and statutory payments. <br>
-                                <a href="/pdf/axpara.pdf" class="link view-deck" target="_blank"> View Deck</a>
+                                <a href="pdf/axpara.pdf" class="link view-deck" target="_blank"> View Deck</a>
                             </div>
                             <div class="mt-4">
                                 <div class="d-flex header-panel">
@@ -69,11 +118,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 ps-4 build">
+                        <div class="col-12 col-sm-10 col-md-6 col-lg-4 ps-lg-4 build">
                             <div class="text-blue header-card">Build</div>
                             <div class="sub-text-card sub-text1">
                                 With projects teams in Vietnam and Ukraine, we build customized software systems to power your enterprise and productivity needs.
-                              <br>  <a href="/pdf/AxparaPortfolio.pdf" class="link view-portfolio" target="_blank">  View Portfolio</a>
+                              <br>  <a href="pdf/AxparaPortfolio.pdf" class="link view-portfolio" target="_blank">  View Portfolio</a>
                                 
                             </div>
                             <div class="mt-4">
@@ -192,7 +241,7 @@
                 <div id="mapMobileWrap"></div>
                 <div class="spotify-playlist">
                     <iframe src="https://open.spotify.com/embed/playlist/4wk6yVwSHuIh8KrpQv0TP3?utm_source=generator" frameBorder="0"
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" width="300" height="100"
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" width="300" height="107"
                             style="border-radius:12px"
                     ></iframe>
                 </div>
@@ -308,30 +357,32 @@
                         <div class="row manange-talent-content">
                               <div class="col-sm-12 col-md-12 col-lg-4 pe-2">
                                 <div class="manange-talent-card" @mouseover="showButton('seamless');" @mouseleave="showButton('');">
-                                    <div class="bg-hover-blue" v-if="viewDeck == 'seamless'">
-                                        <div class="hover-container">                                          
-                                            <a href="/pdf/axpara.pdf" target="_blank">                              
-                                                <button class="btn btn-white btn-view-deck">
-                                                    View Deck
-                                                </button>
-                                            </a>
+                                   <div>
+                                        <div class="bg-hover-blue" v-if="viewDeck == 'seamless'">
+                                            <div class="hover-container">                                          
+                                                <a href="pdf/axpara.pdf" target="_blank">                              
+                                                    <button class="btn btn-white btn-view-deck">
+                                                        View Deck
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="manange-talent-card-content">
-                                        <div>
-                                        <img src="@/assets/images/candidatedb/Rectangle1.png">
-                                        </div>
-                                        <div class="manange-talent-details">
-                                            We’re making it seamless and convenient to hire and manage talent across the world and we are here to be your on-the-ground human resource team in every country in which you might want to operate.
-                                        </div>                                       
-                                    </div>                                   
+                                        <div class="manange-talent-card-content">                                        
+                                            <div>
+                                                <img src="@/assets/images/candidatedb/Rectangle1.png">
+                                            </div>
+                                            <div class="manange-talent-details">
+                                                We’re making it seamless and convenient to hire and manage talent across the world and we are here to be your on-the-ground human resource team in every country in which you might want to operate.
+                                            </div>                                       
+                                        </div>  
+                                   </div>                                                                    
                                 </div>
                               </div>
                               <div class="col-sm-12 col-md-12 col-lg-4 pe-2">
                                  <div class="manange-talent-card" @mouseover="showButton('care_everyting');" @mouseleave="showButton('');">
                                     <div class="bg-hover-blue" v-if="viewDeck == 'care_everyting'">
                                         <div class="hover-container">
-                                            <a href="/pdf/axpara.pdf" target="_blank">                                
+                                            <a href="pdf/axpara.pdf" target="_blank">                                
                                                 <button class="btn btn-white btn-view-deck">
                                                     View Deck
                                                 </button>
@@ -352,7 +403,7 @@
                                  <div class="manange-talent-card" @mouseover="showButton('labour');" @mouseleave="showButton('');">
                                     <div class="bg-hover-blue" v-if="viewDeck == 'labour'">
                                         <div class="hover-container">
-                                            <a href="/pdf/axpara.pdf" target="_blank">                                                
+                                            <a href="pdf/axpara.pdf" target="_blank">                                                
                                                 <button class="btn btn-white btn-view-deck">
                                                     View Deck
                                                 </button>
@@ -499,14 +550,14 @@
     }
     .bg-hover-blue .hover-container{
         text-align: center;
-        height: 474px;       
     }
     .bg-hover-blue{        
         background: #2c91ffb8;
-        width: 450px;
-        height: 474px;
+        width: 450px;   
         border-radius: 6px;
         position: absolute;
+        top:0px;
+        bottom: 0px;
     }
     .manange-talent-card{
         width: 450.67px;
@@ -515,6 +566,7 @@
         border: 1px solid #EDEDED;
         box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
         border-radius: 6px;      
+        position: relative;
     }
     .manange-talent-card-content{
         padding: 28px;
@@ -666,7 +718,7 @@
         font-weight: 500;
         line-height: 120%;
         font-size: 40px;
-        margin-top: 80px;
+        margin-top: 50px;
     }
     .how-we-understand{
         color: #2C91FF;
@@ -795,6 +847,7 @@
         padding-bottom: 8px;
         margin-top:8px;
     }
+ 
     /* End Hire Manage Buid */
     @media screen and (max-width: 1440px) {
         body {
@@ -823,10 +876,8 @@
        
         .ourteam{
             width: 100%;
-        }            
-        .enable-borderless-text{
-            font-size: 45px;
-        }
+        }           
+      
         .sub-text-card.sub-text{
             height: 100px;
         }
@@ -835,6 +886,9 @@
         }
         .emergin-market .emerging-card{
             height: unset;
+        }
+        .manange-talent{
+            padding-top: 10px;
         }
       
     }
@@ -861,22 +915,25 @@
         .ourteamframe{
             width: 100%;
         }
-    }
-    @media screen and (max-width: 360px) { 
-                  
-       .enable-borderless-text{
-           font-size: 35px;
-       }
-       .enable-borderless-sub-text{
-          font-size: 14px;
-       }
-       .manange-talent-card{
-            width: 350.67px;
-            height: unset;
+        .manange-talent-card{
+            /* width: 350.67px; */
+            height: unset !important;
         }
-   }
-
+    }
     
+    @media screen and (max-device-width: 600px){
+      .header-card, .we-are-now, .our-team, .how-we-understand, .manange-talent{
+        font-size: 25px !important;
+        
+      }
+      .manage, .build{
+        margin-top: 60px;
+      }
+      .candidate-content-details{
+        height: unset !important;
+      }
+    
+    }
    
 </style>
 <script>
@@ -922,7 +979,7 @@ export default {
         let data = candidatecsv.getData();
         this.talent = data[0];
 
-        setTimeout(this.scrollToBottom, 500);        
+        // setTimeout(this.scrollToBottom, 500);        
         const API_URL = 'https://api.axpara.com/api';
 
         const width = window.innerWidth;
@@ -1100,13 +1157,13 @@ export default {
 
             });
         },
-        scrollToBottom(){
-            this.routeName = window.location.pathname.split('/')[1];
-            if(this.routeName == 'about-axpara'){
-                const element = document.getElementById("about-axpara");
-                element.scrollIntoView();         
-            } 
-        },
+        // scrollToBottom(){
+        //     this.routeName = window.location.pathname.split('/')[1];
+        //     if(this.routeName == 'about-axpara'){
+        //         const element = document.getElementById("about-axpara");
+        //         element.scrollIntoView();         
+        //     } 
+        // },
         showButton(el){
             this.viewDeck = el;
         },

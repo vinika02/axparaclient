@@ -27,7 +27,7 @@
                                 type="email"
                                 name="email"
                                 class="form-control mt-2"
-                                placeholder="enter your email"
+                                placeholder="Enter your Email"
                                 style="width: 100%"
                                 @keyup="emailKeyUp($event)"
                                 v-model="email"

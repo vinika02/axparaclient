@@ -128,11 +128,30 @@
         height: 12px;
         border-radius:  50px;
     }
-    @media screen and (max-width: 435px) { 
-        .text-b-b-18{
-            font-size: 15px;
-        }
-        .my-talent button .label{
-            font-size: 11px !important;
+    .mobile-country{
+        font-family: 'RubikRegular' !important;
+    }
+    @media screen and (max-width: 650px) { 
+        .content-panel{
+            height: unset !important;
         }
     }
+    @media screen and (max-device-width: 600px){
+               
+        .content-panel{
+            height: unset !important;
+        }
+        .custom-btn-interview {
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+        .custom-btn-interview-text {
+            font-size: 14px !important;
+            font-family: 'RubikRegular';
+            padding-top: 1px !important;
+        }
+        .custom-skills {
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+     }

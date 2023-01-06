@@ -1,35 +1,41 @@
 <template>
-  <div>
+  <div class="banner-con">
     <div class="bg-white" v-if="isBanner">
       <div class="container-fluid app-container p-y-24">
         <div class="content-container dashboard">
-          <div class="enabled-border-less">
-            <div class="enabled-border-bg-blue">
-              <img src="../../../../assets/images/candidatedb/Frame.svg" class="frame" />
+          <div class="enabled-border-less" :class="{'android-enabled-border-less': deviceName == 'Android', 'ios-enabled-border-less': deviceName == 'iOS' }">
+            <div class="enabled-border-bg-blue" >
+              <img src="@/assets/images/candidatedb/Frame.svg" class="frame" />
               <img
-                src="../../../../assets/images/candidatedb/Frame1.svg"
+                src="@/assets/images/candidatedb/Frame1.svg"
                 class="frame1"
               />
 
               <div class="d-block text-details">
                 <div class="flex-fill">
-                  <h1 class="enable-borderless-text">
+                  <h1 class="enable-borderless-text" :class="{ 'android-enable-borderless-text': deviceName == 'Android', 'ios-enable-borderless-text': deviceName == 'iOS' }">
                     We Enable Borderless <br />
                     Employment.
                   </h1>
-                  <h5 class="enable-borderless-sub-text" v-if="location != 'Philippines'">
-                    We use our local expertise to help you hire the right talent for your
-                    needs,<br />
-                    wherever they may be in the world.
+                  <h5 class="enable-borderless-sub-text" :class="{ 'android-enable-borderless-sub-text': deviceName == 'Android', 'ios-enable-borderless-sub-text': deviceName == 'iOS' }" v-if="location != 'Philippines'" >
+                    We use our local expertise to help you hire the right talent 
+                    <br v-if="deviceName == 'Android' || deviceName == 'iOS'"/> 
+                    for your
+                    needs,
+                    <br v-if="deviceName != 'Android' && deviceName != 'iOS'" />
+                    wherever
+                    <br v-if="deviceName == 'Android' || deviceName == 'iOS'" /> 
+                    they may be in the world.
                   </h5>
-                  <h5 class="enable-borderless-sub-text" v-if="location == 'Philippines'">
+                  <h5 class="enable-borderless-sub-text" :class="{ 'android-enable-borderless-sub-text': deviceName == 'Android', 'ios-enable-borderless-sub-text': deviceName == 'iOS' }" v-if="location == 'Philippines'">
                     Do it all in one platform where you can post jobs, shortlist
-                    applicants,<br />
+                    applicants, <br class="mt-3" v-if="deviceName != 'Android' && deviceName != 'iOS'" />
                     and hire your chosen candidates.
                   </h5>
                   <div>
                     <button
                       class="btn btn-white btn-post-a-job"
+                      :class="{ 'android-btn-post-a-job': deviceName == 'Android', 'ios-btn-post-a-job': deviceName == 'iOS' }"
                       data-bs-toggle="modal"
                       href="#LoginModal"
                     >
@@ -39,7 +45,7 @@
                 </div>
                 <div class="flex-fill">
                   <img
-                    src="../../../../assets/Axpara_Icon/Outline/CancelWhite.svg"
+                    src="@/assets/Axpara_Icon/Outline/CancelWhite.svg"
                     @click="closeBanner()"
                     class="btn-cancel"
                   />
@@ -89,18 +95,18 @@
   left: 250px;
   z-index: 0;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-device-width: 900px) {
   .frame {
     top: 90px;
     left: 0;
     z-index: 0;
-    width: 100%;
+    width: 65%;
   }
   .frame1 {
     top: 363px;
     left: 0;
     z-index: 0;
-    width: 100%;
+    width: 65%;
   }
 }
 .vector1 {
@@ -142,19 +148,69 @@
   margin-top: 68px;
   padding: 10px 32px;
 }
+@media screen and (max-device-width: 600px){
+     /* ios                */
+    .ios-enable-borderless-text{
+        font-size: 28px !important;
+    }
+    .ios-enabled-border-less{
+      zoom: 60%;
+      background-position: right;
+    }
+    .ios-enable-borderless-sub-text{
+      font-size: 12px !important;
+    }
+    .ios-btn-post-a-job {
+      margin-top: 15px;
+      font-size: 12px !important;
+    }
+   
+    /* end ios */
+
+    /* android */
+    .android-enable-borderless-text{
+        font-size: 56px !important;
+    }
+    .android-enabled-border-less{
+      zoom: 60%;
+      background-position: right;
+    }
+    .android-enable-borderless-sub-text{
+      font-size: 22px !important;
+    }
+    .android-btn-post-a-job {
+      font-size: 25px;
+      margin-top: 30px;
+    }
+    /* end adroid */
+    .banner-con{
+      display: none;
+    }
+}
+@media screen and (max-device-width: 900px){
+                  
+}
 </style>
 
 <script>
+import device from '@/helper/device.js'
 export default {
   name: "Banner",
   data() {
     return {
       location: "",
       isBanner: true,
+      deviceName: ''
     };
   },
   mounted() {
     this.location = localStorage.getItem("location");
+    if(device.get() == 'Android'){
+      this.deviceName = 'Android'
+    }
+    if(device.get() == 'iOS'){
+      this.deviceName = 'iOS'
+    }   
   },
   methods: {
     closeBanner() {
